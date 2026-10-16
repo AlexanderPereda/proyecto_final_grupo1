@@ -33,3 +33,4 @@ como revisor crítico de dicho trabajo.
     data/        Datos locales (no versionados)
     notebooks/   Notebooks de exploración y experimentos
     docs/        Enunciado e informe final
+    templates/   Plantillas estándar del equipo (commits, handoffs, etc.)
