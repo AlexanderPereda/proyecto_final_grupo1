@@ -40,8 +40,20 @@ def normalizar_ts(valor):
     return ts if TS_MIN <= ts <= TS_MAX else None
 
 
+_NUMERO = re.compile(r"-?\d[\d,]*(?:\.\d+)?")     # primer número del texto, con signo opcional
+
+
 def normalizar_precio(valor):
-    """Convierte el precio a float. Lanza ValueError si el texto no es un número."""
+    """Convierte el precio crudo a float, o a None si no contiene ningún número.
+
+    El catálogo mezcla formatos: "2.68", None, "from 14.99", "—", "$1,299.00" y, en los
+    duplicados sintéticos, "19,99". Se toma el primer número del texto:
+    - "from 14.99" -> 14.99 y "14.99 - 29.99" -> 14.99 (precio desde);
+    - una coma seguida de exactamente dos dígitos al final es decimal: "19,99" -> 19.99;
+    - cualquier otra coma es de miles: "1,299.00" -> 1299.0;
+    - "—", "", "None" o un texto sin dígitos -> None.
+    El signo se conserva para que un precio negativo se rechace en la validación.
+    """
     if valor is None:
         return None
     if isinstance(valor, (int, float)) and not isinstance(valor, bool):
@@ -49,11 +61,15 @@ def normalizar_precio(valor):
     texto = str(valor).strip().replace("$", "")
     if texto.lower() in {"", "none", "null", "nan"}:
         return None
-    if "," in texto and "." not in texto:
-        texto = texto.replace(",", ".")      # coma decimal: "19,99"
+    coincidencia = _NUMERO.search(texto)
+    if coincidencia is None:
+        return None                          # "—", "N/A" u otro texto sin número
+    numero = coincidencia.group()
+    if re.fullmatch(r"-?\d+,\d{2}", numero):
+        numero = numero.replace(",", ".")    # coma decimal: "19,99"
     else:
-        texto = texto.replace(",", "")       # coma de miles: "1,299.00"
-    return float(texto)
+        numero = numero.replace(",", "")     # coma de miles: "1,299.00"
+    return float(numero)
 
 
 def normalizar_categoria(valor):
