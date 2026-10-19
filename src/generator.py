@@ -1,50 +1,107 @@
 """Lectura del dataset como stream y generador sintético de eventos (parte de la etapa 0).
 
-Código copiado de notebooks/etapa0_ingesta_buffer.ipynb (pasos 2, 3 y 4).
+Las reseñas vienen en un Parquet ordenado por `timestamp` (ver `notebooks/00-download-data.ipynb`).
+Se leen por bloques, una reseña a la vez, dentro de una ventana reciente: las últimas N reseñas
+del archivo. Cada reseña se convierte en un recorrido de compra cuyos eventos ocurren en los
+minutos previos al timestamp real de la reseña.
 """
 
 import heapq                      # solo se usa dentro del simulador, no es una estructura evaluada
-import json
 import random
 import re
 import zlib
 from collections import Counter, deque
 
-SEED = 42
-T0_MS = 1_672_531_200_000              # 2023-01-01 00:00:00 UTC en milisegundos
+import pyarrow.parquet as pq
+
+from . import config
+
+SEED = config.SEED
 VENTANA_RECORRIDO_MS = 30 * 60 * 1000  # el recorrido empieza como máximo 30 min antes de la reseña
+MARGEN_LIBERACION_MS = 1_000           # cubre el desplazamiento de ±0.4 s de los duplicados casi exactos
 N_GRUPOS_CO_COMPRA = 500
 CAMPOS = ["event_id", "event_type", "user_id", "parent_asin", "order_id", "order_type",
           "price", "payment_id", "device_id", "ts", "category", "query", "rating"]
 
 
-def leer_resenas(ruta, limite=None):
-    """Recorre el archivo JSONL de reseñas línea por línea y entrega un registro a la vez.
+# ----- Lectura de reseñas -------------------------------------------------------
 
-    limite: número máximo de reseñas a leer (None lee el archivo completo).
+def describir_ventana(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS_EXPERIMENTO, limite=None):
+    """Calcula qué filas y qué grupos de filas del Parquet forman la ventana, sin leer datos.
+
+    La ventana son las últimas `n_ventana` filas del archivo. Si se indica `limite`, se toman
+    solo las primeras `limite` filas de esa ventana (modo desarrollo). Solo se leen los
+    metadatos del Parquet (número de filas de cada grupo de filas).
     """
-    with open(ruta, "r", encoding="utf-8") as archivo:
-        for i, linea in enumerate(archivo):
-            if limite is not None and i >= limite:
-                break
-            r = json.loads(linea)
-            # Solo se guardan los campos necesarios para generar eventos
-            yield {
-                "user_id": r["user_id"],
-                "parent_asin": r["parent_asin"],
-                "rating": r["rating"],
-                "verified_purchase": r["verified_purchase"],
-            }
+    metadatos = pq.ParquetFile(ruta).metadata
+    total = metadatos.num_rows
+    inicio = max(0, total - n_ventana)
+    fin = total if limite is None else min(total, inicio + limite)
+
+    grupos = []                  # grupos de filas que se cruzan con [inicio, fin)
+    primera_fila_grupos = None   # fila global donde empieza el primer grupo que se lee
+    acumulado = 0
+    for g in range(metadatos.num_row_groups):
+        filas = metadatos.row_group(g).num_rows
+        if acumulado + filas > inicio and acumulado < fin:
+            if primera_fila_grupos is None:
+                primera_fila_grupos = acumulado
+            grupos.append(g)
+        acumulado += filas
+
+    return {
+        "total_filas": total,
+        "inicio": inicio,
+        "fin": fin,
+        "filas": fin - inicio,
+        "grupos_totales": metadatos.num_row_groups,
+        "grupos_leidos": grupos,
+        "filas_a_descartar": inicio - primera_fila_grupos if grupos else 0,
+    }
 
 
-def cargar_catalogo(ruta):
-    """Lee los metadatos línea por línea y devuelve {parent_asin: (precio, categoria, titulo)}."""
-    catalogo = {}
-    with open(ruta, "r", encoding="utf-8") as archivo:
-        for linea in archivo:
-            m = json.loads(linea)
-            catalogo[m["parent_asin"]] = (m.get("price"), m.get("main_category"), m.get("title"))
-    return catalogo
+def leer_resenas(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS_EXPERIMENTO, limite=None,
+                 tam_bloque=10_000):
+    """Entrega las reseñas de la ventana reciente una a la vez, en orden de timestamp.
+
+    Lee el Parquet por bloques de `tam_bloque` filas con `iter_batches` y solo las columnas
+    necesarias. Los grupos de filas anteriores a la ventana no se leen; dentro del primer grupo
+    se descartan las filas previas al inicio. La memoria usada depende del tamaño del bloque,
+    no del número de reseñas.
+    """
+    ventana = describir_ventana(ruta, n_ventana, limite)
+    if not ventana["grupos_leidos"] or ventana["filas"] <= 0:
+        return
+    por_descartar = ventana["filas_a_descartar"]
+    restantes = ventana["filas"]
+    archivo = pq.ParquetFile(ruta)
+    for bloque in archivo.iter_batches(batch_size=tam_bloque, row_groups=ventana["grupos_leidos"],
+                                       columns=config.COLUMNAS_RESENAS):
+        if por_descartar >= bloque.num_rows:          # el bloque entero está antes de la ventana
+            por_descartar -= bloque.num_rows
+            continue
+        if por_descartar:
+            bloque = bloque.slice(por_descartar)
+            por_descartar = 0
+        for r in bloque.to_pylist():
+            yield r
+            restantes -= 1
+            if restantes == 0:
+                return
+
+
+def cargar_catalogo(ruta=config.RUTA_META):
+    """Lee solo las columnas del catálogo y devuelve {parent_asin: (precio, categoria, titulo)}.
+
+    El precio se conserva como texto crudo (puede ser "2.68", None, "from 14.99" o "—");
+    su conversión a número corresponde a la etapa 1.
+    """
+    tabla = pq.read_table(ruta, columns=config.COLUMNAS_META)
+    asins = tabla.column("parent_asin").to_pylist()
+    precios = tabla.column("price").to_pylist()
+    categorias = tabla.column("main_category").to_pylist()
+    titulos = tabla.column("title").to_pylist()
+    return {a: (p, c, t) for a, p, c, t in zip(asins, precios, categorias, titulos)}
 
 
 def hash_estable(texto):
@@ -52,32 +109,34 @@ def hash_estable(texto):
     return zlib.crc32(texto.encode("utf-8"))
 
 
+# ----- Generador de eventos -----------------------------------------------------
+
 class GeneradorEventos:
     """Convierte reseñas reales en un stream sintético de eventos de comercio electrónico."""
 
     def __init__(self, catalogo, semilla=SEED,
-                 intervalo_medio_s=2.0,       # tiempo medio entre reseñas en el reloj de reproducción
+                 porcentaje_tardios=config.PORCENTAJE_TARDIOS,
+                 retraso_max_tardios_s=config.RETRASO_MAX_TARDIOS_S,
                  p_duplicado_exacto=0.03,
                  p_duplicado_casi=0.015,
                  p_malformado=0.01,
-                 p_tardio=0.05,
                  p_producto_extra=0.25,       # orden con más de un producto
                  p_rafaga_fraude=0.002,
                  p_alerta_fraude=0.30,
                  p_alerta_legitima=0.003):
         self.catalogo = catalogo
         self.rng = random.Random(semilla)
-        self.intervalo_medio_ms = intervalo_medio_s * 1000
+        self.porcentaje_tardios = porcentaje_tardios
+        self.retraso_max_tardios_ms = retraso_max_tardios_s * 1000
         self.p_duplicado_exacto = p_duplicado_exacto
         self.p_duplicado_casi = p_duplicado_casi
         self.p_malformado = p_malformado
-        self.p_tardio = p_tardio
         self.p_producto_extra = p_producto_extra
         self.p_rafaga_fraude = p_rafaga_fraude
         self.p_alerta_fraude = p_alerta_fraude
         self.p_alerta_legitima = p_alerta_legitima
 
-        self.reloj_ms = T0_MS            # hora de la reseña actual en el reloj de reproducción
+        self.reloj_ms = None             # timestamp de la reseña actual (el mayor visto)
         self.n_eventos = 0               # contador para event_id
         self.n_ordenes = 0               # contador para order_id
         self.pendientes = []             # montículo (hora_llegada, secuencia, registro)
@@ -110,17 +169,23 @@ class GeneradorEventos:
         return r
 
     def _precio_crudo(self, asin):
-        """Precio del catálogo como texto. Si falta, se usa un precio sintético estable por producto."""
+        """Precio del catálogo tal como viene (texto crudo, se limpia en la etapa 1).
+
+        Si el producto no tiene precio, se usa un precio sintético estable por producto,
+        a veces con símbolo de moneda o coma decimal.
+        """
         precio = self.catalogo.get(asin, (None, None, None))[0]
-        if precio is None:
-            precio = 5 + (hash_estable(asin) % 9500) / 100      # entre 5.00 y 99.99
-            self.estadisticas["precio_sintetico"] += 1
+        if precio is not None:
+            self.estadisticas["precio_catalogo"] += 1
+            return precio
+        sintetico = 5 + (hash_estable(asin) % 9500) / 100      # entre 5.00 y 99.99
+        self.estadisticas["precio_sintetico"] += 1
         u = self.rng.random()
         if u < 0.10:
-            return f"${precio:.2f}"                           # con símbolo de moneda
+            return f"${sintetico:.2f}"                        # con símbolo de moneda
         if u < 0.15:
-            return f"{precio:.2f}".replace(".", ",")          # coma decimal
-        return f"{precio:.2f}"
+            return f"{sintetico:.2f}".replace(".", ",")       # coma decimal
+        return f"{sintetico:.2f}"
 
     def _categoria_cruda(self, asin):
         """Categoría del catálogo, a veces con mayúsculas o espacios distintos."""
@@ -168,8 +233,12 @@ class GeneradorEventos:
     # ----- Recorridos ---------------------------------------------------------
 
     def _recorrido(self, resena):
-        """Convierte una reseña en su recorrido de compra (lista de registros limpios)."""
-        A = self.reloj_ms
+        """Convierte una reseña en su recorrido de compra (lista de registros limpios).
+
+        El ancla A es el timestamp real de la reseña; el resto del recorrido ocurre en los
+        30 minutos previos y la devolución, si la hay, en la hora siguiente.
+        """
+        A = resena["timestamp"]
         minuto = 60_000
         usuario, asin = resena["user_id"], resena["parent_asin"]
         tarjeta, dispositivo = self._medios_del_usuario(usuario)
@@ -214,7 +283,7 @@ class GeneradorEventos:
                                               payment_id=tarjeta, device_id=dispositivo))
                 self.estadisticas["alertas_legitimas"] += 1
 
-        # Reseña: en la hora de reproducción A
+        # Reseña: en su timestamp real
         eventos.append(self._registro("review", usuario, A, parent_asin=asin, device_id=dispositivo,
                                       category=categoria, rating=resena["rating"]))
 
@@ -292,45 +361,52 @@ class GeneradorEventos:
         self.n_programados += 1
 
     def _programar(self, registro):
-        """Calcula la hora de llegada del registro e inyecta ruido."""
-        if self.rng.random() < self.p_tardio:
-            retraso = self.rng.uniform(30_000, 300_000)        # llega entre 30 s y 5 min tarde
-            self.estadisticas["tardios"] += 1
-        else:
-            retraso = self.rng.uniform(50, 2_000)
-        llegada = registro["ts"] + retraso
+        """Calcula la hora de llegada del registro e inyecta ruido.
 
-        u = self.rng.random()
-        if u < self.p_malformado:
+        Desorden controlado: un evento llega en su propio ts, salvo una fracción
+        `porcentaje_tardios` que llega con un retraso aleatorio de hasta
+        `retraso_max_tardios_s`. Con porcentaje 0 el stream sale ordenado por ts.
+        Los duplicados llegan en su propio ts, justo después del original.
+        """
+        self.estadisticas["programados"] += 1
+        llegada = registro["ts"]
+        if self.porcentaje_tardios and self.rng.random() < self.porcentaje_tardios:
+            llegada += self.rng.uniform(0, self.retraso_max_tardios_ms)
+            self.estadisticas["tardios"] += 1
+
+        if self.rng.random() < self.p_malformado:
             self._encolar_llegada(self._corromper(registro), llegada)
             return
         self._encolar_llegada(registro, llegada)
 
         u = self.rng.random()
         if u < self.p_duplicado_exacto:
-            self._encolar_llegada(dict(registro), llegada + self.rng.uniform(100, 10_000))
+            self._encolar_llegada(dict(registro), registro["ts"])
             self.estadisticas["duplicados_exactos"] += 1
         elif u < self.p_duplicado_exacto + self.p_duplicado_casi:
-            self._encolar_llegada(self._casi_duplicado(registro), llegada + self.rng.uniform(100, 10_000))
+            copia = self._casi_duplicado(registro)
+            self._encolar_llegada(copia, copia["ts"])
             self.estadisticas["duplicados_casi"] += 1
 
     def eventos(self, resenas):
-        """Generador principal: recibe reseñas y entrega registros crudos en orden de llegada."""
+        """Generador principal: recibe reseñas ordenadas por timestamp y entrega registros crudos
+        en orden de llegada."""
         for resena in resenas:
-            self.reloj_ms += int(self.rng.expovariate(1 / self.intervalo_medio_ms))
+            # Las reseñas vienen ordenadas; se usa el mayor timestamp visto por si hubiera empates o retrocesos
+            self.reloj_ms = resena["timestamp"] if self.reloj_ms is None else max(self.reloj_ms, resena["timestamp"])
             for r in self._recorrido(resena):
                 self._programar(r)
             if self.rng.random() < self.p_rafaga_fraude and self.recientes_por_grupo:
                 for r in self._rafaga_fraude():
                     self._programar(r)
 
-            # Ningún evento futuro puede llegar antes de (reloj - 30 min); lo anterior ya se puede entregar
-            limite = self.reloj_ms - VENTANA_RECORRIDO_MS
+            # Ningún evento futuro puede llegar antes de (reloj - 30 min - margen); lo anterior ya se entrega
+            limite = self.reloj_ms - VENTANA_RECORRIDO_MS - MARGEN_LIBERACION_MS
             while self.pendientes and self.pendientes[0][0] <= limite:
                 self.estadisticas["emitidos"] += 1
                 yield heapq.heappop(self.pendientes)[2]
 
-        # Fin del archivo: se entrega lo que queda
+        # Fin de las reseñas: se entrega lo que queda
         while self.pendientes:
             self.estadisticas["emitidos"] += 1
             yield heapq.heappop(self.pendientes)[2]
