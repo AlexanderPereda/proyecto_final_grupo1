@@ -5,15 +5,14 @@ Ejecutar desde la raíz del proyecto:
 """
 
 import random
-from pathlib import Path
 
 import pytest
 
+from src import config
 from src.events import Event
 from src.stage2_heap import ColaPrioridadEventos, MinHeap, es_heap, violaciones_heap
 
-SEED = 42
-RAIZ = Path(__file__).resolve().parent.parent
+SEED = config.SEED
 
 
 # ----- La función de verificación ------------------------------------------------
@@ -97,10 +96,10 @@ def test_cola_prioridad_mantiene_la_propiedad_con_aging():
 
 # ----- La traza que usa el visualizador ------------------------------------------
 
-DATOS_DISPONIBLES = (RAIZ / "data" / "raw" / "review_categories" / "All_Beauty.jsonl").exists()
+DATOS_DISPONIBLES = config.RUTA_RESENAS.exists() and config.RUTA_META.exists()
 
 
-@pytest.mark.skipif(not DATOS_DISPONIBLES, reason="faltan los datos: python scripts/data_download.py All_Beauty")
+@pytest.mark.skipif(not DATOS_DISPONIBLES, reason="faltan los Parquet: ejecutar notebooks/00-download-data.ipynb")
 def test_cada_foto_del_heap_en_la_traza_es_valida():
     from src.trace import generar_traza
 
