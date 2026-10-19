@@ -19,6 +19,9 @@ data/*
 # Variables de entorno / credenciales
 .env
 
+# Instrucciones locales para Claude (no se versionan)
+CLAUDE.md
+
 # IDE y sistema operativo
 .vscode/
 .idea/
