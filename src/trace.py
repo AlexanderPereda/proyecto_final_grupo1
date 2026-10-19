@@ -25,15 +25,19 @@ import tracemalloc
 from array import array
 from collections import Counter
 from dataclasses import asdict
-from pathlib import Path
-
+from . import config
 from .generator import SEED, GeneradorEventos, cargar_catalogo, leer_resenas
 from .stage0_queue import ColaCircular
 from .stage1_preprocess import Preprocesador
 from .stage2_heap import AGING_S, ColaPrioridadEventos
 
-RAIZ = Path(__file__).resolve().parent.parent
 MAX_PASOS_POR_EVENTO = 20      # cota para reservar los arreglos de memoria de la pasada de medición
+
+# Eventos iniciales del stream que se generan pero no se trazan. Al inicio solo hay búsquedas y
+# vistas, porque cada recorrido empieza unos 25 minutos antes de su reseña. Con 13 000, la ventana
+# de 200 eventos de Office_Products tiene compras, 8 alertas de pago, devoluciones, 5 registros
+# malformados, duplicados exactos y casi exactos, y 10 eventos fuera de orden por llegadas tardías.
+SALTAR = 13_000
 
 
 class _Descarte:
@@ -66,7 +70,8 @@ def _ejecutar(catalogo, ruta_resenas, n_eventos, semilla, saltar, capacidad_cola
         tracemalloc.start()                         # el catálogo queda fuera de la medición
 
     generador = GeneradorEventos(catalogo, semilla=semilla)
-    fuente = itertools.islice(generador.eventos(leer_resenas(ruta_resenas)), saltar, saltar + n_eventos)
+    fuente = itertools.islice(generador.eventos(leer_resenas(ruta_resenas, n_ventana=config.N_RESENAS_EXPERIMENTO)),
+                              saltar, saltar + n_eventos)
 
     cola = ColaCircular(capacidad_cola)
     cola_prioridad = ColaPrioridadEventos(aging_s=AGING_S)
@@ -251,8 +256,8 @@ def _ejecutar(catalogo, ruta_resenas, n_eventos, semilla, saltar, capacidad_cola
     return eventos, pasos, c, preprocesador
 
 
-def generar_traza(n_eventos=200, semilla=SEED, categoria="All_Beauty",
-                  saltar=14_600,            # eventos iniciales del stream que se generan pero no se trazan
+def generar_traza(n_eventos=200, semilla=SEED,
+                  saltar=SALTAR,            # eventos iniciales del stream que se generan pero no se trazan
                   capacidad_cola=32,        # capacidad de la ColaCircular (etapa 0)
                   llegadas_por_tick=8,      # eventos que el productor intenta encolar en cada tick
                   consumir_cada=3,          # el consumidor forma un lote cada 3 ticks
@@ -265,17 +270,14 @@ def generar_traza(n_eventos=200, semilla=SEED, categoria="All_Beauty",
     cada 3 ticks (unos 5.3 por tick), así que la cola se llena y aparece el backpressure.
     La etapa 2 atiende 12 eventos por lote, menos de los que llegan, así que el heap crece.
 
-    saltar: al inicio del stream solo hay búsquedas y vistas, porque cada recorrido empieza
-    unos 25 minutos antes de su reseña. Con saltar=14 600 la ventana trazada tiene todos los
-    tipos de evento (compras, alertas, devoluciones), registros malformados y duplicados.
-    Los eventos saltados se generan con la misma semilla, para que el estado del generador sea
+    Los datos, la categoría y la ventana de reseñas se toman de `src/config.py`.
+
+    saltar: ver SALTAR. Los eventos saltados se generan con la misma semilla, para que el estado del generador sea
     el real, pero no pasan por las etapas. Por eso un reenvío cuyo original fue saltado se
     trata como un evento nuevo.
     """
-    ruta_resenas = RAIZ / "data" / "raw" / "review_categories" / f"{categoria}.jsonl"
-    ruta_meta = RAIZ / "data" / "raw" / "meta_categories" / f"meta_{categoria}.jsonl"
-    catalogo = cargar_catalogo(ruta_meta)
-    argumentos = dict(catalogo=catalogo, ruta_resenas=ruta_resenas, n_eventos=n_eventos,
+    catalogo = cargar_catalogo(config.RUTA_META)
+    argumentos = dict(catalogo=catalogo, ruta_resenas=config.RUTA_RESENAS, n_eventos=n_eventos,
                       semilla=semilla, saltar=saltar, capacidad_cola=capacidad_cola,
                       llegadas_por_tick=llegadas_por_tick, consumir_cada=consumir_cada,
                       tam_lote=tam_lote, capacidad_servicio=capacidad_servicio, aging_cada=aging_cada)
@@ -309,7 +311,7 @@ def generar_traza(n_eventos=200, semilla=SEED, categoria="All_Beauty",
         "rechazos_por_motivo": dict(preprocesador.motivos),
         "estados_finales": dict(Counter(e["estado"] for e in eventos.values())),
     }
-    parametros = {"n_eventos": n_eventos, "semilla": semilla, "categoria": categoria, "saltar": saltar,
+    parametros = {"n_eventos": n_eventos, "semilla": semilla, "categoria": config.CATEGORIA, "saltar": saltar,
                   "capacidad_cola": capacidad_cola, "llegadas_por_tick": llegadas_por_tick,
                   "consumir_cada": consumir_cada, "tam_lote": tam_lote,
                   "capacidad_servicio": capacidad_servicio, "aging_cada": aging_cada}

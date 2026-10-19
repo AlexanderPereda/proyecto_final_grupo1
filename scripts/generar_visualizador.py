@@ -3,7 +3,7 @@
 El resultado es un solo archivo HTML que se abre con doble clic, sin servidor.
 
 Uso:
-    python scripts/generar_visualizador.py                  # 200 eventos, semilla 42
+    python scripts/generar_visualizador.py                  # 200 eventos, semilla de config.py
     python scripts/generar_visualizador.py --eventos 300
 """
 
@@ -16,7 +16,8 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
 
-from src.trace import generar_traza  # noqa: E402
+from src import config  # noqa: E402
+from src.trace import SALTAR, generar_traza  # noqa: E402
 
 PLANTILLA = RAIZ / "scripts" / "plantilla_visualizador.html"
 MARCADOR = "__DATOS_TRAZA__"
@@ -25,8 +26,8 @@ MARCADOR = "__DATOS_TRAZA__"
 def leer_argumentos():
     parser = argparse.ArgumentParser(description="Genera el visualizador HTML del pipeline.")
     parser.add_argument("--eventos", type=int, default=200, help="número de eventos a trazar")
-    parser.add_argument("--semilla", type=int, default=42, help="semilla del generador")
-    parser.add_argument("--saltar", type=int, default=14_600,
+    parser.add_argument("--semilla", type=int, default=config.SEED, help="semilla del generador")
+    parser.add_argument("--saltar", type=int, default=SALTAR,
                         help="eventos iniciales del stream que no se trazan")
     parser.add_argument("--salida", type=Path, default=RAIZ / "visualizador" / "pipeline.html",
                         help="ruta del archivo HTML")
