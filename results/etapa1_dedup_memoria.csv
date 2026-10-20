@@ -1,0 +1,13 @@
+metodo,n,pico_mb
+merge_sort + recorrido (propio),1000,0.084128
+sorted() + recorrido,1000,0.015936
+set() (tabla hash),1000,0.043688
+merge_sort + recorrido (propio),10000,0.816815
+sorted() + recorrido,10000,0.16528
+set() (tabla hash),10000,0.697504
+merge_sort + recorrido (propio),100000,8.131488
+sorted() + recorrido,100000,1.601088
+set() (tabla hash),100000,6.924544
+merge_sort + recorrido (propio),1000000,81.350488
+sorted() + recorrido,1000000,16.448832
+set() (tabla hash),1000000,55.606304

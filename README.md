@@ -11,7 +11,7 @@ Pipeline de procesamiento de streams de 10 etapas aplicado a un **sistema de com
 priorización de órdenes, consulta de productos, detección de posible fraude, productos relacionados,
 análisis de co-compra y servicio al usuario final.
 
-- **Dataset base:** [Amazon Reviews 2023](https://amazon-reviews-2023.github.io/) (McAuley-Lab), categoría `Office_Products`
+- **Dataset base:** [Amazon Reviews 2023](https://amazon-reviews-2023.github.io/) (McAuley-Lab), categoría `Office_Products`. Se descarga y se convierte a Parquet con [notebooks/00-download-data.ipynb](notebooks/00-download-data.ipynb).
 - **Enunciado:** [docs/proyecto-eda-2026-2.pdf](docs/proyecto-eda-2026-2.pdf)
 
 ## Integrantes y roles

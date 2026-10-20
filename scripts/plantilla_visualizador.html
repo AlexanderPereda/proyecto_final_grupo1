@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visualizador del pipeline</title>
+<style>
+/* ===== Colores (tema claro y oscuro) ===== */
+:root {
+  --fondo: #f6f6f4;
+  --panel: #ffffff;
+  --panel-2: #f0f0ed;
+  --texto: #1d1d1f;
+  --tenue: #66666c;
+  --borde: #deded9;
+  --acento: #2f5bd3;
+  --peligro: #c62f2f;
+  --ok: #1f8a4c;
+  /* Tipos de evento */
+  --t-search: #2f6fe0;   --tx-search: #ffffff;
+  --t-view: #12a4b6;     --tx-view: #04262b;
+  --t-cart: #e0a00b;     --tx-cart: #2a1c00;
+  --t-purchase: #1f9d55; --tx-purchase: #ffffff;
+  --t-payment_alert: #d93636; --tx-payment_alert: #ffffff;
+  --t-review: #7c5cdb;   --tx-review: #ffffff;
+  --t-return: #c2417e;   --tx-return: #ffffff;
+  --t-invalido: #7a7a80; --tx-invalido: #ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fondo: #131315; --panel: #1c1c20; --panel-2: #24242a; --texto: #ececef;
+    --tenue: #9b9ba3; --borde: #303036; --acento: #7d9bff; --peligro: #ff6b6b; --ok: #4cc37f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fondo: #131315; --panel: #1c1c20; --panel-2: #24242a; --texto: #ececef;
+  --tenue: #9b9ba3; --borde: #303036; --acento: #7d9bff; --peligro: #ff6b6b; --ok: #4cc37f;
+  color-scheme: dark;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--fondo); color: var(--texto);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.contenedor { max-width: 1520px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 20px; margin: 0 0 2px; }
+h2 { font-size: 15px; margin: 0; }
+h3 { font-size: 12px; margin: 14px 0 6px; color: var(--tenue); text-transform: uppercase; letter-spacing: .04em; }
+.subtitulo { color: var(--tenue); font-size: 13px; }
+.panel { background: var(--panel); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; }
+button { font: inherit; color: inherit; }
+
+/* ===== Controles ===== */
+.controles { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 14px 0 10px; }
+.botones { display: flex; gap: 6px; flex-wrap: wrap; }
+.boton {
+  background: var(--panel); border: 1px solid var(--borde); border-radius: 8px;
+  padding: 6px 12px; cursor: pointer; min-width: 44px;
+}
+.boton:hover { border-color: var(--acento); }
+.boton.principal { background: var(--acento); border-color: var(--acento); color: #fff; }
+.boton:disabled { opacity: .45; cursor: default; }
+.control { display: flex; align-items: center; gap: 8px; color: var(--tenue); font-size: 13px; }
+.control input[type=range] { accent-color: var(--acento); }
+#barra-progreso { flex: 1 1 260px; min-width: 200px; }
+#indicador-paso { font-variant-numeric: tabular-nums; color: var(--texto); }
+
+/* ===== Contadores ===== */
+.contadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 8px; }
+.contador { background: var(--panel); border: 1px solid var(--borde); border-radius: 10px; padding: 8px 10px; }
+.contador .etiqueta { font-size: 11px; color: var(--tenue); }
+.contador .valor { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.contador .extra { font-size: 11px; color: var(--tenue); font-variant-numeric: tabular-nums; }
+.contador.memoria { grid-column: span 2; }
+.barra { height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden; margin-top: 4px; }
+.barra > div { height: 100%; background: var(--acento); width: 0; transition: width .2s; }
+
+/* ===== Narración del paso actual ===== */
+.narracion {
+  margin: 10px 0; padding: 10px 14px; border-radius: 10px; background: var(--panel);
+  border: 1px solid var(--borde); min-height: 44px; display: flex; gap: 10px; align-items: center;
+}
+.insignia-etapa { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--panel-2); white-space: nowrap; }
+.ref { display: inline-block; padding: 0 6px; border-radius: 5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ===== Columnas de etapas ===== */
+.etapas { display: grid; grid-template-columns: 1fr 1.15fr 1.35fr; gap: 12px; align-items: start; }
+@media (max-width: 1050px) { .etapas { grid-template-columns: 1fr; } }
+.etapa .cabecera { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.etapa .estructura { font-size: 12px; color: var(--tenue); }
+.flecha { color: var(--tenue); font-size: 12px; margin-top: 2px; }
+
+/* ===== Chips de evento ===== */
+.chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 22px; border-radius: 6px; border: 0; padding: 0;
+  font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums;
+  cursor: pointer; position: relative; will-change: transform;
+}
+.chip:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+.t-search { background: var(--t-search); color: var(--tx-search); }
+.t-view { background: var(--t-view); color: var(--tx-view); }
+.t-cart { background: var(--t-cart); color: var(--tx-cart); }
+.t-purchase { background: var(--t-purchase); color: var(--tx-purchase); }
+.t-payment_alert { background: var(--t-payment_alert); color: var(--tx-payment_alert); }
+.t-review { background: var(--t-review); color: var(--tx-review); }
+.t-return { background: var(--t-return); color: var(--tx-return); }
+.t-invalido { background: var(--t-invalido); color: var(--tx-invalido); }
+.chip.actual { box-shadow: 0 0 0 2px var(--panel), 0 0 0 4px var(--texto); z-index: 2; }
+.chip.seleccionado { outline: 2px dashed var(--acento); outline-offset: 2px; }
+/* Marcas de la etapa 1 */
+.chip.m-pendiente { opacity: .7; }
+.chip.m-valido::after, .chip.m-limpio::after, .chip.rechazado::after, .chip.duplicado::after {
+  position: absolute; top: -6px; right: -6px; width: 13px; height: 13px; border-radius: 50%;
+  font-size: 9px; line-height: 13px; text-align: center; color: #fff;
+}
+.chip.m-valido::after { content: "✓"; background: var(--ok); }
+.chip.m-limpio::after { content: "↕"; background: var(--acento); }
+.chip.rechazado::after { content: "✕"; background: var(--peligro); }
+.chip.duplicado::after { content: "="; background: var(--tenue); }
+
+/* ===== Etapa 0: productor y cola circular ===== */
+.productor { display: flex; align-items: center; gap: 8px; min-height: 34px; padding: 6px 8px; border-radius: 8px; background: var(--panel-2); }
+.productor.bloqueado { background: color-mix(in srgb, var(--peligro) 16%, var(--panel)); }
+.aviso { font-size: 12px; color: var(--peligro); font-weight: 600; }
+.ranuras { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; }
+.ranura {
+  position: relative; height: 40px; border: 1px dashed var(--borde); border-radius: 7px;
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px;
+}
+.ranura .indice { position: absolute; top: 1px; left: 4px; font-size: 9px; color: var(--tenue); }
+.ranura.frente { border: 2px solid var(--acento); }
+.ranura.fin { border-style: solid; border-color: var(--tenue); }
+.info-cola { font-size: 12px; color: var(--tenue); margin-top: 6px; font-variant-numeric: tabular-nums; }
+
+/* ===== Etapa 1 ===== */
+.zona { display: flex; flex-wrap: wrap; gap: 6px; min-height: 34px; padding: 6px; border-radius: 8px; background: var(--panel-2); align-content: flex-start; }
+.zona.vacia::before { content: attr(data-vacia); color: var(--tenue); font-size: 12px; }
+.leyenda-marcas { font-size: 11px; color: var(--tenue); margin-top: 6px; }
+
+/* ===== Etapa 2: heap dibujado como árbol ===== */
+.heap { padding: 10px 6px; background: var(--panel-2); border-radius: 8px; min-height: 44px; }
+.arbol-marco { position: relative; }                       /* reserva el alto del árbol ya escalado */
+.arbol { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+.arbol svg { position: absolute; top: 0; left: 0; overflow: visible; }
+.arbol line { stroke: var(--tenue); stroke-width: 1.3; opacity: .55; }
+.arbol line.violacion { stroke: var(--peligro); stroke-width: 3; opacity: 1; }
+.nodo { position: absolute; width: 32px; display: flex; flex-direction: column; align-items: center; }
+.nodo .clase { font-size: 9px; line-height: 1; margin-top: 2px; color: var(--tenue); font-variant-numeric: tabular-nums; }
+.nodo.raiz .chip { box-shadow: 0 0 0 2px var(--acento); }
+.nodo.violacion .chip { box-shadow: 0 0 0 3px var(--peligro); }
+.heap-vacio { color: var(--tenue); font-size: 12px; padding: 4px 8px; }
+.verificacion { font-size: 12px; margin-top: 6px; padding: 6px 8px; border-radius: 6px; }
+.verificacion.ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); }
+.verificacion.error { color: var(--peligro); background: color-mix(in srgb, var(--peligro) 14%, transparent); font-weight: 600; }
+.alerta-global { margin-top: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 600;
+  color: var(--peligro); background: color-mix(in srgb, var(--peligro) 14%, var(--panel)); border: 1px solid var(--peligro); }
+.alerta-global button { margin-left: 8px; }
+.salida { display: flex; flex-wrap: wrap; gap: 6px 4px; }
+.salida .item { display: flex; flex-direction: column; align-items: center; }
+.salida .orden { font-size: 9px; color: var(--tenue); font-variant-numeric: tabular-nums; }
+
+/* ===== Leyenda ===== */
+.leyenda { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 12px 0; font-size: 12px; color: var(--tenue); }
+.leyenda span.muestra { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin-right: 5px; }
+.nota { font-size: 12px; color: var(--tenue); margin-top: 14px; }
+
+/* ===== Panel de detalle ===== */
+.detalle {
+  position: fixed; top: 0; right: 0; height: 100vh; width: min(460px, 100vw);
+  background: var(--panel); border-left: 1px solid var(--borde); box-shadow: -8px 0 24px rgba(0,0,0,.12);
+  padding: 16px; overflow-y: auto; z-index: 10; transform: translateX(100%); transition: transform .2s;
+}
+.detalle.abierto { transform: none; }
+.detalle table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.detalle th, .detalle td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--borde); vertical-align: top; word-break: break-all; }
+.detalle th { color: var(--tenue); font-weight: 500; }
+.detalle td.cambio { background: color-mix(in srgb, var(--acento) 12%, transparent); }
+.detalle .falta { color: var(--peligro); }
+.historial { list-style: none; padding: 0; margin: 0; font-size: 12px; }
+.historial li { padding: 3px 0; border-bottom: 1px solid var(--borde); }
+.historial button { background: none; border: 0; color: var(--acento); cursor: pointer; padding: 0; font-variant-numeric: tabular-nums; }
+.cerrar { float: right; }
+.sin-datos { padding: 40px; text-align: center; color: var(--tenue); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header>
+    <h1>Pipeline de eventos · Etapas 0, 1 y 2</h1>
+    <div class="subtitulo" id="subtitulo"></div>
+    <div class="alerta-global" id="alerta-global" hidden></div>
+  </header>
+
+  <!-- Controles de reproducción -->
+  <section class="controles" aria-label="Controles">
+    <div class="botones">
+      <button class="boton" id="btn-reiniciar" title="Volver al inicio">⏮</button>
+      <button class="boton" id="btn-atras" title="Paso anterior (←)">◀ Paso</button>
+      <button class="boton principal" id="btn-reproducir" title="Reproducir (espacio)">▶ Reproducir</button>
+      <button class="boton" id="btn-pausar" title="Pausar (espacio)">⏸ Pausar</button>
+      <button class="boton" id="btn-paso" title="Paso siguiente (→)">Paso ▶</button>
+    </div>
+    <label class="control">Velocidad
+      <input type="range" id="velocidad" min="1" max="60" value="8">
+      <span id="velocidad-texto">8 pasos/s</span>
+    </label>
+    <input type="range" id="barra-progreso" min="0" value="0" aria-label="Posición en la traza">
+    <span class="control" id="indicador-paso"></span>
+  </section>
+
+  <!-- Contadores en vivo -->
+  <section class="contadores" aria-label="Contadores">
+    <div class="contador"><div class="etiqueta">En cola (etapa 0)</div><div class="valor" id="c-cola">0</div><div class="barra"><div id="b-cola"></div></div></div>
+    <div class="contador"><div class="etiqueta">Bloqueos del productor</div><div class="valor" id="c-bloqueos">0</div><div class="extra">backpressure</div></div>
+    <div class="contador"><div class="etiqueta">Micro-lotes</div><div class="valor" id="c-lotes">0</div><div class="extra" id="c-lote-info">&nbsp;</div></div>
+    <div class="contador"><div class="etiqueta">Válidos (etapa 1)</div><div class="valor" id="c-validos">0</div></div>
+    <div class="contador"><div class="etiqueta">Rechazados</div><div class="valor" id="c-rechazados">0</div></div>
+    <div class="contador"><div class="etiqueta">Duplicados eliminados</div><div class="valor" id="c-duplicados">0</div></div>
+    <div class="contador"><div class="etiqueta">Tamaño del heap</div><div class="valor" id="c-heap">0</div><div class="extra" id="c-heap-max">&nbsp;</div></div>
+    <div class="contador"><div class="etiqueta">Atendidos (etapa 2)</div><div class="valor" id="c-atendidos">0</div></div>
+    <div class="contador memoria">
+      <div class="etiqueta">Memoria del pipeline: actual / pico</div>
+      <div class="valor" id="c-memoria">0 KB</div>
+      <div class="barra"><div id="b-memoria"></div></div>
+      <div class="extra">tracemalloc, medida desde el primer paso</div>
+    </div>
+  </section>
+
+  <!-- Narración del paso actual -->
+  <section class="narracion" id="narracion" aria-live="polite"></section>
+
+  <!-- Las tres etapas -->
+  <main class="etapas">
+    <section class="panel etapa">
+      <div class="cabecera"><h2>Etapa 0 · Ingesta y buffer</h2><span class="estructura">ColaCircular · O(1)</span></div>
+      <h3>Productor</h3>
+      <div class="productor" id="productor"></div>
+      <h3>Cola FIFO circular</h3>
+      <div class="ranuras" id="ranuras"></div>
+      <div class="info-cola" id="info-cola"></div>
+      <div class="flecha">→ el consumidor saca micro-lotes desde el frente</div>
+    </section>
+
+    <section class="panel etapa">
+      <div class="cabecera"><h2>Etapa 1 · Preprocesamiento</h2><span class="estructura">merge sort · búsqueda binaria</span></div>
+      <h3 id="titulo-lote">Lote en proceso</h3>
+      <div class="zona" id="zona-lote" data-vacia="Sin lote en proceso"></div>
+      <div class="leyenda-marcas">✓ válido y normalizado · ↕ limpio, ordenado por ts · → pasa al heap</div>
+      <h3>Rechazados (ColaEnlazada)</h3>
+      <div class="zona" id="zona-rechazados" data-vacia="Ninguno"></div>
+      <h3>Duplicados eliminados</h3>
+      <div class="zona" id="zona-duplicados" data-vacia="Ninguno"></div>
+    </section>
+
+    <section class="panel etapa">
+      <div class="cabecera"><h2>Etapa 2 · Cola con prioridades</h2><span class="estructura">MinHeap · O(log n)</span></div>
+      <h3>Heap como árbol (chip = evento; número pequeño = clase efectiva)</h3>
+      <div class="heap" id="heap-caja">
+        <div class="arbol-marco" id="arbol-marco">
+          <div class="arbol" id="arbol">
+            <svg id="arbol-lineas" aria-hidden="true"></svg>
+            <div id="arbol-nodos"></div>
+          </div>
+        </div>
+      </div>
+      <div class="verificacion" id="verificacion-heap" aria-live="polite"></div>
+      <h3 id="titulo-salida">Atendidos (más reciente primero)</h3>
+      <div class="salida" id="salida"></div>
+    </section>
+  </main>
+
+  <div class="leyenda" id="leyenda"></div>
+  <p class="nota" id="nota"></p>
+</div>
+
+<!-- Panel lateral con los datos de un evento -->
+<aside class="detalle" id="detalle" aria-label="Detalle del evento"></aside>
+
+<!-- Datos de la traza, incrustados por scripts/generar_visualizador.py -->
+<script id="datos-traza" type="application/json">__DATOS_TRAZA__</script>
+
+<script>
+'use strict';
+
+/* =====================================================================
+   1. Datos de la traza
+   ===================================================================== */
+let TRAZA;
+try {
+  TRAZA = JSON.parse(document.getElementById('datos-traza').textContent);
+} catch (error) {
+  document.querySelector('.contenedor').innerHTML =
+    '<p class="sin-datos">Esta es la plantilla sin datos. Generar el visualizador con ' +
+    '<code>python scripts/generar_visualizador.py</code>.</p>';
+  throw error;
+}
+const PASOS = TRAZA.pasos;
+const EVENTOS = TRAZA.eventos;            // índice = tid
+const PARAM = TRAZA.parametros;
+const N = PASOS.length;
+
+const TIPOS = {
+  search: 'Búsqueda', view: 'Vista', cart: 'Carrito', purchase: 'Compra',
+  payment_alert: 'Alerta de pago', review: 'Reseña', return: 'Devolución', invalido: 'Tipo inválido',
+};
+const NOMBRE_CLASE = { 1: 'alerta', 2: 'express', 3: 'estándar', 4: 'programada', 5: 'navegación' };
+const CAMPOS = ['event_id', 'event_type', 'user_id', 'parent_asin', 'order_id', 'order_type',
+                'price', 'payment_id', 'device_id', 'ts', 'category', 'query', 'rating'];
+const MAX_SALIDA = 60;                    // eventos atendidos que se muestran
+
+// Tipo de un evento para su color; los tipos desconocidos (malformados) se marcan como inválidos
+function tipoDe(tid) {
+  const t = EVENTOS[tid].crudo.event_type;
+  return t in TIPOS ? t : 'invalido';
+}
+
+// Pasos de cada evento, para el historial del panel de detalle
+const PASOS_POR_TID = new Map();
+for (const p of PASOS) {
+  if (p.tid === null) continue;
+  if (!PASOS_POR_TID.has(p.tid)) PASOS_POR_TID.set(p.tid, []);
+  PASOS_POR_TID.get(p.tid).push(p);
+}
+// Tamaño máximo del heap en toda la traza (para la barra)
+const MAX_HEAP = Math.max(...PASOS.map(p => p.contadores.en_heap));
+
+/* ---------------------------------------------------------------------
+   Verificación de la propiedad de heap: cada padre <= sus hijos.
+   Se compara la clave real del MinHeap, (clase efectiva, deadline, seq),
+   en orden lexicográfico, igual que Python compara tuplas.
+   --------------------------------------------------------------------- */
+function clavesHeap(foto) {
+  return foto.heap.map((_, i) => [foto.clases[i], foto.deadlines[i], foto.seqs[i]]);
+}
+
+// true si la clave a es estrictamente menor que la clave b
+function esMenor(a, b) {
+  for (let k = 0; k < a.length; k++) {
+    if (a[k] < b[k]) return true;
+    if (a[k] > b[k]) return false;
+  }
+  return false;
+}
+
+// Pares {padre, hijo} (posiciones del arreglo) donde el hijo es menor que su padre
+function violacionesHeap(claves) {
+  const violaciones = [];
+  for (let hijo = 1; hijo < claves.length; hijo++) {
+    const padre = (hijo - 1) >> 1;
+    if (esMenor(claves[hijo], claves[padre])) violaciones.push({ padre, hijo });
+  }
+  return violaciones;
+}
+
+// Se revisan todas las fotos del heap al cargar la página
+const FOTOS_HEAP = PASOS.filter(p => p.estructura && p.estructura.heap);
+const PASOS_CON_VIOLACION = FOTOS_HEAP
+  .filter(p => violacionesHeap(clavesHeap(p.estructura)).length > 0)
+  .map(p => p.paso);
+
+/* =====================================================================
+   2. Estado de la visualización
+   El estado se reconstruye aplicando los pasos en orden. Las estructuras de las
+   etapas 0 y 2 vienen como fotos tomadas de Python; aquí solo se dibujan.
+   ===================================================================== */
+function estadoInicial() {
+  return {
+    indice: -1,
+    ranuras: new Array(PARAM.capacidad_cola).fill(null), inicio: 0,
+    bloqueado: null,                       // tid que espera por backpressure
+    loteInfo: null, lote: [], marca: {}, posicion: {},
+    rechazados: [], duplicados: [],
+    heap: [], fotoHeap: null,              // foto completa del heap (tids y claves)
+    salida: [],
+    contadores: null,
+  };
+}
+
+function quitar(lista, tid) {
+  const i = lista.indexOf(tid);
+  if (i >= 0) lista.splice(i, 1);
+}
+
+// Aplica un paso al estado (sin dibujar)
+function aplicar(e, p) {
+  const d = p.detalle;
+  if (p.estructura) {
+    if (p.estructura.ranuras) { e.ranuras = p.estructura.ranuras; e.inicio = p.estructura.inicio; }
+    if (p.estructura.heap) { e.heap = p.estructura.heap; e.fotoHeap = p.estructura; }
+  }
+  switch (p.accion) {
+    case 'backpressure': e.bloqueado = p.tid; break;
+    case 'encolado': if (e.bloqueado === p.tid) e.bloqueado = null; break;
+    case 'lote_formado':
+      e.lote = []; e.marca = {}; e.posicion = {};
+      e.loteInfo = { numero: p.lote, tamano: d.tamano, motivo: d.motivo };
+      break;
+    case 'sale_en_lote': e.lote.push(p.tid); e.marca[p.tid] = 'pendiente'; break;
+    case 'valido': e.marca[p.tid] = 'valido'; break;
+    case 'rechazado': quitar(e.lote, p.tid); e.rechazados.push(p.tid); break;
+    case 'duplicado': quitar(e.lote, p.tid); e.duplicados.push(p.tid); break;
+    case 'limpio': e.marca[p.tid] = 'limpio'; e.posicion[p.tid] = d.posicion; break;
+    case 'entra_heap': quitar(e.lote, p.tid); break;
+    case 'sale_heap': e.salida.push({ tid: p.tid, orden: d.orden }); break;
+  }
+  e.indice = p.paso;
+  e.contadores = p.contadores;
+}
+
+/* =====================================================================
+   3. Elementos de la página
+   ===================================================================== */
+const $ = id => document.getElementById(id);
+const ZONAS = {
+  productor: $('productor'), lote: $('zona-lote'), rechazados: $('zona-rechazados'),
+  duplicados: $('zona-duplicados'), heap: $('arbol-nodos'), salida: $('salida'),
+};
+
+// Ranuras de la cola circular (se crean una sola vez)
+const RANURAS = [];
+for (let i = 0; i < PARAM.capacidad_cola; i++) {
+  const r = document.createElement('div');
+  r.className = 'ranura';
+  r.innerHTML = `<span class="indice">${i}</span>`;
+  $('ranuras').appendChild(r);
+  RANURAS.push(r);
+}
+
+// Un chip por evento; el mismo elemento se mueve entre zonas para poder animarlo
+const CHIPS = new Map();
+let seleccionado = null;
+function chip(tid) {
+  let el = CHIPS.get(tid);
+  if (!el) {
+    el = document.createElement('button');
+    el.textContent = tid;
+    el.dataset.tid = tid;
+    el.title = `#${tid} · ${TIPOS[tipoDe(tid)]} · ${EVENTOS[tid].crudo.event_id ?? ''}`;
+    el.addEventListener('click', () => mostrarDetalle(tid));
+    CHIPS.set(tid, el);
+  }
+  el.className = `chip t-${tipoDe(tid)}` + (tid === seleccionado ? ' seleccionado' : '');
+  return el;
+}
+
+/* =====================================================================
+   4. Dibujo
+   Animación FLIP: se guarda la posición de cada chip antes de redibujar y,
+   después, cada chip se anima desde su posición anterior hasta la nueva.
+   ===================================================================== */
+let estado = estadoInicial();
+let velocidad = 8;                         // pasos por segundo
+let temporizador = null;
+
+function dibujar(e, animar) {
+  const antes = new Map();
+  if (animar) for (const [tid, el] of CHIPS) if (el.isConnected) antes.set(tid, el.getBoundingClientRect());
+  const visibles = new Set();
+  const colocar = (tid, destino, extra = '') => {
+    const el = chip(tid);
+    if (extra) el.classList.add(...extra.split(' '));
+    destino.appendChild(el);
+    visibles.add(tid);
+    return el;
+  };
+
+  // Primero se vacían todas las zonas; después se colocan los chips
+  RANURAS.forEach(r => r.querySelectorAll('.chip').forEach(c => c.remove()));
+  Object.values(ZONAS).forEach(z => z.replaceChildren());
+
+  // --- Etapa 0: productor y cola circular
+  const tam = e.contadores ? e.contadores.en_cola : 0;
+  const capacidad = PARAM.capacidad_cola;
+  ZONAS.productor.classList.toggle('bloqueado', e.bloqueado !== null);
+  if (e.bloqueado !== null) {
+    colocar(e.bloqueado, ZONAS.productor);
+    const aviso = document.createElement('span');
+    aviso.className = 'aviso';
+    aviso.textContent = tam >= capacidad
+      ? 'Cola llena: el productor espera (backpressure)'
+      : 'Esperando desde que la cola se llenó; reintenta en el siguiente tick';
+    ZONAS.productor.appendChild(aviso);
+  } else {
+    ZONAS.productor.innerHTML = '<span class="subtitulo">Generando eventos desde las reseñas</span>';
+  }
+  RANURAS.forEach((r, i) => {
+    r.classList.toggle('frente', tam > 0 && i === e.inicio);
+    r.classList.toggle('fin', tam < capacidad && i === (e.inicio + tam) % capacidad);
+    if (e.ranuras[i] !== null) colocar(e.ranuras[i], r);
+  });
+  $('info-cola').textContent = `inicio = ${e.inicio} · tam = ${tam} / ${capacidad} · ` +
+    `fin = (inicio + tam) % ${capacidad} = ${(e.inicio + tam) % capacidad} · ` +
+    `borde azul: frente · borde gris continuo: fin`;
+
+  // --- Etapa 1: lote en proceso (los limpios, ordenados por ts, van primero)
+  const enProceso = e.lote.length > 0;
+  $('titulo-lote').textContent = e.loteInfo
+    ? `Lote ${e.loteInfo.numero} ${enProceso ? 'en proceso' : 'procesado'} ` +
+      `(${e.loteInfo.tamano} eventos, cierre por ${e.loteInfo.motivo})`
+    : 'Lote en proceso';
+  ZONAS.lote.dataset.vacia = e.loteInfo
+    ? 'Todos los eventos del lote pasaron a la etapa 2 o fueron descartados'
+    : 'Sin lote en proceso';
+  const limpios = e.lote.filter(t => e.marca[t] === 'limpio').sort((a, b) => e.posicion[a] - e.posicion[b]);
+  const otros = e.lote.filter(t => e.marca[t] !== 'limpio');
+  for (const t of [...limpios, ...otros]) colocar(t, ZONAS.lote, `m-${e.marca[t]}`);
+  for (const t of e.rechazados) colocar(t, ZONAS.rechazados, 'rechazado');
+  for (const t of e.duplicados) colocar(t, ZONAS.duplicados, 'duplicado');
+  for (const z of [ZONAS.lote, ZONAS.rechazados, ZONAS.duplicados]) z.classList.toggle('vacia', !z.children.length);
+
+  // --- Etapa 2: heap como árbol
+  dibujarArbol(e, colocar);
+
+  // --- Etapa 2: atendidos, el más reciente primero
+  const desde = Math.max(0, e.salida.length - MAX_SALIDA);
+  for (let k = e.salida.length - 1; k >= desde; k--) {
+    const item = document.createElement('div');
+    item.className = 'item';
+    colocar(e.salida[k].tid, item);
+    const orden = document.createElement('span');
+    orden.className = 'orden';
+    orden.textContent = e.salida[k].orden;
+    item.appendChild(orden);
+    ZONAS.salida.appendChild(item);
+  }
+  $('titulo-salida').textContent = e.salida.length > MAX_SALIDA
+    ? `Atendidos (últimos ${MAX_SALIDA} de ${e.salida.length}, más reciente primero)`
+    : 'Atendidos (más reciente primero)';
+
+  // Los chips que no están en ninguna zona se retiran de la página
+  for (const [tid, el] of CHIPS) if (!visibles.has(tid)) el.remove();
+
+  // Evento del paso actual
+  const actual = e.indice >= 0 ? PASOS[e.indice].tid : null;
+  if (actual !== null && CHIPS.has(actual) && visibles.has(actual)) CHIPS.get(actual).classList.add('actual');
+
+  // Animación
+  if (animar) {
+    const duracion = Math.min(450, 800 / velocidad);
+    for (const tid of visibles) {
+      const el = CHIPS.get(tid);
+      const previo = antes.get(tid);
+      const nuevo = el.getBoundingClientRect();
+      if (previo) {
+        // Dentro del árbol escalado, 1 px de la pantalla equivale a 1/escala px del chip
+        const escala = el.offsetWidth ? nuevo.width / el.offsetWidth : 1;
+        const dx = (previo.left - nuevo.left) / escala, dy = (previo.top - nuevo.top) / escala;
+        if (dx || dy) el.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: 'none' }],
+                                 { duration: duracion, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      } else {
+        el.animate([{ opacity: 0, transform: 'scale(.3)' }, { opacity: 1, transform: 'none' }], { duration: duracion });
+      }
+    }
+  }
+
+  dibujarContadores(e);
+  $('narracion').innerHTML = e.indice >= 0 ? narrar(PASOS[e.indice]) : narracionInicial();
+  $('barra-progreso').value = e.indice + 1;
+  $('indicador-paso').textContent = e.indice >= 0
+    ? `Paso ${e.indice + 1} / ${N} · tick ${PASOS[e.indice].tick}`
+    : `Paso 0 / ${N}`;
+  actualizarBotones();
+}
+
+/* ---------------------------------------------------------------------
+   Árbol del heap. El nodo de la posición i tiene sus hijos en 2i + 1 y 2i + 2
+   y su padre en (i - 1) // 2. Cada subárbol recibe un ancho igual al número de
+   hojas en que termina, y cada nodo se centra sobre ese ancho; así queda justo
+   encima de sus hijos sin reservar espacio para posiciones vacías.
+   --------------------------------------------------------------------- */
+const RANURA_X = 38;      // px por hoja
+const FILA_Y = 50;        // px por nivel
+const MARGEN_Y = 12;      // espacio arriba de la raíz
+
+function dibujarArbol(e, colocar) {
+  const n = e.heap.length;
+  const svg = $('arbol-lineas');
+  svg.replaceChildren();
+  const marco = $('arbol-marco'), arbol = $('arbol');
+  if (!n) {
+    ZONAS.heap.innerHTML = '<div class="heap-vacio">Heap vacío</div>';
+    marco.style.height = '24px';
+    arbol.style.transform = 'none';
+    mostrarVerificacion(e, []);
+    return;
+  }
+
+  // 1. Ancho de cada subárbol en hojas, de abajo hacia arriba
+  const hijos = i => [2 * i + 1, 2 * i + 2].filter(h => h < n);
+  const ancho = new Array(n);
+  for (let i = n - 1; i >= 0; i--) {
+    const hs = hijos(i);
+    ancho[i] = hs.length ? hs.reduce((suma, h) => suma + ancho[h], 0) : 1;
+  }
+
+  // 2. Posición de cada nodo: centrado sobre el ancho de su subárbol
+  const pos = new Array(n);
+  (function ubicar(i, x0, nivel) {
+    pos[i] = { x: (x0 + ancho[i] / 2) * RANURA_X, y: MARGEN_Y + nivel * FILA_Y };
+    let x = x0;
+    for (const h of hijos(i)) { ubicar(h, x, nivel + 1); x += ancho[h]; }
+  })(0, 0, 0);
+  const anchoTotal = ancho[0] * RANURA_X;
+  const altoTotal = MARGEN_Y + (Math.floor(Math.log2(n)) + 1) * FILA_Y;
+
+  // 3. Verificación de la foto actual
+  const claves = clavesHeap(e.fotoHeap);
+  const violaciones = violacionesHeap(claves);
+  const malos = new Set(violaciones.flatMap(v => [v.padre, v.hijo]));
+  const lineaRota = new Set(violaciones.map(v => v.hijo));
+
+  // 4. Líneas padre-hijo (SVG detrás de los chips)
+  const NS = 'http://www.w3.org/2000/svg';
+  svg.setAttribute('width', anchoTotal);
+  svg.setAttribute('height', altoTotal);
+  for (let h = 1; h < n; h++) {
+    const padre = (h - 1) >> 1;
+    const linea = document.createElementNS(NS, 'line');
+    linea.setAttribute('x1', pos[padre].x); linea.setAttribute('y1', pos[padre].y);
+    linea.setAttribute('x2', pos[h].x);     linea.setAttribute('y2', pos[h].y);
+    if (lineaRota.has(h)) linea.classList.add('violacion');
+    svg.appendChild(linea);
+  }
+
+  // 5. Nodos: el centro del chip queda en la posición calculada
+  for (let i = 0; i < n; i++) {
+    const nodo = document.createElement('div');
+    nodo.className = 'nodo' + (i === 0 ? ' raiz' : '') + (malos.has(i) ? ' violacion' : '');
+    nodo.style.left = `${pos[i].x - 16}px`;
+    nodo.style.top = `${pos[i].y - 11}px`;
+    const el = colocar(e.heap[i], nodo);
+    const [clase, deadline, seq] = claves[i];
+    el.title = `#${e.heap[i]} · posición ${i}` + (i ? ` · padre en ${(i - 1) >> 1}` : ' · raíz') +
+               `\nclave (clase, deadline, seq) = (${clase}, ${formatoTs(deadline, false)?.slice(11, 19)}, ${seq})`;
+    const etiqueta = document.createElement('span');
+    etiqueta.className = 'clase';
+    etiqueta.textContent = clase;
+    nodo.appendChild(etiqueta);
+    ZONAS.heap.appendChild(nodo);
+  }
+
+  // 6. Si el árbol no cabe en la columna, se escala para que quepa completo
+  const disponible = $('heap-caja').clientWidth - 12;
+  const escala = Math.min(1, disponible / anchoTotal);
+  const desplazamiento = Math.max(0, (disponible - anchoTotal * escala) / 2);
+  arbol.style.width = `${anchoTotal}px`;
+  arbol.style.height = `${altoTotal}px`;
+  arbol.style.transform = `translateX(${desplazamiento}px) scale(${escala})`;
+  marco.style.height = `${altoTotal * escala}px`;
+
+  mostrarVerificacion(e, violaciones, claves);
+}
+
+// Mensaje bajo el árbol: verde si se cumple la propiedad, rojo con el detalle si no
+function mostrarVerificacion(e, violaciones, claves) {
+  const caja = $('verificacion-heap');
+  if (violaciones.length) {
+    const v = violaciones[0];
+    const fmt = c => `(${c[0]}, ${c[1]}, ${c[2]})`;
+    caja.className = 'verificacion error';
+    caja.textContent = `⚠ Se rompe la propiedad de heap en ${violaciones.length} par(es). ` +
+      `Ejemplo: el padre #${e.heap[v.padre]} (posición ${v.padre}, clave ${fmt(claves[v.padre])}) ` +
+      `es mayor que su hijo #${e.heap[v.hijo]} (posición ${v.hijo}, clave ${fmt(claves[v.hijo])}).`;
+    return;
+  }
+  const n = e.heap.length;
+  caja.className = 'verificacion ok';
+  caja.textContent = n > 1
+    ? `✓ Cada padre ≤ sus hijos según la clave (clase, deadline, seq): ${n - 1} pares revisados en esta foto.`
+    : '✓ Propiedad de heap: no hay pares padre-hijo que revisar.';
+}
+
+function kb(bytes) {
+  return bytes >= 1024 * 1024 ? `${(bytes / 1048576).toFixed(2)} MB` : `${(bytes / 1024).toFixed(1)} KB`;
+}
+
+function dibujarContadores(e) {
+  const c = e.contadores || { en_cola: 0, bloqueos: 0, lotes: 0, validos: 0, rechazados: 0,
+                              duplicados: 0, en_heap: 0, atendidos: 0, mem_actual: 0, mem_pico: 0 };
+  $('c-cola').textContent = `${c.en_cola} / ${PARAM.capacidad_cola}`;
+  $('b-cola').style.width = `${100 * c.en_cola / PARAM.capacidad_cola}%`;
+  $('c-bloqueos').textContent = c.bloqueos;
+  $('c-lotes').textContent = c.lotes;
+  $('c-lote-info').textContent = e.loteInfo ? `último: ${e.loteInfo.tamano} ev., ${e.loteInfo.motivo}` : ' ';
+  $('c-validos').textContent = c.validos;
+  $('c-rechazados').textContent = c.rechazados;
+  $('c-duplicados').textContent = c.duplicados;
+  $('c-heap').textContent = c.en_heap;
+  $('c-heap-max').textContent = `máximo en la traza: ${MAX_HEAP}`;
+  $('c-atendidos').textContent = c.atendidos;
+  $('c-memoria').textContent = `${kb(Math.max(0, c.mem_actual))} / ${kb(c.mem_pico)}`;
+  $('b-memoria').style.width = c.mem_pico > 0 ? `${100 * Math.max(0, c.mem_actual) / c.mem_pico}%` : '0';
+}
+
+/* =====================================================================
+   5. Narración de cada paso
+   ===================================================================== */
+const ref = tid => `<span class="ref t-${tipoDe(tid)}">#${tid}</span> (${TIPOS[tipoDe(tid)].toLowerCase()})`;
+const ETAPA = ['Etapa 0', 'Etapa 1', 'Etapa 2'];
+
+function narracionInicial() {
+  return `<span class="insignia-etapa">Inicio</span><span>Pulsa <b>Reproducir</b> o <b>Paso</b>. ` +
+         `${EVENTOS.length} eventos, semilla ${PARAM.semilla}. Haz clic en un evento para ver sus datos.</span>`;
+}
+
+function narrar(p) {
+  const d = p.detalle, t = p.tid;
+  let texto;
+  switch (p.accion) {
+    case 'encolado': {
+      const ranura = p.estructura.ranuras.indexOf(t);
+      texto = `${ref(t)} entra a la cola circular en la ranura ${ranura}.`;
+      break;
+    }
+    case 'backpressure':
+      texto = `La cola está llena (${d.capacidad}/${d.capacidad}). El productor se bloquea con ${ref(t)} ` +
+              `hasta que el consumidor libere espacio (backpressure).`;
+      break;
+    case 'lote_formado':
+      texto = `El consumidor forma el micro-lote ${p.lote} con ${d.tamano} eventos (cierre por ${d.motivo}).`;
+      break;
+    case 'sale_en_lote':
+      texto = `${ref(t)} sale del frente de la cola hacia el lote ${p.lote}.`;
+      break;
+    case 'valido':
+      texto = `${ref(t)} cumple el esquema y se normaliza (ts en segundos, precio numérico, categoría canónica).`;
+      break;
+    case 'rechazado':
+      texto = `${ref(t)} se rechaza por <b>${d.motivo}</b> y pasa a la cola de rechazados.`;
+      break;
+    case 'duplicado': {
+      const donde = d.donde === 'lote'
+        ? 'al ordenar el lote por (clave, ts) quedó junto a'
+        : 'la búsqueda binaria en la ventana de claves encontró a';
+      const original = d.original_tid !== null && d.original_tid !== undefined ? ref(d.original_tid) : d.original_event_id;
+      texto = `${ref(t)} es un duplicado <b>${d.tipo}</b>: ${donde} ${original}. Se elimina.`;
+      break;
+    }
+    case 'limpio':
+      texto = `${ref(t)} queda en la posición ${d.posicion} del lote reordenado por ts (merge sort).`;
+      break;
+    case 'entra_heap':
+      texto = `${ref(t)} entra al heap con prioridad <b>${d.prioridad}</b> (${NOMBRE_CLASE[d.prioridad]}); ` +
+              `sube mientras sea menor que su padre.`;
+      break;
+    case 'aging':
+      texto = `Pasada de aging: ${d.ascensos} ascensos de clase y heapify del arreglo.`;
+      break;
+    case 'sale_heap':
+      texto = `${ref(t)} sale de la raíz del heap en el orden <b>${d.orden}</b> (clase ${d.clase_salida}, ` +
+              `${NOMBRE_CLASE[d.clase_salida]}); el último elemento baja para restaurar el heap.`;
+      break;
+    default:
+      texto = p.accion;
+  }
+  return `<span class="insignia-etapa">${ETAPA[p.etapa]}</span><span>${texto}</span>`;
+}
+
+/* =====================================================================
+   6. Panel de detalle de un evento
+   ===================================================================== */
+function formatoTs(valor, enMilisegundos) {
+  if (typeof valor !== 'number') return null;
+  const fecha = new Date(enMilisegundos ? valor : valor * 1000);
+  return isNaN(fecha) ? null : fecha.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+}
+
+function celda(valor) {
+  if (valor === undefined) return '<span class="falta">(falta)</span>';
+  if (valor === null) return '<span class="subtitulo">null</span>';
+  return String(valor).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/ /g, '·');
+}
+
+function mostrarDetalle(tid) {
+  seleccionado = tid;
+  const ev = EVENTOS[tid];
+  const crudo = ev.crudo, norm = ev.normalizado;
+  let filas = '';
+  for (const campo of CAMPOS) {
+    const vc = campo in crudo ? crudo[campo] : undefined;
+    const vn = norm ? norm[campo] : undefined;
+    let celdaNorm = norm ? celda(vn) : '<span class="subtitulo">—</span>';
+    if (campo === 'ts' && norm) celdaNorm += `<br><span class="subtitulo">${formatoTs(vn, false) ?? ''}</span>`;
+    let celdaCrudo = celda(vc);
+    if (campo === 'ts') celdaCrudo += `<br><span class="subtitulo">${formatoTs(vc, true) ?? ''}</span>`;
+    const cambio = norm && String(vc) !== String(vn);
+    filas += `<tr><th>${campo}</th><td>${celdaCrudo}</td><td class="${cambio ? 'cambio' : ''}">${celdaNorm}</td></tr>`;
+  }
+  const estados = { atendido: 'Atendido por la etapa 2', rechazado: 'Rechazado en la etapa 1',
+                    duplicado: 'Eliminado como duplicado en la etapa 1', en_heap: 'En el heap', en_cola: 'En la cola' };
+  const prioridad = ev.prioridad ? `${ev.prioridad} (${NOMBRE_CLASE[ev.prioridad]})` : '—';
+  const deadline = norm && norm.deadline ? formatoTs(norm.deadline, false) : '—';
+  const historial = (PASOS_POR_TID.get(tid) || []).map(p =>
+    `<li><button data-paso="${p.paso}">paso ${p.paso + 1}</button> · ${ETAPA[p.etapa]} · ${p.accion}` +
+    `${p.detalle && p.detalle.motivo ? ' · ' + p.detalle.motivo : ''}</li>`).join('');
+
+  $('detalle').innerHTML = `
+    <button class="boton cerrar" id="btn-cerrar" title="Cerrar (Esc)">✕</button>
+    <h2><span class="ref t-${tipoDe(tid)}">#${tid}</span> ${TIPOS[tipoDe(tid)]}</h2>
+    <p class="subtitulo">${celda(crudo.event_id)}</p>
+    <table>
+      <tr><th>Estado final</th><td colspan="2">${estados[ev.estado] ?? ev.estado}${ev.motivo ? ' · ' + ev.motivo : ''}</td></tr>
+      <tr><th>Micro-lote</th><td colspan="2">${ev.lote ?? '—'}</td></tr>
+      <tr><th>Prioridad (clase)</th><td colspan="2">${prioridad}</td></tr>
+      <tr><th>Deadline</th><td colspan="2">${deadline}</td></tr>
+      <tr><th>Orden de salida</th><td colspan="2">${ev.orden_salida ?? '—'}</td></tr>
+    </table>
+    <h3>Registro crudo y normalizado</h3>
+    <table><tr><th>Campo</th><th>Crudo (etapa 0)</th><th>Normalizado (etapa 1)</th></tr>${filas}</table>
+    <p class="subtitulo">Los espacios se muestran como «·». Las celdas resaltadas cambiaron al normalizar.</p>
+    <h3>Historial en la traza</h3>
+    <ul class="historial">${historial}</ul>`;
+  $('detalle').classList.add('abierto');
+  $('btn-cerrar').addEventListener('click', cerrarDetalle);
+  $('detalle').querySelectorAll('[data-paso]').forEach(b =>
+    b.addEventListener('click', () => { pausar(); irA(Number(b.dataset.paso)); }));
+  for (const [t, el] of CHIPS) el.classList.toggle('seleccionado', t === tid);
+}
+
+function cerrarDetalle() {
+  seleccionado = null;
+  $('detalle').classList.remove('abierto');
+  for (const el of CHIPS.values()) el.classList.remove('seleccionado');
+}
+
+/* =====================================================================
+   7. Controles
+   ===================================================================== */
+function avanzar() {
+  if (estado.indice >= N - 1) return false;
+  aplicar(estado, PASOS[estado.indice + 1]);
+  dibujar(estado, true);
+  return true;
+}
+
+// Salta al paso k reconstruyendo el estado desde el inicio (sin animación)
+function irA(k) {
+  estado = estadoInicial();
+  for (let i = 0; i <= k && i < N; i++) aplicar(estado, PASOS[i]);
+  dibujar(estado, false);
+}
+
+function programar() {
+  temporizador = setTimeout(() => {
+    temporizador = null;
+    if (avanzar()) programar(); else actualizarBotones();
+  }, 1000 / velocidad);
+}
+
+function reproducir() {
+  if (temporizador) return;
+  if (estado.indice >= N - 1) irA(-1);
+  programar();
+  actualizarBotones();
+}
+
+function pausar() {
+  clearTimeout(temporizador);
+  temporizador = null;
+  actualizarBotones();
+}
+
+function actualizarBotones() {
+  const reproduciendo = temporizador !== null;
+  $('btn-reproducir').disabled = reproduciendo;
+  $('btn-pausar').disabled = !reproduciendo;
+  $('btn-paso').disabled = estado.indice >= N - 1;
+  $('btn-atras').disabled = estado.indice < 0;
+}
+
+$('btn-reproducir').addEventListener('click', reproducir);
+$('btn-pausar').addEventListener('click', pausar);
+$('btn-paso').addEventListener('click', () => { pausar(); avanzar(); });
+$('btn-atras').addEventListener('click', () => { pausar(); irA(estado.indice - 1); });
+$('btn-reiniciar').addEventListener('click', () => { pausar(); irA(-1); });
+$('velocidad').addEventListener('input', ev => {
+  velocidad = Number(ev.target.value);
+  $('velocidad-texto').textContent = `${velocidad} pasos/s`;
+});
+$('barra-progreso').max = N;
+$('barra-progreso').addEventListener('input', ev => { pausar(); irA(Number(ev.target.value) - 1); });
+
+// Teclado: espacio reproduce o pausa, flechas avanzan o retroceden, Esc cierra el detalle
+document.addEventListener('keydown', ev => {
+  if (ev.target.tagName === 'INPUT') return;
+  if (ev.key === ' ') { ev.preventDefault(); temporizador ? pausar() : reproducir(); }
+  else if (ev.key === 'ArrowRight') { pausar(); avanzar(); }
+  else if (ev.key === 'ArrowLeft') { pausar(); irA(estado.indice - 1); }
+  else if (ev.key === 'Escape') cerrarDetalle();
+});
+
+/* =====================================================================
+   8. Textos fijos e inicio
+   ===================================================================== */
+$('subtitulo').textContent =
+  `${EVENTOS.length} eventos de ${PARAM.categoria} · semilla ${PARAM.semilla} · ${N} pasos · ` +
+  `cola de ${PARAM.capacidad_cola} · lotes de ${PARAM.tam_lote} · servicio de ${PARAM.capacidad_servicio} eventos por lote`;
+
+// Alerta general si alguna foto del heap de la traza rompe la propiedad
+if (PASOS_CON_VIOLACION.length) {
+  const alerta = $('alerta-global');
+  alerta.hidden = false;
+  alerta.innerHTML = `⚠ La verificación encontró la propiedad de heap rota en ${PASOS_CON_VIOLACION.length} ` +
+    `de ${FOTOS_HEAP.length} fotos del heap (primera: paso ${PASOS_CON_VIOLACION[0] + 1}).` +
+    `<button class="boton" id="btn-ir-violacion">Ir al paso</button>`;
+  $('btn-ir-violacion').addEventListener('click', () => { pausar(); irA(PASOS_CON_VIOLACION[0]); });
+}
+
+$('leyenda').innerHTML = Object.entries(TIPOS)
+  .map(([t, nombre]) => `<span><span class="muestra t-${t}"></span>${nombre}</span>`).join('');
+
+$('nota').textContent =
+  `Las estructuras de las etapas 0 y 2 se dibujan a partir de fotos de la ColaCircular y del MinHeap reales ` +
+  `tomadas en cada paso por src/trace.py. Productor y consumidor se alternan por turnos fijos ` +
+  `(${PARAM.llegadas_por_tick} llegadas por tick, un lote cada ${PARAM.consumir_cada} ticks) para que la traza ` +
+  `sea reproducible. La memoria se mide con tracemalloc en una pasada aparte, sin la memoria de la propia traza. ` +
+  `La propiedad de heap se verificó al cargar la página en las ${FOTOS_HEAP.length} fotos del heap: ` +
+  (PASOS_CON_VIOLACION.length ? `${PASOS_CON_VIOLACION.length} con violaciones.` : 'ninguna la rompe.');
+
+// El árbol se reajusta al cambiar el ancho de la ventana
+window.addEventListener('resize', () => dibujar(estado, false));
+
+// La dirección puede indicar un paso, un evento y si se reproduce, por ejemplo
+// pipeline.html#paso=465&evento=68 o pipeline.html#reproducir
+// (útil en la presentación para abrir directamente un momento de la traza)
+const pasoInicial = Number((location.hash.match(/paso=(\d+)/) || [])[1]);
+const eventoInicial = Number((location.hash.match(/evento=(\d+)/) || [])[1]);
+irA(Number.isFinite(pasoInicial) ? Math.min(pasoInicial, N) - 1 : -1);
+if (Number.isFinite(eventoInicial) && eventoInicial < EVENTOS.length) mostrarDetalle(eventoInicial);
+if (/reproducir/.test(location.hash)) reproducir();          // #reproducir arranca la animación sola
+</script>
+</body>
+</html>
