@@ -1,12 +1,12 @@
 metodo,n,pico_mb
-MinHeap (propio),1000,0.00908
+MinHeap (propio),1000,0.009072
 heapq (C),1000,0.008904
 lista ordenada (insort + pop(0)),1000,0.008904
-MinHeap (propio),10000,0.0854
+MinHeap (propio),10000,0.085392
 heapq (C),10000,0.085224
 lista ordenada (insort + pop(0)),10000,0.085224
-MinHeap (propio),100000,0.801208
+MinHeap (propio),100000,0.8012
 heapq (C),100000,0.801032
 lista ordenada (insort + pop(0)),100000,0.801032
-MinHeap (propio),1000000,8.450284
-heapq (C),1000000,8.451056
+MinHeap (propio),1000000,8.598292
+heapq (C),1000000,8.448776
