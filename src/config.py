@@ -29,12 +29,11 @@ CARPETA_RESULTADOS = RAIZ / "results"                                 # CSV y gr
 SEED = 42
 
 # --- Tamaño del experimento ---------------------------------------------------
-# Ventana reciente: las últimas N_RESENAS_EXPERIMENTO reseñas del archivo, que es un bloque
-# continuo al final de las reseñas ordenadas por tiempo. El modo desarrollo usa las primeras
-# N_RESENAS_DESARROLLO reseñas de esa misma ventana.
-N_RESENAS_EXPERIMENTO = 2_500_000
-N_RESENAS_DESARROLLO = 50_000
-MODO = "desarrollo"                     # "desarrollo" o "experimento"
+# Ventana reciente: las últimas N_RESENAS reseñas del archivo, que forman un bloque continuo al
+# final de las reseñas ordenadas por tiempo. El enunciado pide un stream de 10 millones de eventos;
+# en esta ventana el generador produce unos 7 registros por reseña, así que 1 500 000 reseñas dan
+# unos 10.5 millones de eventos.
+N_RESENAS = 1_500_000
 
 # --- Desorden controlado del stream -------------------------------------------
 # Fracción de eventos que llegan tarde. Con 0 el stream sale ordenado por ts, sin llegadas tardías.
@@ -45,14 +44,5 @@ PORCENTAJE_TARDIOS = 0.05
 #      siguiente y el desorden que deja la etapa 1 entre lotes quede acotado;
 #   2. menor que la ventana de deduplicación de la etapa 1 (VENTANA_S = 600 s), para que un
 #      reenvío de un evento tardío todavía se detecte entre lotes.
-# 120 s es un valor provisional: se confirma midiendo la duración real de un lote en modo desarrollo.
+# El notebook de la etapa 1 comprueba la condición 1 midiendo la duración real de los lotes.
 RETRASO_MAX_TARDIOS_S = 120
-
-
-def n_resenas(modo=MODO):
-    """Número de reseñas que se procesan en el modo indicado."""
-    if modo == "desarrollo":
-        return N_RESENAS_DESARROLLO
-    if modo == "experimento":
-        return N_RESENAS_EXPERIMENTO
-    raise ValueError(f"modo desconocido: {modo!r} (usar 'desarrollo' o 'experimento')")

@@ -70,7 +70,7 @@ def _ejecutar(catalogo, ruta_resenas, n_eventos, semilla, saltar, capacidad_cola
         tracemalloc.start()                         # el catálogo queda fuera de la medición
 
     generador = GeneradorEventos(catalogo, semilla=semilla)
-    fuente = itertools.islice(generador.eventos(leer_resenas(ruta_resenas, n_ventana=config.N_RESENAS_EXPERIMENTO)),
+    fuente = itertools.islice(generador.eventos(leer_resenas(ruta_resenas, n_ventana=config.N_RESENAS)),
                               saltar, saltar + n_eventos)
 
     cola = ColaCircular(capacidad_cola)

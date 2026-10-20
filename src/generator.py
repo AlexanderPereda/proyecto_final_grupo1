@@ -26,11 +26,11 @@ CAMPOS = ["event_id", "event_type", "user_id", "parent_asin", "order_id", "order
 
 # ----- Lectura de reseñas -------------------------------------------------------
 
-def describir_ventana(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS_EXPERIMENTO, limite=None):
+def describir_ventana(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS, limite=None):
     """Calcula qué filas y qué grupos de filas del Parquet forman la ventana, sin leer datos.
 
     La ventana son las últimas `n_ventana` filas del archivo. Si se indica `limite`, se toman
-    solo las primeras `limite` filas de esa ventana (modo desarrollo). Solo se leen los
+    solo las primeras `limite` filas de esa ventana (pruebas y demostraciones). Solo se leen los
     metadatos del Parquet (número de filas de cada grupo de filas).
     """
     metadatos = pq.ParquetFile(ruta).metadata
@@ -60,7 +60,7 @@ def describir_ventana(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS_EXPER
     }
 
 
-def leer_resenas(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS_EXPERIMENTO, limite=None,
+def leer_resenas(ruta=config.RUTA_RESENAS, n_ventana=config.N_RESENAS, limite=None,
                  tam_bloque=10_000):
     """Entrega las reseñas de la ventana reciente una a la vez, en orden de timestamp.
 
