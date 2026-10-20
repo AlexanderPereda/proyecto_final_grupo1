@@ -45,7 +45,7 @@ La etapa 3 recibe cada evento de la etapa 2, consulta su producto a través de u
 
 ### Diseño
 
-- **Tabla hash.** Direccionamiento abierto con sondeo lineal sobre dos arreglos paralelos de claves y valores. La función hash es CRC32, porque el `hash()` de Python cambia entre ejecuciones para los textos. Las eliminaciones dejan una lápida para no cortar las secuencias de sondeo. Cuando las posiciones usadas superan el 70 % de la capacidad, la tabla se reconstruye, y su capacidad se duplica si las claves vivas lo justifican. Con factor de carga α, una búsqueda exitosa revisa en promedio ½ (1 + 1 / (1 − α)) posiciones (Knuth, 1998).
+- **Tabla hash.** Direccionamiento abierto con sondeo lineal (Cormen et al., 2022) sobre dos arreglos paralelos de claves y valores. La función hash es CRC32, porque el `hash()` de Python cambia entre ejecuciones para los textos. Las eliminaciones dejan una lápida para no cortar las secuencias de sondeo. Cuando las posiciones usadas superan el 70 % de la capacidad, la tabla se reconstruye, y su capacidad se duplica si las claves vivas lo justifican. Con factor de carga α, una búsqueda exitosa revisa en promedio ½ (1 + 1 / (1 − α)) posiciones (Knuth, 1998).
 - **Catálogo en disco.** Los 710 503 registros se escriben en un archivo de 303 MB, un JSON por línea, con el precio convertido por la función `normalizar_precio` de la etapa 1. En memoria queda solo el índice hash `parent_asin` → `(offset, largo)`, y cada consulta lee el registro con un `seek`.
 - **Caché LRU.** Una tabla hash propia da acceso O(1) al nodo de cada producto, y una lista doblemente enlazada con dos centinelas mantiene el orden de uso. Consulta, inserción y desalojo cuestan O(1). La capacidad es de 10 000 productos.
 - **Estado del producto.** Para cada producto con actividad se guardan vistas, carritos, compras, devoluciones, reseñas, stock y precio observado. Una compra descuenta stock, una devolución lo repone y un producto agotado se repone 48 horas después de agotarse. El precio observado cubre a los productos sin precio en el catálogo.
@@ -103,7 +103,7 @@ La etapa 4 indexa los productos por precio en un B+Tree almacenado en disco. La 
 
 ### Diseño
 
-- **Archivo de páginas.** El árbol vive en un archivo dividido en páginas de 4 096 bytes, y cada nodo ocupa una página. Una hoja guarda hasta 136 entradas `(precio, parent_asin, offset, largo)` y el número de la hoja siguiente. Un nodo interno guarda hasta 157 claves separadoras. La página 0 es la cabecera.
+- **Archivo de páginas.** El B+Tree es la variante del B-tree de Bayer y McCreight (1972) que guarda todas las entradas en las hojas. El árbol vive en un archivo dividido en páginas de 4 096 bytes, y cada nodo ocupa una página. Una hoja guarda hasta 136 entradas `(precio, parent_asin, offset, largo)` y el número de la hoja siguiente. Un nodo interno guarda hasta 157 claves separadoras. La página 0 es la cabecera.
 - **Clave y valor.** La clave es `(precio, parent_asin)`, porque muchos productos comparten precio y las claves deben ser únicas. El valor es la posición del registro en el catálogo en disco de la etapa 3.
 - **Búsqueda y rango.** Una búsqueda desciende de la raíz a la hoja con búsqueda binaria en cada nodo y lee una página por nivel. Un rango desciende hasta la primera hoja y recorre las hojas enlazadas.
 - **Inserción.** Una hoja llena se divide en dos y su primera clave sube al padre. Si el padre se llena también se divide, y si se divide la raíz el árbol crece un nivel.
@@ -161,8 +161,8 @@ La etapa 5 representa cada producto con precio como un punto de 4 dimensiones y 
 ### Diseño
 
 - **Vectores.** Se recorre el B+Tree de la etapa 4, se lee cada registro del catálogo y se agrega la actividad registrada por la etapa 3. Los atributos son log(1 + precio), la calificación promedio, log(1 + número de calificaciones) y log(1 + actividad en el stream). Cada uno se normaliza con z-score, porque sin esa normalización el número de calificaciones pesaría casi el triple que la calificación en la distancia euclidiana.
-- **Elección del KD-Tree.** Los datos son puntos, la dimensión es baja y el conjunto es casi estático. El R-Tree está pensado para objetos con extensión y para inserciones frecuentes (Guttman, 1984). El KD-Tree poda bien en dimensión baja (Friedman, Bentley y Finkel, 1977).
-- **Construcción.** Cada nodo divide su región por la mediana de la dimensión de mayor dispersión, obtenida con `np.argpartition` en O(m). El árbol queda balanceado y se construye en O(n log n). Las hojas guardan hasta 32 puntos contiguos, y la distancia a todos ellos se calcula con una operación de numpy.
+- **Elección del KD-Tree.** Los datos son puntos, la dimensión es baja y el conjunto es casi estático. El R-Tree está pensado para objetos con extensión y para inserciones frecuentes (Guttman, 1984). El KD-Tree poda bien en dimensión baja (Friedman, Bentley y Finkel, 1977). Samet (2006) compara las dos familias de estructuras.
+- **Construcción.** El KD-Tree es un árbol binario de búsqueda sobre puntos de d dimensiones (Bentley, 1975). Cada nodo divide su región por la mediana de la dimensión de mayor dispersión, obtenida con `np.argpartition` en O(m). El árbol queda balanceado y se construye en O(n log n). Las hojas guardan hasta 32 puntos contiguos, y la distancia a todos ellos se calcula con una operación de numpy.
 - **KNN.** Un recorrido en profundidad visita primero el lado del hiperplano donde está la consulta y descarta un subárbol si la distancia a su región no mejora al peor de los k candidatos. Los candidatos se guardan en el `MinHeap` de la etapa 2 con la distancia negada, para consultar el peor en O(1). Un filtro opcional restringe los vecinos a la categoría de último nivel del producto.
 - **Rango.** Se desciende por los lados del hiperplano que cortan la caja pedida.
 - **Línea base.** KNN por fuerza bruta con numpy, en O(n·d) por consulta.
@@ -251,13 +251,10 @@ Cuatro decisiones se corrigieron después de medir, y siete limitaciones quedan 
 
 - Bayer, R., y McCreight, E. (1972). Organization and maintenance of large ordered indexes. *Acta Informatica*, 1(3), 173–189.
 - Bentley, J. L. (1975). Multidimensional binary search trees used for associative searching. *Communications of the ACM*, 18(9), 509–517.
-- Comer, D. (1979). The ubiquitous B-tree. *ACM Computing Surveys*, 11(2), 121–137.
-- Cormen, T. H., Leiserson, C. E., Rivest, R. L., y Stein, C. (2022). *Introduction to Algorithms* (4.ª ed.). MIT Press. Caps. 11 y 18.
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., y Stein, C. (2022). *Introduction to Algorithms* (4.ª ed.). MIT Press. Cap. 11.
 - Friedman, J. H., Bentley, J. L., y Finkel, R. A. (1977). An algorithm for finding best matches in logarithmic expected time. *ACM Transactions on Mathematical Software*, 3(3), 209–226.
 - Guttman, A. (1984). R-trees: A dynamic index structure for spatial searching. *Proceedings of ACM SIGMOD*, 47–57.
 - Knuth, D. E. (1998). *The Art of Computer Programming, Vol. 3: Sorting and Searching* (2.ª ed.). Addison-Wesley. Sec. 6.4.
-- Mattson, R. L., Gecsei, J., Slutz, D. R., y Traiger, I. L. (1970). Evaluation techniques for storage hierarchies. *IBM Systems Journal*, 9(2), 78–117.
-- Saad, Y. (2003). *Iterative Methods for Sparse Linear Systems* (2.ª ed.). SIAM. Sec. 3.4.
 - Samet, H. (2006). *Foundations of Multidimensional and Metric Data Structures*. Morgan Kaufmann.
 - Weber, R., Schek, H.-J., y Blott, S. (1998). A quantitative analysis and performance study for similarity-search methods in high-dimensional spaces. *Proceedings of VLDB*, 194–205.
 - Yao, A. C. (1978). On random 2-3 trees. *Acta Informatica*, 9(2), 159–170.
