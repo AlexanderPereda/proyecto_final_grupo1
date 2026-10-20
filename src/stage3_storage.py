@@ -21,14 +21,16 @@ from collections import Counter
 import pyarrow.parquet as pq
 
 from . import config
+from .events import Event
 from .stage1_preprocess import normalizar_precio
 
 # ----- Parámetros de la etapa ----------------------------------------------------
 
+RUTA_EVENTOS_ETAPA2 = config.CARPETA_INTERIM / "etapa2_eventos.jsonl"    # entrada: salida de la etapa 2
 RUTA_CATALOGO = config.CARPETA_INTERIM / "etapa3_catalogo.jsonl"          # registros en disco
 COLUMNAS_CATALOGO = ["parent_asin", "title", "main_category", "categories", "price",
                      "average_rating", "rating_number", "store"]
-CAPACIDAD_CACHE = 10_000          # productos que la LRU mantiene en memoria
+CAPACIDAD_CACHE = 50_000          # productos que la LRU mantiene en memoria
 
 # Peso de cada tipo de evento en la matriz usuario × producto (retroalimentación implícita).
 # La búsqueda no tiene producto y la alerta de pago no es una interacción con el producto.
@@ -36,6 +38,20 @@ PESOS = {"view": 1.0, "cart": 2.0, "purchase": 4.0, "review": 1.0, "return": -4.
 
 STOCK_MIN, STOCK_MAX = 5, 50      # stock inicial sintético por producto
 REPOSICION_S = 48 * 3600          # un producto agotado se repone 48 h después de agotarse
+
+
+# ----- Entrada --------------------------------------------------------------------
+
+def leer_eventos(ruta=RUTA_EVENTOS_ETAPA2):
+    """Entrega los eventos de la etapa 2 uno a uno, en orden de servicio.
+
+    El archivo tiene un ciclo de servicio por línea y se lee línea por línea, así que la
+    memoria usada depende del tamaño de un ciclo y no del número de eventos.
+    """
+    with open(ruta, encoding="utf-8") as archivo:
+        for linea in archivo:
+            for datos in json.loads(linea)["eventos"]:
+                yield Event(**datos)
 
 
 # ----- Función hash ---------------------------------------------------------------

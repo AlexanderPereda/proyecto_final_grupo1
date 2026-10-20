@@ -10,7 +10,7 @@ import pytest
 
 from src.events import Event
 from src.stage3_storage import (AlmacenCatalogo, CacheLRU, EtapaAlmacenamiento, MatrizDispersa,
-                                TablaHash, _registro_producto, stock_inicial)
+                                TablaHash, _registro_producto, leer_eventos, stock_inicial)
 
 
 # ----- Tabla hash -----------------------------------------------------------------
@@ -177,6 +177,19 @@ def test_etapa_actualiza_estado_cache_y_matriz(almacen):
     assert etapa.ficha("B002")["precio"] == 9.5          # el catálogo no tiene precio: se usa el observado
     assert etapa.matriz.valor("U1", "B002") == 1 + 2 + 4 + 1
     assert almacen.lecturas == 1                         # las demás consultas fueron aciertos de la caché
+
+
+def test_leer_eventos_en_orden_de_servicio(tmp_path):
+    import json
+    from dataclasses import asdict
+    ciclos = [[_evento("view", "B001", 1), _evento("cart", "B001", 2)], [_evento("search", None, 3)]]
+    ruta = tmp_path / "etapa2_eventos.jsonl"
+    with open(ruta, "w", encoding="utf-8") as f:
+        for i, eventos in enumerate(ciclos):
+            f.write(json.dumps({"ciclo": i, "eventos": [asdict(e) for e in eventos]}) + "\n")
+    leidos = list(leer_eventos(ruta))
+    assert [e.event_type for e in leidos] == ["view", "cart", "search"]
+    assert leidos[2].parent_asin is None and leidos[1].ts == 2
 
 
 def test_etapa_agota_y_repone(almacen):
