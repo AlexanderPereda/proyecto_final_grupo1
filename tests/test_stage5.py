@@ -87,3 +87,19 @@ def test_indice_productos_similares():
     assert "B000000004" not in [a for _, a in similares]
     assert all(int(a[1:]) % 2 == 0 for _, a in similares)              # misma categoría (Paper)
     assert indice.similares("B999999999") is None
+
+
+def test_arbol_por_categoria_coincide_con_fuerza_bruta_filtrada():
+    rng = np.random.default_rng(7)
+    n = 2_000
+    asins = [f"B{i:09d}" for i in range(n)]
+    X = rng.normal(size=(n, 4))
+    categorias = [f"c{c}" for c in rng.integers(0, 25, size=n)]
+    indice = IndiceProductos(asins, X, categorias, tam_hoja=8)
+    assert sum(len(m) for m in indice.miembros) == n
+    for i in rng.choice(n, size=50, replace=False):
+        obtenido = indice.similares(asins[i], k=7)
+        esperado = [(d, j) for d, j in knn_fuerza_bruta(indice.Z, indice.Z[i], 8, indice.categoria,
+                                                         indice.categoria[i]) if j != i][:7]
+        assert [round(d, 9) for d, _ in obtenido] == [round(d, 9) for d, _ in esperado]
+        assert all(indice.categoria[indice.posicion.obtener(a)] == indice.categoria[i] for _, a in obtenido)

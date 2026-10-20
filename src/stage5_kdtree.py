@@ -203,7 +203,10 @@ class IndiceProductos:
     """KD-Tree sobre los vectores normalizados de los productos y consulta de productos similares.
 
     Cada atributo se normaliza con z-score (media 0, desviación 1) para que ninguna escala domine
-    la distancia euclidiana.
+    la distancia euclidiana. Además del árbol global se construye un KD-Tree por categoría. Con
+    el filtro sobre el árbol global, los productos de una categoría pequeña están dispersos en
+    todo el espacio y la búsqueda recorre muchas hojas; el árbol de la categoría solo contiene
+    sus productos.
     """
 
     def __init__(self, asins, X_crudo, categorias, tam_hoja=TAM_HOJA):
@@ -219,6 +222,11 @@ class IndiceProductos:
         for i, asin in enumerate(self.asins):
             self.posicion.insertar(asin, i)
         self.kd = KDTree(self.Z, tam_hoja=tam_hoja, etiquetas=self.categoria)
+        # Un KD-Tree por categoría, con la posición global de cada uno de sus puntos
+        orden = np.argsort(self.categoria, kind="stable")
+        limites = np.searchsorted(self.categoria[orden], np.arange(len(self.nombres_categoria) + 1))
+        self.miembros = [orden[a:b] for a, b in zip(limites[:-1], limites[1:])]
+        self.kd_categoria = [KDTree(self.Z[m], tam_hoja=tam_hoja) for m in self.miembros]
 
     def normalizar(self, x_crudo):
         return (np.asarray(x_crudo, dtype=np.float64) - self.media) / self.desv
@@ -228,6 +236,9 @@ class IndiceProductos:
         i = self.posicion.obtener(asin)
         if i is None:
             return None
-        etiqueta = int(self.categoria[i]) if misma_categoria else None
-        vecinos = self.kd.knn(self.Z[i], k + 1, etiqueta=etiqueta)
+        if misma_categoria:
+            c = int(self.categoria[i])
+            vecinos = [(d, int(self.miembros[c][j])) for d, j in self.kd_categoria[c].knn(self.Z[i], k + 1)]
+        else:
+            vecinos = self.kd.knn(self.Z[i], k + 1)
         return [(d, self.asins[j]) for d, j in vecinos if j != i][:k]
