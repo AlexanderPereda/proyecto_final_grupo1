@@ -1,16 +1,16 @@
 estructura,n,actual_mb,pico_mb
-list.pop(0),1000,0.00928,0.009432
-collections.deque,1000,0.00944,0.009592
-ColaEnlazada (propia),1000,0.048392,0.048544
-ColaCircular (propia),1000,0.008512,0.008668
-list.pop(0),10000,0.0856,0.085752
-collections.deque,10000,0.08336,0.083512
-ColaEnlazada (propia),10000,0.480392,0.480544
-ColaCircular (propia),10000,0.080512,0.080668
-list.pop(0),100000,0.801408,0.80156
-collections.deque,100000,0.825728,0.82588
-ColaEnlazada (propia),100000,4.800336,4.800544
-ColaCircular (propia),100000,0.800512,0.800668
-collections.deque,1000000,8.250992,8.251144
-ColaEnlazada (propia),1000000,48.000336,48.000544
-ColaCircular (propia),1000000,8.002304,8.002712
+list.pop(0),1000,0.00928,0.009416
+collections.deque,1000,0.00944,0.009576
+ColaEnlazada (propia),1000,0.048384,0.04852
+ColaCircular (propia),1000,0.008504,0.00866
+list.pop(0),10000,0.0856,0.085736
+collections.deque,10000,0.08336,0.083496
+ColaEnlazada (propia),10000,0.480384,0.48052
+ColaCircular (propia),10000,0.080504,0.08066
+list.pop(0),100000,0.801408,0.801544
+collections.deque,100000,0.825728,0.825864
+ColaEnlazada (propia),100000,4.800328,4.80052
+ColaCircular (propia),100000,0.800504,0.80066
+collections.deque,1000000,8.250992,8.251128
+ColaEnlazada (propia),1000000,48.149448,48.149584
+ColaCircular (propia),1000000,8.000504,8.00066

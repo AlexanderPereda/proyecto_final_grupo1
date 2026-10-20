@@ -66,7 +66,7 @@ def test_leer_resenas_entrega_las_ultimas_n(parquet_resenas):
     assert ts == list(range(7_500, 10_000))
 
 
-def test_modo_desarrollo_toma_el_inicio_de_la_ventana(parquet_resenas):
+def test_limite_toma_el_inicio_de_la_ventana(parquet_resenas):
     assert describir_ventana(parquet_resenas, n_ventana=2_500, limite=300)["grupos_leidos"] == [7]
     ts = [r["timestamp"] for r in leer_resenas(parquet_resenas, n_ventana=2_500, limite=300)]
     assert ts == list(range(7_500, 7_800))
