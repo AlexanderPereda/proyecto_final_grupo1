@@ -1,4 +1,4 @@
-"""Tests del Bloom Filter y el Count-Min Sketch de la etapa 6.
+"""Tests del Bloom Filter, el Count-Min Sketch y el detector de fraude de la etapa 6.
 
 Las estructuras probabilísticas se comparan con un set y un Counter exactos.
 
@@ -12,7 +12,8 @@ from collections import Counter
 
 import pytest
 
-from src.stage6_probabilistic import BloomFilter, CMSVentana, CountMinSketch
+from src.events import Event
+from src.stage6_probabilistic import BloomFilter, CMSVentana, CountMinSketch, DetectorFraude
 
 
 def _claves(n, prefijo, semilla):
@@ -113,3 +114,52 @@ def test_cms_ventana_acepta_eventos_tardios_retenidos():
     cms.agregar("t", 2_000)
     assert cms.agregar("t", 100) is True         # 6 ventanas atrás, todavía retenida
     assert cms.estimar("t", 100) == 1
+
+
+# ----- Detector --------------------------------------------------------------------
+
+LISTAS = {"cuentas": ["AFRAUDE"], "tarjetas": ["pay_malo"], "dispositivos": ["dev_malo"]}
+
+
+def _compra(i, usuario, tarjeta, dispositivo, ts, tipo="purchase"):
+    return Event(f"e{i}", tipo, usuario, "B1", f"o{i}", "express", 10.0, tarjeta, dispositivo, ts)
+
+
+def test_detector_bloquea_lista_y_no_toca_legitimos():
+    detector = DetectorFraude(LISTAS)
+    assert detector.procesar(_compra(1, "AUSUARIO", "pay_ok", "dev_ok", 0)) is None
+    alerta = detector.procesar(_compra(2, "AUSUARIO", "pay_malo", "dev_ok", 10))
+    assert alerta["motivos"] == ["tarjeta"] and alerta["decision"] == "bloquear"
+    alerta = detector.procesar(_compra(3, "AFRAUDE", "pay_ok2", "dev_ok2", 20, tipo="payment_alert"))
+    assert alerta["motivos"] == ["cuenta"]
+    vista = Event("e4", "view", "AFRAUDE", "B1", None, None, None, None, "dev_malo", 30)
+    assert detector.procesar(vista) is None      # solo se revisan compras y alertas de pago
+
+
+def test_detector_rafaga_desde_la_quinta_compra():
+    detector = DetectorFraude(LISTAS, umbral=5)
+    resultados = [detector.procesar(_compra(i, "AOTRO", "pay_rafaga", "dev_x", 1_000 + 20 * i)) for i in range(8)]
+    assert resultados[:4] == [None] * 4
+    assert all(r["motivos"] == ["rafaga"] and r["conteo_exacto"] >= 5 for r in resultados[4:])
+    assert all(r["decision"] == "revisar" for r in resultados[4:])       # sin lista, la orden se retiene para revisión
+
+
+def test_detector_cuenta_una_vez_cada_orden():
+    detector = DetectorFraude(LISTAS, umbral=5)
+    for orden in range(4):                       # 4 órdenes de 3 productos: 12 compras, 4 intentos
+        for producto in range(3):
+            e = _compra(10 * orden + producto, "AOTRO", "pay_multi", "dev_x", 1_000 + 30 * orden)
+            e.order_id = f"o{orden}"
+            assert detector.procesar(e) is None
+    assert detector.metricas["intentos"] == 4
+    assert detector.cms.estimar("pay_multi", 1_100) == 4
+
+
+def test_detector_verifica_falsas_alertas_del_cms():
+    detector = DetectorFraude(LISTAS, epsilon=1.0, delta=0.5, umbral=3)    # w = 3: casi todo colisiona
+    for i in range(30):
+        detector.procesar(_compra(i, f"AU{i}", f"pay_{i}", f"dev_{i}", 1_000 + i))
+    m = detector.metricas
+    assert m["cms_alertas"] > 0
+    assert m["cms_falsas_alertas"] == m["cms_alertas"]    # ninguna tarjeta compra 3 veces
+    assert m["alertas"] == 0
