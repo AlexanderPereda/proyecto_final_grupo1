@@ -10,7 +10,7 @@ import pyarrow.parquet as pq
 import pytest
 
 from src import config
-from src.generator import GeneradorEventos, describir_ventana, leer_resenas
+from src.etapa_0.generator import GeneradorEventos, describir_ventana, leer_resenas
 from src.metricas import contar_fuera_de_orden
 
 

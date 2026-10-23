@@ -10,7 +10,7 @@ import pytest
 
 from src import config
 from src.events import Event
-from src.stage2_heap import ColaPrioridadEventos, MinHeap, es_heap, violaciones_heap
+from src.etapa_2.stage2_heap import ColaPrioridadEventos, MinHeap, es_heap, violaciones_heap
 
 SEED = config.SEED
 

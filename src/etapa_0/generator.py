@@ -14,7 +14,7 @@ from collections import Counter, deque
 
 import pyarrow.parquet as pq
 
-from . import config
+from .. import config
 
 SEED = config.SEED
 VENTANA_RECORRIDO_MS = 30 * 60 * 1000  # el recorrido empieza como máximo 30 min antes de la reseña
