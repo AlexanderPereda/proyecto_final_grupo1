@@ -27,7 +27,7 @@ from collections import Counter
 from dataclasses import asdict
 from . import config
 from .etapa_0.generator import SEED, GeneradorEventos, cargar_catalogo, leer_resenas
-from .etapa_0.stage0_queue import ColaCircular
+from .etapa_0.queue import ColaCircular
 from .etapa_1.stage1_preprocess import Preprocesador
 from .etapa_2.stage2_heap import AGING_S, ColaPrioridadEventos
 

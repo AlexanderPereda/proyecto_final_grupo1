@@ -11,7 +11,7 @@ from collections import Counter
 from datetime import datetime, timezone
 
 from ..events import Event
-from ..etapa_0.stage0_queue import ColaEnlazada
+from ..etapa_0.queue import ColaEnlazada
 
 TIPOS_EVENTO = {"search", "view", "cart", "purchase", "review", "return", "payment_alert"}
 TIPOS_ORDEN = {"express", "standard", "scheduled"}
