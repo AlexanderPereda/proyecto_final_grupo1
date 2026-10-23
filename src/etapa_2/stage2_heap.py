@@ -1,6 +1,6 @@
 """Etapa 2: min-heap propio y cola de prioridades con aging.
 
-Código copiado de notebooks/etapa2_cola_prioridades.ipynb (pasos 2 a 4).
+notebooks/etapa2_cola_prioridades.ipynb importa este código y lo explica en los pasos 2 a 4.
 """
 
 CLASE_ALERTA, CLASE_EXPRESS, CLASE_ESTANDAR, CLASE_PROGRAMADA, CLASE_NAVEGACION = 1, 2, 3, 4, 5
