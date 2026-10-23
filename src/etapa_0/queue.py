@@ -1,6 +1,6 @@
 """Etapa 0: colas FIFO propias, buffer con backpressure y micro-lotes.
 
-Código copiado de notebooks/etapa0_ingesta_buffer.ipynb (pasos 5 y 6).
+notebooks/etapa0_ingesta_buffer.ipynb importa este código y lo explica en los pasos 5 y 6.
 """
 
 import threading

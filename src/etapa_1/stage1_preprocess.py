@@ -1,8 +1,8 @@
 """Etapa 1: validación, normalización, merge sort, deduplicación y búsqueda binaria.
 
-Código copiado de notebooks/etapa1_preprocesamiento.ipynb (pasos 3 a 8). Se agregaron dos
-parámetros opcionales para observar las decisiones de la etapa sin cambiar su comportamiento:
-`al_descartar` en deduplicar_lote y `observador` en Preprocesador.
+notebooks/etapa1_preprocesamiento.ipynb importa este código y lo explica en los pasos 3 a 8.
+Dos parámetros opcionales permiten observar las decisiones de la etapa sin cambiar su
+comportamiento: `al_descartar` en deduplicar_lote y `observador` en Preprocesador.
 """
 
 import re
