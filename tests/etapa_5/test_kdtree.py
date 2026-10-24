@@ -10,7 +10,7 @@ Ejecutar desde la raíz del proyecto:
 import numpy as np
 import pytest
 
-from src.stage5_kdtree import IndiceProductos, KDTree, knn_fuerza_bruta
+from src.etapa_5.kdtree import IndiceProductos, KDTree, knn_fuerza_bruta
 
 
 def _distancias(resultado):

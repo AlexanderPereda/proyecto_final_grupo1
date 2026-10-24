@@ -12,6 +12,8 @@ Cada producto con precio se representa con un vector de atributos numéricos nor
 - knn_fuerza_bruta: línea base exacta. Calcula la distancia a todos los puntos en O(n·d).
 - IndiceProductos: construye los vectores desde las salidas de las etapas 3 y 4 y responde
   "productos similares a este".
+
+notebooks/etapa5_kdtree_knn.ipynb importa este código y lo explica en los pasos 2 a 5.
 """
 
 import json
@@ -20,13 +22,15 @@ import math
 import numpy as np
 import pyarrow.parquet as pq
 
-from . import config
-from .etapa_2.stage2_heap import MinHeap
-from .etapa_3.storage import RUTA_CATALOGO, RUTA_ESTADOS, TablaHash
-from .etapa_4.bplustree import RUTA_INDICE_PRECIO, ArbolBMas
+from .. import config
+from ..etapa_2.stage2_heap import MinHeap
+from ..etapa_3.storage import RUTA_CATALOGO, RUTA_ESTADOS, TablaHash
+from ..etapa_4.bplustree import RUTA_INDICE_PRECIO, ArbolBMas
 
-RUTA_VECTORES = config.CARPETA_INTERIM / "etapa5_vectores.npz"
-RUTA_VECINOS = config.CARPETA_INTERIM / "etapa5_vecinos.parquet"
+# Salidas de la etapa en data/interim/<CATEGORIA>/etapa_5/
+CARPETA_ETAPA5 = config.CARPETA_INTERIM / "etapa_5"
+RUTA_VECTORES = CARPETA_ETAPA5 / "vectores.npz"
+RUTA_VECINOS = CARPETA_ETAPA5 / "vecinos.parquet"
 TAM_HOJA = 32
 ATRIBUTOS = ["log_precio", "average_rating", "log_rating_number", "log_actividad_stream"]
 
