@@ -1,0 +1,1204 @@
+metodo,n,repeticion,operaciones,segundos,procesador,python
+DOK propia (MatrizDispersa),1000,0,1000,0.00855490006506443,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,0,1000,0.0008298000320792198,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,1,1000,0.005116599961183965,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,1,1000,0.0003997000167146325,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,2,1000,0.00668660004157573,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,2,1000,0.00040680007077753544,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,3,1000,0.0075876000337302685,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,3,1000,0.00039790000300854445,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,4,1000,0.0049239000072702765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,4,1000,0.0009078999282792211,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,5,1000,0.009255599929019809,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,5,1000,0.0004113999893888831,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,6,1000,0.014686099952086806,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,6,1000,0.00047880003694444895,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,7,1000,0.005786799942143261,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,7,1000,0.00040389993228018284,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,8,1000,0.005787799949757755,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,8,1000,0.000615399912931025,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,9,1000,0.007521199993789196,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,9,1000,0.00041750003583729267,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,10,1000,0.00556790002156049,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,10,1000,0.000431500026024878,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,11,1000,0.005931299994699657,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,11,1000,0.0003972999984398484,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,12,1000,0.00573680002707988,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,12,1000,0.0004160000244155526,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,13,1000,0.005885299993678927,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,13,1000,0.0003966999938711524,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,14,1000,0.010119099984876812,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,14,1000,0.0010652999626472592,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,15,1000,0.007617499912157655,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,15,1000,0.0008700999896973372,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,16,1000,0.009315200033597648,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,16,1000,0.0006648999406024814,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,17,1000,0.005104899988509715,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,17,1000,0.0004016999155282974,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,18,1000,0.006572499987669289,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,18,1000,0.00040179991628974676,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,19,1000,0.005505400011315942,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,19,1000,0.00039519998244941235,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,20,1000,0.005216799909248948,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,20,1000,0.0006135000148788095,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,21,1000,0.005153800011612475,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,21,1000,0.00040280004031956196,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,22,1000,0.005012499983422458,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,22,1000,0.0004737999988719821,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,23,1000,0.009535299963317811,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,23,1000,0.0003958999877795577,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,24,1000,0.005032900022342801,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,24,1000,0.00039439997635781765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,25,1000,0.0049542998895049095,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,25,1000,0.0004104999825358391,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,26,1000,0.00576189998537302,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,26,1000,0.0005700000328943133,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,27,1000,0.007258900091983378,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,27,1000,0.0004123999970033765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,28,1000,0.00604050001129508,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,28,1000,0.0004056999459862709,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,29,1000,0.005780500010587275,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,29,1000,0.00039980001747608185,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,30,1000,0.005350799998268485,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,30,1000,0.00041889993008226156,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,31,1000,0.00520619994495064,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,31,1000,0.0005674998974427581,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,32,1000,0.004925600020214915,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,32,1000,0.0008808999555185437,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,33,1000,0.004956899909302592,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,33,1000,0.00040390004869550467,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,34,1000,0.00596189999487251,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,34,1000,0.00040250003803521395,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,35,1000,0.006064999965019524,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,35,1000,0.000470499973744154,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,36,1000,0.007862500031478703,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,36,1000,0.00040369993075728416,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,37,1000,0.006012499914504588,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,37,1000,0.00040140002965927124,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,38,1000,0.004924600012600422,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,38,1000,0.0005723000504076481,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,39,1000,0.0049202999798581,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,39,1000,0.0009550999384373426,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,40,1000,0.005918700015172362,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,40,1000,0.00048390007577836514,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,41,1000,0.006749299936927855,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,41,1000,0.00047010008711367846,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,42,1000,0.006118400022387505,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,42,1000,0.0004686999600380659,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,43,1000,0.0049582000356167555,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,43,1000,0.0004723999882116914,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,44,1000,0.005093099898658693,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,44,1000,0.00041939993388950825,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,45,1000,0.006035499973222613,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,45,1000,0.0017905000131577253,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,46,1000,0.004947400069795549,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,46,1000,0.00043610006105154753,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,47,1000,0.006258600042201579,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,47,1000,0.0004616000223904848,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,48,1000,0.0049631999572739005,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,48,1000,0.0004371000686660409,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,49,1000,0.005770299932919443,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,49,1000,0.0004637000383809209,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,50,1000,0.009932899964042008,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,50,1000,0.0004154000198468566,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,51,1000,0.00748639996163547,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,51,1000,0.0004594000056385994,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,52,1000,0.006144799990579486,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,52,1000,0.00041179999243468046,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,53,1000,0.005408199969679117,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,53,1000,0.0007175999926403165,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,54,1000,0.004973400034941733,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,54,1000,0.000408099964261055,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,55,1000,0.006615300080738962,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,55,1000,0.00046690006274729967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,56,1000,0.007797199999913573,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,56,1000,0.0004865999799221754,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,57,1000,0.006691699963994324,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,57,1000,0.00039659999310970306,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,58,1000,0.004947899957187474,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,58,1000,0.0003969999961555004,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,59,1000,0.005337199894711375,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,59,1000,0.0003952999832108617,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,60,1000,0.006337600061669946,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,60,1000,0.00042559998109936714,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,61,1000,0.005740300053730607,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,61,1000,0.0004151000175625086,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,62,1000,0.006497099995613098,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,62,1000,0.0004694999661296606,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,63,1000,0.006747800041921437,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,63,1000,0.0004091999726369977,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,64,1000,0.00565519998781383,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,64,1000,0.0004675999516621232,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,65,1000,0.007901699980720878,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,65,1000,0.0003934999695047736,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,66,1000,0.006312099983915687,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,66,1000,0.0004026999231427908,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,67,1000,0.006560000008903444,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,67,1000,0.00039469997864216566,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,68,1000,0.004924600012600422,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,68,1000,0.00039900001138448715,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,69,1000,0.005929799983277917,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,69,1000,0.0007460000924766064,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,70,1000,0.004932000068947673,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,70,1000,0.000583800021559,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,71,1000,0.004952599992975593,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,71,1000,0.0004330000374466181,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,72,1000,0.005994400009512901,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,72,1000,0.000408399966545403,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,73,1000,0.007563699968159199,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,73,1000,0.00040499994065612555,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,74,1000,0.008992600021883845,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,74,1000,0.0006307000294327736,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,75,1000,0.005110000027343631,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,75,1000,0.0005941999843344092,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,76,1000,0.00492340000346303,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,76,1000,0.0004132000030949712,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,77,1000,0.007235000026412308,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,77,1000,0.0004013000288978219,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,78,1000,0.00936809997074306,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,78,1000,0.0006192999426275492,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,79,1000,0.008383800042793155,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,79,1000,0.00046690006274729967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,80,1000,0.005854099988937378,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,80,1000,0.00039900001138448715,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,81,1000,0.005903500015847385,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,81,1000,0.00044219999108463526,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,82,1000,0.006385799963027239,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,82,1000,0.0021786000579595566,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,83,1000,0.004976500058546662,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,83,1000,0.0004237999673932791,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,84,1000,0.004981899983249605,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,84,1000,0.00047770002856850624,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,85,1000,0.005042499979026616,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,85,1000,0.00039629999082535505,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,86,1000,0.004996099974960089,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,86,1000,0.0004059000639244914,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,87,1000,0.005097299930639565,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,87,1000,0.0006707999855279922,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,88,1000,0.008438699995167553,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,88,1000,0.00046660006046295166,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,89,1000,0.00818569993134588,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,89,1000,0.0004577001091092825,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,90,1000,0.006408100016415119,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,90,1000,0.0004770000232383609,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,91,1000,0.00493970001116395,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,91,1000,0.00045299995690584183,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,92,1000,0.004913500044494867,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,92,1000,0.0004045000532642007,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,93,1000,0.004928900045342743,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,93,1000,0.00040009990334510803,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,94,1000,0.005805799970403314,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,94,1000,0.0005092000355944037,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,95,1000,0.00587460002861917,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,95,1000,0.00040819996502250433,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,96,1000,0.0066636999836191535,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,96,1000,0.000462799915112555,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,97,1000,0.006211300031282008,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,97,1000,0.00039930001366883516,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,98,1000,0.006533800042234361,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,98,1000,0.0007478999905288219,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000,99,1000,0.004921599989756942,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000,99,1000,0.0004124999977648258,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,0,1000,0.00032210000790655613,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,1,1000,0.0004260001005604863,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,2,1000,0.00035799993202090263,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,3,1000,0.00035740004386752844,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,4,1000,0.0003480999730527401,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,5,1000,0.0003170999698340893,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,6,1000,0.00031450006645172834,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,7,1000,0.0003060000017285347,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,8,1000,0.0003245000261813402,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,9,1000,0.0003040999872609973,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,10,1000,0.00043169991113245487,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,11,1000,0.0003101000329479575,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,12,1000,0.00030090007930994034,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,13,1000,0.000328000052832067,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,14,1000,0.0003056999994441867,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,15,1000,0.00043400004506111145,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,16,1000,0.00032309989910572767,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,17,1000,0.000301400083117187,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,18,1000,0.0003280999371781945,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,19,1000,0.0003499999875202775,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,20,1000,0.00030990003142505884,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,21,1000,0.00030429998878389597,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,22,1000,0.0004160000244155526,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,23,1000,0.00033119996078312397,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,24,1000,0.000407799961976707,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,25,1000,0.0003152000717818737,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,26,1000,0.0003034999826923013,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,27,1000,0.0004260999849066138,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,28,1000,0.00036529998760670424,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,29,1000,0.00030499999411404133,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,30,1000,0.0006935000419616699,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,31,1000,0.00030690000858157873,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,32,1000,0.00045030005276203156,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,33,1000,0.0003122000489383936,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,34,1000,0.00030260009225457907,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,35,1000,0.0003125999355688691,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,36,1000,0.00030339998193085194,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,37,1000,0.0004290000069886446,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,38,1000,0.0003633000887930393,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,39,1000,0.0007105999393388629,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,40,1000,0.00032299989834427834,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,41,1000,0.00030559999868273735,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,42,1000,0.0005922999698668718,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,43,1000,0.0003166000824421644,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,44,1000,0.00030720001086592674,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,45,1000,0.0004328000359237194,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,46,1000,0.00031370006036013365,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,47,1000,0.0006681999657303095,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,48,1000,0.00031510007102042437,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,49,1000,0.0006397999823093414,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,50,1000,0.000310199917294085,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,51,1000,0.0003010999644175172,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,52,1000,0.00030559999868273735,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,53,1000,0.0003195999888703227,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,54,1000,0.0003034999826923013,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,55,1000,0.0003065000055357814,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,56,1000,0.0003056999994441867,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,57,1000,0.00043679994996637106,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,58,1000,0.000305800000205636,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,59,1000,0.0003098000306636095,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,60,1000,0.00037889997474849224,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,61,1000,0.000313800061121583,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,62,1000,0.00031430006492882967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,63,1000,0.00033299997448921204,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,64,1000,0.00031020003370940685,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,65,1000,0.0003249999135732651,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,66,1000,0.00030499999411404133,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,67,1000,0.0005498999962583184,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,68,1000,0.0006006999174132943,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,69,1000,0.0005193999968469143,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,70,1000,0.0003524000057950616,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,71,1000,0.0003426000475883484,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,72,1000,0.0009350000182166696,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,73,1000,0.0003112000413239002,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,74,1000,0.00045579997822642326,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,75,1000,0.0003488999791443348,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,76,1000,0.0004661999410018325,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,77,1000,0.0003189999843016267,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,78,1000,0.00030700000934302807,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,79,1000,0.0005513000069186091,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,80,1000,0.00031320005655288696,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,81,1000,0.00030449999030679464,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,82,1000,0.00038899993523955345,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,83,1000,0.0003263000398874283,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,84,1000,0.00030159996822476387,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,85,1000,0.00037459994200617075,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,86,1000,0.00030069996137171984,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,87,1000,0.0004854999715462327,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,88,1000,0.00030610000248998404,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,89,1000,0.000305499997921288,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,90,1000,0.00031809997744858265,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,91,1000,0.000362900085747242,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,92,1000,0.0003165999660268426,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,93,1000,0.00032329990062862635,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,94,1000,0.0003008999628946185,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,95,1000,0.0004221999552100897,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,96,1000,0.0005549000343307853,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,97,1000,0.0009133000858128071,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,98,1000,0.00035699992440640926,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000,99,1000,0.00034989998675882816,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,0,10000,0.052852499997243285,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,0,10000,0.004776500049047172,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,1,10000,0.05837979994248599,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,1,10000,0.007353299995884299,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,2,10000,0.05950219999067485,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,2,10000,0.004528700024820864,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,3,10000,0.05607139994390309,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,3,10000,0.005297700059600174,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,4,10000,0.05624649999663234,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,4,10000,0.009707899997010827,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,5,10000,0.060233999975025654,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,5,10000,0.009212199947796762,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,6,10000,0.057562400004826486,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,6,10000,0.004766699974425137,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,7,10000,0.056775699951685965,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,7,10000,0.004912900039926171,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,8,10000,0.063566799974069,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,8,10000,0.004948899964801967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,9,10000,0.06330440007150173,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,9,10000,0.005422100075520575,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,10,10000,0.056802500039339066,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,10,10000,0.005389399942941964,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,11,10000,0.059647400048561394,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,11,10000,0.0070572999538853765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,12,10000,0.05965259997174144,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,12,10000,0.005050500039942563,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,13,10000,0.0615191999822855,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,13,10000,0.008877099957317114,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,14,10000,0.05926570005249232,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,14,10000,0.009027400054037571,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,15,10000,0.058996800100430846,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,15,10000,0.005448299925774336,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,16,10000,0.055872400058433414,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,16,10000,0.004579600063152611,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,17,10000,0.054001000011339784,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,17,10000,0.004676699987612665,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,18,10000,0.06118890002835542,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,18,10000,0.004643399966880679,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,19,10000,0.055904499953612685,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,19,10000,0.0053545000264421105,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,20,10000,0.05772449995856732,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,20,10000,0.004955000011250377,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,21,10000,0.05777529999613762,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,21,10000,0.005561299971304834,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,22,10000,0.05604860000312328,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,22,10000,0.008928600000217557,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,23,10000,0.057060500024817884,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,23,10000,0.007890600012615323,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,24,10000,0.059052799944765866,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,24,10000,0.0072475000051781535,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,25,10000,0.06263039994519204,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,25,10000,0.008840600028634071,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,26,10000,0.06474960001651198,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,26,10000,0.004689299967139959,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,27,10000,0.06162829999811947,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,27,10000,0.008501300006173551,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,28,10000,0.06328290002420545,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,28,10000,0.010159100056625903,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,29,10000,0.06105219991877675,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,29,10000,0.0067526999628171325,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,30,10000,0.05194210004992783,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,30,10000,0.004528900026343763,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,31,10000,0.05877220002003014,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,31,10000,0.004810300073586404,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,32,10000,0.05123280000407249,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,32,10000,0.004703699960373342,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,33,10000,0.05588109989184886,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,33,10000,0.009661999996751547,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,34,10000,0.05497070006094873,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,34,10000,0.0072975000366568565,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,35,10000,0.05317179998382926,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,35,10000,0.004581499961204827,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,36,10000,0.05690670001786202,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,36,10000,0.006511600106023252,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,37,10000,0.05220459995325655,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,37,10000,0.004783499985933304,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,38,10000,0.051375600043684244,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,38,10000,0.004667900037020445,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,39,10000,0.05427239998243749,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,39,10000,0.00465499993879348,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,40,10000,0.05487310001626611,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,40,10000,0.004558800021186471,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,41,10000,0.05669090000446886,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,41,10000,0.004805599921382964,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,42,10000,0.051907500019297004,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,42,10000,0.0051998000126332045,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,43,10000,0.05941720004193485,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,43,10000,0.004461399978026748,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,44,10000,0.056471899966709316,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,44,10000,0.0053400000324472785,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,45,10000,0.0528070000000298,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,45,10000,0.004691499983891845,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,46,10000,0.05499530001543462,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,46,10000,0.00766559992916882,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,47,10000,0.05791299999691546,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,47,10000,0.004574500024318695,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,48,10000,0.05248750001192093,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,48,10000,0.004499699920415878,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,49,10000,0.056054100045003,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,49,10000,0.004991100053302944,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,50,10000,0.059187600039877,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,50,10000,0.004543400020338595,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,51,10000,0.05014219996519387,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,51,10000,0.004610100062564015,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,52,10000,0.05247259989846498,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,52,10000,0.0058423998998478055,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,53,10000,0.05319370003417134,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,53,10000,0.004607100039720535,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,54,10000,0.06060220010112971,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,54,10000,0.007020099903456867,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,55,10000,0.052707399940118194,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,55,10000,0.0053796999854967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,56,10000,0.06632230000104755,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,56,10000,0.004584799986332655,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,57,10000,0.056224499945528805,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,57,10000,0.00757110002450645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,58,10000,0.057691800058819354,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,58,10000,0.004625400062650442,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,59,10000,0.05910519999451935,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,59,10000,0.0045547999907284975,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,60,10000,0.07321269996464252,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,60,10000,0.0055059000151231885,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,61,10000,0.06574460002593696,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,61,10000,0.0056464000372216105,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,62,10000,0.05816919996868819,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,62,10000,0.004562400048598647,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,63,10000,0.056104399962350726,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,63,10000,0.004469399922527373,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,64,10000,0.05357330001424998,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,64,10000,0.006232099956832826,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,65,10000,0.051911700051277876,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,65,10000,0.006336100050248206,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,66,10000,0.06774570001289248,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,66,10000,0.009049299987964332,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,67,10000,0.05874989996664226,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,67,10000,0.005606700084172189,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,68,10000,0.05076240003108978,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,68,10000,0.006498800008557737,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,69,10000,0.05583290010690689,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,69,10000,0.004556400002911687,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,70,10000,0.056815700023435056,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,70,10000,0.00482249993365258,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,71,10000,0.05520729999989271,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,71,10000,0.004696400021202862,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,72,10000,0.054326399927958846,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,72,10000,0.008625399903394282,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,73,10000,0.05496920004952699,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,73,10000,0.013650599983520806,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,74,10000,0.06491800001822412,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,74,10000,0.0045906000304967165,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,75,10000,0.05756280000787228,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,75,10000,0.008457200019620359,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,76,10000,0.06195279990788549,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,76,10000,0.005115700070746243,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,77,10000,0.05818849999923259,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,77,10000,0.004528900026343763,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,78,10000,0.08303800004068762,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,78,10000,0.010056199971586466,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,79,10000,0.05984919995535165,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,79,10000,0.00470399996265769,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,80,10000,0.05589489999692887,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,80,10000,0.005460500018671155,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,81,10000,0.05658420000690967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,81,10000,0.006898100022226572,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,82,10000,0.055140199954621494,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,82,10000,0.004586600000038743,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,83,10000,0.05917120003141463,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,83,10000,0.0053292999509721994,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,84,10000,0.05993250000756234,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,84,10000,0.00846129993442446,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,85,10000,0.059811600018292665,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,85,10000,0.004899500054307282,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,86,10000,0.05036359990481287,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,86,10000,0.004814699990674853,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,87,10000,0.06229569995775819,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,87,10000,0.007493300014175475,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,88,10000,0.05182330007664859,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,88,10000,0.0056995999766513705,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,89,10000,0.05548740003723651,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,89,10000,0.004605000023730099,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,90,10000,0.0590390000725165,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,90,10000,0.00754719995893538,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,91,10000,0.054809699999168515,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,91,10000,0.004569499986246228,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,92,10000,0.05908919998910278,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,92,10000,0.00462999998126179,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,93,10000,0.05895889992825687,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,93,10000,0.00457830005325377,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,94,10000,0.05839140003081411,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,94,10000,0.004899600055068731,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,95,10000,0.05895630002487451,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,95,10000,0.008580200024880469,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,96,10000,0.0556485999841243,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,96,10000,0.0045798999490216374,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,97,10000,0.05206220003310591,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,97,10000,0.005384100019000471,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,98,10000,0.058804200030863285,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,98,10000,0.007403900031931698,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000,99,10000,0.06029549997765571,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000,99,10000,0.004571900004521012,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,0,10000,0.0027456999523565173,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,1,10000,0.005289900000207126,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,2,10000,0.00274860009085387,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,3,10000,0.0027550000231713057,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,4,10000,0.0047848999965935946,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,5,10000,0.002724100020714104,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,6,10000,0.0036865000147372484,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,7,10000,0.005772900069132447,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,8,10000,0.002678200020454824,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,9,10000,0.0026938000228255987,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,10,10000,0.006393900024704635,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,11,10000,0.0027037999825552106,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,12,10000,0.0028859999729320407,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,13,10000,0.0066024999832734466,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,14,10000,0.0027332999743521214,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,15,10000,0.0028554999735206366,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,16,10000,0.005718400003388524,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,17,10000,0.002715800073929131,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,18,10000,0.0028214999474585056,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,19,10000,0.006144499988295138,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,20,10000,0.0027880999259650707,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,21,10000,0.0027818999951705337,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,22,10000,0.003917799913324416,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,23,10000,0.002726400038227439,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,24,10000,0.0033950000070035458,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,25,10000,0.004157199990004301,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,26,10000,0.0027302999515086412,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,27,10000,0.0027522000018507242,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,28,10000,0.00641819997690618,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,29,10000,0.002790600061416626,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,30,10000,0.0029835000168532133,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,31,10000,0.006094599957577884,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,32,10000,0.0027677000034600496,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,33,10000,0.0027620999608188868,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,34,10000,0.0036274000303819776,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,35,10000,0.0036235000006854534,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,36,10000,0.00273499998729676,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,37,10000,0.0028150000143796206,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,38,10000,0.01079790003132075,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,39,10000,0.0036235000006854534,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,40,10000,0.004280499997548759,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,41,10000,0.00393830006942153,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,42,10000,0.005384400021284819,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,43,10000,0.003137099905870855,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,44,10000,0.0031620999798178673,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,45,10000,0.006089900038205087,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,46,10000,0.003118199994787574,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,47,10000,0.00287580001167953,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,48,10000,0.004309299984015524,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,49,10000,0.0031946999952197075,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,50,10000,0.00284620001912117,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,51,10000,0.0031724999425932765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,52,10000,0.0027495999820530415,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,53,10000,0.0027372000040486455,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,54,10000,0.0027484000893309712,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,55,10000,0.004273099941201508,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,56,10000,0.003034000052139163,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,57,10000,0.005842300015501678,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,58,10000,0.007765699992887676,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,59,10000,0.00277220003772527,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,60,10000,0.004052300006151199,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,61,10000,0.003255799994803965,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,62,10000,0.002715200069360435,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,63,10000,0.0028623000252991915,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,64,10000,0.003541699959896505,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,65,10000,0.002759799943305552,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,66,10000,0.0032792999409139156,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,67,10000,0.0038584000431001186,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,68,10000,0.0026889999862760305,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,69,10000,0.002902899985201657,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,70,10000,0.004706300096586347,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,71,10000,0.002749199979007244,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,72,10000,0.0028708999743685126,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,73,10000,0.004898000042885542,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,74,10000,0.0027051999932155013,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,75,10000,0.0027322000823915005,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,76,10000,0.007895000046119094,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,77,10000,0.006950699957087636,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,78,10000,0.0031765999738126993,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,79,10000,0.0028404000913724303,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,80,10000,0.0048445999855175614,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,81,10000,0.002728800056502223,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,82,10000,0.0028366000624373555,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,83,10000,0.007427399978041649,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,84,10000,0.0032113000052049756,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,85,10000,0.0028337999247014523,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,86,10000,0.003379999892786145,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,87,10000,0.0048102999571710825,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,88,10000,0.002814000006765127,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,89,10000,0.0028411000967025757,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,90,10000,0.00610430003143847,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,91,10000,0.0027037999825552106,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,92,10000,0.003321200027130544,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,93,10000,0.008183500031009316,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,94,10000,0.004977499949745834,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,95,10000,0.002801500027999282,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,96,10000,0.002715499955229461,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,97,10000,0.003533500013872981,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,98,10000,0.0026743001071736217,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000,99,10000,0.0028942000353708863,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,0,100000,0.7947148999664932,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,0,100000,0.08268810005392879,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,1,100000,0.6621944999787956,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,1,100000,0.07772419997490942,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,2,100000,0.7191679999232292,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,2,100000,0.09413109999150038,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,3,100000,0.6596103999763727,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,3,100000,0.07997740001883358,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,4,100000,0.6826775999506935,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,4,100000,0.0919827000470832,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,5,100000,0.7008815999142826,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,5,100000,0.12069880007766187,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,6,100000,0.6622225999599323,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,6,100000,0.11537599994335324,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,7,100000,0.6917432000627741,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,7,100000,0.07767539995256811,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,8,100000,0.6526600999059156,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,8,100000,0.13305790000595152,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,9,100000,0.6749803000129759,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,9,100000,0.10705559991765767,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,10,100000,0.6790596999926493,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,10,100000,0.10197999991942197,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,11,100000,0.7076811000006273,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,11,100000,0.09629020001739264,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,12,100000,0.6984825999243185,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,12,100000,0.10519459994975477,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,13,100000,0.6331577999517322,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,13,100000,0.08007880009245127,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,14,100000,0.7157833999954164,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,14,100000,0.08688339998479933,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,15,100000,0.6672912000212818,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,15,100000,0.07953659992199391,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,16,100000,0.6828637999715284,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,16,100000,0.08358799992129207,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,17,100000,0.7131653999676928,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,17,100000,0.0847584999864921,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,18,100000,0.6428725000005215,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,18,100000,0.10863359994255006,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,19,100000,0.7304913999978453,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,19,100000,0.08346709993202239,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,20,100000,0.6666199999162927,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,20,100000,0.07816879998426884,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,21,100000,0.6330306999152526,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,21,100000,0.08385179995093495,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,22,100000,0.6975885999854654,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,22,100000,0.07901609991677105,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,23,100000,0.6561172999208793,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,23,100000,0.0878405999392271,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,24,100000,0.7191398999420926,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,24,100000,0.08421989995986223,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,25,100000,0.6519724000245333,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,25,100000,0.08368300006259233,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,26,100000,0.6993384000379592,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,26,100000,0.10421369993127882,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,27,100000,0.651616399991326,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,27,100000,0.08030770008917898,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,28,100000,0.6788727999664843,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,28,100000,0.0844669999787584,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,29,100000,0.6821157999802381,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,29,100000,0.08193440001923591,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,30,100000,0.6300422999775037,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,30,100000,0.09627420001197606,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,31,100000,0.7304095000727102,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,31,100000,0.08338590001221746,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,32,100000,0.6725444999756292,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,32,100000,0.0832056999206543,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,33,100000,0.6742813000455499,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,33,100000,0.0886937000323087,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,34,100000,0.684095999924466,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,34,100000,0.10941599996294826,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,35,100000,0.6589594000251964,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,35,100000,0.17142439994495362,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,36,100000,0.7008596999803558,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,36,100000,0.0780424999538809,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,37,100000,0.6635340000502765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,37,100000,0.07985049998387694,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,38,100000,0.6692617000080645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,38,100000,0.08193730004131794,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,39,100000,0.6319355999585241,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,39,100000,0.08569489989895374,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,40,100000,0.6328615000238642,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,40,100000,0.08349730004556477,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,41,100000,0.63500530004967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,41,100000,0.07597630005329847,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,42,100000,0.7121644000289962,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,42,100000,0.09769730002153665,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,43,100000,0.6388756000669673,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,43,100000,0.08768839994445443,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,44,100000,0.7043550000526011,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,44,100000,0.08795079996343702,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,45,100000,0.8044685000786558,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,45,100000,0.18505260010715574,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,46,100000,0.6440632999874651,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,46,100000,0.08219619991723448,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,47,100000,0.8548960000043735,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,47,100000,0.09547830000519753,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,48,100000,0.6920084999874234,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,48,100000,0.17240200005471706,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,49,100000,0.6729078000644222,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,49,100000,0.12016260006930679,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,50,100000,0.7372510998975486,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,50,100000,0.09122920001391321,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,51,100000,0.7359707000432536,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,51,100000,0.1049129000166431,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,52,100000,0.7946640000445768,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,52,100000,0.08578490000218153,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,53,100000,0.6482589000370353,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,53,100000,0.08855769992806017,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,54,100000,0.6458561000181362,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,54,100000,0.08795489999465644,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,55,100000,0.6597755999537185,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,55,100000,0.0890211999649182,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,56,100000,0.6719778999686241,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,56,100000,0.08638090000022203,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,57,100000,0.6760136999655515,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,57,100000,0.0830646000104025,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,58,100000,0.66504920006264,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,58,100000,0.09045459993649274,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,59,100000,0.7091182000003755,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,59,100000,0.08397189993411303,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,60,100000,0.6962601999985054,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,60,100000,0.10792159999255091,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,61,100000,0.6585496999323368,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,61,100000,0.10501119995024055,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,62,100000,0.7730624999385327,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,62,100000,0.10078630002681166,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,63,100000,0.6699319999897853,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,63,100000,0.08361599990166724,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,64,100000,0.778291100054048,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,64,100000,0.13586919999215752,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,65,100000,0.6631921000080183,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,65,100000,0.09320229990407825,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,66,100000,0.7017001000931486,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,66,100000,0.09369199990760535,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,67,100000,0.6887521999888122,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,67,100000,0.082667600014247,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,68,100000,0.6802820999873802,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,68,100000,0.08313419995829463,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,69,100000,0.7075585999991745,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,69,100000,0.08730689994990826,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,70,100000,0.6837995999958366,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,70,100000,0.08151539997197688,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,71,100000,0.7279508999781683,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,71,100000,0.08456149999983609,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,72,100000,0.6344114999519661,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,72,100000,0.08079729997552931,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,73,100000,0.6764553999528289,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,73,100000,0.09313990001101047,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,74,100000,0.7100775999715552,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,74,100000,0.10696799994911999,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,75,100000,0.6458454999374226,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,75,100000,0.08382649999111891,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,76,100000,0.7135467999614775,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,76,100000,0.08220219996292144,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,77,100000,0.6503136999672279,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,77,100000,0.0835473999613896,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,78,100000,0.6645980000030249,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,78,100000,0.08987320004962385,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,79,100000,0.657261399901472,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,79,100000,0.09010819997638464,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,80,100000,0.6589529000921175,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,80,100000,0.11988889996428043,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,81,100000,0.7200590000720695,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,81,100000,0.08300560002680868,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,82,100000,0.7033176999539137,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,82,100000,0.09449320007115602,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,83,100000,0.7818933000089601,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,83,100000,0.09447450004518032,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,84,100000,0.6588997000362724,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,84,100000,0.07729980000294745,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,85,100000,0.6850268000271171,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,85,100000,0.09292630001436919,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,86,100000,0.710520299966447,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,86,100000,0.11632169992662966,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,87,100000,0.6505506000248715,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,87,100000,0.11129810009151697,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,88,100000,0.6946626000571996,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,88,100000,0.08305109990760684,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,89,100000,0.6907227999763563,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,89,100000,0.0978565999539569,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,90,100000,0.7681346000172198,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,90,100000,0.1075642000650987,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,91,100000,0.838859900017269,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,91,100000,0.08372620004229248,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,92,100000,0.7132657000329345,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,92,100000,0.1340028999838978,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,93,100000,0.6847371999174356,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,93,100000,0.08141450001858175,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,94,100000,0.6988421999849379,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,94,100000,0.08256510004866868,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,95,100000,0.6832700999220833,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,95,100000,0.10468300001230091,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,96,100000,0.6691791999619454,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,96,100000,0.08275679999496788,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,97,100000,0.7223211000673473,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,97,100000,0.08785389992408454,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,98,100000,0.6609659000532702,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,98,100000,0.08649279992096126,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),100000,99,100000,0.6870178999379277,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),100000,99,100000,0.09187829995062202,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,0,100000,0.07333159993868321,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,1,100000,0.07367680000606924,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,2,100000,0.053403600002638996,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,3,100000,0.05223279993515462,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,4,100000,0.05180849996395409,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,5,100000,0.05382669996470213,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,6,100000,0.04891200002748519,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,7,100000,0.13413210003636777,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,8,100000,0.052719400031492114,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,9,100000,0.05406619992572814,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,10,100000,0.050978300045244396,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,11,100000,0.05171070003416389,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,12,100000,0.04833150003105402,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,13,100000,0.049127399921417236,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,14,100000,0.05285939993336797,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,15,100000,0.05631999997422099,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,16,100000,0.05384179996326566,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,17,100000,0.05586069996934384,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,18,100000,0.06649349990766495,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,19,100000,0.048468600027263165,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,20,100000,0.05688049993477762,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,21,100000,0.06249539996497333,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,22,100000,0.04929490003269166,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,23,100000,0.07666880008764565,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,24,100000,0.06884399999398738,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,25,100000,0.047287800000049174,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,26,100000,0.04650709999259561,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,27,100000,0.05866390001028776,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,28,100000,0.047275900025852025,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,29,100000,0.051545599941164255,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,30,100000,0.053686499944888055,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,31,100000,0.058928599930368364,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,32,100000,0.05065579991787672,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,33,100000,0.04906220000702888,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,34,100000,0.05025460000615567,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,35,100000,0.051707300008274615,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,36,100000,0.04849940002895892,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,37,100000,0.05216580000706017,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,38,100000,0.04893269995227456,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,39,100000,0.05077749991323799,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,40,100000,0.051028799964115024,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,41,100000,0.08391889999620616,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,42,100000,0.058738799998536706,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,43,100000,0.059968599933199584,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,44,100000,0.06445199996232986,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,45,100000,0.05022050009574741,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,46,100000,0.05286009993869811,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,47,100000,0.07607120007742196,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,48,100000,0.06090829998720437,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,49,100000,0.05175890005193651,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,50,100000,0.052807900006882846,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,51,100000,0.047390000079758465,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,52,100000,0.05105650005862117,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,53,100000,0.07351300003938377,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,54,100000,0.07584619999397546,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,55,100000,0.055378500022925436,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,56,100000,0.04877130000386387,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,57,100000,0.05159849999472499,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,58,100000,0.04772460006643087,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,59,100000,0.04824969999026507,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,60,100000,0.04895630001556128,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,61,100000,0.06881099997553974,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,62,100000,0.048647800111211836,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,63,100000,0.0789193999953568,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,64,100000,0.05713510001078248,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,65,100000,0.05440879997331649,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,66,100000,0.053438000031746924,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,67,100000,0.048369200085289776,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,68,100000,0.048581400071270764,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,69,100000,0.05776150000747293,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,70,100000,0.06477249995805323,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,71,100000,0.052053799969144166,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,72,100000,0.057913700002245605,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,73,100000,0.04776799993123859,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,74,100000,0.04790320002939552,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,75,100000,0.04834330000448972,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,76,100000,0.05005149997305125,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,77,100000,0.07352760003414005,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,78,100000,0.050370599958114326,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,79,100000,0.05080860003363341,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,80,100000,0.04743669996969402,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,81,100000,0.050130999996326864,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,82,100000,0.05220940010622144,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,83,100000,0.05104729998856783,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,84,100000,0.050019599962979555,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,85,100000,0.047283199965022504,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,86,100000,0.05167269997764379,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,87,100000,0.05106690002139658,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,88,100000,0.05863730004057288,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,89,100000,0.05475859995931387,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,90,100000,0.05247509991750121,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,91,100000,0.057229400030337274,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,92,100000,0.051116100046783686,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,93,100000,0.050111700082197785,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,94,100000,0.06551450002007186,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,95,100000,0.058379200054332614,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,96,100000,0.0514062000438571,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,97,100000,0.048211899935267866,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,98,100000,0.04816629993729293,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,100000,99,100000,0.051141100004315376,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,0,1000000,7.160627199918963,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,0,1000000,1.381793399923481,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,1,1000000,7.025901500019245,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,1,1000000,1.4204000000609085,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,2,1000000,6.954180600005202,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,2,1000000,1.6035936999833211,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,3,1000000,7.077710599987768,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,3,1000000,1.4417210000101477,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,4,1000000,7.093390299938619,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,4,1000000,1.4874393999343738,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,5,1000000,7.141966399969533,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,5,1000000,1.443150500068441,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,6,1000000,7.134190800017677,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,6,1000000,1.4200644000666216,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,7,1000000,7.05574190011248,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,7,1000000,1.6271911999210715,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,8,1000000,7.339336200035177,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,8,1000000,1.437632399960421,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,9,1000000,7.1097134000156075,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,9,1000000,1.4917099999729544,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,10,1000000,7.357345099910162,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,10,1000000,1.490832900046371,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,11,1000000,7.111761700012721,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,11,1000000,1.5192346000112593,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,12,1000000,7.152106900000945,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,12,1000000,1.4414519000565633,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,13,1000000,7.102313500014134,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,13,1000000,1.4945074999704957,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,14,1000000,6.979216899955645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,14,1000000,1.5278268000110984,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,15,1000000,7.196303799981251,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,15,1000000,1.436407099943608,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,16,1000000,7.07617539993953,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,16,1000000,1.407876400044188,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,17,1000000,7.040004599955864,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,17,1000000,1.5241834999760613,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,18,1000000,7.331929200096056,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,18,1000000,1.5208114999113604,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,19,1000000,7.056493199896067,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,19,1000000,1.520697900094092,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,20,1000000,7.222539200098254,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,20,1000000,1.503673000028357,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,21,1000000,7.308550300076604,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,21,1000000,1.4650585000636056,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,22,1000000,7.155249400064349,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,22,1000000,1.524561999947764,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,23,1000000,7.193730100058019,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,23,1000000,1.4951164000667632,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,24,1000000,7.059420399949886,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,24,1000000,1.4662444998975843,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,25,1000000,7.261833500000648,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,25,1000000,1.536565599963069,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,26,1000000,7.237225000048056,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,26,1000000,1.412535100011155,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,27,1000000,7.230553500005044,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,27,1000000,1.4322312999283895,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,28,1000000,7.028714600019157,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,28,1000000,1.4458211999153718,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,29,1000000,7.040109100053087,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,29,1000000,1.468758700066246,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,30,1000000,7.159882199950516,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,30,1000000,1.5972913999576122,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,31,1000000,6.926476599997841,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,31,1000000,1.3801719000330195,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,32,1000000,7.066576299956068,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,32,1000000,1.428666100022383,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,33,1000000,7.273803999996744,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,33,1000000,1.4732267999788746,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,34,1000000,6.998907799948938,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,34,1000000,1.464623300009407,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,35,1000000,6.9313766999403015,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,35,1000000,1.4306338999886066,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,36,1000000,7.09126350004226,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,36,1000000,1.3559099999256432,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,37,1000000,6.86474490002729,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,37,1000000,1.6197214999701828,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,38,1000000,6.757588000036776,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,38,1000000,1.5214360000099987,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,39,1000000,7.124187600100413,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,39,1000000,1.495479500037618,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,40,1000000,6.688282300019637,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,40,1000000,1.3530477000167593,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,41,1000000,7.136513700010255,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,41,1000000,1.4464759000111371,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,42,1000000,6.84663000004366,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,42,1000000,1.3990096999332309,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,43,1000000,6.856348600005731,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,43,1000000,1.398916400037706,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,44,1000000,7.120269700069912,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,44,1000000,1.4945012000389397,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,45,1000000,7.012330399942584,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,45,1000000,1.4636020000325516,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,46,1000000,6.935404399991967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,46,1000000,1.549540099920705,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,47,1000000,7.118286299984902,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,47,1000000,1.7464468000689521,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,48,1000000,6.973151299986057,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,48,1000000,1.4629902000306174,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,49,1000000,6.921640499960631,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,49,1000000,1.4495745000895113,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,50,1000000,7.232082900009118,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,50,1000000,1.4527081999694929,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,51,1000000,7.136059100041166,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,51,1000000,1.4800686000380665,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,52,1000000,6.99941819999367,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,52,1000000,1.4945044999476522,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,53,1000000,7.0192391000455245,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,53,1000000,1.4680115999653935,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,54,1000000,7.070773500017822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,54,1000000,1.506260099937208,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,55,1000000,6.96756430005189,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,55,1000000,1.5199218000052497,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,56,1000000,6.8394577000290155,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,56,1000000,1.5437337999464944,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,57,1000000,7.0492962000425905,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,57,1000000,1.4565890999510884,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,58,1000000,7.127253400045447,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,58,1000000,1.429226400097832,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,59,1000000,6.993827700032853,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,59,1000000,1.416348500060849,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,60,1000000,7.107877800008282,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,60,1000000,1.4465138000668958,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,61,1000000,7.238322300021537,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,61,1000000,1.4563629999756813,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,62,1000000,7.038974300026894,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,62,1000000,1.4305187999270856,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,63,1000000,7.165936600067653,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,63,1000000,1.5594198999460787,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,64,1000000,6.791484299930744,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,64,1000000,1.350238100043498,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,65,1000000,6.90790210000705,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,65,1000000,1.3844223000342026,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,66,1000000,7.1020431000506505,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,66,1000000,1.4538175999186933,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,67,1000000,7.664483700064011,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,67,1000000,1.3854942000471056,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,68,1000000,6.864286400028504,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,68,1000000,1.4592937999404967,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,69,1000000,7.091547599993646,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,69,1000000,1.3684205999597907,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,70,1000000,6.773064299952239,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,70,1000000,1.4301388999447227,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,71,1000000,6.808138799970038,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,71,1000000,1.4862336999503896,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,72,1000000,6.9328472999623045,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,72,1000000,1.5012763000559062,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,73,1000000,6.9976422999752685,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,73,1000000,1.4577414999948815,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,74,1000000,7.11756579997018,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,74,1000000,1.4486701000714675,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,75,1000000,6.851136500015855,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,75,1000000,1.3387299999594688,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,76,1000000,6.85997440002393,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,76,1000000,1.4032327000750229,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,77,1000000,6.883829599944875,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,77,1000000,1.4928626000182703,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,78,1000000,6.925904199946672,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,78,1000000,1.4509382999967784,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,79,1000000,6.787814400042407,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,79,1000000,1.3552874999586493,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,80,1000000,6.832840099930763,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,80,1000000,1.3574028000002727,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,81,1000000,6.772944400086999,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,81,1000000,1.3650963999098167,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,82,1000000,6.671964199980721,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,82,1000000,1.3343585999682546,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,83,1000000,6.981676299939863,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,83,1000000,1.3576331000076607,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,84,1000000,7.025679699960165,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,84,1000000,1.4015331999398768,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,85,1000000,6.636277199955657,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,85,1000000,1.473871499998495,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,86,1000000,6.8621600000187755,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,86,1000000,1.4004572000121698,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,87,1000000,6.706516599981114,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,87,1000000,1.4506622001063079,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,88,1000000,6.802270199987106,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,88,1000000,1.3517886999761686,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,89,1000000,7.063019499997608,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,89,1000000,1.365237099933438,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,90,1000000,6.872501299949363,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,90,1000000,1.4208861000370234,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,91,1000000,6.681213299976662,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,91,1000000,1.525866400101222,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,92,1000000,6.8747941999463364,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,92,1000000,1.4161895000142977,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,93,1000000,6.919680200051516,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,93,1000000,1.440796900074929,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,94,1000000,6.953935700003058,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,94,1000000,1.498833499965258,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,95,1000000,6.930612999945879,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,95,1000000,1.3758336999453604,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,96,1000000,7.0120157999917865,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,96,1000000,1.3658223999664187,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,97,1000000,7.013787499978207,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,97,1000000,1.453354199999012,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,98,1000000,6.505648400052451,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,98,1000000,1.4228248000144958,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),1000000,99,1000000,6.854171300074086,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),1000000,99,1000000,1.4000383999664336,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,0,1000000,0.860335300094448,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,1,1000000,0.7578378000762314,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,2,1000000,0.8226632000878453,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,3,1000000,0.9184122999431565,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,4,1000000,0.8284516000421718,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,5,1000000,0.8411315000848845,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,6,1000000,0.8502752999775112,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,7,1000000,0.7705990000395104,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,8,1000000,0.8064009000081569,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,9,1000000,0.9012990000192076,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,10,1000000,0.8179966999450698,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,11,1000000,0.7929601999931037,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,12,1000000,0.7903315000003204,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,13,1000000,0.7947260000510141,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,14,1000000,0.79328609991353,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,15,1000000,0.7944089999655262,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,16,1000000,0.8563810000196099,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,17,1000000,0.803191400016658,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,18,1000000,0.7803812000202015,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,19,1000000,0.7866125999717042,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,20,1000000,0.7967761000618339,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,21,1000000,0.766721999971196,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,22,1000000,0.7662439999403432,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,23,1000000,0.7593368999660015,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,24,1000000,0.7734514999901876,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,25,1000000,0.8146972999675199,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,26,1000000,0.7520055000204593,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,27,1000000,0.811617000028491,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,28,1000000,0.8017677000025287,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,29,1000000,0.8369969000341371,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,30,1000000,0.8432807999197394,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,31,1000000,0.8228270000545308,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,32,1000000,0.8697709999978542,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,33,1000000,0.8203015000326559,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,34,1000000,0.8334167000139132,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,35,1000000,0.8619267999893054,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,36,1000000,0.8074631000636145,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,37,1000000,0.832345400005579,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,38,1000000,0.7908607999561355,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,39,1000000,0.9261888000182807,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,40,1000000,0.8449736000038683,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,41,1000000,0.8005939999129623,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,42,1000000,0.8302849000319839,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,43,1000000,0.9076885000104085,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,44,1000000,0.8802911000093445,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,45,1000000,0.8064516000449657,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,46,1000000,0.9547782000154257,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,47,1000000,0.8190061000641435,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,48,1000000,0.8389376999111846,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,49,1000000,0.7812076000263914,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,50,1000000,0.9262794000096619,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,51,1000000,0.8135128000285476,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,52,1000000,0.8092109999852255,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,53,1000000,0.9115775999380276,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,54,1000000,0.8636104000033811,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,55,1000000,0.8451319000450894,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,56,1000000,0.8210334000177681,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,57,1000000,0.8390566000016406,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,58,1000000,0.8003480000188574,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,59,1000000,0.7671518999850377,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,60,1000000,0.7845093000214547,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,61,1000000,0.9100047999527305,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,62,1000000,0.827400799957104,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,63,1000000,0.8511437999550253,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,64,1000000,0.8462241999804974,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,65,1000000,0.9199150999775156,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,66,1000000,0.832732200040482,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,67,1000000,0.8279163999250159,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,68,1000000,0.8312585999956354,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,69,1000000,0.7921440999489278,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,70,1000000,0.840593000059016,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,71,1000000,0.9983035000041127,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,72,1000000,0.925874900072813,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,73,1000000,0.8310297999996692,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,74,1000000,0.8133185999467969,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,75,1000000,0.8595415001036599,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,76,1000000,0.8595986000727862,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,77,1000000,0.8104047999950126,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,78,1000000,0.9125958000076935,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,79,1000000,0.7907541000749916,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,80,1000000,0.8807356000179425,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,81,1000000,0.8274713000282645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,82,1000000,0.8460660999407992,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,83,1000000,0.8042768000159413,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,84,1000000,0.8357531999936327,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,85,1000000,0.8443572000833228,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,86,1000000,0.7821867000311613,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,87,1000000,0.7929369000485167,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,88,1000000,0.7782597000477836,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,89,1000000,0.7691455000312999,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,90,1000000,0.7588138000573963,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,91,1000000,0.7523878999054432,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,92,1000000,0.774657899979502,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,93,1000000,0.785630900063552,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,94,1000000,0.7882438999367878,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,95,1000000,0.8011381999822333,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,96,1000000,0.7999118000734597,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,97,1000000,0.8128308999584988,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,98,1000000,0.86962490004953,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,1000000,99,1000000,0.8109380999812856,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK propia (MatrizDispersa),10000000,0,10000000,70.18486759997904,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+DOK con dict (C),10000000,0,10000000,18.55472999997437,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+conversión a CSR,10000000,0,10000000,11.313045699964277,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

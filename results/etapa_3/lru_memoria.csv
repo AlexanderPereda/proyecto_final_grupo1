@@ -1,0 +1,11 @@
+metodo,n,actual_mb,pico_mb,procesador,python
+CacheLRU (propia),1000,0.097576,0.097803,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),1000,0.07492,0.075068,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),10000,0.905296,0.905544,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),10000,0.659184,0.659332,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),100000,10.595384,10.595607,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),100000,9.142504,9.787392,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),1000000,97.556424,97.556672,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),1000000,79.537488,79.537636,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),10000000,908.438616,908.438843,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),10000000,700.285696,700.285844,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
