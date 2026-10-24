@@ -11,7 +11,7 @@ import random
 
 import pytest
 
-from src.stage4_bplustree import ArbolBMas, Hoja, Interno, capacidad_hoja, capacidad_interno, clave
+from src.etapa_4.bplustree import ArbolBMas, Hoja, Interno, capacidad_hoja, capacidad_interno, clave
 
 PAGINA_CHICA = 128
 

@@ -16,16 +16,20 @@ Operaciones:
 - insertar: O(log_B n), con división de nodos que puede subir hasta la raíz.
 - carga_masiva: O(n) a partir de entradas ordenadas, llenando las páginas de izquierda a derecha.
 - eliminar: O(log_B n). Quita la entrada de su hoja sin fusionar nodos.
+
+notebooks/etapa4_indexacion_bplustree.ipynb importa este código y lo explica en los pasos 2 a 5.
 """
 
 import json
 import struct
 
-from . import config
-from .etapa_1.stage1_preprocess import merge_sort
-from .etapa_3.storage import RUTA_CATALOGO, CacheLRU
+from .. import config
+from ..etapa_1.stage1_preprocess import merge_sort
+from ..etapa_3.storage import RUTA_CATALOGO, CacheLRU
 
-RUTA_INDICE_PRECIO = config.CARPETA_INTERIM / "etapa4_indice_precio.bpt"
+# Salidas de la etapa en data/interim/<CATEGORIA>/etapa_4/
+CARPETA_ETAPA4 = config.CARPETA_INTERIM / "etapa_4"
+RUTA_INDICE_PRECIO = CARPETA_ETAPA4 / "indice_precio.bpt"
 TAM_PAGINA = 4096
 CAPACIDAD_BUFFER = 256            # páginas que el buffer pool mantiene en memoria
 LLENADO_CARGA_MASIVA = 0.9        # fracción de cada página que ocupa la carga masiva
