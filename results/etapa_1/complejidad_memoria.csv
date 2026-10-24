@@ -1,0 +1,33 @@
+experimento,metodo,n,actual_mb,pico_mb
+A. ordenación,merge_sort (propio),1000,0.066088,0.083896
+A. ordenación,"sorted() (Timsort, C)",1000,0.008,0.012024
+B. búsqueda,búsqueda binaria (propia),1000,0.0,0.000208
+B. búsqueda,bisect_left (C),1000,0.0,7.6e-05
+B. búsqueda,búsqueda lineal,1000,5.6e-05,0.00028
+C. deduplicación,merge_sort + recorrido (propio),1000,0.065064,0.083896
+C. deduplicación,sorted() + recorrido,1000,0.007888,0.015936
+C. deduplicación,set() (tabla hash),1000,0.007832,0.043744
+A. ordenación,merge_sort (propio),10000,0.198576,0.816912
+A. ordenación,"sorted() (Timsort, C)",10000,0.08,0.120072
+B. búsqueda,búsqueda binaria (propia),10000,0.001247,0.001479
+B. búsqueda,bisect_left (C),10000,0.0,7.6e-05
+B. búsqueda,búsqueda lineal,10000,0.000103,0.000435
+C. deduplicación,merge_sort + recorrido (propio),10000,0.199504,0.81812
+C. deduplicación,sorted() + recorrido,10000,0.085232,0.16528
+C. deduplicación,set() (tabla hash),10000,0.085176,0.697504
+A. ordenación,merge_sort (propio),100000,0.915592,8.13096
+A. ordenación,"sorted() (Timsort, C)",100000,0.800056,1.199968
+B. búsqueda,búsqueda binaria (propia),100000,0.0,0.000208
+B. búsqueda,bisect_left (C),100000,0.0,7.6e-05
+B. búsqueda,búsqueda lineal,100000,0.002096,0.00302
+C. deduplicación,merge_sort + recorrido (propio),100000,0.915,8.129976
+C. deduplicación,sorted() + recorrido,100000,0.80104,1.601088
+C. deduplicación,set() (tabla hash),100000,0.800984,6.924544
+A. ordenación,merge_sort (propio),1000000,8.565824,81.351264
+A. ordenación,"sorted() (Timsort, C)",1000000,8.000056,11.99988
+B. búsqueda,búsqueda binaria (propia),1000000,0.0,0.000208
+B. búsqueda,bisect_left (C),1000000,0.0,7.6e-05
+B. búsqueda,búsqueda lineal,1000000,0.002992,0.003916
+C. deduplicación,merge_sort + recorrido (propio),1000000,8.564272,81.350048
+C. deduplicación,sorted() + recorrido,1000000,8.448784,16.448832
+C. deduplicación,set() (tabla hash),1000000,8.448728,55.606304
