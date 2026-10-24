@@ -21,11 +21,10 @@ import numpy as np
 import pyarrow.parquet as pq
 
 from . import config
-from .stage2_heap import MinHeap
-from .stage3_storage import RUTA_CATALOGO, TablaHash
+from .etapa_2.stage2_heap import MinHeap
+from .etapa_3.storage import RUTA_CATALOGO, RUTA_ESTADOS, TablaHash
 from .stage4_bplustree import RUTA_INDICE_PRECIO, ArbolBMas
 
-RUTA_ESTADOS = config.CARPETA_INTERIM / "etapa3_estado_productos.parquet"
 RUTA_VECTORES = config.CARPETA_INTERIM / "etapa5_vectores.npz"
 RUTA_VECINOS = config.CARPETA_INTERIM / "etapa5_vecinos.parquet"
 TAM_HOJA = 32

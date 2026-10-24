@@ -11,6 +11,8 @@ Estructuras propias de la etapa:
   producto a través de la caché, actualiza el estado dinámico del producto y la matriz.
 
 `dict`, `OrderedDict` y la búsqueda lineal se usan solo como líneas base en los experimentos.
+
+notebooks/etapa3_almacenamiento_cache.ipynb importa este código y lo explica en los pasos 2 a 6.
 """
 
 import json
@@ -20,14 +22,20 @@ from collections import Counter
 
 import pyarrow.parquet as pq
 
-from . import config
-from .events import Event
-from .stage1_preprocess import normalizar_precio
+from .. import config
+from ..events import Event
+from ..etapa_1.stage1_preprocess import normalizar_precio
 
 # ----- Parámetros de la etapa ----------------------------------------------------
 
 RUTA_EVENTOS_ETAPA2 = config.CARPETA_INTERIM / "etapa2_eventos.jsonl"    # entrada: salida de la etapa 2
-RUTA_CATALOGO = config.CARPETA_INTERIM / "etapa3_catalogo.jsonl"          # registros en disco
+
+# Salidas de la etapa en data/interim/<CATEGORIA>/etapa_3/
+CARPETA_ETAPA3 = config.CARPETA_INTERIM / "etapa_3"
+RUTA_CATALOGO = CARPETA_ETAPA3 / "catalogo.jsonl"                        # registros en disco
+RUTA_ESTADOS = CARPETA_ETAPA3 / "estado_productos.parquet"
+RUTA_MATRIZ = CARPETA_ETAPA3 / "matriz_usuario_producto.npz"
+RUTA_METRICAS = CARPETA_ETAPA3 / "metricas.json"
 COLUMNAS_CATALOGO = ["parent_asin", "title", "main_category", "categories", "price",
                      "average_rating", "rating_number", "store"]
 CAPACIDAD_CACHE = 50_000          # productos que la LRU mantiene en memoria

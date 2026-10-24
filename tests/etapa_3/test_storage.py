@@ -9,7 +9,7 @@ import random
 import pytest
 
 from src.events import Event
-from src.stage3_storage import (AlmacenCatalogo, CacheLRU, EtapaAlmacenamiento, MatrizDispersa,
+from src.etapa_3.storage import (AlmacenCatalogo, CacheLRU, EtapaAlmacenamiento, MatrizDispersa,
                                 TablaHash, _registro_producto, leer_eventos, stock_inicial)
 
 

@@ -22,8 +22,8 @@ import json
 import struct
 
 from . import config
-from .stage1_preprocess import merge_sort
-from .stage3_storage import RUTA_CATALOGO, CacheLRU
+from .etapa_1.stage1_preprocess import merge_sort
+from .etapa_3.storage import RUTA_CATALOGO, CacheLRU
 
 RUTA_INDICE_PRECIO = config.CARPETA_INTERIM / "etapa4_indice_precio.bpt"
 TAM_PAGINA = 4096
