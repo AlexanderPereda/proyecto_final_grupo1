@@ -1,4 +1,4 @@
-"""Configuración central de las etapas 0, 1 y 2.
+"""Configuración central del pipeline.
 
 Es el único lugar del proyecto donde se escriben la categoría, las rutas de los datos y los
 parámetros del experimento. Los notebooks, `src/` y los tests importan estos valores.
