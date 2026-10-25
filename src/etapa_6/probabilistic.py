@@ -12,10 +12,16 @@ Estructuras propias de la etapa:
   etapa 2. El Bloom Filter reconoce cuentas, tarjetas y dispositivos señalados; el
   Count-Min Sketch estima las compras por tarjeta en la ventana. Toda alerta se verifica con
   una estructura exacta antes de bloquear la operación.
+- dividir_listas: parte las listas de señalados de la etapa 0 en las claves que conoce el
+  detector y las nuevas, para que la evaluación no sea circular.
+- ejecutar_etapa: recorre el stream de la etapa 2 con el detector, escribe las salidas de la
+  etapa y evalúa las decisiones contra la verdad de referencia de la etapa 0.
 
-Las k (o d) posiciones de una clave se obtienen por doble hashing, g_i(x) = h1(x) + i·h2(x),
-con h1 y h2 tomados de un único BLAKE2b de 128 bits (Kirsch y Mitzenmacher, 2006). Es
-determinista entre ejecuciones, a diferencia del hash() de Python.
+Las k posiciones de una clave en el Bloom Filter y sus d posiciones en el Count-Min Sketch, una
+por fila, son valores independientes de 64 bits tomados de un único BLAKE2b de la clave
+(`posiciones`). Es determinista entre ejecuciones, a diferencia del hash() de Python.
+`hashes_base` da los dos valores del doble hashing, g_i(x) = h1(x) + i·h2(x) (Kirsch y
+Mitzenmacher, 2006), que el notebook usa solo para compararlo con las posiciones independientes.
 
 `set` y `dict` se usan solo como líneas base exactas en los experimentos.
 
@@ -25,11 +31,17 @@ notebooks/etapa6_filtrado_probabilistico.ipynb importa este código y lo explica
 import hashlib
 import json
 import math
+import random
+import struct
+import time
+import tracemalloc
 from array import array
 from collections import Counter
 
+import numpy as np
+
 from .. import config
-from ..etapa_3.storage import TablaHash
+from ..etapa_3.storage import RUTA_EVENTOS_ETAPA2, TablaHash, leer_eventos
 
 RUTA_LISTAS = config.CARPETA_INTERIM / "listas_senalados.json"          # entrada: listas de la etapa 0
 
@@ -37,6 +49,8 @@ RUTA_LISTAS = config.CARPETA_INTERIM / "listas_senalados.json"          # entrad
 CARPETA_ETAPA6 = config.CARPETA_INTERIM / "etapa_6"
 RUTA_ALERTAS = CARPETA_ETAPA6 / "alertas.jsonl"                         # salida: etapas 8 y 9
 RUTA_BLOQUEADAS = CARPETA_ETAPA6 / "ordenes_bloqueadas.json"
+RUTA_METRICAS = CARPETA_ETAPA6 / "metricas.json"                        # conteos, tiempos, memoria y evaluación
+RUTA_COMPRAS = CARPETA_ETAPA6 / "compras.npz"                           # por compra: CMS, conteo exacto y verdad
 
 # ----- Parámetros de la etapa ----------------------------------------------------
 
@@ -46,6 +60,7 @@ DELTA = 0.01              # probabilidad de superar esa cota
 VENTANA_S = 5 * 60        # duración de una ventana del CMS
 N_VENTANAS = 288          # ventanas retenidas (24 h) para tolerar eventos que llegan tarde
 UMBRAL = 5                # compras con la misma tarjeta en la ventana actual + la anterior
+FRACCION_CONOCIDA = 0.5   # fracción de cada lista de señalados que conoce el detector
 
 
 # ----- Hash ------------------------------------------------------------------------
@@ -55,6 +70,27 @@ def hashes_base(clave):
     todas las posiciones cuando el tamaño es potencia de 2."""
     d = hashlib.blake2b(clave.encode("utf-8"), digest_size=16).digest()
     return int.from_bytes(d[:8], "little"), int.from_bytes(d[8:], "little") | 1
+
+
+_VALORES_64 = [struct.Struct(f"<{i}Q") for i in range(9)]        # i enteros de 64 bits
+
+
+def posiciones(clave, cantidad, modulo):
+    """`cantidad` posiciones independientes en [0, modulo) para una clave.
+
+    Cada posición es un valor de 64 bits de un BLAKE2b de la clave, reducido módulo `modulo`.
+    Un BLAKE2b de 64 bytes da 8 valores; si hacen falta más, se calcula otro con un salt distinto.
+    """
+    datos = clave.encode("utf-8")
+    if cantidad <= 8:                                                  # caso habitual: un solo BLAKE2b
+        digest = hashlib.blake2b(datos, digest_size=8 * cantidad).digest()
+        return [v % modulo for v in _VALORES_64[cantidad].unpack(digest)]
+    resultado = []
+    for bloque in range(math.ceil(cantidad / 8)):
+        faltan = min(cantidad - len(resultado), 8)
+        digest = hashlib.blake2b(datos, digest_size=8 * faltan, salt=bloque.to_bytes(16, "little")).digest()
+        resultado.extend(v % modulo for v in _VALORES_64[faltan].unpack(digest))
+    return resultado
 
 
 # ----- Bloom Filter ----------------------------------------------------------------
@@ -82,9 +118,7 @@ class BloomFilter:
         return cls(m, k)
 
     def _posiciones(self, clave):
-        h1, h2 = hashes_base(clave)
-        m = self.m
-        return [(h1 + i * h2) % m for i in range(self.k)]
+        return posiciones(clave, self.k, self.m)
 
     def agregar(self, clave):
         bits = self.bits
@@ -119,7 +153,8 @@ class CountMinSketch:
 
     Actualizar y estimar cuestan O(d). Con w = ⌈e/ε⌉ y d = ⌈ln(1/δ)⌉ (Cormode y
     Muthukrishnan, 2005), la estimación f̂ cumple f <= f̂ <= f + ε·N con probabilidad
-    1 - δ, donde N es la suma de todas las cuentas.
+    1 - δ, donde N es la suma de todas las cuentas. La posición de una clave en cada fila es
+    un valor independiente de `posiciones`, como pide esa cota.
     """
 
     def __init__(self, w, d):
@@ -134,16 +169,12 @@ class CountMinSketch:
         return cls(math.ceil(math.e / epsilon), math.ceil(math.log(1 / delta)))
 
     def agregar(self, clave, cuenta=1):
-        h1, h2 = hashes_base(clave)
-        w = self.w
-        for i, fila in enumerate(self.filas):
-            fila[(h1 + i * h2) % w] += cuenta
+        for fila, p in zip(self.filas, posiciones(clave, self.d, self.w)):
+            fila[p] += cuenta
         self.total += cuenta
 
     def estimar(self, clave):
-        h1, h2 = hashes_base(clave)
-        w = self.w
-        return min(fila[(h1 + i * h2) % w] for i, fila in enumerate(self.filas))
+        return min(fila[p] for fila, p in zip(self.filas, posiciones(clave, self.d, self.w)))
 
     def limpiar(self):
         for fila in self.filas:
@@ -224,6 +255,32 @@ def cargar_listas(ruta=RUTA_LISTAS):
     return json.loads(ruta.read_text(encoding="utf-8"))
 
 
+TIPOS_SENALADOS = (("cuentas", "cuenta"), ("tarjetas", "tarjeta"), ("dispositivos", "dispositivo"))
+
+
+def claves_senaladas(listas):
+    """Claves del Bloom Filter: cada valor con su tipo como prefijo, por ejemplo "tarjeta:pay_…"."""
+    return [f"{prefijo}:{valor}" for tipo, prefijo in TIPOS_SENALADOS for valor in listas[tipo]]
+
+
+def dividir_listas(listas, fraccion=FRACCION_CONOCIDA, semilla=config.SEED):
+    """Parte cada lista de señalados en las claves que conoce el detector y las nuevas.
+
+    La etapa 0 usa las claves de las listas en todas sus ráfagas de fraude. Si el detector las
+    conociera todas, detectaría todo el fraude por construcción. Con una fracción conocida, las
+    demás representan defraudadores que todavía no están en la lista y que solo la regla de
+    ráfaga puede detectar. Devuelve (conocidas, nuevas), con la misma forma que listas.
+    """
+    rng = random.Random(semilla)
+    conocidas, nuevas = {}, {}
+    for tipo, _ in TIPOS_SENALADOS:
+        valores = sorted(listas[tipo])
+        rng.shuffle(valores)
+        corte = round(fraccion * len(valores))
+        conocidas[tipo], nuevas[tipo] = valores[:corte], valores[corte:]
+    return conocidas, nuevas
+
+
 class DetectorFraude:
     """Revisa las compras y alertas de pago, en el orden de servicio de la etapa 2.
 
@@ -244,8 +301,7 @@ class DetectorFraude:
 
     def __init__(self, listas, p_fp=P_FP, epsilon=EPSILON, delta=DELTA, ventana_s=VENTANA_S,
                  n_ventanas=N_VENTANAS, umbral=UMBRAL):
-        claves = ([f"cuenta:{c}" for c in listas["cuentas"]] + [f"tarjeta:{t}" for t in listas["tarjetas"]]
-                  + [f"dispositivo:{d}" for d in listas["dispositivos"]])
+        claves = claves_senaladas(listas)
         self.bloom = BloomFilter.para(len(claves), p_fp)
         self.exacta = TablaHash(len(claves))
         for c in claves:
@@ -335,3 +391,111 @@ class DetectorFraude:
     def memoria_bytes(self):
         """Memoria de las estructuras probabilísticas (sin la verificación exacta)."""
         return self.bloom.memoria_bytes + self.cms.memoria_bytes
+
+
+# ----- Ejecución sobre el stream ---------------------------------------------------
+
+def ejecutar_etapa(conocidas, listas, ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_alertas=RUTA_ALERTAS,
+                   ruta_bloqueadas=RUTA_BLOQUEADAS, ruta_metricas=RUTA_METRICAS, ruta_compras=RUTA_COMPRAS):
+    """Ejecuta la etapa 6 sobre el stream de la etapa 2, en su orden de servicio, y evalúa el detector.
+
+    El detector conoce solo `conocidas`. La evaluación usa `listas`, las listas completas de la
+    etapa 0: un evento es fraude si su cuenta está en la lista de cuentas, porque solo las ráfagas
+    de fraude usan esas cuentas. El fraude se separa según tenga alguna clave conocida o sus tres
+    claves nuevas. La verdad de referencia, el conteo exacto de órdenes por (tarjeta, ventana) y
+    las claves distintas consultadas se usan solo para evaluar; el detector no los consulta.
+
+    Escribe las alertas, las órdenes bloqueadas, las métricas y, por compra, la estimación del CMS,
+    el conteo exacto, si es fraude y si tiene alguna clave conocida. Devuelve las métricas.
+    """
+    cuentas_fraude = set(listas["cuentas"])                        # solo para evaluar
+    claves_conocidas = set(claves_senaladas(conocidas))            # solo para evaluar
+
+    tracemalloc.start()
+    detector = DetectorFraude(conocidas)
+    memoria_detector = tracemalloc.get_traced_memory()[0]
+    tracemalloc.stop()
+
+    ventana_s = detector.cms.ventana_s
+    exacto_ventana = Counter()                     # (tarjeta, ventana) -> órdenes distintas: línea base exacta
+    ordenes_contadas = set()
+    estimado, conteo, fraude, conocida = [], [], [], []           # una posición por compra
+    evaluacion = Counter()
+    ordenes_bloqueadas = set()
+    en_bloom = {}                                  # clave no conocida -> si da positivo en el Bloom Filter
+    eventos = 0
+    t_detector = 0.0
+    t0 = time.perf_counter()
+
+    ruta_alertas.parent.mkdir(parents=True, exist_ok=True)
+    with open(ruta_alertas, "w", encoding="utf-8") as salida:
+        for e in leer_eventos(ruta_eventos):
+            eventos += 1
+            t = time.perf_counter()
+            alerta = detector.procesar(e)
+            t_detector += time.perf_counter() - t
+
+            if e.event_type in ("purchase", "payment_alert"):
+                es_fraude = e.user_id in cuentas_fraude
+                claves = [f"{tipo}:{valor}" for tipo, valor in (("cuenta", e.user_id), ("tarjeta", e.payment_id),
+                                                                ("dispositivo", e.device_id)) if valor is not None]
+                con_clave_conocida = any(c in claves_conocidas for c in claves)
+                for c in claves:
+                    if c not in claves_conocidas and c not in en_bloom:
+                        en_bloom[c] = c in detector.bloom
+                decision = alerta["decision"] if alerta is not None else "aprobar"
+                evaluacion[f"{decision}_{'fraude' if es_fraude else 'legitimo'}"] += 1
+                if es_fraude:
+                    evaluacion[f"{decision}_fraude_{'conocido' if con_clave_conocida else 'nuevo'}"] += 1
+                evaluacion[f"{e.event_type}_{'fraude' if es_fraude else 'legitimo'}"] += 1
+                if e.event_type == "purchase" and e.payment_id is not None:
+                    v = int(e.ts // ventana_s)
+                    if e.order_id not in ordenes_contadas:
+                        ordenes_contadas.add(e.order_id)
+                        exacto_ventana[(e.payment_id, v)] += 1
+                    estimado.append(detector.cms.estimar(e.payment_id, e.ts))
+                    conteo.append(exacto_ventana[(e.payment_id, v)] + exacto_ventana.get((e.payment_id, v - 1), 0))
+                    fraude.append(es_fraude)
+                    conocida.append(con_clave_conocida)
+            if alerta is not None:
+                alerta["fraude_real"] = e.user_id in cuentas_fraude
+                salida.write(json.dumps(alerta) + "\n")
+                if alerta["decision"] == "bloquear" and e.order_id is not None:
+                    ordenes_bloqueadas.add(e.order_id)
+            if eventos % 2_000_000 == 0:
+                print(f"{eventos:,} eventos ({time.perf_counter() - t0:.0f} s)", flush=True)
+
+    estimado, conteo = np.array(estimado, dtype=np.int32), np.array(conteo, dtype=np.int32)
+    fraude, conocida = np.array(fraude, dtype=bool), np.array(conocida, dtype=bool)
+    np.savez_compressed(ruta_compras, estimado=estimado, conteo=conteo, fraude=fraude, conocida=conocida)
+    ruta_bloqueadas.write_text(json.dumps(sorted(ordenes_bloqueadas)), encoding="utf-8")
+
+    ev = evaluacion
+    alertas_fraude = ev["bloquear_fraude"] + ev["revisar_fraude"]
+    alertas_legitimas = ev["bloquear_legitimo"] + ev["revisar_legitimo"]
+    total_fraude = alertas_fraude + ev["aprobar_fraude"]
+    error = estimado.astype(np.int64) - conteo
+    metricas = {
+        "eventos": eventos, "detector": dict(detector.metricas), "evaluacion": dict(evaluacion),
+        "precision_alertas": alertas_fraude / max(1, alertas_fraude + alertas_legitimas),
+        "recall_alertas": alertas_fraude / max(1, total_fraude),
+        "precision_bloqueos": ev["bloquear_fraude"] / max(1, ev["bloquear_fraude"] + ev["bloquear_legitimo"]),
+        "recall_bloqueos": ev["bloquear_fraude"] / max(1, total_fraude),
+        "ordenes_bloqueadas": len(ordenes_bloqueadas),
+        "cms_descartados_por_tardios": detector.cms.descartados,
+        "cms_error_medio": float(error.mean()), "cms_error_max": int(error.max()),
+        "cms_subestimaciones": int((error < 0).sum()),
+        "cms_compras_con_error": int((error > 0).sum()), "compras": len(error),
+        "tiempo_total_s": time.perf_counter() - t0, "tiempo_detector_s": t_detector,
+        "us_por_evento_revisado": t_detector / max(1, detector.metricas["revisados"]) * 1e6,
+        "memoria_bloom_bytes": detector.bloom.memoria_bytes, "memoria_cms_bytes": detector.cms.memoria_bytes,
+        "memoria_detector_tracemalloc_bytes": memoria_detector,
+        "bloom": {"m": detector.bloom.m, "k": detector.bloom.k, "n": detector.bloom.n,
+                  "tasa_fp_teorica": detector.bloom.tasa_fp_teorica()},
+        "bloom_claves_no_conocidas": len(en_bloom), "bloom_falsos_positivos_distintos": sum(en_bloom.values()),
+        "cms": {"w": detector.cms.sketches[0].w, "d": detector.cms.sketches[0].d,
+                "ventana_s": ventana_s, "n_ventanas": len(detector.cms.sketches), "umbral": detector.umbral},
+        "pares_tarjeta_ventana_exactos": len(exacto_ventana),
+    }
+    ruta_metricas.write_text(json.dumps(metricas, indent=2), encoding="utf-8")
+    return metricas
