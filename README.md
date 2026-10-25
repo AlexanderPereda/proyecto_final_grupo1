@@ -25,7 +25,7 @@ como revisor crítico de dicho trabajo.
 | Cristina | 0 – 2 | Ingesta y buffer · Preprocesamiento por lotes · Cola con prioridades | `etapa-0-2-cristina` |
 | Carlos | 3 – 5 | Almacenamiento, lookup y caché · Indexación B+Tree · Índice multidimensional y KNN exacto | `etapa-3-5-carlos` |
 | Aris | 6 | Filtrado probabilístico (Bloom Filter + Count-Min Sketch) | `etapa-6-aris` |
-| Axel | 7 | Similitud aproximada (conjuntos + ANN vectorial) | `main` |
+| Axel | 7 | Similitud aproximada (conjuntos + ANN vectorial) | `etapa-7-axel` |
 | Jesús | 8 – 9 | Grafo de dominio (influencia + comunidades) · Servicio y visualización | `etapa-8-9-jesus` |
 
 Axel es el mantenedor principal del repositorio.
@@ -56,7 +56,8 @@ templates/   Plantillas estándar del equipo (commits, handoffs, etc.)
 - Antes de empezar cada sesión de trabajo, el integrante comprueba que está en su rama y trae los últimos cambios de esa rama desde GitHub.
 - Todo commit se realiza en la rama propia y sigue el formato de [templates/commit.md](templates/commit.md).
 - Todo push se realiza a la rama propia.
-- Ningún integrante trabaja, hace commit ni hace push en `main` ni en la rama de otro integrante.
+- Ningún integrante trabaja, hace commit ni hace push en la rama de otro integrante.
+- En `main` solo se trabaja cuando el mantenedor principal lo indica, y solo sobre el informe propio en `docs/`. Antes de cada push a `main` se ejecuta `git pull origin main`; si aparece un conflicto, se detiene el trabajo y se avisa al mantenedor.
 
 ### Integración a `main`
 
