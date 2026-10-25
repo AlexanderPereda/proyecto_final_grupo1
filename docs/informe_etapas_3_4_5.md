@@ -12,7 +12,7 @@ Las etapas 3, 4 y 5 resuelven la consulta de productos del escenario B. La etapa
 | --- | --- | --- | --- | --- |
 | 3. Almacenamiento, lookup y caché | Consultar productos por `parent_asin`, actualizar su estado y registrar interacciones | Tabla hash con direccionamiento abierto, caché LRU y matriz dispersa (DOK y CSR) | O(1) esperado por operación | Sondeo medio de 2.048 posiciones frente a 2.051 teóricas; 95.6 % de aciertos en la caché y latencia 7 veces menor que sin caché |
 | 4. Indexación principal | Consultar productos por rango de precio | B+Tree en disco con páginas de 4 KB y buffer pool | O(log_B n) lecturas por búsqueda, O(log_B n + k / B) por rango | 4 lecturas de página por búsqueda a 10M, frente a 22 de la búsqueda binaria en un archivo ordenado |
-| 5. Índice multidimensional y KNN exacto | Encontrar productos similares y filtrar por varios atributos | KD-Tree global y un KD-Tree por categoría, con corte por la mediana | ≈ O(log n) por consulta en dimensión baja | 0.19 ms por consulta a 10M puntos, 2 100 veces menos que la fuerza bruta; mismas distancias que la fuerza bruta en 3 000 consultas reales |
+| 5. Índice multidimensional y KNN exacto | Encontrar productos similares y filtrar por varios atributos | KD-Tree global y un KD-Tree por categoría, con corte por la mediana | ≈ O(log n) por consulta en dimensión baja | 0.58 ms por consulta a 10M puntos, 1 418 veces menos que la fuerza bruta; mismas distancias que la fuerza bruta en 3 000 consultas reales |
 
 Todas las estructuras evaluadas se implementaron a mano y se compararon con alternativas exactas o de la biblioteca estándar en tamaños de 1K a 10M, con semilla 42. Las etapas reutilizan estructuras de las etapas anteriores. La etapa 4 ordena con el merge sort de la etapa 1, y la etapa 5 mantiene sus candidatos en el min-heap de la etapa 2.
 
@@ -30,14 +30,15 @@ El dataset no trae inventario. La disponibilidad se obtiene de un stock sintéti
 | Origen | Artefacto | Destino | Uso |
 | --- | --- | --- | --- |
 | Etapa 2 | `etapa2_eventos.jsonl` | Etapa 3 | Stream que actualiza la caché, el estado de los productos y la matriz |
-| Etapa 3 | `etapa3_catalogo.jsonl` | Etapas 4, 5 y 9 | Catálogo en disco con el precio convertido a número |
-| Etapa 3 | `etapa3_estado_productos.parquet` | Etapas 4, 5 y 9 | Contadores, stock, disponibilidad y precio observado en el stream |
-| Etapa 3 | `etapa3_matriz_usuario_producto.npz` | Etapas 7 y 9 | Matriz CSR de interacciones usuario × producto |
-| Etapa 4 | `etapa4_indice_precio.bpt` | Etapas 5 y 9 | Índice de precios en disco |
-| Etapa 5 | `etapa5_vectores.npz` | Etapa 7 | Vectores normalizados de los productos |
-| Etapa 5 | `etapa5_vecinos.parquet` | Etapas 7 y 9 | 10 vecinos exactos por producto con actividad |
+| Etapa 3 | `etapa_3/catalogo.jsonl` | Etapas 4, 5 y 9 | Catálogo en disco con el precio convertido a número |
+| Etapa 3 | `etapa_3/estado_productos.parquet` | Etapas 4, 5 y 9 | Contadores, stock, disponibilidad y precio observado en el stream |
+| Etapa 3 | `etapa_3/matriz_usuario_producto.npz` | Etapas 7 y 9 | Matriz CSR de interacciones usuario × producto |
+| Etapa 3 | `etapa_3/metricas.json` | Informe | Métricas de la ejecución de la etapa 3 |
+| Etapa 4 | `etapa_4/indice_precio.bpt` | Etapas 5 y 9 | Índice de precios en disco |
+| Etapa 5 | `etapa_5/vectores.npz` | Etapa 7 | Vectores normalizados de los productos |
+| Etapa 5 | `etapa_5/vecinos.parquet` | Etapas 7 y 9 | 10 vecinos exactos por producto con actividad |
 
-Todos los artefactos están en `data/interim/<CATEGORIA>/`. El código está en `src/stage3_storage.py`, `src/stage4_bplustree.py` y `src/stage5_kdtree.py`, y cada etapa tiene un notebook que lo importa y documenta sus experimentos.
+Todos los artefactos están en `data/interim/<CATEGORIA>/`. El código está en `src/etapa_3/storage.py`, `src/etapa_4/bplustree.py` y `src/etapa_5/kdtree.py`, y cada etapa tiene un notebook que lo importa y documenta sus experimentos.
 
 ## Etapa 3. Almacenamiento, lookup y caché
 
@@ -60,7 +61,7 @@ La etapa 3 recibe cada evento de la etapa 2, consulta su producto a través de u
 | Lecturas en disco | 372 307, igual al número de fallos |
 | Productos con estado | 195 019, con 50 906 reposiciones de stock |
 | Matriz | 1 096 990 usuarios × 195 019 productos, 2 169 391 celdas no nulas; la CSR ocupa 35 MB |
-| Tiempo y memoria | 104 s (unos 10 µs por evento con la lectura del archivo) y 516 MB de pico sin el índice del catálogo |
+| Tiempo y memoria | El tiempo pasa a 202 s, 20.3 µs por evento. La memoria (500 MB al terminar y 516 MB de pico) se mantiene |
 
 La ejecución se verificó con tres igualdades. Aciertos más fallos es igual al número de eventos con producto, las lecturas en disco son iguales a los fallos y la suma de la matriz es igual a la suma de los pesos de los eventos (15 891 702).
 
@@ -68,35 +69,35 @@ La ejecución se verificó con tres igualdades. Aciertos más fallos es igual al
 
 | Experimento | Método | Pendiente log-log | Esperado |
 | --- | --- | --- | --- |
-| Construcción con n claves | `TablaHash` (propia) | 1.01 | n |
-| Construcción con n claves | `dict` (C) | 1.15 | n |
+| Construcción con n claves | `TablaHash` (propia) | 1.05 | n |
+| Construcción con n claves | `dict` (C) | 1.20 | n |
 | Consulta | `TablaHash` (propia) | 0.08 | 1 |
-| Consulta | `dict` (C) | 0.21 | 1 |
-| Consulta | Búsqueda lineal | 0.97 | n |
-| Construcción de la matriz con n interacciones | DOK propia | 0.97 | n |
-| Construcción de la matriz con n interacciones | DOK con `dict` (C) | 0.98 | n |
-| Conversión a CSR | Propia | 1.03 | nnz log nnz |
+| Consulta | `dict` (C) | 0.28 | 1 |
+| Consulta | Búsqueda lineal | 1.05 | n |
+| Construcción de la matriz con n interacciones | DOK propia | 1.02 | n |
+| Construcción de la matriz con n interacciones | DOK con `dict` (C) | 1.15 | n |
+| Conversión a CSR | Propia | 1.12 | nnz log nnz |
 
-La consulta en `TablaHash` pasa de 0.9 µs a 1K a 2.0 µs a 10M. A 1M la búsqueda lineal tarda 24.7 ms por consulta, unas 12 000 veces más. `dict` es entre 8 y 18 veces más rápido en la construcción por estar escrito en C, con el mismo orden de complejidad. Al terminar la construcción `TablaHash` ocupa entre 62 y 95 bytes por clave y `dict` entre 47 y 66, y el pico es mayor en las dos porque durante cada reconstrucción conviven los arreglos viejos y los nuevos.
+La consulta en `TablaHash` pasa de 0.66 µs a 1K a 1.38 µs con 10M. La búsqueda lineal tarda 36.5 ms con 1M, unas 33 000 veces más. `dict` es entre 9.5 y 34 veces más rápido en la construcción por estar escrito en C, con el mismo orden de complejidad. Al terminar la construcción `TablaHash` ocupa entre 55 y 96 bytes por clave y `dict` entre 47 y 66, y el pico es mayor en las dos porque durante cada reconstrucción conviven los arreglos viejos y los nuevos.
 
 La caché se evaluó con la secuencia real de 8 453 141 consultas sobre 195 019 productos distintos.
 
-![Tasa de aciertos y latencia de la caché LRU según la capacidad](../results/etapa3_lru.png)
+![Tasa de aciertos de la caché LRU según la capacidad](../results/etapa_3/lru_stream.png)
 
-*Fuente: `notebooks/etapa3_almacenamiento_cache.ipynb`, 8 453 141 consultas reales, 3 repeticiones.*
+*Fuente: `notebooks/etapa3_almacenamiento_cache.ipynb`, 8 453 141 consultas reales, 100 repeticiones de 1 000 000 consultas.*
 
-| Capacidad | Tasa de aciertos | Latencia media (`CacheLRU`) |
-| --- | --- | --- |
-| Sin caché | 0 % | 11.1 µs |
-| 1 000 | 76.7 % | 4.9 µs |
-| 10 000 | 89.1 % | 2.8 µs |
-| 50 000 | 95.6 % | 1.6 µs |
-| 100 000 | 97.2 % | 1.2 µs |
-| 250 000 | 97.7 % | 1.0 µs |
+| Capacidad | Tasa de aciertos |
+| --- | --- |
+| Sin caché | 0 % | 
+| 1 000 | 76.7 % |
+| 10 000 | 89.1 % |
+| 50 000 | 95.6 % |
+| 100 000 | 97.2 % |
+| 250 000 | 97.7 % |
 
-La cota superior es 97.7 %, porque la primera consulta de cada producto siempre es un fallo. Con 50 000 productos la caché alcanza el 98 % de esa cota con el 26 % de los productos distintos. La LRU con `OrderedDict` es 1.7 veces más rápida que la propia con la misma tasa de aciertos.
+La cota superior es 97.7 %, porque la primera consulta de cada producto siempre es un fallo. Con 50 000 productos la caché alcanza el 98 % de esa cota con el 26 % de los productos distintos. La LRU con `OrderedDict` es 1.8 veces más rápida que la propia con la misma tasa de aciertos (1.64 frente a 2.93 µs).
 
-Para medir la matriz de 1K a 10M se generaron interacciones sintéticas que reproducen cuatro proporciones del stream real. Son un usuario por cada 7.7 interacciones, 3.89 interacciones por celda, productos con distribución de Zipf de exponente 1.1 sobre el catálogo y la frecuencia real de cada tipo de evento. Con 10M interacciones sintéticas la matriz tiene 1 113 156 × 232 212 celdas y 2 437 355 no nulas, cerca de la matriz real, que viene de 8.4 millones de interacciones. La CSR sintética ocupa 38 MB, frente a unos 2 TB de la matriz densa.
+Para medir la matriz de 1K a 10M se generaron interacciones sintéticas que reproducen cuatro proporciones del stream real. Son un usuario por cada 7.7 interacciones, 3.89 interacciones por celda, productos con distribución de Zipf de exponente 1.1 sobre el catálogo y la frecuencia real de cada tipo de evento. Con 10M interacciones sintéticas la matriz tiene 1 113 156 × 232 212 celdas y 2 464 756 celdas no nulas, cerca de la matriz real, que viene de 8 438 123 interacciones. La CSR sintética ocupa 38.2 MB, frente a unos 2 TB de la matriz densa.
 
 ## Etapa 4. Indexación principal
 
@@ -114,7 +115,7 @@ La etapa 4 indexa los productos por precio en un B+Tree almacenado en disco. La 
 
 ### Construcción y actualización
 
-Las 282 534 entradas con precio del catálogo se ordenaron con el merge sort de la etapa 1 y se cargaron con la carga masiva en 4.5 s. El árbol quedó con altura 3, que es la mínima posible, 2 335 páginas (9.6 MB) y hojas al 89.7 % de ocupación. Después se insertaron uno a uno los 53 881 productos sin precio en el catálogo cuyo precio observó la etapa 3 en el stream. Cada inserción costó 74 µs, se crearon 922 páginas por divisiones y la altura no cambió. El índice quedó con 336 415 entradas y 13.3 MB.
+Las 282 534 entradas con precio del catálogo se ordenaron con el merge sort de la etapa 1 y se cargaron con la carga masiva en 11.4 s, con el merge sort incluido. El árbol quedó con altura 3, que es la mínima posible, 2 335 páginas (9.6 MB) y hojas al 89.7 % de ocupación. Después se insertaron uno a uno los 53 881 productos sin precio en el catálogo cuyo precio observó la etapa 3 en el stream. Cada inserción costó 259 µs (13.94 s en total), se crearon 922 páginas por divisiones y la altura no cambió. El índice quedó con 336 415 entradas y 13.3 MB.
 
 ### Consultas
 
@@ -132,28 +133,28 @@ Combinado con la etapa 3, el rango de 10 a 12 dólares tiene 25 841 productos, d
 
 ### Experimentos
 
-![Tiempo y lecturas por consulta puntual del B+Tree y del archivo ordenado](../results/etapa4_consulta.png)
+![Tiempo y lecturas por consulta puntual del B+Tree y del archivo ordenado](../results/etapa_4/consulta.png)
 
 *Fuente: `notebooks/etapa4_indexacion_bplustree.ipynb`, 1K a 10M entradas, 1 000 consultas por repetición.*
 
 | n | Lecturas B+Tree | Lecturas archivo ordenado | µs B+Tree | µs archivo ordenado |
 | --- | --- | --- | --- | --- |
-| 1K | 2 | 8.9 | 3.1 | 11.4 |
-| 100K | 3 | 15.9 | 27.3 | 40.3 |
-| 10M | 4 | 22.2 | 76.5 | 119.5 |
+| 1K | 2 | 8.9 | 5.8 | 15.8 |
+| 100K | 3 | 15.9 | 58.8 | 63.2 |
+| 10M | 4 | 22.2 | 178.5 | 141.2 |
 
-Sin buffer, el B+Tree leyó exactamente una página por nivel y el archivo ordenado leyó log₂ n registros. A 10M el B+Tree hizo 5.5 veces menos lecturas y fue 1.6 veces más rápido. La diferencia en tiempo es menor que en lecturas porque la caché de páginas del sistema operativo abarata las lecturas de los dos métodos.
+Sin buffer, el B+Tree leyó exactamente una página por nivel y el archivo ordenado leyó log₂ n registros. A 10M el B+Tree hizo 5.5 veces menos lecturas y fue 1.26 veces más lento que el archivo ordenado. Esto se debe a que el B+Tree decodifica la página completa, con hasta 136 entradas, mientras que el archivo ordenado decodifica un registro de 30 bytes.
 
 | Experimento | Método | Resultado |
 | --- | --- | --- |
-| Rango con n = 1M | B+Tree | 0.19 ms con k = 10, frente a 37 ms del recorrido completo; pendiente 0.88 en k entre 1K y 100K |
-| Rango con n = 1M | Recorrido completo | 32 ms con k = 100 000, igual que el B+Tree (36 ms) |
-| Construcción | Carga masiva | Pendiente 0.96, 1 µs y 0.008 páginas escritas por entrada, ocupación del 89.7 % |
-| Construcción | Inserciones en orden aleatorio | Pendiente 1.18, de 20 a 60 µs y 1.02 páginas escritas por entrada, ocupación del 68.7 % |
-| Tamaño de página | 256 B a 16 KB con n = 1M | Altura de 7 a 3; tiempo mínimo con 1 KB (65 µs), 94 µs con 4 KB |
-| Memoria | B+Tree frente a lista ordenada | 7 MB constantes desde 100K frente a 228 MB con 1M |
+| Rango con n = 1M | B+Tree | 0.22 ms con k = 10, frente a 78 ms del recorrido completo; pendiente 0.91 en k entre 1K y 100K |
+| Rango con n = 1M | Recorrido completo | 79 ms con k = 100 000, igual que el B+Tree (85 ms) |
+| Construcción | Carga masiva | Pendiente 0.97, de 1.7 a 2.5 µs y 0.008 páginas escritas por entrada, ocupación del 89.7 % |
+| Construcción | Inserciones en orden aleatorio | Pendiente 1.24, de 37 a 184 µs y 1.02 páginas escritas por entrada, ocupación del 68.7 % |
+| Tamaño de página | 256 B a 16 KB con n = 1M | Altura de 7 a 3; tiempo mínimo con 1 KB (118 µs), 157 µs con 4 KB |
+| Memoria | B+Tree frente a lista ordenada | 7 MB frente a 228 MB con 1M y 2 288 MB con 10M, 339 veces más |
 
-La ocupación de 68.7 % con inserciones aleatorias coincide con el ln 2 ≈ 69.3 % que predice Yao (1978). Con rangos que cubren el 10 % de los datos, el índice deja de ser ventajoso frente al recorrido completo. Se mantienen las páginas de 4 KB porque coinciden con la página del sistema operativo y el bloque de un SSD, y dan altura 3 hasta unos 2.8 millones de entradas. Con páginas de 8 KB o más el tiempo se duplica, porque en Python decodificar una página grande cuesta más que leerla de la caché del sistema operativo.
+La ocupación de 68.7 % con inserciones aleatorias coincide con el ln 2 ≈ 69.3 % que predice Yao (1978). Con rangos que cubren el 10 % de los datos, el índice deja de ser ventajoso frente al recorrido completo. Se mantienen las páginas de 4 KB porque coinciden con la página del sistema operativo y el bloque de un SSD, y dan altura 3 hasta unos 2.8 millones de entradas. Con 8 KB el tiempo es 1.7 veces el de 4 KB y con 16 KB es 2.5 veces, porque en Python decodificar una página grande cuesta más que leerla de la caché del sistema operativo.
 
 ## Etapa 5. Índice multidimensional y KNN exacto
 
@@ -171,35 +172,35 @@ La etapa 5 representa cada producto con precio como un punto de 4 dimensiones y 
 
 ### Resultados
 
-El índice tiene 336 415 productos de 607 categorías, de los que 193 416 tuvieron actividad en el stream. El KD-Tree global tiene 32 737 nodos y altura 15, que corresponde a las 14 divisiones por la mitad que llevan a hojas de 32 puntos o menos más el nivel de las hojas. Se construyó en 1.4 s.
+El índice tiene 336 415 productos de 607 categorías, de los que 193 416 tuvieron actividad en el stream. El KD-Tree global tiene 32 737 nodos y altura 15, que corresponde a las 14 divisiones por la mitad que llevan a hojas de 32 puntos o menos más el nivel de las hojas. Se construyó en 2.8 s y ocupa 70.9 MB.
 
-En 1 000 productos elegidos al azar, sin filtro, con el filtro sobre el árbol global y con el árbol de la categoría, el KD-Tree devolvió las mismas distancias que la fuerza bruta en las 3 000 consultas. Dentro de la categoría, el filtro sobre el árbol global tardó 7.9 ms por consulta y el árbol de la categoría 0.20 ms, 40 veces menos. Con ese árbol, los 10 vecinos de los 193 422 productos con actividad se calcularon en 70 s. La consulta por caja "precio entre 10 y 20 dólares, calificación de al menos 4.5 y al menos 1 000 calificaciones" devolvió 4 195 productos tras evaluar 8 700 puntos, en 3.4 ms. El B+Tree de la etapa 4 más un filtro obtuvo los mismos productos en 171 ms, porque primero recupera los 100 715 productos del rango de precio.
+En 1 000 productos elegidos al azar, sin filtro, con el filtro sobre el árbol global y con el árbol de la categoría, el KD-Tree devolvió las mismas distancias que la fuerza bruta en las 3 000 consultas. Dentro de la categoría, el filtro sobre el árbol global tardó 14.8 ms por consulta y el árbol de la categoría 0.27 ms, 55 veces menos. Con ese árbol, los 10 vecinos de los 193 422 productos con actividad se calcularon en 159 s (0.41 ms por consulta). La consulta por caja "precio entre 10 y 20 dólares, calificación de al menos 4.5 y al menos 1 000 calificaciones" devolvió 4 195 productos tras evaluar 8 700 puntos, en 6.8 ms. El B+Tree de la etapa 4 más un filtro obtuvo los mismos productos en 338 ms, porque primero recupera los 100 715 productos del rango de precio.
 
 ### Experimentos
 
 | Experimento | Método | Pendiente log-log | Esperado |
 | --- | --- | --- | --- |
-| KNN según n, d = 4 | KD-Tree (propio) | 0.08 | log n |
+| KNN según n, d = 4 | KD-Tree (propio) | 0.09 | log n |
 | KNN según n, d = 4 | Fuerza bruta (numpy) | 1.03 | n |
-| Construcción | KD-Tree (propio) | 1.08 | n log n |
-| KNN según k, n = 1M | KD-Tree (propio) | 0.73 | Creciente con k |
-| KNN según k, n = 1M | Fuerza bruta (numpy) | 0.00 | Constante |
+| Construcción | KD-Tree (propio) | 1.11 | n log n |
+| KNN según k, n = 1M | KD-Tree (propio) | 0.72 | Creciente con k |
+| KNN según k, n = 1M | Fuerza bruta (numpy) | -0.01 | Constante |
 
-Los experimentos según n y según k usan los vectores reales remuestreados con ruido hasta 10M. A 10M el KD-Tree responde en 190 µs y evalúa unos 400 puntos por consulta, mientras que la fuerza bruta tarda 403 ms. Con 1K puntos la fuerza bruta es 2.3 veces más rápida, porque numpy calcula 1 000 distancias en C más rápido de lo que Python recorre el árbol, y el punto de cruce está cerca de 10K.
+Los experimentos según n y según k usan los vectores reales remuestreados con ruido hasta 10M. A 10M el KD-Tree responde en 577 µs y evalúa unos 400 puntos por consulta, mientras que la fuerza bruta tarda 817 ms. Con 1K puntos la fuerza bruta es 3.2 veces más rápida, porque numpy calcula 1 000 distancias en C más rápido de lo que Python recorre el árbol. Con 10K el KD-Tree ya es 1.3 veces más rápido, así que el punto de cruce está entre 1K y 10K.
 
-![Fracción de puntos evaluados y tiempo por consulta según la dimensión](../results/etapa5_knn_dimension.png)
+![Fracción de puntos evaluados y tiempo por consulta según la dimensión](../results/etapa_5/knn_dimension.png)
 
-*Fuente: `notebooks/etapa5_kdtree_knn.ipynb`, 100 000 puntos uniformes, 5 repeticiones de 100 consultas.*
+*Fuente: `notebooks/etapa5_kdtree_knn.ipynb`, 100 000 puntos uniformes, 100 repeticiones de 10 consultas.*
 
 | Dimensión | Fracción evaluada por el KD-Tree | µs KD-Tree | µs fuerza bruta |
 | --- | --- | --- | --- |
-| 2 | 0.07 % | 58 | 2 281 |
-| 4 | 0.36 % | 154 | 2 822 |
-| 8 | 6.8 % | 1 723 | 4 700 |
-| 16 | 100 % | 25 232 | 8 600 |
-| 32 | 100 % | 26 757 | 15 915 |
+| 2 | 0.07 % | 184 | 5 788 |
+| 4 | 0.37 % | 473 | 7 499 |
+| 8 | 7.0 % | 5 679 | 11 678 |
+| 16 | 100 % | 66 640 | 18 213 |
+| 32 | 100 % | 87 963 | 36 685 |
 
-Desde d = 16 la poda no descarta ninguna región y el KD-Tree evalúa todos los puntos, como describen Weber, Schek y Blott (1998). Este resultado justifica que la etapa 7 use búsqueda aproximada para vectores de dimensión alta, con el KNN exacto de esta etapa como referencia. El KD-Tree ocupa entre 48 y 55 bytes por punto con d = 4, y su pico de construcción es el doble por las copias temporales de numpy.
+Desde d = 16 la poda no descarta ninguna región y el KD-Tree evalúa todos los puntos, como describen Weber, Schek y Blott (1998). Este resultado justifica que la etapa 7 use búsqueda aproximada para vectores de dimensión alta, con el KNN exacto de esta etapa como referencia. El KD-Tree ocupa entre 48 y 53 bytes por punto con d = 4, y su pico de construcción es el doble por las copias temporales de numpy.
 
 ## Integración y verificación
 
@@ -208,15 +209,15 @@ Desde d = 16 la poda no descarta ninguna región y el KD-Tree evalúa todos los 
 | `notebooks/etapa3_almacenamiento_cache.ipynb` | Tabla hash, catálogo en disco, caché LRU, matriz dispersa, ejecución sobre el stream y experimentos |
 | `notebooks/etapa4_indexacion_bplustree.ipynb` | Formato de páginas, carga masiva, inserción del stream, consultas y experimentos |
 | `notebooks/etapa5_kdtree_knn.ipynb` | Vectores, KD-Tree global y por categoría, verificación contra la fuerza bruta, consultas y experimentos |
-| `src/` | `stage3_storage.py`, `stage4_bplustree.py` y `stage5_kdtree.py` |
-| `tests/` | 59 tests de la lectura del stream, la tabla hash, la caché, la matriz, el B+Tree y el KD-Tree; todos pasan junto con los 45 de las etapas 0 a 2 |
+| `src/` | `etapa_3/storage.py`, `etapa_4/bplustree.py` y `etapa_5/kdtree.py` |
+| `tests/etapa_3/`, `tests/etapa_4/` y `tests/etapa_5/` | 59 tests de la lectura del stream, la tabla hash, la caché, la matriz, el B+Tree y el KD-Tree; todos pasan junto con los 45 de las etapas 0 a 2 |
 | `results/` | CSV y gráficas de todos los experimentos |
 
 Los tests comparan cada estructura con una referencia exacta. La tabla hash se compara con `dict` en secuencias aleatorias de inserciones y eliminaciones, la caché con un modelo de lista, la CSR con la matriz densa, el B+Tree con listas ordenadas en páginas de 128 bytes que fuerzan varios niveles, y el KD-Tree global y por categoría con la fuerza bruta. Los tests del B+Tree verifican además sus invariantes, las claves ordenadas, los separadores coherentes y todas las hojas a la misma profundidad, y que una búsqueda lea exactamente una página por nivel.
 
 ### Condiciones de los experimentos
 
-Las etapas se ejecutaron con la salida completa de la etapa 2, generada a partir de 1 500 000 reseñas de `Office_Products` con semilla 42. Los tamaños fueron 1K, 10K, 100K, 1M y 10M, con 100 repeticiones para 1K y 10K, 20 para 100K, 5 para 1M y 1 para 10M, salvo donde cada notebook indica otra cantidad. El experimento de la caché usó 3 repeticiones, porque cada una sirve 8.5 millones de consultas. Las estructuras O(n) por operación se midieron hasta 1M. Durante cada medición se desactivó el recolector de basura. La memoria actual y pico se midió con `tracemalloc`. La plataforma fue Windows 11, Intel64 Family 6 Model 186, 20 núcleos lógicos, 25.4 GB de RAM y Python 3.12.10.
+Las etapas se ejecutaron con la salida completa de la etapa 2, generada a partir de 1 500 000 reseñas de `Office_Products` con semilla 42. Los tamaños fueron 1K, 10K, 100K, 1M y 10M. Las operaciones tienen 100 repeticiones en todos los tamaños, incluido 10M. Las construcciones tienen 100 repeticiones o menos, con la justificación que imprime cada notebook. El experimento de la caché usó 100 repeticiones de 1 000 000 consultas. Las estructuras O(n) por operación se midieron hasta 1M. Durante cada medición se desactivó el recolector de basura. La memoria actual y pico se midió con `tracemalloc`. La plataforma fue Windows 10, AMD64 Family 23 Model 24, 8 núcleos lógicos, 32.1 GB de RAM y Python 3.12.0, con semilla 42.
 
 ## Limitaciones y decisiones corregidas
 
@@ -232,7 +233,7 @@ Siete decisiones se corrigieron después de medir, y cinco limitaciones quedan d
 | Reportar solo la memoria pico en la etapa 3 y solo la actual en la etapa 4 | El enunciado pide memoria actual y pico | Las tres etapas reportan las dos |
 | Cargar todos los eventos de la etapa 2 en memoria | Con 9.9 millones de eventos los objetos ocuparían varios GB | Los eventos se leen del archivo línea por línea |
 | Caché de 10 000 productos | Con el stream completo hay 195 019 productos distintos y la tasa de aciertos baja a 89.1 % | Caché de 50 000 productos, con 95.6 % de aciertos |
-| Filtro por categoría sobre el KD-Tree global | La búsqueda dentro de la categoría tardaba 7.9 ms por consulta | Un KD-Tree por categoría, con 0.20 ms por consulta |
+| Filtro por categoría sobre el KD-Tree global | La búsqueda dentro de la categoría tardaba 14.8 ms por consulta | Un KD-Tree por categoría, con 0.27 ms por consulta |
 
 ### Limitaciones
 
