@@ -24,7 +24,7 @@ import pyarrow.parquet as pq
 
 from .. import config
 from ..events import Event
-from ..etapa_1.stage1_preprocess import normalizar_precio
+from ..etapa_1.preprocess import normalizar_precio
 
 # ----- Parámetros de la etapa ----------------------------------------------------
 

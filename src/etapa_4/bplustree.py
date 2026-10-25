@@ -24,7 +24,7 @@ import json
 import struct
 
 from .. import config
-from ..etapa_1.stage1_preprocess import merge_sort
+from ..etapa_1.preprocess import merge_sort
 from ..etapa_3.storage import RUTA_CATALOGO, CacheLRU
 
 # Salidas de la etapa en data/interim/<CATEGORIA>/etapa_4/

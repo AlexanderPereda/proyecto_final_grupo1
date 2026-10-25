@@ -23,7 +23,7 @@ import numpy as np
 import pyarrow.parquet as pq
 
 from .. import config
-from ..etapa_2.stage2_heap import MinHeap
+from ..etapa_2.heap import MinHeap
 from ..etapa_3.storage import RUTA_CATALOGO, RUTA_ESTADOS, TablaHash
 from ..etapa_4.bplustree import RUTA_INDICE_PRECIO, ArbolBMas
 

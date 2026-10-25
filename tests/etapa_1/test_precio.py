@@ -6,7 +6,7 @@ El catálogo de Office_Products guarda `price` como texto mezclado: "2.68", None
 
 import pytest
 
-from src.etapa_1.stage1_preprocess import normalizar_precio, validar_y_normalizar
+from src.etapa_1.preprocess import normalizar_precio, validar_y_normalizar
 
 
 @pytest.mark.parametrize("crudo, esperado", [
