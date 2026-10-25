@@ -1,0 +1,16 @@
+metodo,n,actual_mb,pico_mb,matriz_mb,procesador,python
+construcción del KD-Tree,1000,0.053432,0.10644,0.032,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta del KD-Tree,1000,0.00364,0.006416,0.032,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta de la fuerza bruta,1000,0.00176,0.065256,0.032,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construcción del KD-Tree,10000,0.531512,1.01888,0.32,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta del KD-Tree,10000,0.003704,0.005904,0.32,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta de la fuerza bruta,10000,0.001824,0.640296,0.32,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construcción del KD-Tree,100000,4.997752,9.805976,3.2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta del KD-Tree,100000,0.003656,0.006568,3.2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta de la fuerza bruta,100000,0.001824,6.400296,3.2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construcción del KD-Tree,1000000,48.095974,96.105094,32.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta del KD-Tree,1000000,0.003656,0.007208,32.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta de la fuerza bruta,1000000,0.001824,64.000296,32.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construcción del KD-Tree,10000000,526.194728,1006.20612,320.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta del KD-Tree,10000000,0.003736,0.006768,320.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta de la fuerza bruta,10000000,0.003216,640.000296,320.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

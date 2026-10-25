@@ -1,0 +1,11 @@
+metodo,n,actual_mb,pico_mb,procesador,python
+TablaHash (propia),1000,0.095471,0.10128,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+dict (C),1000,0.047012,0.051248,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+TablaHash (propia),10000,0.651137,0.850704,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+dict (C),10000,0.4807,0.48082,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+TablaHash (propia),100000,7.101769,13.746717,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+dict (C),100000,6.637844,8.207076,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+TablaHash (propia),1000000,61.663852,109.530764,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+dict (C),1000000,58.7513,65.703984,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+TablaHash (propia),10000000,548.546444,878.234492,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+dict (C),10000000,526.060532,526.060652,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

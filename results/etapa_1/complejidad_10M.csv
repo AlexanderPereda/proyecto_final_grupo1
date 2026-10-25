@@ -1,0 +1,9 @@
+experimento,metodo,n,segundos,actual_mb,pico_mb,procesador,python
+A. ordenación,merge_sort (propio),10000000,45.98973770000157,89.213008,827.291592,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. ordenación,"sorted() (Timsort, C)",10000000,2.217542799999137,80.0,120.000032,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. búsqueda,búsqueda binaria (propia),10000000,0.0035969000000477536,0.001247,0.001495,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. búsqueda,bisect_left (C),10000000,0.0014656000003014924,0.0,7.6e-05,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. búsqueda,búsqueda lineal,10000000,122.99002999999902,0.006072,0.007052,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+C. deduplicación,merge_sort + recorrido (propio),10000000,50.895755200001076,79.31352,827.291592,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+C. deduplicación,sorted() + recorrido,10000000,8.531950399999914,79.197424,159.197472,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+C. deduplicación,set() (tabla hash),10000000,3.3049895000003744,79.195672,446.601312,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0

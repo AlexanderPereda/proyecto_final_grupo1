@@ -1,0 +1,3 @@
+forma,n,primer_registro_s,total_s,actual_mb,pico_mb,procesador,python
+generador,10000000,0.1033187999855727,11.387471099966206,0.022247,4.119316,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista,10000000,10.595223400043324,11.595239599933848,3689.362967,3689.648865,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

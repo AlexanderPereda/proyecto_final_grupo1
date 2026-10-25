@@ -1,0 +1,6 @@
+capacidad,consultas,aciertos,tasa_aciertos,procesador,python
+1000,8453141,6481743,0.7667851512236694,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+10000,8453141,7532245,0.8910587200663044,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+50000,8453141,8080834,0.9559563717202871,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+100000,8453141,8219001,0.9723014202649642,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+250000,8453141,8258122,0.9769294041114421,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

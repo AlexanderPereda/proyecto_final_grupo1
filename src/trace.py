@@ -26,10 +26,10 @@ from array import array
 from collections import Counter
 from dataclasses import asdict
 from . import config
-from .generator import SEED, GeneradorEventos, cargar_catalogo, leer_resenas
-from .stage0_queue import ColaCircular
-from .stage1_preprocess import Preprocesador
-from .stage2_heap import AGING_S, ColaPrioridadEventos
+from .etapa_0.generator import SEED, GeneradorEventos, cargar_catalogo, leer_resenas
+from .etapa_0.queue import ColaCircular
+from .etapa_1.preprocess import Preprocesador
+from .etapa_2.heap import AGING_S, ColaPrioridadEventos
 
 MAX_PASOS_POR_EVENTO = 20      # cota para reservar los arreglos de memoria de la pasada de medición
 

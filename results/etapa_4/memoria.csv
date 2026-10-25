@@ -1,0 +1,16 @@
+metodo,n,actual_mb,pico_mb,procesador,python
+carga masiva,1000,0.249975,0.266648,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+"B+Tree en disco (propio), abierto",1000,0.25854,0.262776,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,0.228744,0.229067,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+carga masiva,10000,2.323656,2.344346,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+"B+Tree en disco (propio), abierto",10000,2.341135,2.346187,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,2.280376,2.280699,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+carga masiva,100000,7.21589,7.393011,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+"B+Tree en disco (propio), abierto",100000,7.198739,7.217682,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,22.701984,22.702307,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+carga masiva,1000000,7.049309,9.011832,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+"B+Tree en disco (propio), abierto",1000000,7.024887,7.04654,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000000,227.898896,227.899219,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+carga masiva,10000000,6.352811,25.225415,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+"B+Tree en disco (propio), abierto",10000000,6.753578,6.784255,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000000,2288.192656,2288.192979,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

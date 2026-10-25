@@ -1,0 +1,301 @@
+metodo,repeticion,operaciones,lecturas_disco,segundos,procesador,python
+CacheLRU (propia),0,10000,429,0.028229199931956828,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),1,10000,408,0.026214999961666763,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),2,10000,432,0.026182500063441694,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),3,10000,425,0.028848999994806945,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),4,10000,425,0.02901419997215271,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),5,10000,471,0.027980500017292798,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),6,10000,436,0.02972230000887066,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),7,10000,429,0.05622669996228069,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),8,10000,399,0.030344200087711215,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),9,10000,407,0.030405099969357252,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),10,10000,423,0.02947489998769015,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),11,10000,444,0.026352799963206053,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),12,10000,416,0.02960700006224215,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),13,10000,422,0.028638400021009147,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),14,10000,438,0.026673799962736666,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),15,10000,415,0.025585099938325584,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),16,10000,432,0.03072989999782294,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),17,10000,388,0.028035900089889765,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),18,10000,397,0.030164800002239645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),19,10000,391,0.026067999890074134,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),20,10000,411,0.0286885000532493,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),21,10000,445,0.029796999995596707,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),22,10000,419,0.025909099960699677,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),23,10000,441,0.02895509998779744,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),24,10000,421,0.029171000001952052,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),25,10000,408,0.0288247000426054,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),26,10000,408,0.028545700013637543,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),27,10000,371,0.02689859992824495,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),28,10000,390,0.028391700005158782,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),29,10000,376,0.05529229994863272,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),30,10000,413,0.029307299992069602,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),31,10000,398,0.029778600088320673,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),32,10000,409,0.02896839997265488,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),33,10000,386,0.028199900058098137,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),34,10000,385,0.02680939994752407,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),35,10000,381,0.025882499990984797,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),36,10000,406,0.02866019995417446,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),37,10000,428,0.02863769989926368,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),38,10000,434,0.029719099984504282,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),39,10000,411,0.028102099895477295,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),40,10000,403,0.028045800048857927,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),41,10000,440,0.026606200030073524,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),42,10000,450,0.030493600061163306,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),43,10000,403,0.02748240006621927,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),44,10000,437,0.028679000097326934,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),45,10000,437,0.028082599979825318,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),46,10000,418,0.028512499993667006,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),47,10000,434,0.026983699994161725,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),48,10000,403,0.026420800015330315,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),49,10000,409,0.031976399943232536,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),50,10000,407,0.027279699919745326,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),51,10000,399,0.028226700029335916,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),52,10000,397,0.027976799989119172,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),53,10000,381,0.02998180000577122,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),54,10000,401,0.02728829998522997,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),55,10000,399,0.028639100026339293,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),56,10000,444,0.03127370006404817,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),57,10000,406,0.03287440002895892,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),58,10000,430,0.028828599955886602,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),59,10000,408,0.027727200067602098,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),60,10000,438,0.029162100050598383,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),61,10000,433,0.03014320007059723,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),62,10000,411,0.025763200013898313,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),63,10000,427,0.031382299959659576,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),64,10000,446,0.03120840003248304,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),65,10000,424,0.02888570004142821,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),66,10000,406,0.02893010003026575,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),67,10000,407,0.028309999965131283,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),68,10000,392,0.030487600015476346,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),69,10000,409,0.028029299923218787,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),70,10000,387,0.02575599995907396,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),71,10000,389,0.02787019999232143,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),72,10000,445,0.028481199988164008,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),73,10000,388,0.027005900046788156,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),74,10000,367,0.026863700011745095,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),75,10000,409,0.030272800009697676,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),76,10000,428,0.0309889999916777,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),77,10000,422,0.027539299917407334,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),78,10000,432,0.02829859999474138,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),79,10000,451,0.030446200049482286,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),80,10000,415,0.02839069999754429,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),81,10000,448,0.031288200058043,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),82,10000,405,0.02749580005183816,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),83,10000,391,0.03088850004132837,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),84,10000,454,0.029511400032788515,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),85,10000,409,0.032761899987235665,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),86,10000,381,0.026852400042116642,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),87,10000,472,0.02848639991134405,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),88,10000,397,0.028582099941559136,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),89,10000,427,0.028389299986883998,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),90,10000,437,0.030951699940487742,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),91,10000,424,0.02874600002542138,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),92,10000,409,0.029316100059077144,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),93,10000,416,0.026973300031386316,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),94,10000,441,0.029852300067432225,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),95,10000,424,0.029992999974638224,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),96,10000,446,0.030041699996218085,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),97,10000,420,0.02964389999397099,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),98,10000,451,0.034079000004567206,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+CacheLRU (propia),99,10000,418,0.028607099899090827,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),0,10000,429,0.015414500026963651,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),1,10000,408,0.017214099992997944,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),2,10000,432,0.014840099960565567,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),3,10000,425,0.01742829999420792,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),4,10000,425,0.01663689990527928,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),5,10000,471,0.01693789998535067,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),6,10000,436,0.016366099938750267,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),7,10000,429,0.017820999957621098,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),8,10000,399,0.01379339990671724,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),9,10000,407,0.0182177999522537,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),10,10000,423,0.01460420002695173,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),11,10000,444,0.01658980001229793,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),12,10000,416,0.014620999922044575,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),13,10000,422,0.015809200005605817,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),14,10000,438,0.016483799903653562,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),15,10000,415,0.01665729994419962,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),16,10000,432,0.015529499971307814,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),17,10000,388,0.016482200007885695,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),18,10000,397,0.014909200021065772,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),19,10000,391,0.01503659994341433,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),20,10000,411,0.014500499935820699,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),21,10000,445,0.016327599994838238,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),22,10000,419,0.015556300058960915,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),23,10000,441,0.018024399993009865,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),24,10000,421,0.016019799979403615,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),25,10000,408,0.018063200055621564,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),26,10000,408,0.016837700037285686,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),27,10000,371,0.01621040003374219,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),28,10000,390,0.0142823999049142,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),29,10000,376,0.013497999985702336,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),30,10000,413,0.016609700047411025,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),31,10000,398,0.014175399905070662,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),32,10000,409,0.01701329997740686,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),33,10000,386,0.014116899925284088,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),34,10000,385,0.015546699985861778,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),35,10000,381,0.015431899926625192,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),36,10000,406,0.014532799948938191,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),37,10000,428,0.016116200014948845,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),38,10000,434,0.01741480000782758,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),39,10000,411,0.01571389997843653,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),40,10000,403,0.01766690006479621,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),41,10000,440,0.01566619996447116,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),42,10000,450,0.016065499978139997,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),43,10000,403,0.014505699975416064,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),44,10000,437,0.01798370003234595,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),45,10000,437,0.016892799991182983,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),46,10000,418,0.016886499943211675,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),47,10000,434,0.01857950002886355,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),48,10000,403,0.01621599995996803,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),49,10000,409,0.01643540000077337,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),50,10000,407,0.016545600024983287,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),51,10000,399,0.014622400049120188,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),52,10000,397,0.014213399961590767,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),53,10000,381,0.016107400064356625,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),54,10000,401,0.016932700062170625,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),55,10000,399,0.016321000060997903,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),56,10000,444,0.015402200049720705,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),57,10000,406,0.019164200057275593,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),58,10000,430,0.01675720000639558,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),59,10000,408,0.017904300009831786,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),60,10000,438,0.01849040004890412,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),61,10000,433,0.0169210999738425,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),62,10000,411,0.016462800092995167,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),63,10000,427,0.015676100039854646,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),64,10000,446,0.02609559998381883,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),65,10000,424,0.01714509993325919,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),66,10000,406,0.021605100017040968,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),67,10000,407,0.014331900049000978,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),68,10000,392,0.017469100072048604,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),69,10000,409,0.014208200038410723,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),70,10000,387,0.01859369990415871,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),71,10000,389,0.01489760004915297,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),72,10000,445,0.016079199966043234,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),73,10000,388,0.016068299999460578,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),74,10000,367,0.015757800079882145,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),75,10000,409,0.01421310007572174,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),76,10000,428,0.014954000012949109,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),77,10000,422,0.016366599942557514,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),78,10000,432,0.017028399975970387,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),79,10000,451,0.016538800089620054,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),80,10000,415,0.016445300076156855,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),81,10000,448,0.015320700011216104,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),82,10000,405,0.015503799892030656,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),83,10000,391,0.015100199962034822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),84,10000,454,0.017807599972002208,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),85,10000,409,0.016030600061640143,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),86,10000,381,0.01464140007738024,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),87,10000,472,0.017950800014659762,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),88,10000,397,0.013609800022095442,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),89,10000,427,0.01594790001399815,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),90,10000,437,0.014888299978338182,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),91,10000,424,0.017727200058288872,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),92,10000,409,0.016403599991463125,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),93,10000,416,0.01654959993902594,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),94,10000,441,0.017548499978147447,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),95,10000,424,0.01791699999012053,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),96,10000,446,0.014984300010837615,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),97,10000,420,0.019962599966675043,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),98,10000,451,0.018974100006744266,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+LRU con OrderedDict (C),99,10000,418,0.015073999995365739,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),0,10000,10000,0.18900680006481707,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),1,10000,10000,0.2095668000401929,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),2,10000,10000,0.20368919998873025,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),3,10000,10000,0.19482049997895956,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),4,10000,10000,0.21265460003633052,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),5,10000,10000,0.19113509997259825,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),6,10000,10000,0.20332640002015978,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),7,10000,10000,0.2011721000308171,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),8,10000,10000,0.1877280999906361,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),9,10000,10000,0.2122545000165701,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),10,10000,10000,0.20289870002306998,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),11,10000,10000,0.19685690000187606,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),12,10000,10000,0.20124829991254956,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),13,10000,10000,0.19523519999347627,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),14,10000,10000,0.19110400008503348,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),15,10000,10000,0.20033550006337464,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),16,10000,10000,0.1848820000886917,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),17,10000,10000,0.19704940007068217,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),18,10000,10000,0.19454439997207373,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),19,10000,10000,0.182610800024122,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),20,10000,10000,0.20038010005373508,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),21,10000,10000,0.20311150001361966,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),22,10000,10000,0.18922970001585782,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),23,10000,10000,0.20782970008440316,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),24,10000,10000,0.1837404000107199,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),25,10000,10000,0.21040380001068115,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),26,10000,10000,0.19659850001335144,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),27,10000,10000,0.1860185000114143,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),28,10000,10000,0.2029517999617383,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),29,10000,10000,0.19722600001841784,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),30,10000,10000,0.19158860004972667,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),31,10000,10000,0.20185770001262426,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),32,10000,10000,0.19494789990130812,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),33,10000,10000,0.19318349997047335,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),34,10000,10000,0.19932319992221892,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),35,10000,10000,0.1935797999612987,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),36,10000,10000,0.1939397999085486,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),37,10000,10000,0.20338830002583563,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),38,10000,10000,0.19326139998156577,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),39,10000,10000,0.1982902999734506,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),40,10000,10000,0.196399400010705,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),41,10000,10000,0.20152710005640984,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),42,10000,10000,0.20080970006529242,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),43,10000,10000,0.1924216999905184,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),44,10000,10000,0.198602500022389,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),45,10000,10000,0.19882230006624013,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),46,10000,10000,0.19120170001406223,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),47,10000,10000,0.20690479991026223,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),48,10000,10000,0.2003448000177741,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),49,10000,10000,0.1981730000115931,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),50,10000,10000,0.19951529998797923,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),51,10000,10000,0.19268610002472997,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),52,10000,10000,0.20260389999020845,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),53,10000,10000,0.2070084000006318,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),54,10000,10000,0.18975889997091144,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),55,10000,10000,0.19786449999082834,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),56,10000,10000,0.20017359999474138,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),57,10000,10000,0.18919350008945912,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),58,10000,10000,0.20694499998353422,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),59,10000,10000,0.1904355000006035,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),60,10000,10000,0.19334190001245588,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),61,10000,10000,0.19836759997997433,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),62,10000,10000,0.19586199999321252,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),63,10000,10000,0.1959024000680074,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),64,10000,10000,0.18545750004705042,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),65,10000,10000,0.1878441000590101,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),66,10000,10000,0.20167310000397265,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),67,10000,10000,0.19982450001407415,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),68,10000,10000,0.1936676000477746,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),69,10000,10000,0.20038150006439537,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),70,10000,10000,0.18795519997365773,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),71,10000,10000,0.19322699995245785,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),72,10000,10000,0.19106640003155917,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),73,10000,10000,0.19055709999520332,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),74,10000,10000,0.1978687000228092,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),75,10000,10000,0.1997931000078097,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),76,10000,10000,0.1866380999563262,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),77,10000,10000,0.19866549992002547,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),78,10000,10000,0.1883426000131294,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),79,10000,10000,0.19980439997743815,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),80,10000,10000,0.19583920005243272,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),81,10000,10000,0.19018889998551458,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),82,10000,10000,0.19656800001394004,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),83,10000,10000,0.18905070004984736,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),84,10000,10000,0.19006890000309795,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),85,10000,10000,0.2000597999431193,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),86,10000,10000,0.18074219999834895,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),87,10000,10000,0.19594260002486408,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),88,10000,10000,0.20456270000431687,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),89,10000,10000,0.21571819996461272,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),90,10000,10000,0.20200059993658215,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),91,10000,10000,0.193538699997589,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),92,10000,10000,0.19633320008870214,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),93,10000,10000,0.19770840008277446,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),94,10000,10000,0.189479700056836,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),95,10000,10000,0.20990370004437864,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),96,10000,10000,0.18839150003623217,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),97,10000,10000,0.20071689994074404,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),98,10000,10000,0.20136269996874034,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+sin caché (archivo),99,10000,10000,0.19235020002815872,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

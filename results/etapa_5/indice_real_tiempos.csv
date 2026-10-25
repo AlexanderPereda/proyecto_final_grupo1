@@ -1,0 +1,401 @@
+consulta,metodo,repeticion,operaciones,segundos,procesador,python
+vecinos en la categoría,filtro sobre el árbol global,0,10,0.2886899000732228,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,0,10,0.0023476999485865235,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,1,10,0.07324990001507103,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,1,10,0.002681500045582652,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,2,10,0.23690289992373437,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,2,10,0.0025423000333830714,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,3,10,0.1070119000505656,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,3,10,0.002967699896544218,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,4,10,0.07092510000802577,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,4,10,0.0024811000330373645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,5,10,0.05532499996479601,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,5,10,0.002815400017425418,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,6,10,0.09831379994284362,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,6,10,0.0027117999270558357,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,7,10,0.09358089999295771,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,7,10,0.003251599962823093,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,8,10,0.2188038999447599,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,8,10,0.0018509000074118376,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,9,10,0.13710870000068098,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,9,10,0.0027712000301107764,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,10,10,0.08829079999122769,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,10,10,0.002077299985103309,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,11,10,0.0991750000976026,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,11,10,0.0024181000189855695,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,12,10,0.24054609995801002,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,12,10,0.002813900006003678,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,13,10,0.16602500004228204,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,13,10,0.0030175000429153442,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,14,10,0.06814099999610335,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,14,10,0.0031441999599337578,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,15,10,0.06074989994522184,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,15,10,0.004727700026705861,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,16,10,0.1057936999714002,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,16,10,0.003605599980801344,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,17,10,0.07909700006712228,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,17,10,0.003091000020503998,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,18,10,0.041158100008033216,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,18,10,0.002585600013844669,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,19,10,0.10744569997768849,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,19,10,0.002197299967519939,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,20,10,0.24228680005762726,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,20,10,0.00240470003336668,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,21,10,0.10768890008330345,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,21,10,0.0026536999503150582,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,22,10,0.04469249991234392,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,22,10,0.0032725000055506825,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,23,10,0.12596790003590286,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,23,10,0.0029972000047564507,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,24,10,0.060187899973243475,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,24,10,0.002130200038664043,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,25,10,0.5221419000299647,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,25,10,0.0017563001019880176,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,26,10,0.4414498000405729,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,26,10,0.0026672000531107187,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,27,10,0.09603070002049208,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,27,10,0.0020754000870510936,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,28,10,0.07443480007350445,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,28,10,0.004128100001253188,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,29,10,0.4071919000707567,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,29,10,0.002634800039231777,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,30,10,0.11371409997809678,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,30,10,0.002600699895992875,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,31,10,0.11160159995779395,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,31,10,0.0028593000024557114,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,32,10,0.18481379991862923,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,32,10,0.0025474000722169876,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,33,10,0.07045799994375557,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,33,10,0.003054599976167083,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,34,10,0.2562105000251904,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,34,10,0.002231599995866418,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,35,10,0.09772710001561791,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,35,10,0.00266219989862293,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,36,10,0.0955646000802517,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,36,10,0.00286829995457083,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,37,10,0.19233640003949404,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,37,10,0.002277499996125698,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,38,10,0.09100439993198961,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,38,10,0.0023233999963849783,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,39,10,0.0993047000374645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,39,10,0.0020409999415278435,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,40,10,0.25620960001833737,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,40,10,0.0026217999402433634,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,41,10,0.18357620004098862,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,41,10,0.001801899983547628,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,42,10,0.05852449999656528,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,42,10,0.002926599932834506,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,43,10,0.1018340999726206,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,43,10,0.001987399999052286,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,44,10,0.34884840005543083,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,44,10,0.0021213999716565013,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,45,10,0.20155849994625896,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,45,10,0.002645100001245737,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,46,10,0.10207059991080314,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,46,10,0.002238399931229651,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,47,10,0.1722350000636652,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,47,10,0.0022765001049265265,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,48,10,0.10436559992376715,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,48,10,0.003652599989436567,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,49,10,0.08749870001338422,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,49,10,0.0035696999402716756,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,50,10,0.06437609996646643,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,50,10,0.0028723999857902527,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,51,10,0.057919700047932565,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,51,10,0.0026279999874532223,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,52,10,0.1529272000771016,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,52,10,0.002203500014729798,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,53,10,0.16110899997875094,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,53,10,0.0026979000540450215,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,54,10,0.11559019994456321,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,54,10,0.002497200039215386,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,55,10,0.15224209998268634,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,55,10,0.0029427000554278493,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,56,10,0.2067073000362143,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,56,10,0.0016440000617876649,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,57,10,0.20518469996750355,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,57,10,0.002420000033453107,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,58,10,0.0663854000158608,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,58,10,0.0024844000581651926,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,59,10,0.0923494000453502,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,59,10,0.0027413000352680683,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,60,10,0.12447519996203482,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,60,10,0.002909099915996194,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,61,10,0.17660190002061427,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,61,10,0.002362700062803924,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,62,10,0.32800920004956424,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,62,10,0.002507900004275143,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,63,10,0.21010480006225407,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,63,10,0.0031663000117987394,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,64,10,0.19612249999772757,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,64,10,0.0024591999826952815,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,65,10,0.10572709992993623,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,65,10,0.005077700014226139,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,66,10,0.11257080000359565,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,66,10,0.002862999914214015,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,67,10,0.10186140006408095,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,67,10,0.0020414000609889627,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,68,10,0.2593464999226853,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,68,10,0.002478300011716783,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,69,10,0.21993879997171462,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,69,10,0.003925699973478913,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,70,10,0.08307789999525994,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,70,10,0.0034832999808713794,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,71,10,0.08087479998357594,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,71,10,0.0031222000252455473,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,72,10,0.20616429997608066,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,72,10,0.002359700039960444,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,73,10,0.1110257999971509,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,73,10,0.002480700029991567,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,74,10,0.3553118999116123,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,74,10,0.0032079999800771475,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,75,10,0.061082699918188155,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,75,10,0.00237479992210865,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,76,10,0.30998799996450543,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,76,10,0.0024666000390425324,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,77,10,0.14068349997978657,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,77,10,0.002148799947462976,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,78,10,0.1628765999339521,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,78,10,0.004075199947692454,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,79,10,0.15771589998621494,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,79,10,0.002218300011008978,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,80,10,0.10799709998536855,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,80,10,0.0019387999782338738,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,81,10,0.21029669989366084,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,81,10,0.0032571000047028065,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,82,10,0.06722540000919253,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,82,10,0.0026919000083580613,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,83,10,0.10925189999397844,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,83,10,0.002814500010572374,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,84,10,0.06290549994446337,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,84,10,0.0023541999980807304,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,85,10,0.12496060004923493,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,85,10,0.002357900026254356,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,86,10,0.2268454999430105,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,86,10,0.004256399930454791,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,87,10,0.1540723000653088,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,87,10,0.002922399900853634,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,88,10,0.046438600053079426,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,88,10,0.002875400008633733,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,89,10,0.13391380000393838,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,89,10,0.0023295999271795154,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,90,10,0.12224289996083826,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,90,10,0.001972300000488758,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,91,10,0.04597430001012981,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,91,10,0.0027230000123381615,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,92,10,0.05796660005580634,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,92,10,0.00289339991286397,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,93,10,0.06403520004823804,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,93,10,0.002580299973487854,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,94,10,0.1206125000026077,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,94,10,0.0026940000243484974,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,95,10,0.10120869998354465,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,95,10,0.002547499956563115,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,96,10,0.19353060005232692,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,96,10,0.002016899990849197,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,97,10,0.17570539994630963,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,97,10,0.002341900020837784,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,98,10,0.10119359998498112,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,98,10,0.002307899994775653,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,filtro sobre el árbol global,99,10,0.344863299978897,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+vecinos en la categoría,árbol de la categoría,99,10,0.0025800999719649553,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,0,1,0.007124700001440942,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,0,1,0.287624099990353,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,1,1,0.006007699994370341,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,1,1,0.29476389999035746,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,2,1,0.005732399993576109,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,2,1,0.29974070005118847,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,3,1,0.005967700039036572,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,3,1,0.291790800052695,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,4,1,0.00644179992377758,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,4,1,0.2965664000948891,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,5,1,0.005618800059892237,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,5,1,0.29792279994580895,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,6,1,0.006131700007244945,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,6,1,0.3166129000019282,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,7,1,0.007090999977663159,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,7,1,0.3002394000068307,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,8,1,0.006664999993517995,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,8,1,0.40001090010628104,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,9,1,0.005578799988143146,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,9,1,0.337086399900727,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,10,1,0.008338699932210147,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,10,1,0.3289191999938339,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,11,1,0.0063032000325620174,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,11,1,0.35594340006355196,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,12,1,0.008056499995291233,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,12,1,0.3446195999858901,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,13,1,0.00634269998408854,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,13,1,0.34817279991693795,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,14,1,0.006916199927218258,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,14,1,0.44126009999308735,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,15,1,0.006810000049881637,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,15,1,0.43281439994461834,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,16,1,0.007482600049115717,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,16,1,0.3551960000768304,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,17,1,0.005667900084517896,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,17,1,0.35777020000386983,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,18,1,0.005701599991880357,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,18,1,0.31784709997009486,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,19,1,0.007156500010751188,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,19,1,0.3139942000852898,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,20,1,0.007521499996073544,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,20,1,0.3302980000153184,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,21,1,0.006379099912010133,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,21,1,0.35052119998726994,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,22,1,0.006914400029927492,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,22,1,0.3474160999758169,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,23,1,0.007951000006869435,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,23,1,0.359209300018847,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,24,1,0.007752000004984438,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,24,1,0.3667208000551909,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,25,1,0.00620800000615418,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,25,1,0.35434199997689575,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,26,1,0.0057743999641388655,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,26,1,0.3504184000194073,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,27,1,0.0057465999852865934,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,27,1,0.35402630001772195,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,28,1,0.0061030000215396285,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,28,1,0.35728829994332045,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,29,1,0.0070090999361127615,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,29,1,0.3542547000106424,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,30,1,0.008678599959239364,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,30,1,0.34809710003901273,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,31,1,0.008878300082869828,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,31,1,0.35090649989433587,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,32,1,0.005792600102722645,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,32,1,0.3683870000531897,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,33,1,0.007541900034993887,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,33,1,0.34357349993661046,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,34,1,0.005768100032582879,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,34,1,0.3441311999922618,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,35,1,0.006527399993501604,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,35,1,0.3628963000373915,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,36,1,0.006350600044243038,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,36,1,0.3486706999829039,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,37,1,0.007251800037920475,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,37,1,0.3549082000972703,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,38,1,0.006467400002293289,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,38,1,0.35459809994790703,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,39,1,0.005741800065152347,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,39,1,0.3416147999232635,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,40,1,0.009964799974113703,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,40,1,0.3538243999937549,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,41,1,0.0068585000699386,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,41,1,0.34361470001749694,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,42,1,0.009112100000493228,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,42,1,0.3507215999998152,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,43,1,0.005805799970403314,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,43,1,0.351755200070329,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,44,1,0.006299700005911291,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,44,1,0.31086700002197176,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,45,1,0.009440799942240119,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,45,1,0.32146560004912317,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,46,1,0.005911999964155257,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,46,1,0.30411969998385757,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,47,1,0.006054700003005564,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,47,1,0.31217260006815195,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,48,1,0.005783499917015433,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,48,1,0.35857010004110634,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,49,1,0.006195400026626885,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,49,1,0.35127779992762953,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,50,1,0.007263600011356175,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,50,1,0.4102032999508083,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,51,1,0.010497200069949031,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,51,1,0.5022439999738708,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,52,1,0.012317400076426566,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,52,1,0.4737583000678569,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,53,1,0.010546499979682267,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,53,1,0.37191460002213717,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,54,1,0.008443100028671324,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,54,1,0.34484049992170185,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,55,1,0.006668400019407272,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,55,1,0.3068483000388369,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,56,1,0.006392500014044344,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,56,1,0.3042428999906406,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,57,1,0.005649999948218465,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,57,1,0.42020499997306615,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,58,1,0.009927700040861964,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,58,1,0.34951090009417385,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,59,1,0.006558099994435906,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,59,1,0.3016060999361798,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,60,1,0.006448700092732906,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,60,1,0.30420829996000975,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,61,1,0.006354300072416663,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,61,1,0.3071845999220386,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,62,1,0.005570700042881072,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,62,1,0.305848199990578,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,63,1,0.005549900000914931,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,63,1,0.3131524999625981,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,64,1,0.005707399919629097,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,64,1,0.31268959993030876,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,65,1,0.00619910005480051,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,65,1,0.29870679997839034,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,66,1,0.005814000032842159,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,66,1,0.29732999997213483,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,67,1,0.006016999948769808,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,67,1,0.3059327999362722,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,68,1,0.006324699963442981,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,68,1,0.31722770002670586,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,69,1,0.005676899920217693,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,69,1,0.30429509992245585,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,70,1,0.006386000080965459,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,70,1,0.29786890000104904,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,71,1,0.006061099935323,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,71,1,0.3145230000372976,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,72,1,0.0062460999470204115,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,72,1,0.30395460000727326,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,73,1,0.0077448999509215355,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,73,1,0.30580930004362017,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,74,1,0.005693299928680062,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,74,1,0.3103688999544829,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,75,1,0.005805700086057186,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,75,1,0.30509339994750917,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,76,1,0.007507500005885959,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,76,1,0.3075083999428898,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,77,1,0.005538500030525029,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,77,1,0.29615650000050664,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,78,1,0.005497800069861114,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,78,1,0.29750809993129224,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,79,1,0.005860899924300611,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,79,1,0.3109388999873772,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,80,1,0.00589090003632009,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,80,1,0.3109616000438109,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,81,1,0.006948099937289953,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,81,1,0.3165038999868557,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,82,1,0.0063732999842613935,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,82,1,0.44085780007299036,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,83,1,0.006924699991941452,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,83,1,0.3054717000341043,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,84,1,0.006021299981512129,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,84,1,0.31565430003684014,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,85,1,0.005862600053660572,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,85,1,0.3118198999436572,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,86,1,0.005840600002557039,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,86,1,0.32514570001512766,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,87,1,0.007438600063323975,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,87,1,0.35184270003810525,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,88,1,0.005635800072923303,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,88,1,0.3462103999918327,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,89,1,0.005672900006175041,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,89,1,0.34914299997035414,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,90,1,0.008654600009322166,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,90,1,0.35373029997572303,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,91,1,0.005806199973449111,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,91,1,0.35253669996745884,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,92,1,0.005833599949255586,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,92,1,0.38766840007156134,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,93,1,0.007342200027778745,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,93,1,0.3741094000870362,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,94,1,0.005843100021593273,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,94,1,0.3487450999673456,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,95,1,0.007010300061665475,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,95,1,0.3581403000280261,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,96,1,0.006089000031352043,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,96,1,0.31127349997404963,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,97,1,0.008753699949011207,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,97,1,0.3034963998943567,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,98,1,0.006479299976490438,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,98,1,0.31901390000712126,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,KD-Tree,99,1,0.006337100057862699,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+rango multidimensional,B+Tree de la etapa 4 + filtro,99,1,0.3039314999477938,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

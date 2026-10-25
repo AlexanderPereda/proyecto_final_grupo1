@@ -1,0 +1,1332 @@
+operacion,metodo,n,repeticion,operaciones,segundos,puntos_evaluados,altura,nodos,procesador,python
+construccion,KD-Tree (propio),1000,0,1000,0.002475299988873303,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,1,1000,0.0014976999955251813,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,2,1000,0.002617600024677813,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,3,1000,0.0023494999622926116,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,4,1000,0.0017898998921737075,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,5,1000,0.0015584999928250909,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,6,1000,0.0015051999362185597,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,7,1000,0.0015561999753117561,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,8,1000,0.0013495000312104821,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,9,1000,0.0015442000003531575,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,10,1000,0.0020571999484673142,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,11,1000,0.0013755999971181154,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,12,1000,0.0021158000454306602,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,13,1000,0.0014002000680193305,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,14,1000,0.0027333999751135707,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,15,1000,0.0016005999641492963,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,16,1000,0.0015010000206530094,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,17,1000,0.0014703000197187066,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,18,1000,0.0013873999705538154,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,19,1000,0.0013275999808683991,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,20,1000,0.0015230999561026692,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,21,1000,0.0019850999815389514,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,22,1000,0.0017341000493615866,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,23,1000,0.0014258000301197171,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,24,1000,0.0014032999752089381,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,25,1000,0.0016379000153392553,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,26,1000,0.002171300002373755,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,27,1000,0.0014652999816462398,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,28,1000,0.0018582000629976392,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,29,1000,0.001469200011342764,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,30,1000,0.0018298999639227986,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,31,1000,0.002272399957291782,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,32,1000,0.0013191000325605273,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,33,1000,0.0023262000177055597,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,34,1000,0.0028819000581279397,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,35,1000,0.00633969996124506,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,36,1000,0.0018389999167993665,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,37,1000,0.0015372999478131533,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,38,1000,0.002258199965581298,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,39,1000,0.0021281999070197344,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,40,1000,0.0014191999798640609,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,41,1000,0.0015681000659242272,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,42,1000,0.001584900077432394,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,43,1000,0.0016861000331118703,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,44,1000,0.0025572999147698283,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,45,1000,0.0014168000780045986,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,46,1000,0.0013712000800296664,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,47,1000,0.0015242999652400613,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,48,1000,0.001814100076444447,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,49,1000,0.0015509999357163906,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,50,1000,0.0014286000514402986,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,51,1000,0.002086500055156648,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,52,1000,0.0017625000327825546,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,53,1000,0.0017199000576511025,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,54,1000,0.0014842000091448426,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,55,1000,0.0012938999570906162,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,56,1000,0.0031731000635772943,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,57,1000,0.0016613999614492059,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,58,1000,0.0020708999363705516,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,59,1000,0.0022409000666812062,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,60,1000,0.0016411000397056341,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,61,1000,0.0013450999977067113,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,62,1000,0.0017160000279545784,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,63,1000,0.002935199998319149,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,64,1000,0.004144300008192658,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,65,1000,0.001588999992236495,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,66,1000,0.0018574000569060445,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,67,1000,0.0016123000532388687,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,68,1000,0.0013747999910265207,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,69,1000,0.0020396000472828746,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,70,1000,0.0018739999504759908,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,71,1000,0.0016589999431744218,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,72,1000,0.003153800033032894,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,73,1000,0.0015722999814897776,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,74,1000,0.001778300036676228,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,75,1000,0.0017496999353170395,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,76,1000,0.0014643999747931957,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,77,1000,0.0014560000272467732,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,78,1000,0.0021188000682741404,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,79,1000,0.0012999000027775764,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,80,1000,0.0013211999321356416,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,81,1000,0.0021805999567732215,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,82,1000,0.0015953000402078032,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,83,1000,0.0013841999461874366,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,84,1000,0.0018962000031024218,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,85,1000,0.0018984000198543072,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,86,1000,0.0014794000890105963,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,87,1000,0.001639300025999546,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,88,1000,0.00181940000038594,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,89,1000,0.0013834000565111637,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,90,1000,0.0013229000614956021,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,91,1000,0.0014618000714108348,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,92,1000,0.003783700056374073,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,93,1000,0.0015675999457016587,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,94,1000,0.0022411999525502324,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,95,1000,0.0016614999622106552,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,96,1000,0.001344099990092218,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,97,1000,0.0013927000109106302,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,98,1000,0.0013373000547289848,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000,99,1000,0.001930900034494698,,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,0,100,0.023790799896232784,224.71,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,0,100,0.007088799960911274,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,1,100,0.018837800016626716,220.95,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,1,100,0.00658719998318702,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,2,100,0.02138369996100664,191.79,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,2,100,0.006300700013525784,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,3,100,0.02284029999282211,225.9,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,3,100,0.006575100007466972,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,4,100,0.020919600035995245,220.13,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,4,100,0.006897800019942224,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,5,100,0.02437110000755638,235.27,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,5,100,0.006324499961920083,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,6,100,0.027344100060872734,228.0,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,6,100,0.005954400054179132,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,7,100,0.022562799975275993,227.03,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,7,100,0.006435199989937246,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,8,100,0.024734999984502792,201.34,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,8,100,0.00865819992031902,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,9,100,0.021390400012023747,221.89,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,9,100,0.006224700016900897,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,10,100,0.023728700005449355,234.41,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,10,100,0.0057249999372288585,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,11,100,0.019083600025624037,223.3,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,11,100,0.005633699940517545,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,12,100,0.01993939990643412,222.92,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,12,100,0.005418299930170178,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,13,100,0.0223204999929294,223.83,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,13,100,0.007754900027066469,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,14,100,0.020061099901795387,215.73,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,14,100,0.006761500029824674,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,15,100,0.01693629997316748,216.02,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,15,100,0.006447699968703091,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,16,100,0.02019020006991923,232.2,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,16,100,0.00554430007468909,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,17,100,0.0292022000066936,239.93,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,17,100,0.006287900032475591,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,18,100,0.019269400043413043,242.41,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,18,100,0.005781800020486116,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,19,100,0.01758799992967397,218.75,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,19,100,0.006592700025066733,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,20,100,0.02590739994775504,205.03,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,20,100,0.005831099930219352,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,21,100,0.020545699982903898,224.94,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,21,100,0.00549959996715188,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,22,100,0.019852199940942228,217.77,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,22,100,0.005976299988105893,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,23,100,0.02058979996945709,224.13,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,23,100,0.006323500070720911,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,24,100,0.022760799969546497,213.09,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,24,100,0.005730599979870021,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,25,100,0.021768599981442094,230.32,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,25,100,0.005622499971650541,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,26,100,0.018868700019083917,208.33,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,26,100,0.007440099958330393,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,27,100,0.020944599993526936,203.42,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,27,100,0.005955800064839423,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,28,100,0.02058679994661361,226.53,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,28,100,0.007494299905374646,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,29,100,0.02132639999035746,221.46,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,29,100,0.009177499916404486,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,30,100,0.01943119999486953,244.13,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,30,100,0.007010900066234171,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,31,100,0.020673099905252457,232.85,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,31,100,0.005653599975630641,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,32,100,0.020349099999293685,244.17,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,32,100,0.006924899993464351,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,33,100,0.024055499932728708,241.26,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,33,100,0.0054908000165596604,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,34,100,0.022013199981302023,222.95,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,34,100,0.00701840000692755,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,35,100,0.01908600004389882,207.74,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,35,100,0.00911950005684048,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,36,100,0.018721699947491288,224.6,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,36,100,0.006829099962487817,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,37,100,0.019814999890513718,223.83,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,37,100,0.006448199972510338,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,38,100,0.021355199976824224,222.61,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,38,100,0.007861800026148558,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,39,100,0.02314569998998195,234.46,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,39,100,0.005718600004911423,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,40,100,0.023454699898138642,231.14,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,40,100,0.010419399943202734,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,41,100,0.02077669999562204,225.87,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,41,100,0.005529899965040386,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,42,100,0.019437800045125186,215.27,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,42,100,0.005766300018876791,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,43,100,0.020880499971099198,222.47,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,43,100,0.005985700059682131,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,44,100,0.019728400046005845,217.63,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,44,100,0.005930599989369512,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,45,100,0.022463400033302605,221.36,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,45,100,0.006498500006273389,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,46,100,0.021263199974782765,228.27,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,46,100,0.0062769000651314855,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,47,100,0.022013200097717345,226.62,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,47,100,0.006237099994905293,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,48,100,0.01920910004992038,228.82,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,48,100,0.006222399999387562,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,49,100,0.018904400058090687,230.89,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,49,100,0.005926200072281063,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,50,100,0.018553100060671568,237.61,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,50,100,0.007714499952271581,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,51,100,0.01999289996456355,213.34,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,51,100,0.006459000054746866,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,52,100,0.018916100030764937,224.02,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,52,100,0.006215499946847558,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,53,100,0.018806500011123717,222.42,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,53,100,0.009337499970570207,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,54,100,0.021085800020955503,232.62,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,54,100,0.006737900082953274,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,55,100,0.01854530000127852,218.57,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,55,100,0.006749400054104626,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,56,100,0.027226499980315566,251.96,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,56,100,0.00624779995996505,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,57,100,0.02082269999664277,240.05,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,57,100,0.005815900047309697,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,58,100,0.024671099963597953,210.87,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,58,100,0.0067912000231444836,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,59,100,0.020894500077702105,213.85,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,59,100,0.00811050005722791,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,60,100,0.025442500016652048,210.94,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,60,100,0.006795200053602457,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,61,100,0.02081349992658943,218.06,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,61,100,0.006018299958668649,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,62,100,0.02298420004080981,232.88,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,62,100,0.006203100085258484,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,63,100,0.022303199977613986,215.06,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,63,100,0.005888700019568205,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,64,100,0.018760500010102987,210.82,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,64,100,0.007307899999432266,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,65,100,0.019995099981315434,215.13,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,65,100,0.005694200051948428,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,66,100,0.021615799982100725,233.86,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,66,100,0.005494800047017634,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,67,100,0.01903279998805374,201.53,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,67,100,0.005558399949222803,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,68,100,0.016798799973912537,213.25,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,68,100,0.006877699983306229,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,69,100,0.023866000003181398,225.4,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,69,100,0.005952500039711595,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,70,100,0.017766700009815395,202.72,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,70,100,0.005745899979956448,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,71,100,0.01767000008840114,217.35,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,71,100,0.0056235999800264835,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,72,100,0.01975989993661642,217.18,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,72,100,0.005460900021716952,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,73,100,0.019056799937970936,223.05,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,73,100,0.007579100085422397,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,74,100,0.022771700052544475,222.59,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,74,100,0.008106300025247037,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,75,100,0.01865510002244264,217.04,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,75,100,0.006180000025779009,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,76,100,0.01817380008287728,210.62,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,76,100,0.005511900060810149,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,77,100,0.022432400030083954,245.33,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,77,100,0.006244800053536892,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,78,100,0.020849800086580217,237.59,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,78,100,0.006761100026778877,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,79,100,0.023923899978399277,213.55,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,79,100,0.013352800044231117,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,80,100,0.019708700012415648,219.55,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,80,100,0.006122599937953055,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,81,100,0.018255900009535253,232.26,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,81,100,0.007177600055001676,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,82,100,0.023501999909058213,217.6,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,82,100,0.006940999999642372,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,83,100,0.026865399908274412,203.07,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,83,100,0.00978760002180934,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,84,100,0.026937499991618097,213.83,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,84,100,0.007267599925398827,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,85,100,0.024707600008696318,224.54,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,85,100,0.007532000076025724,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,86,100,0.028579400037415326,231.65,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,86,100,0.007468300056643784,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,87,100,0.027916999999433756,214.27,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,87,100,0.006467100000008941,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,88,100,0.02752220002003014,230.53,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,88,100,0.0064335999777540565,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,89,100,0.02126519999001175,221.66,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,89,100,0.006488900049589574,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,90,100,0.0244611999951303,218.81,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,90,100,0.007417300017550588,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,91,100,0.02096429991070181,211.72,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,91,100,0.006509700091555715,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,92,100,0.02168599993456155,229.5,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,92,100,0.00818140001501888,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,93,100,0.023443899932317436,215.78,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,93,100,0.006406300002709031,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,94,100,0.02052620006725192,231.03,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,94,100,0.00555160001385957,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,95,100,0.01852739998139441,222.22,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,95,100,0.007294799899682403,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,96,100,0.022435100050643086,221.85,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,96,100,0.005773599958047271,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,97,100,0.018387900083325803,218.43,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,97,100,0.005613100016489625,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,98,100,0.026114100008271635,226.15,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,98,100,0.005550700007006526,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000,99,100,0.02029329992365092,218.09,6.0,63.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000,99,100,0.006480799987912178,1000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,0,10000,0.02881239994894713,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,1,10000,0.026516700047068298,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,2,10000,0.02291739999782294,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,3,10000,0.024231299990788102,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,4,10000,0.021285599912516773,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,5,10000,0.029142499901354313,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,6,10000,0.021288500051014125,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,7,10000,0.027491199900396168,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,8,10000,0.029307199991308153,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,9,10000,0.026159600005485117,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,10,10000,0.025780599913559854,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,11,10000,0.02376480004750192,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,12,10000,0.02390130003914237,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,13,10000,0.025278600049205124,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,14,10000,0.056917999987490475,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,15,10000,0.022170200012624264,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,16,10000,0.02773999993223697,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,17,10000,0.029963499982841313,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,18,10000,0.03506399993784726,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,19,10000,0.025517300004139543,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,20,10000,0.029164399951696396,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,21,10000,0.025201300042681396,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,22,10000,0.026834300020709634,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,23,10000,0.023710699984803796,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,24,10000,0.027262500021606684,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,25,10000,0.03397300001233816,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,26,10000,0.020804099971428514,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,27,10000,0.03280990000348538,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,28,10000,0.02340790000744164,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,29,10000,0.03283249994274229,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,30,10000,0.027280899928882718,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,31,10000,0.022845800034701824,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,32,10000,0.03537009994033724,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,33,10000,0.026724800001829863,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,34,10000,0.03619110002182424,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,35,10000,0.02471320005133748,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,36,10000,0.024909600033424795,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,37,10000,0.0343257999047637,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,38,10000,0.026008999906480312,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,39,10000,0.023501999909058213,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,40,10000,0.03161750000435859,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,41,10000,0.023448599968105555,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,42,10000,0.05437530006747693,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,43,10000,0.03860359999816865,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,44,10000,0.03828470001462847,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,45,10000,0.027655299985781312,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,46,10000,0.031115700025111437,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,47,10000,0.02189800003543496,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,48,10000,0.025091500021517277,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,49,10000,0.028838500031270087,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,50,10000,0.025187000050209463,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,51,10000,0.029085899936035275,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,52,10000,0.025361399981193244,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,53,10000,0.022152599995024502,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,54,10000,0.03874440002255142,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,55,10000,0.030146599980071187,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,56,10000,0.024471199954859912,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,57,10000,0.022304899990558624,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,58,10000,0.023909399984404445,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,59,10000,0.03938969993032515,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,60,10000,0.025111400056630373,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,61,10000,0.02266559994313866,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,62,10000,0.03015830006916076,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,63,10000,0.021202400093898177,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,64,10000,0.026848900015465915,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,65,10000,0.02404350007418543,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,66,10000,0.025389399961568415,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,67,10000,0.029346299939788878,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,68,10000,0.02121540007647127,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,69,10000,0.026838500052690506,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,70,10000,0.023219999973662198,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,71,10000,0.04559879994485527,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,72,10000,0.027430100017227232,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,73,10000,0.02214539994020015,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,74,10000,0.03671290003694594,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,75,10000,0.0605694999685511,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,76,10000,0.026696000015363097,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,77,10000,0.032460999907925725,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,78,10000,0.02528349997010082,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,79,10000,0.028535200050100684,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,80,10000,0.031816600007005036,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,81,10000,0.02316049998626113,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,82,10000,0.02620779990684241,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,83,10000,0.027272299979813397,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,84,10000,0.033005400095134974,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,85,10000,0.03187070006970316,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,86,10000,0.029726600041612983,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,87,10000,0.02263899997342378,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,88,10000,0.025950699928216636,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,89,10000,0.0214874999364838,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,90,10000,0.035714600002393126,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,91,10000,0.03595120005775243,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,92,10000,0.020860300050117075,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,93,10000,0.02762439998332411,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,94,10000,0.036337200086563826,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,95,10000,0.028559900005348027,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,96,10000,0.023479399969801307,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,97,10000,0.025464599952101707,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,98,10000,0.02790899993851781,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000,99,10000,0.03485890000592917,,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,0,100,0.03820730000734329,252.62,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,0,100,0.03650970000308007,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,1,100,0.027277500019408762,244.28,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,1,100,0.04480969998985529,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,2,100,0.03612469998188317,271.22,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,2,100,0.03505029994994402,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,3,100,0.03624019993003458,265.56,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,3,100,0.03309889999218285,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,4,100,0.029635500046424568,282.22,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,4,100,0.038781700073741376,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,5,100,0.047330800094641745,276.85,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,5,100,0.04350260004866868,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,6,100,0.033033500076271594,277.42,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,6,100,0.045776400016620755,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,7,100,0.03088850004132837,261.79,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,7,100,0.03566349996253848,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,8,100,0.02998919994570315,270.56,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,8,100,0.04071460000704974,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,9,100,0.03297139995265752,272.7,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,9,100,0.05356460006441921,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,10,100,0.032704200013540685,255.41,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,10,100,0.033417000086046755,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,11,100,0.030442899907939136,275.72,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,11,100,0.04640500003006309,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,12,100,0.03376269992440939,287.69,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,12,100,0.03485739999450743,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,13,100,0.03740339993964881,254.51,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,13,100,0.03244370000902563,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,14,100,0.02938630001153797,267.55,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,14,100,0.03293159999884665,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,15,100,0.041871200082823634,248.25,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,15,100,0.04857839993201196,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,16,100,0.030296699958853424,274.71,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,16,100,0.11602360010147095,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,17,100,0.0944387000054121,280.14,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,17,100,0.04878670000471175,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,18,100,0.052920600050128996,267.9,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,18,100,0.07892350002657622,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,19,100,0.055552099947817624,303.01,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,19,100,0.048489400069229305,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,20,100,0.042254499974660575,280.12,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,20,100,0.059211499989032745,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,21,100,0.04611850006040186,256.58,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,21,100,0.06934759998694062,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,22,100,0.0416311000008136,259.7,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,22,100,0.06459640001412481,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,23,100,0.04609590000472963,252.05,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,23,100,0.05965539999306202,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,24,100,0.039303299970924854,258.21,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,24,100,0.06535819999407977,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,25,100,0.04589870001655072,275.99,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,25,100,0.05056270002387464,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,26,100,0.04095029993914068,267.22,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,26,100,0.07624870003201067,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,27,100,0.050419499981217086,261.24,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,27,100,0.13218549999874085,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,28,100,0.07084950001444668,267.54,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,28,100,0.11713249993044883,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,29,100,0.06568010000046343,253.53,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,29,100,0.07300790003500879,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,30,100,0.06357650004792958,253.64,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,30,100,0.06377939996309578,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,31,100,0.04967640002723783,269.35,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,31,100,0.048261200077831745,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,32,100,0.045530600007623434,281.26,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,32,100,0.09794839995447546,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,33,100,0.04798179992940277,278.85,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,33,100,0.1735520000802353,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,34,100,0.15604740008711815,255.7,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,34,100,0.11044889991171658,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,35,100,0.0501755999866873,269.88,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,35,100,0.07218400004785508,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,36,100,0.058494299999438226,281.31,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,36,100,0.11809210001956671,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,37,100,0.08898829994723201,287.51,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,37,100,0.11756789998617023,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,38,100,0.043748000054620206,273.88,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,38,100,0.06798239995259792,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,39,100,0.056657099979929626,291.83,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,39,100,0.06944250001106411,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,40,100,0.05303389998152852,269.67,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,40,100,0.07888429996091872,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,41,100,0.05078340007457882,260.05,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,41,100,0.06883990007918328,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,42,100,0.04888900008518249,276.02,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,42,100,0.07760199997574091,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,43,100,0.05859389994293451,254.73,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,43,100,0.09255619999021292,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,44,100,0.05010150000452995,299.31,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,44,100,0.08589819993358105,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,45,100,0.0716524999588728,284.14,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,45,100,0.09640529996249825,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,46,100,0.05883529991842806,284.59,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,46,100,0.06462429999373853,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,47,100,0.06154999998398125,249.35,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,47,100,0.09961839998140931,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,48,100,0.09087369998451322,269.45,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,48,100,0.13275560003239661,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,49,100,0.0781081001041457,262.48,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,49,100,0.09956599993165582,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,50,100,0.05567590007558465,269.64,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,50,100,0.09917900001164526,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,51,100,0.06670460000168532,256.32,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,51,100,0.0713910999475047,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,52,100,0.050267300102859735,279.51,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,52,100,0.10224390006624162,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,53,100,0.0735939999576658,236.93,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,53,100,0.22196590004023165,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,54,100,0.11331759998574853,294.33,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,54,100,0.07225730002392083,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,55,100,0.05704189999960363,273.05,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,55,100,0.06163230002857745,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,56,100,0.04330640006810427,275.19,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,56,100,0.06415450002532452,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,57,100,0.06289329996798187,278.12,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,57,100,0.049618500052019954,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,58,100,0.05645019991789013,293.58,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,58,100,0.0832390000578016,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,59,100,0.04693920002318919,272.58,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,59,100,0.1120257000438869,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,60,100,0.07237710000481457,278.83,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,60,100,0.08096960000693798,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,61,100,0.03793540003243834,273.66,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,61,100,0.04922439996153116,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,62,100,0.03792290005367249,267.57,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,62,100,0.057903300039470196,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,63,100,0.042864799965173006,277.66,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,63,100,0.04600490001030266,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,64,100,0.037297099945135415,258.35,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,64,100,0.04109539999626577,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,65,100,0.034637499949894845,274.71,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,65,100,0.02960959996562451,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,66,100,0.029185199993662536,268.91,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,66,100,0.04401539999525994,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,67,100,0.0288869000505656,264.64,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,67,100,0.03517940000165254,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,68,100,0.027965900022536516,284.66,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,68,100,0.03421800001524389,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,69,100,0.03185130003839731,279.82,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,69,100,0.032372300047427416,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,70,100,0.030136600020341575,244.05,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,70,100,0.03075529995840043,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,71,100,0.033045000047422945,272.29,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,71,100,0.038997999974526465,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,72,100,0.029565799981355667,270.86,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,72,100,0.03255709994118661,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,73,100,0.026547800051048398,242.03,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,73,100,0.034345900057815015,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,74,100,0.027158499928191304,270.15,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,74,100,0.03707089996896684,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,75,100,0.03091530001256615,275.42,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,75,100,0.027016400010325015,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,76,100,0.03631470003165305,269.22,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,76,100,0.041334800072945654,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,77,100,0.033320999937132,274.32,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,77,100,0.02586579998023808,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,78,100,0.033819900010712445,256.33,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,78,100,0.027727199951186776,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,79,100,0.026804699911735952,271.03,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,79,100,0.028022299986332655,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,80,100,0.031606500037014484,272.59,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,80,100,0.03978450002614409,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,81,100,0.042029600008390844,256.88,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,81,100,0.04344639996998012,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,82,100,0.03784010000526905,287.73,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,82,100,0.041543700033798814,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,83,100,0.02827070001512766,268.86,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,83,100,0.029623000067658722,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,84,100,0.030535400030203164,235.0,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,84,100,0.04040890000760555,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,85,100,0.02779209997970611,254.75,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,85,100,0.0463420000160113,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,86,100,0.03067789995111525,266.57,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,86,100,0.038251500111073256,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,87,100,0.02824659994803369,259.46,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,87,100,0.030626000021584332,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,88,100,0.028228000039234757,274.81,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,88,100,0.04628550005145371,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,89,100,0.02760070003569126,253.75,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,89,100,0.02816560002975166,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,90,100,0.030926599982194602,279.42,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,90,100,0.02714879997074604,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,91,100,0.025798300048336387,263.2,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,91,100,0.029404500033706427,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,92,100,0.03965560009237379,280.71,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,92,100,0.0380190999712795,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,93,100,0.03875239996705204,269.87,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,93,100,0.044124400010332465,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,94,100,0.05385179992299527,307.73,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,94,100,0.06230880005750805,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,95,100,0.04257990000769496,280.83,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,95,100,0.051339600002393126,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,96,100,0.03565229999367148,267.61,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,96,100,0.07520139997359365,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,97,100,0.04552919999696314,265.43,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,97,100,0.05378329998347908,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,98,100,0.06492270005401224,283.74,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,98,100,0.07153249997645617,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000,99,100,0.05314870004076511,271.18,10.0,1023.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000,99,100,0.06380479992367327,10000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,0,100000,0.3596236000303179,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,1,100000,0.33282509993296117,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,2,100000,0.3287457999540493,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,3,100000,0.5853772999253124,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,4,100000,0.38818660005927086,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,5,100000,0.2928966999752447,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,6,100000,0.4054161000531167,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,7,100000,0.34266869991552085,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,8,100000,0.31275849998928607,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,9,100000,0.34587860002648085,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,10,100000,0.3334857999579981,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,11,100000,0.4673618000233546,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,12,100000,0.3355401000007987,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,13,100000,0.3162257999647409,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,14,100000,0.2957057000603527,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,15,100000,0.2904967999784276,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,16,100000,0.28830780007410794,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,17,100000,0.306000699987635,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,18,100000,0.27890859998296946,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,19,100000,0.26592329994309694,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,20,100000,0.27243119990453124,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,21,100000,0.2811168999178335,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,22,100000,0.2997596999630332,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,23,100000,0.28874750004615635,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,24,100000,0.31016039999667555,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,25,100000,0.3873311000643298,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,26,100000,0.3101602999959141,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,27,100000,0.3122107000090182,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,28,100000,0.3056325000943616,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,29,100000,0.31734379997942597,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,30,100000,0.33071240002755076,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,31,100000,0.3087895999196917,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,32,100000,0.32607020006980747,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,33,100000,0.3189043999882415,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,34,100000,0.33875400002580136,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,35,100000,0.28500400006305426,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,36,100000,0.2949079000391066,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,37,100000,0.3105928000295535,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,38,100000,0.28505990002304316,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,39,100000,0.3571372999576852,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,40,100000,0.2986841999227181,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,41,100000,0.34141309990081936,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,42,100000,0.3466359000885859,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,43,100000,0.30185980000533164,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,44,100000,0.30938059999607503,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,45,100000,0.3176735000452027,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,46,100000,0.29253169998992234,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,47,100000,0.2919584000483155,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,48,100000,0.29271139996126294,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,49,100000,0.341457900009118,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,50,100000,0.28718779992777854,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,51,100000,0.2980460000690073,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,52,100000,0.2954782999586314,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,53,100000,0.38313279999420047,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,54,100000,0.32389130000956357,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,55,100000,0.292351899901405,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,56,100000,0.362316400045529,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,57,100000,0.3351736000040546,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,58,100000,0.30805280001368374,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,59,100000,0.3292513999622315,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,60,100000,0.3213491999777034,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,61,100000,0.33764309994876385,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,62,100000,0.5688989999471232,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,63,100000,0.347878500004299,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,64,100000,0.38194120000116527,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,65,100000,0.3948187999194488,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,66,100000,0.3055786000331864,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,67,100000,0.37182499992195517,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,68,100000,0.44084809999912977,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,69,100000,0.5158490999601781,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,70,100000,0.3418549000052735,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,71,100000,0.4342171000316739,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,72,100000,0.45129280001856387,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,73,100000,0.6413872999837622,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,74,100000,0.6520215000491589,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,75,100000,0.2873519000131637,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,76,100000,0.29162140004336834,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,77,100000,0.2751315999776125,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,78,100000,0.31474080006591976,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,79,100000,0.31416980002541095,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,80,100000,0.3209711000090465,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,81,100000,0.32647490000817925,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,82,100000,0.288182899937965,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,83,100000,0.2851423000684008,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,84,100000,0.26425890007521957,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,85,100000,0.2976846999954432,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,86,100000,0.3890413000481203,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,87,100000,0.44921019999310374,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,88,100000,0.43200150004122406,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,89,100000,0.3682692999718711,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,90,100000,0.40847370005212724,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,91,100000,0.30885330005548894,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,92,100000,0.3182954000076279,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,93,100000,0.2605335999978706,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,94,100000,0.4094121999805793,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,95,100000,0.3153335000388324,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,96,100000,0.3448811999987811,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,97,100000,0.28866110008675605,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,98,100000,0.3115317999618128,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),100000,99,100000,0.32695380004588515,,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,0,100,0.03297640010714531,375.89,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,0,100,0.886005699983798,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,1,100,0.07357150001917034,385.46,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,1,100,0.8184301999863237,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,2,100,0.04442709998693317,364.26,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,2,100,0.7335908999666572,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,3,100,0.035682500107213855,418.11,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,3,100,0.8910265000304207,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,4,100,0.03898229997139424,391.53,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,4,100,0.8914265000494197,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,5,100,0.05561219993978739,410.23,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,5,100,0.7889104000059888,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,6,100,0.037008300074376166,368.42,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,6,100,0.7513041000347584,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,7,100,0.06395059998612851,375.67,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,7,100,0.8046234999783337,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,8,100,0.04233099997509271,371.27,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,8,100,0.7741797999478877,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,9,100,0.046027000062167645,385.45,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,9,100,0.636688599945046,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,10,100,0.03376120002940297,363.0,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,10,100,0.6733060999540612,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,11,100,0.03696549998130649,386.26,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,11,100,0.6854673000052571,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,12,100,0.04242249997332692,399.65,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,12,100,0.6637260999996215,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,13,100,0.03663470002356917,425.98,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,13,100,0.7936854000436142,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,14,100,0.046652200049720705,383.63,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,14,100,0.7522213000338525,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,15,100,0.06014439999125898,410.79,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,15,100,0.7593652000650764,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,16,100,0.14544110000133514,414.56,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,16,100,0.8289487999863923,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,17,100,0.0561510999687016,382.01,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,17,100,1.004780999966897,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,18,100,0.06579579995013773,383.81,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,18,100,0.968660100013949,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,19,100,0.06832900003064424,395.17,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,19,100,0.8618359999964014,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,20,100,0.0697360000340268,415.17,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,20,100,0.8246166999451816,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,21,100,0.04937010002322495,395.54,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,21,100,0.8713501999154687,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,22,100,0.050447699963115156,373.79,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,22,100,0.8200464000692591,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,23,100,0.035501400008797646,382.95,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,23,100,0.8418566000182182,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,24,100,0.045277200057171285,391.49,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,24,100,0.8053107999730855,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,25,100,0.062401399947702885,407.97,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,25,100,0.8729133999440819,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,26,100,0.04315179993864149,389.48,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,26,100,0.7228110999567434,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,27,100,0.040022000088356435,409.41,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,27,100,0.852500900044106,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,28,100,0.05393219995312393,373.96,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,28,100,0.74344300001394,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,29,100,0.04409590002615005,431.1,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,29,100,0.8408393999561667,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,30,100,0.04978040000423789,378.35,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,30,100,0.761829899973236,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,31,100,0.040133100003004074,368.44,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,31,100,0.9334323999937624,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,32,100,0.06161810003686696,400.19,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,32,100,0.7909433000022545,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,33,100,0.06361880002077669,402.88,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,33,100,0.9184128999477252,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,34,100,0.0355389000615105,391.45,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,34,100,0.5827369000762701,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,35,100,0.04133740009274334,386.4,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,35,100,0.6569671999895945,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,36,100,0.03664720000233501,402.87,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,36,100,0.6188724000239745,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,37,100,0.03952620003838092,408.77,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,37,100,0.8395448999945074,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,38,100,0.06610349996481091,421.56,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,38,100,0.9984479999402538,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,39,100,0.07478720007929951,389.2,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,39,100,0.838223599945195,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,40,100,0.09629050001967698,390.19,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,40,100,0.9937726999633014,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,41,100,0.052095199935138226,422.8,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,41,100,1.0612598999869078,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,42,100,0.056713800062425435,378.79,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,42,100,0.7215783999999985,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,43,100,0.03779600001871586,379.05,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,43,100,0.6788297999883071,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,44,100,0.043220699997618794,383.73,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,44,100,0.8046353000681847,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,45,100,0.045000200043432415,374.52,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,45,100,1.1506977999815717,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,46,100,0.08484029991086572,392.64,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,46,100,0.9703907000366598,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,47,100,0.05094350001309067,382.73,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,47,100,0.8336372000630945,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,48,100,0.058189300005324185,369.58,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,48,100,0.9673071999568492,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,49,100,0.06406729994341731,382.44,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,49,100,0.8437610999681056,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,50,100,0.038737199967727065,371.58,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,50,100,0.7876115000108257,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,51,100,0.058813100098632276,361.53,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,51,100,0.7808716000290588,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,52,100,0.03428569994866848,373.81,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,52,100,0.7317690999479964,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,53,100,0.05052519997116178,400.3,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,53,100,0.7441810000455007,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,54,100,0.05238939996343106,385.72,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,54,100,0.9357335000531748,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,55,100,0.09754059999249876,389.72,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,55,100,0.8810330999549478,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,56,100,0.0534922000952065,386.45,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,56,100,0.8475099999923259,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,57,100,0.05388329993002117,374.16,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,57,100,0.8734089999925345,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,58,100,0.051862900028936565,385.79,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,58,100,0.9359438999090344,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,59,100,0.05037770001217723,372.97,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,59,100,0.7672450999962166,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,60,100,0.04145349992904812,378.28,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,60,100,0.7723433000501245,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,61,100,0.05072449997533113,386.01,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,61,100,1.2829392000567168,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,62,100,0.05044689995702356,379.09,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,62,100,0.7518038999987766,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,63,100,0.052080600056797266,382.3,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,63,100,0.996131099993363,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,64,100,0.05571610003244132,393.6,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,64,100,0.8427083999849856,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,65,100,0.04544849996455014,389.17,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,65,100,0.8911852999590337,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,66,100,0.07446509995497763,404.93,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,66,100,0.7689223999623209,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,67,100,0.044511000043712556,371.26,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,67,100,0.7548726999666542,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,68,100,0.04790050000883639,376.44,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,68,100,0.7354663999285549,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,69,100,0.0450573000125587,388.57,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,69,100,0.864032999961637,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,70,100,0.05378710001241416,407.78,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,70,100,0.8058316999813542,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,71,100,0.05307880009058863,383.17,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,71,100,0.7724521999480203,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,72,100,0.033963299938477576,347.34,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,72,100,0.7904583000345156,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,73,100,0.04022740002255887,370.43,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,73,100,0.8375278000021353,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,74,100,0.043657399946823716,375.41,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,74,100,0.9214065000414848,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,75,100,0.050304300035350025,381.76,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,75,100,0.6639590000268072,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,76,100,0.04249530006200075,370.76,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,76,100,0.7121509000426158,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,77,100,0.03576899995096028,391.4,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,77,100,0.7329237000085413,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,78,100,0.03642169991508126,389.59,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,78,100,0.7069175000069663,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,79,100,0.04845270002260804,361.45,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,79,100,0.6839973999885842,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,80,100,0.042829400044865906,381.93,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,80,100,0.6412962999893352,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,81,100,0.039511899929493666,401.47,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,81,100,0.6748092999914661,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,82,100,0.03563999990001321,368.39,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,82,100,0.6820045999484137,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,83,100,0.046644799993373454,411.35,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,83,100,0.6828955999808386,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,84,100,0.04755059990566224,369.73,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,84,100,0.7630275000119582,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,85,100,0.042997100041247904,371.32,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,85,100,0.737737899995409,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,86,100,0.04597079998347908,363.2,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,86,100,0.66314419999253,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,87,100,0.045360199990682304,386.33,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,87,100,0.6424501000437886,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,88,100,0.056473299977369606,402.05,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,88,100,0.6782302000792697,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,89,100,0.039383099996484816,346.34,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,89,100,0.7483119999524206,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,90,100,0.04353210004046559,420.25,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,90,100,0.6729831999400631,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,91,100,0.04273260000627488,362.82,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,91,100,0.7927205000305548,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,92,100,0.04642569995485246,405.45,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,92,100,0.7431164999725297,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,93,100,0.050056900014169514,401.11,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,93,100,0.8837554000783712,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,94,100,0.058966899989172816,401.61,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,94,100,0.7899856000440195,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,95,100,0.05279629991855472,381.37,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,95,100,0.8839608998969197,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,96,100,0.041109299985691905,393.12,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,96,100,0.7431223000166938,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,97,100,0.06389640003908426,375.62,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,97,100,0.653840099927038,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,98,100,0.03807870007585734,380.67,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,98,100,0.6444011999992654,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),100000,99,100,0.033208100008778274,372.87,13.0,8191.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),100000,99,100,0.6307841000379995,100000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,0,1000000,4.220521399984136,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,1,1000000,3.3967899000272155,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,2,1000000,3.858193900086917,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,3,1000000,3.512303899973631,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,4,1000000,3.7573638000758365,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,5,1000000,3.6957854999927804,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,6,1000000,4.297625700011849,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,7,1000000,4.086078300024383,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,8,1000000,3.8029978999402374,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,9,1000000,3.6852933999616653,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,10,1000000,3.500748199992813,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,11,1000000,3.8802977000596,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,12,1000000,3.7352813000325114,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,13,1000000,3.7503489000955597,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,14,1000000,4.023071400006302,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,15,1000000,3.9339084000093862,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,16,1000000,4.194364700000733,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,17,1000000,3.9410653999075294,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,18,1000000,4.091413200017996,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,19,1000000,3.5865798000013456,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,20,1000000,4.06102959997952,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,21,1000000,4.140849699964747,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,22,1000000,4.293205299996771,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,23,1000000,3.964953300077468,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,24,1000000,4.796253499924205,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,25,1000000,4.1844877999974415,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,26,1000000,4.076886800001375,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,27,1000000,4.310834100004286,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,28,1000000,4.218698799959384,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),1000000,29,1000000,4.268496899981983,,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,0,100,0.03884950000792742,451.69,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,0,10,0.8141092000296339,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,1,100,0.03791469999123365,460.3,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,1,10,0.9390283999964595,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,2,100,0.06959339999593794,451.62,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,2,10,0.950420800014399,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,3,100,0.06314739992376417,468.98,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,3,10,0.9759669000050053,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,4,100,0.04113410005811602,430.67,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,4,10,0.8487862000474706,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,5,100,0.043022300000302494,451.33,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,5,10,0.8916872999398038,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,6,100,0.045051899971440434,442.06,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,6,10,0.896119499928318,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,7,100,0.05403710005339235,466.81,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,7,10,0.7413476998917758,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,8,100,0.05244719993788749,478.62,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,8,10,0.7845694000134245,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,9,100,0.05903859995305538,492.5,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,9,10,0.8490390999941155,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,10,100,0.039933099993504584,454.51,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,10,10,0.8320014999480918,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,11,100,0.03397940006107092,428.2,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,11,10,0.8666971999919042,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,12,100,0.05218340002465993,476.41,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,12,10,0.8762889999197796,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,13,100,0.03942679997999221,431.64,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,13,10,0.8339275999460369,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,14,100,0.04824279993772507,488.82,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,14,10,0.8286413000896573,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,15,100,0.06309199996758252,474.94,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,15,10,0.8325469000265002,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,16,100,0.042823700001463294,488.69,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,16,10,0.7528950000414625,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,17,100,0.05190530000254512,458.11,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,17,10,0.8500453000888228,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,18,100,0.040154000045731664,479.9,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,18,10,0.8925702000269666,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,19,100,0.06033839995507151,457.0,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,19,10,0.8361810999922454,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,20,100,0.0451693000504747,475.7,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,20,10,0.9974311999976635,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,21,100,0.06202439998742193,467.65,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,21,10,0.7969175999751315,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,22,100,0.03832049993798137,464.09,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,22,10,0.8497571999905631,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,23,100,0.05048079998232424,495.91,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,23,10,0.8118010999169201,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,24,100,0.0580700000282377,463.65,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,24,10,0.8956971000880003,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,25,100,0.04462009994313121,454.83,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,25,10,0.7782844000030309,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,26,100,0.0775637999176979,473.69,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,26,10,0.781406500027515,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,27,100,0.05974599998444319,472.04,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,27,10,0.7927954000188038,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,28,100,0.04475680005270988,488.9,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,28,10,0.8597463000332937,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,29,100,0.04073829995468259,453.56,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,29,10,0.8783776999916881,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,30,100,0.046552899992093444,479.58,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,30,10,0.8092516999458894,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,31,100,0.04998930008150637,489.49,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,31,10,0.8430712999543175,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,32,100,0.041719599976204336,452.32,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,32,10,0.8360255999723449,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,33,100,0.05735410004854202,450.73,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,33,10,0.7956925999606028,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,34,100,0.04559809993952513,448.16,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,34,10,0.7947997000301257,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,35,100,0.057524100062437356,462.79,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,35,10,0.8822532999329269,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,36,100,0.05660739995073527,454.18,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,36,10,0.8867860999889672,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,37,100,0.05782820004969835,441.58,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,37,10,0.8081890000030398,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,38,100,0.04700740007683635,503.31,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,38,10,0.7607985000358894,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,39,100,0.034324900014325976,432.14,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,39,10,0.815575800021179,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,40,100,0.03954109991900623,502.51,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,40,10,0.7695161000592634,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,41,100,0.043406100012362,456.67,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,41,10,0.7267910999944434,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,42,100,0.04730450001079589,497.27,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,42,10,0.784607799956575,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,43,100,0.03557479998562485,463.2,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,43,10,0.8087968999752775,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,44,100,0.041620199917815626,471.44,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,44,10,0.8626114000799134,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,45,100,0.0443995000096038,444.16,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,45,10,0.8687397000612691,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,46,100,0.042620299966074526,426.14,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,46,10,0.9117673001019284,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,47,100,0.04730500001460314,466.69,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,47,10,0.8412516999524087,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,48,100,0.04283629998099059,453.14,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,48,10,0.8267413999419659,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,49,100,0.047221200075000525,436.54,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,49,10,0.8404768999898806,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,50,100,0.06304240005556494,456.61,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,50,10,0.8365745000774041,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,51,100,0.05405799997970462,485.91,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,51,10,0.8422496999846771,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,52,100,0.045336500043049455,478.52,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,52,10,0.8602810999145731,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,53,100,0.05128999997396022,486.82,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,53,10,0.7843985999934375,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,54,100,0.034821299952454865,479.44,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,54,10,0.7358219999587163,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,55,100,0.03804200002923608,449.27,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,55,10,0.6536805999930948,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,56,100,0.04106670001056045,465.15,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,56,10,0.7022751000477001,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,57,100,0.04856799996923655,503.68,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,57,10,0.819478900055401,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,58,100,0.03666240000165999,474.73,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,58,10,1.0800429000519216,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,59,100,0.05683719995431602,478.2,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,59,10,1.0394364000530913,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,60,100,0.05445439997129142,452.29,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,60,10,0.9345426999498159,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,61,100,0.05853539996314794,487.29,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,61,10,1.017607800080441,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,62,100,0.044563400093466043,470.33,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,62,10,0.90124079992529,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,63,100,0.04760509997140616,489.01,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,63,10,0.9574582000495866,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,64,100,0.05544760008342564,469.14,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,64,10,0.8077067999402061,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,65,100,0.060287200030870736,477.52,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,65,10,0.9428668998880312,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,66,100,0.04558869998436421,454.65,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,66,10,0.9178436000365764,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,67,100,0.04630590009037405,481.04,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,67,10,0.9904982999432832,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,68,100,0.050803599995560944,469.29,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,68,10,1.4980954000493512,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,69,100,0.05906310002319515,485.94,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,69,10,1.0908046000404283,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,70,100,0.08137380005791783,434.67,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,70,10,1.0142119999509305,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,71,100,0.07231299998238683,476.38,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,71,10,1.068576900055632,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,72,100,0.0498098999960348,490.81,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,72,10,0.9997243999969214,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,73,100,0.045816400088369846,462.87,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,73,10,0.9768504000967368,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,74,100,0.040418899967335165,487.04,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,74,10,0.9480281999567524,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,75,100,0.05904540000483394,484.8,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,75,10,1.0029838000191376,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,76,100,0.057882599998265505,483.28,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,76,10,1.0887598000699654,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,77,100,0.056923599913716316,439.41,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,77,10,1.0002106999745592,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,78,100,0.05713070009369403,445.07,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,78,10,0.8136472000041977,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,79,100,0.06274700001813471,467.01,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,79,10,0.9168702000752091,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,80,100,0.05232020001858473,437.45,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,80,10,0.9108785999706015,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,81,100,0.03580710000824183,462.08,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,81,10,0.8665152000030503,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,82,100,0.048493799986317754,459.17,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,82,10,0.9041556000011042,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,83,100,0.054811300011351705,450.64,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,83,10,0.9157147000078112,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,84,100,0.054653899976983666,466.64,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,84,10,0.8379325000569224,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,85,100,0.03740000003017485,472.22,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,85,10,0.9681907000485808,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,86,100,0.04193269996903837,473.27,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,86,10,0.9324080999940634,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,87,100,0.05666729994118214,456.64,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,87,10,0.9411342000821605,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,88,100,0.04193840001244098,454.89,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,88,10,0.8465381000423804,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,89,100,0.03748029994312674,437.66,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,89,10,0.8648643000051379,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,90,100,0.04550579993519932,457.32,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,90,10,0.8581378000089899,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,91,100,0.04402129992377013,480.53,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,91,10,0.8806433000136167,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,92,100,0.06328719994053245,472.83,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,92,10,0.8769358000718057,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,93,100,0.056809799978509545,470.08,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,93,10,0.8038943998981267,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,94,100,0.0718348000664264,441.71,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,94,10,0.9576628999784589,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,95,100,0.06127469998318702,509.09,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,95,10,0.8507814999902621,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,96,100,0.04058879998046905,491.05,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,96,10,0.7701299999607727,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,97,100,0.040833699982613325,454.33,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,97,10,0.7453982000006363,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,98,100,0.05279579991474748,468.34,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,98,10,0.8120718999998644,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),1000000,99,100,0.049477500026114285,451.55,16.0,65535.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),1000000,99,10,0.7650716999778524,1000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+construccion,KD-Tree (propio),10000000,0,10000000,70.3638655000832,,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,0,100,0.043308000080287457,402.39,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,0,1,0.8258998000528663,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,1,100,0.054363899980671704,399.14,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,1,1,0.8218017000472173,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,2,100,0.06593949999660254,383.86,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,2,1,0.8745853999862447,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,3,100,0.05168770009186119,399.16,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,3,1,0.939022499951534,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,4,100,0.041214399971067905,365.69,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,4,1,0.8089075000025332,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,5,100,0.04960749996826053,413.2,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,5,1,0.7747195999836549,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,6,100,0.05603089998476207,410.27,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,6,1,0.8227333000395447,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,7,100,0.06403329991735518,399.65,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,7,1,0.7440402000211179,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,8,100,0.05767040001228452,385.88,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,8,1,1.0396310999058187,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,9,100,0.06270030001178384,389.03,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,9,1,0.8779442999511957,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,10,100,0.0656887999502942,409.75,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,10,1,0.8917822999646887,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,11,100,0.06867129995953292,398.54,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,11,1,0.7980631999671459,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,12,100,0.05643130000680685,393.85,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,12,1,0.7833143000025302,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,13,100,0.06880849995650351,414.08,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,13,1,0.7672423999756575,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,14,100,0.05654689995571971,424.81,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,14,1,0.7228511000284925,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,15,100,0.04778050002641976,388.04,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,15,1,0.7903718000743538,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,16,100,0.05702259996905923,399.81,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,16,1,0.874864999903366,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,17,100,0.062328699976205826,397.04,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,17,1,0.7975652000168338,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,18,100,0.06874299992341548,406.55,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,18,1,0.8141518000047654,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,19,100,0.0452987999888137,371.32,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,19,1,0.8002092000097036,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,20,100,0.05626049998681992,388.03,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,20,1,0.7820520999375731,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,21,100,0.05334680003579706,388.91,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,21,1,0.8672087999293581,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,22,100,0.052447899943217635,399.97,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,22,1,0.8382932000095025,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,23,100,0.054626199998892844,405.81,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,23,1,0.7715014999266714,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,24,100,0.049815200036391616,402.84,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,24,1,0.7361449000891298,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,25,100,0.047917500021867454,429.77,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,25,1,0.6820183000527322,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,26,100,0.041298900032415986,392.68,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,26,1,0.7921409999253228,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,27,100,0.0727843000786379,411.34,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,27,1,0.954880699981004,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,28,100,0.05702499998733401,416.33,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,28,1,0.8248529999982566,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,29,100,0.06939399999100715,412.6,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,29,1,0.8844553999369964,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,30,100,0.06485009996686131,419.48,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,30,1,0.7786338999867439,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,31,100,0.0783587999176234,394.12,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,31,1,0.8863459000131115,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,32,100,0.05439850001130253,395.65,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,32,1,0.7262853999854997,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,33,100,0.05358380009420216,404.69,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,33,1,0.725826199981384,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,34,100,0.0453681000508368,389.52,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,34,1,0.6885343999601901,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,35,100,0.04566039994824678,395.27,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,35,1,0.7980743000516668,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,36,100,0.0713821001118049,401.31,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,36,1,0.6750401000026613,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,37,100,0.04655490000732243,408.7,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,37,1,0.6614523000316694,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,38,100,0.05993260000832379,407.17,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,38,1,0.6969027000013739,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,39,100,0.04293400002643466,376.27,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,39,1,0.689994900021702,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,40,100,0.04696680000051856,404.8,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,40,1,0.7653741999529302,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,41,100,0.052102799993008375,412.46,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,41,1,0.781503799953498,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,42,100,0.047687199898064137,392.71,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,42,1,0.7686154999537393,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,43,100,0.058381699956953526,395.64,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,43,1,0.8238521000603214,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,44,100,0.06334550003521144,410.84,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,44,1,0.8103391999611631,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,45,100,0.05752899998333305,419.82,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,45,1,0.9141901000402868,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,46,100,0.0876080000307411,415.82,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,46,1,1.0618016000371426,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,47,100,0.06221889995504171,369.87,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,47,1,0.8764073000056669,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,48,100,0.0590859999647364,385.12,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,48,1,0.8283876999048516,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,49,100,0.048018199973739684,414.67,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,49,1,0.7174674000125378,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,50,100,0.04382149991579354,396.62,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,50,1,0.7067753999726847,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,51,100,0.05059200001414865,385.22,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,51,1,0.7626141000073403,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,52,100,0.049724899930879474,390.68,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,52,1,0.7997060999041423,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,53,100,0.04791459999978542,412.34,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,53,1,0.8305743000237271,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,54,100,0.04293259989935905,412.46,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,54,1,0.7425032999599352,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,55,100,0.054602500051259995,376.63,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,55,1,0.8332562999567017,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,56,100,0.07334529992658645,407.43,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,56,1,0.8985157000133768,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,57,100,0.077038099989295,384.78,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,57,1,0.9032392000081018,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,58,100,0.06252949999179691,394.85,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,58,1,0.9150520999683067,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,59,100,0.058803899912163615,357.27,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,59,1,0.8732445000205189,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,60,100,0.05907099996693432,391.6,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,60,1,0.8072381999809295,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,61,100,0.05893349996767938,409.4,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,61,1,0.7584930000593886,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,62,100,0.0541498000966385,421.05,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,62,1,0.7059089000103995,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,63,100,0.044445499894209206,424.41,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,63,1,0.8291261999402195,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,64,100,0.043457900057546794,372.07,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,64,1,0.7482780999271199,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,65,100,0.07679570000618696,420.15,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,65,1,0.857918000081554,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,66,100,0.08385019993875176,436.22,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,66,1,1.0064788999734446,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,67,100,0.06909240002278239,388.61,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,67,1,1.0047479000641033,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,68,100,0.09824750002007931,405.84,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,68,1,0.994564300053753,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,69,100,0.05893099994864315,362.35,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,69,1,1.112569099990651,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,70,100,0.06033679994288832,426.58,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,70,1,0.8988439000677317,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,71,100,0.04654120001941919,392.4,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,71,1,0.8861896999878809,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,72,100,0.08558079996146262,390.63,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,72,1,0.7706362999742851,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,73,100,0.07074299990199506,372.98,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,73,1,1.0940511000808328,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,74,100,0.0458206000039354,394.96,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,74,1,0.8700235999422148,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,75,100,0.04191520006861538,393.87,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,75,1,0.6873923999955878,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,76,100,0.05419299995992333,397.21,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,76,1,0.8407774000661448,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,77,100,0.09652180003467947,408.51,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,77,1,0.914634000044316,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,78,100,0.05342519993428141,383.44,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,78,1,0.7253060999792069,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,79,100,0.04558999999426305,391.04,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,79,1,0.7531299999682233,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,80,100,0.042208499973639846,387.1,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,80,1,0.8408008000114933,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,81,100,0.05138800002168864,404.05,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,81,1,0.7978895000414923,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,82,100,0.04491529997903854,409.79,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,82,1,0.8064923000056297,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,83,100,0.06810829997994006,411.3,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,83,1,0.7649657001020387,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,84,100,0.06487129989545792,394.4,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,84,1,0.8153891999972984,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,85,100,0.05421039997600019,417.15,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,85,1,0.8110546000534669,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,86,100,0.05047819996252656,408.76,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,86,1,0.8249686999479309,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,87,100,0.055270400014705956,408.4,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,87,1,0.827422000002116,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,88,100,0.05337740003596991,439.21,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,88,1,0.7264320000540465,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,89,100,0.05302819993812591,403.22,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,89,1,0.7325632999418303,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,90,100,0.06474910001270473,401.77,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,90,1,0.6986846999498084,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,91,100,0.06668819999322295,388.91,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,91,1,0.7650769000174478,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,92,100,0.04649949993472546,381.81,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,92,1,0.8232574999565259,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,93,100,0.048603200004436076,421.53,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,93,1,0.7973674000240862,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,94,100,0.05402830010280013,417.49,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,94,1,0.8156746999593452,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,95,100,0.05858279997482896,390.95,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,95,1,0.8314701999770477,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,96,100,0.05339429993182421,407.74,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,96,1,0.7768501000246033,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,97,100,0.0680848000338301,399.38,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,97,1,0.7859050000552088,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,98,100,0.07070979999843985,404.62,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,98,1,0.7399088999954984,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,KD-Tree (propio),10000000,99,100,0.043598800082691014,407.7,20.0,1048575.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+consulta,fuerza bruta (numpy),10000000,99,1,0.8534854999743402,10000000.0,,,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

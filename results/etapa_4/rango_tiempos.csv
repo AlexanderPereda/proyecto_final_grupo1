@@ -1,0 +1,1501 @@
+metodo,k_objetivo,k,repeticion,operaciones,segundos,lecturas,procesador,python
+B+Tree en disco (propio),10,7,0,1,0.00022219994571059942,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,0,1,1.109996810555458e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,0,1,0.07777560001704842,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,1,1,0.00020140002015978098,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,1,1,1.0299962013959885e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,1,1,0.07634559995494783,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,2,1,0.00020030001178383827,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,2,1,9.999959729611874e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,2,1,0.07796819997020066,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,3,1,0.00020150002092123032,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,3,1,1.1500087566673756e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,3,1,0.07083270000293851,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,4,1,0.00021780002862215042,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,4,1,1.0299962013959885e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,4,1,0.07334779994562268,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,5,1,0.00024119997397065163,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,5,1,1.1299969628453255e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,5,1,0.07825719995889813,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,6,1,0.0002935999073088169,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,6,1,1.2399978004395962e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,6,1,0.08111430006101727,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,7,1,0.0002188000362366438,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,7,1,1.1699972674250603e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,7,1,0.07580760004930198,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,8,1,0.00022569997236132622,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,8,1,1.109996810555458e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,8,1,0.06910730001982301,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,9,1,0.00026189989876002073,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,9,1,1.9300030544400215e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,9,1,0.08037619991227984,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,10,1,0.0002221000613644719,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,10,1,1.0900082997977734e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,10,1,0.0791598999639973,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,11,1,0.00020960008259862661,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,11,1,1.0500079952180386e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,11,1,0.07766720000654459,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,12,1,0.00025120005011558533,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,12,1,1.2400094419717789e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,12,1,0.08235879999119788,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,13,1,0.00020969996694475412,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,13,1,1.170008908957243e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,13,1,0.07338910002727062,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,14,1,0.00018540001474320889,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,14,1,1.1199968867003918e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,14,1,0.06561649998184294,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,15,1,0.00018820003606379032,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,15,1,1.0899966582655907e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,15,1,0.07372360001318157,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,16,1,0.0001862999051809311,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,16,1,1.0400079190731049e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,16,1,0.07029069995041937,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,17,1,4.539999645203352e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,17,1,1.209997572004795e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,17,1,0.06547449994832277,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,18,1,0.0002620999002829194,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,18,1,1.0300078429281712e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,18,1,0.07484219991602004,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,19,1,0.00026130001060664654,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,19,1,1.3399985618889332e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,19,1,0.07942159997764975,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,20,1,0.0002343999221920967,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,20,1,1.1199968867003918e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,20,1,0.06922220007982105,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,21,1,0.0001838000025600195,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,21,1,1.0899966582655907e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,21,1,0.07494309998583049,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,22,1,0.0002185999182984233,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,22,1,1.2399978004395962e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,22,1,0.08300079999025911,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,23,1,0.00022009992972016335,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,23,1,9.999959729611874e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,23,1,0.0752911000745371,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,24,1,0.00026830006390810013,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,24,1,2.1099927835166454e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,24,1,0.0716281000059098,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,25,1,0.00033329997677356005,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,25,1,2.9099988751113415e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,25,1,0.07893630000762641,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,26,1,0.00019699998665601015,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,26,1,1.0599964298307896e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,26,1,0.08482960006222129,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,27,1,0.0002587999915704131,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,27,1,1.780001912266016e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,27,1,0.08771680004429072,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,28,1,0.00035280000884085894,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,28,1,2.559996210038662e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,28,1,0.08654310007113963,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,29,1,0.00022449996322393417,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,29,1,1.3499986380338669e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,29,1,0.0936058999504894,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,30,1,0.00022310006897896528,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,30,1,1.0399962775409222e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,30,1,0.08304810000117868,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,31,1,0.0002626000205054879,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,31,1,1.2100092135369778e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,31,1,0.09780789993237704,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,32,1,0.0002527999458834529,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,32,1,1.079996582120657e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,32,1,0.08178550004959106,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,33,1,0.0001943999668583274,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,33,1,1.079996582120657e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,33,1,0.07917789998464286,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,34,1,0.00026350002735853195,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,34,1,1.2600095942616463e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,34,1,0.07707570004276931,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,35,1,0.000229199999012053,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,35,1,1.1599971912801266e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,35,1,0.0793247000547126,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,36,1,0.0002012000186368823,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,36,1,1.1200085282325745e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,36,1,0.08085069991648197,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,37,1,0.000201700022444129,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,37,1,1.309998333454132e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,37,1,0.08371599996462464,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,38,1,0.0002714999718591571,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,38,1,1.5400000847876072e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,38,1,0.09038830001372844,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,39,1,4.830001853406429e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,39,1,8.900067768990993e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,39,1,0.08089400001335889,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,40,1,0.00022709998302161694,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,40,1,1.1999974958598614e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,40,1,0.07632879994343966,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,41,1,0.00023639993742108345,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,41,1,1.209997572004795e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,41,1,0.07159970002248883,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,42,1,0.0001857000170275569,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,42,1,1.009996049106121e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,42,1,0.0786159000126645,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,43,1,0.00024990004021674395,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,43,1,1.2199976481497288e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,43,1,0.07892909995280206,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,44,1,0.00023090001195669174,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,44,1,1.4699995517730713e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,44,1,0.08100569993257523,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,45,1,0.00019599997904151678,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,45,1,1.009996049106121e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,45,1,0.08067890000529587,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,46,1,0.00022300006821751595,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,46,1,1.1599971912801266e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,46,1,0.08654869999736547,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,47,1,0.00020210002548992634,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,47,1,9.499955922365189e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,47,1,0.08747420005965978,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,48,1,0.00019170006271451712,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,48,1,1.079996582120657e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,48,1,0.08433460001833737,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,49,1,0.00019859999883919954,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,49,1,9.7999582067132e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,49,1,0.0910435999976471,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,50,1,0.00027169997338205576,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,50,1,2.719997428357601e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,50,1,0.08591449994128197,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,51,1,0.00019259995315223932,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,51,1,1.0199961252510548e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,51,1,0.07307120005134493,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,52,1,0.00021319999359548092,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,52,1,1.2499978765845299e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,52,1,0.07340540003497154,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,53,1,0.0002001000102609396,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,53,1,9.400071576237679e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,53,1,0.07526780001353472,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,54,1,0.00019120005890727043,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,54,1,9.300070814788342e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,54,1,0.07218259992077947,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,55,1,0.00019319995772093534,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,55,1,1.0699965059757233e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,55,1,0.0715535000199452,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,56,1,0.00018539989832788706,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,56,1,1.1200085282325745e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,56,1,0.07488100009504706,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,57,1,0.00020839995704591274,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,57,1,1.1300086043775082e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,57,1,0.07407460000831634,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,58,1,0.0002148000057786703,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,58,1,1.950003206729889e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,58,1,0.06921320001129061,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,59,1,0.00019619998056441545,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,59,1,1.109996810555458e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,59,1,0.06767469993792474,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,60,1,0.00019759999122470617,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,60,1,1.0699965059757233e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,60,1,0.0736765000037849,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,61,1,0.00018590001855045557,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,61,1,1.0499963536858559e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,61,1,0.0704883000580594,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,62,1,0.0001927000703290105,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,62,1,1.0500079952180386e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,62,1,0.07829460001084954,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,63,1,0.00022050004918128252,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,63,1,1.079996582120657e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,63,1,0.07691479998175055,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,64,1,0.00028579996433109045,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,64,1,1.070008147507906e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,64,1,0.07026730000507087,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,65,1,0.0001879000337794423,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,65,1,1.0600080713629723e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,65,1,0.07366059999912977,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,66,1,0.0002449000021442771,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,66,1,1.0299962013959885e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,66,1,0.07503840001299977,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,67,1,0.00023830006830394268,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,67,1,1.009996049106121e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,67,1,0.06796859996393323,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,68,1,0.00019910000264644623,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,68,1,1.0299962013959885e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,68,1,0.0698112000245601,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,69,1,0.00018540001474320889,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,69,1,1.0200077667832375e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,69,1,0.07487140002194792,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,70,1,0.00019299995619803667,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,70,1,1.0500079952180386e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,70,1,0.07835419999901205,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,71,1,0.00026160001289099455,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,71,1,1.1199968867003918e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,71,1,0.0726528000086546,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,72,1,0.00020530004985630512,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,72,1,1.0599964298307896e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,72,1,0.07849560002796352,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,73,1,0.0002191999228671193,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,73,1,1.1500087566673756e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,73,1,0.0742977000772953,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,74,1,0.00019090005662292242,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,74,1,1.009996049106121e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,74,1,0.07795659999828786,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,75,1,0.00021440000273287296,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,75,1,1.0399962775409222e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,75,1,0.07573660009074956,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,76,1,0.00028389994986355305,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,76,1,3.9899954572319984e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,76,1,0.0733098000055179,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,77,1,0.00041969993617385626,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,77,1,4.0500075556337833e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,77,1,0.07732200005557388,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,78,1,0.00021389999892562628,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,78,1,1.0499963536858559e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,78,1,0.08514019998256117,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,79,1,0.0002297998871654272,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,79,1,1.2100092135369778e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,79,1,0.07703040004707873,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,80,1,0.00019759999122470617,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,80,1,1.00000761449337e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,80,1,0.08748329989612103,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,81,1,0.0002796000335365534,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,81,1,1.8200022168457508e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,81,1,0.07830539997667074,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,82,1,0.00020849995780736208,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,82,1,1.4899997040629387e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,82,1,0.07315049995668232,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,83,1,0.00021449988707900047,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,83,1,9.800074622035027e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,83,1,0.07676399999763817,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,84,1,0.00019590009469538927,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,84,1,1.00000761449337e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,84,1,0.0713176999706775,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,85,1,0.00021740002557635307,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,85,1,1.0299962013959885e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,85,1,0.07281110004987568,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,86,1,0.00018030009232461452,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,86,1,1.0100076906383038e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,86,1,0.0709438999183476,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,87,1,0.0002799000358209014,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,87,1,1.2899981811642647e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,87,1,0.0766853999812156,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,88,1,0.00020370003767311573,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,88,1,1.1599971912801266e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,88,1,0.07289710000623018,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,89,1,4.569999873638153e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,89,1,9.299954399466515e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,89,1,0.07226409995928407,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,90,1,0.0002001000102609396,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,90,1,1.0600080713629723e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,90,1,0.08090199995785952,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,91,1,0.00020619994029402733,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,91,1,9.999959729611874e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,91,1,0.06908240006305277,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,92,1,0.00018229999113827944,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,92,1,1.1199968867003918e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,92,1,0.07598460000008345,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,93,1,0.00024119997397065163,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,93,1,2.359994687139988e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,93,1,0.098981500021182,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,94,1,0.0002004000125452876,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,94,1,1.4699995517730713e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,94,1,0.08551390003412962,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,95,1,0.00023490004241466522,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,95,1,2.0299921743571758e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,95,1,0.07931299996562302,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,96,1,0.0002442999975755811,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,96,1,1.5300000086426735e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,96,1,0.0795147999888286,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,97,1,0.0003098000306636095,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,97,1,1.2400094419717789e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,97,1,0.07336879998911172,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,98,1,0.0001892000436782837,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,98,1,1.009996049106121e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,98,1,0.08219230000395328,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10,7,99,1,0.0001860000193119049,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10,7,99,1,9.699957445263863e-06,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10,7,99,1,0.08103950007352978,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,0,1,0.00030019995756447315,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,0,1,2.2799940779805183e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,0,1,0.0784059000434354,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,1,1,0.00026869995053857565,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,1,1,1.479999627918005e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,1,1,0.08487949997652322,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,2,1,0.0004525999538600445,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,2,1,5.949998740106821e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,2,1,0.0859065999975428,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,3,1,0.0004510999424383044,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,3,1,2.2000051103532314e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,3,1,0.06867009995039552,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,4,1,0.0003472999669611454,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,4,1,1.6000005416572094e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,4,1,0.07509569998364896,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,5,1,0.0002769000129774213,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,5,1,1.5400000847876072e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,5,1,0.07024479995016009,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,6,1,0.0002666000509634614,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,6,1,1.5700003132224083e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,6,1,0.07204609992913902,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,7,1,0.0002883999841287732,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,7,1,1.7600017599761486e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,7,1,0.07404700003098696,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,8,1,0.0002834999468177557,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,8,1,1.4999997802078724e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,8,1,0.0680866000475362,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,9,1,0.0002747999969869852,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,9,1,1.4200108125805855e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,9,1,0.07937910000327975,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,10,1,0.0002896001096814871,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,10,1,1.8200022168457508e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,10,1,0.07625699997879565,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,11,1,0.0002460000105202198,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,11,1,1.4999997802078724e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,11,1,0.07677010004408658,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,12,1,0.00024770002346485853,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,12,1,1.5600002370774746e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,12,1,0.06638669990934432,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,13,1,0.00024309998843818903,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,13,1,1.5400000847876072e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,13,1,0.07294699992053211,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,14,1,0.0002280999906361103,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,14,1,1.6000005416572094e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,14,1,0.07949419994838536,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,15,1,0.00024999992456287146,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,15,1,1.5099998563528061e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,15,1,0.07788840006105602,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,16,1,0.0005614999681711197,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,16,1,3.090000245720148e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,16,1,0.07408670010045171,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,17,1,0.0004137998912483454,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,17,1,1.8000020645558834e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,17,1,0.07006219995673746,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,18,1,0.0002614000113680959,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,18,1,1.5099998563528061e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,18,1,0.07549730001483113,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,19,1,0.0003360999980941415,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,19,1,2.1600048057734966e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,19,1,0.06878799991682172,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,20,1,0.00035230000503361225,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,20,1,2.319994382560253e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,20,1,0.07748510001692921,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,21,1,0.0002767000114545226,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,21,1,1.580000389367342e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,21,1,0.07490080001298338,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,22,1,0.0002579001011326909,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,22,1,1.4399993233382702e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,22,1,0.0762018000241369,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,23,1,0.0002805000403895974,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,23,1,2.6700086891651154e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,23,1,0.08131039992440492,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,24,1,0.00019149994477629662,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,24,1,1.550000160932541e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,24,1,0.07293499994557351,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,25,1,0.000305800000205636,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,25,1,1.750001683831215e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,25,1,0.08117019990459085,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,26,1,0.0002715999726206064,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,26,1,1.889991108328104e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,26,1,0.07530610007233918,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,27,1,0.000215600011870265,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,27,1,1.4899997040629387e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,27,1,0.072913600015454,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,28,1,0.0002902999985963106,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,28,1,1.5900004655122757e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,28,1,0.08611410006415099,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,29,1,0.00010559998918324709,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,29,1,1.5099998563528061e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,29,1,0.07803239999338984,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,30,1,0.00024279998615384102,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,30,1,1.8200022168457508e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,30,1,0.08139269996900111,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,31,1,0.00030419998802244663,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,31,1,1.8799910321831703e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,31,1,0.08057540003210306,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,32,1,0.0002741999924182892,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,32,1,1.550000160932541e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,32,1,0.07812950003426522,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,33,1,0.00024619989562779665,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,33,1,1.6700010746717453e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,33,1,0.08661310002207756,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,34,1,0.0002858999650925398,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,34,1,1.8300022929906845e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,34,1,0.09609599993564188,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,35,1,0.0003249999135732651,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,35,1,1.7400016076862812e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,35,1,0.08138789993245155,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,36,1,0.00018590001855045557,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,36,1,1.5099998563528061e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,36,1,0.07468730001710355,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,37,1,0.00029930006712675095,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,37,1,1.7700018361210823e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,37,1,0.13964960002340376,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,38,1,0.0006686999695375562,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,38,1,0.0036124999169260263,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,38,1,0.14966989995446056,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,39,1,0.00038109999150037766,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,39,1,1.9400031305849552e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,39,1,0.09310960001312196,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,40,1,0.000345999957062304,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,40,1,1.9299914129078388e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,40,1,0.08160929998848587,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,41,1,0.00028979999478906393,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,41,1,1.5999889001250267e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,41,1,0.08234850002918392,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,42,1,0.0002957000397145748,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,42,1,1.7399899661540985e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,42,1,0.08351010002661496,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,43,1,0.0003030999796465039,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,43,1,1.7000013031065464e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,43,1,0.08646289992611855,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,44,1,0.0002576999831944704,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,44,1,1.6700010746717453e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,44,1,0.08935959998052567,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,45,1,0.0002731001004576683,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,45,1,1.4899997040629387e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,45,1,0.09023450000677258,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,46,1,0.00026840006466954947,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,46,1,1.4399993233382702e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,46,1,0.0765980000142008,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,47,1,0.0003170999698340893,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,47,1,1.650000922381878e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,47,1,0.08120010001584888,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,48,1,0.00029910006560385227,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,48,1,1.819990575313568e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,48,1,0.08024769998155534,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,49,1,0.0003212000010535121,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,49,1,1.5700003132224083e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,49,1,0.08093369996640831,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,50,1,0.00020590005442500114,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,50,1,1.6000005416572094e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,50,1,0.09252389997709543,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,51,1,0.00027299998328089714,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,51,1,1.5099998563528061e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,51,1,0.1044662999920547,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,52,1,0.000314100063405931,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,52,1,1.8400023691356182e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,52,1,0.08433610002975911,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,53,1,0.0005506000015884638,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,53,1,5.7200086303055286e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,53,1,0.08442259998992085,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,54,1,0.0003789999755099416,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,54,1,5.18999295309186e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,54,1,0.0795022000093013,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,55,1,0.0003533000126481056,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,55,1,2.1400046534836292e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,55,1,0.0771996999392286,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,56,1,0.0003646999830380082,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,56,1,2.2500054910779e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,56,1,0.1132899000076577,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,57,1,0.0003599999472498894,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,57,1,3.609992563724518e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,57,1,0.09200639999471605,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,58,1,0.00032300001475960016,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,58,1,1.8600025214254856e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,58,1,0.09575609990861267,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,59,1,0.00044980004895478487,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,59,1,8.450006134808064e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,59,1,0.14344919996801764,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,60,1,0.0003671000013127923,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,60,1,2.4099950678646564e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,60,1,0.1088190000737086,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,61,1,0.0004088000860065222,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,61,1,2.680008765310049e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,61,1,0.1164433000376448,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,62,1,0.00044460000935941935,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,62,1,2.2600055672228336e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,62,1,0.10586759995203465,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,63,1,0.0005590999498963356,3,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,63,1,2.9799994081258774e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,63,1,0.10297389992047101,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,64,1,0.0002940000267699361,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,64,1,1.819990575313568e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,64,1,0.10095820005517453,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,65,1,0.00034930009860545397,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,65,1,1.880002673715353e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,65,1,0.11100699997041374,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,66,1,0.00033870001789182425,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,66,1,2.2699940018355846e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,66,1,0.10477390000596642,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,67,1,0.0003522000042721629,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,67,1,3.7499936297535896e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,67,1,0.09951880003791302,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,68,1,0.0003942999755963683,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,68,1,3.290001768618822e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,68,1,0.09800440003164113,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,69,1,0.00025319994892925024,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,69,1,2.1900050342082977e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,69,1,0.09040729992557317,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,70,1,0.00039950001519173384,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,70,1,3.3100019209086895e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,70,1,0.09987729997374117,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,71,1,0.0002983999438583851,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,71,1,2.2400054149329662e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,71,1,0.09403549996204674,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,72,1,0.00028570007998496294,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,72,1,1.5300000086426735e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,72,1,0.08924820006359369,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,73,1,0.0002509000478312373,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,73,1,1.6900012269616127e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,73,1,0.09446109994314611,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,74,1,0.00035440002102404833,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,74,1,2.1399930119514465e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,74,1,0.0938853999832645,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,75,1,0.00042990001384168863,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,75,1,3.9599952287971973e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,75,1,0.09517699992284179,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,76,1,0.0002573999809101224,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,76,1,1.5400000847876072e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,76,1,0.0951704999897629,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,77,1,0.0002831999445334077,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,77,1,1.550000160932541e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,77,1,0.09546009998302907,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,78,1,0.000507800024934113,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,78,1,2.129992935806513e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,78,1,0.09200050006620586,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,79,1,0.00034380005672574043,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,79,1,2.019992098212242e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,79,1,0.08548650005832314,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,80,1,0.0003350999904796481,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,80,1,2.259993925690651e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,80,1,0.09716840006876737,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,81,1,0.00033719989005476236,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,81,1,1.8000020645558834e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,81,1,0.08883070002775639,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,82,1,0.0002929000183939934,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,82,1,1.910002902150154e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,82,1,0.08910580002702773,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,83,1,0.0003512999974191189,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,83,1,1.9200029782950878e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,83,1,0.08866949996445328,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,84,1,0.00022270006593316793,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,84,1,1.5600002370774746e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,84,1,0.08226230007130653,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,85,1,0.00035039999056607485,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,85,1,1.5099998563528061e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,85,1,0.08568539994303137,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,86,1,0.0003978000022470951,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,86,1,2.2699940018355846e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,86,1,0.09004430007189512,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,87,1,0.0003073000116273761,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,87,1,1.910002902150154e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,87,1,0.09391719999257475,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,88,1,0.0003831000067293644,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,88,1,2.9099988751113415e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,88,1,0.08623969997279346,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,89,1,0.0005027999868616462,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,89,1,2.929999027401209e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,89,1,0.08886490005534142,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,90,1,0.00023110001347959042,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,90,1,5.509995389729738e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,90,1,0.08652420004364103,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,91,1,0.0003771999618038535,3,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,91,1,1.5300000086426735e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,91,1,0.0840458000311628,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,92,1,0.0004981999518349767,3,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,92,1,2.759997732937336e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,92,1,0.0958356000483036,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,93,1,0.0002720999764278531,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,93,1,1.680001150816679e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,93,1,0.11089070001617074,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,94,1,0.0003809999907389283,3,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,94,1,1.7300015315413475e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,94,1,0.09189969999715686,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,95,1,0.00028719997499138117,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,95,1,1.610000617802143e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,95,1,0.09541450010146946,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,96,1,0.00040980009362101555,3,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,96,1,1.8400023691356182e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,96,1,0.09243299998342991,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,97,1,0.00023459992371499538,1,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,97,1,1.8300022929906845e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,97,1,0.1011882999446243,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,98,1,0.00041640002746134996,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,98,1,3.0099996365606785e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,98,1,0.0870709998998791,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100,98,99,1,0.00042539997957646847,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100,98,99,1,2.1000043489038944e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100,98,99,1,0.08718130004126579,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,0,1,0.0012035999679937959,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,0,1,0.00017760007176548243,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,0,1,0.08892519993241876,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,1,1,0.0009637000039219856,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,1,1,0.0001365999924018979,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,1,1,0.08277560002170503,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,2,1,0.0009605999803170562,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,2,1,0.0001650999765843153,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,2,1,0.0894243000075221,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,3,1,0.0012301999377086759,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,3,1,0.00014510005712509155,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,3,1,0.08575550001114607,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,4,1,0.0008706999942660332,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,4,1,8.389994036406279e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,4,1,0.07674380007665604,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,5,1,0.0009241999359801412,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,5,1,0.00010740000288933516,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,5,1,0.0834969999268651,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,6,1,0.0010273000225424767,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,6,1,0.0001534000039100647,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,6,1,0.08106929995119572,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,7,1,0.0012516999850049615,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,7,1,0.00017470004968345165,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,7,1,0.080580799956806,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,8,1,0.0010337999556213617,8,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,8,1,0.0001401000190526247,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,8,1,0.08070759999100119,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,9,1,0.0009151999838650227,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,9,1,6.910006050020456e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,9,1,0.08179199998266995,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,10,1,0.000999000039882958,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,10,1,0.000112400040961802,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,10,1,0.07583899993915111,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,11,1,0.0009276000782847404,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,11,1,6.610003765672445e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,11,1,0.07718389993533492,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,12,1,0.0009626999963074923,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,12,1,5.959998816251755e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,12,1,0.07412930007558316,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,13,1,0.001128499978221953,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,13,1,0.00011089991312474012,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,13,1,0.0817264000652358,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,14,1,0.0012384000001475215,8,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,14,1,0.000121300108730793,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,14,1,0.07690790004562587,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,15,1,0.001261299941688776,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,15,1,0.00013910001143813133,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,15,1,0.08012639998923987,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,16,1,0.0010202000848948956,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,16,1,8.370005525648594e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,16,1,0.07977910002227873,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,17,1,0.0013922000071033835,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,17,1,0.00018860003910958767,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,17,1,0.08232270006556064,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,18,1,0.0009624999947845936,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,18,1,6.420002318918705e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,18,1,0.07324489997699857,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,19,1,0.001028600032441318,8,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,19,1,0.00012069998774677515,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,19,1,0.08937070006504655,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,20,1,0.0012503999751061201,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,20,1,0.00015219999477267265,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,20,1,0.09068460005801171,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,21,1,0.0012031999649479985,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,21,1,0.00014079990796744823,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,21,1,0.08322059991769493,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,22,1,0.001665599993430078,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,22,1,0.000175400055013597,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,22,1,0.08767749997787178,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,23,1,0.001103700022213161,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,23,1,7.840001489967108e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,23,1,0.0911431999411434,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,24,1,0.002441600081510842,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,24,1,0.000251100049354136,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,24,1,0.1076239999383688,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,25,1,0.0025563000235706568,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,25,1,0.0006789000472053885,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,25,1,0.11004329996649176,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,26,1,0.0018011999782174826,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,26,1,0.00016960001084953547,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,26,1,0.10579870000947267,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,27,1,0.0012368999887257814,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,27,1,0.0001343999756500125,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,27,1,0.07934089994523674,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,28,1,0.000969099928624928,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,28,1,0.00012099999003112316,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,28,1,0.07437159994151443,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,29,1,0.0010775999398902059,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,29,1,0.00011639995500445366,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,29,1,0.07597790006548166,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,30,1,0.0012011000653728843,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,30,1,0.00013370008673518896,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,30,1,0.07378690002951771,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,31,1,0.0011156999971717596,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,31,1,0.00011010002344846725,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,31,1,0.08142049994785339,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,32,1,0.0014254000270739198,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,32,1,0.0002410999732092023,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,32,1,0.0870971999829635,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,33,1,0.000990699976682663,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,33,1,0.00012250000145286322,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,33,1,0.10018649999983609,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,34,1,0.001460700063034892,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,34,1,0.0001650999765843153,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,34,1,0.09738880000077188,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,35,1,0.0010885000228881836,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,35,1,0.0002738999901339412,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,35,1,0.09611580008640885,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,36,1,0.0017340999329462647,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,36,1,0.00014320004265755415,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,36,1,0.0923727999906987,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,37,1,0.0013920000055804849,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,37,1,0.00023310002870857716,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,37,1,0.09287480008788407,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,38,1,0.002405799925327301,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,38,1,0.00016469997353851795,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,38,1,0.09383839997462928,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,39,1,0.0013927000109106302,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,39,1,0.00019120005890727043,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,39,1,0.09811800008174032,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,40,1,0.0014760999474674463,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,40,1,0.00014030002057552338,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,40,1,0.09759420005138963,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,41,1,0.0014540000120177865,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,41,1,0.000201700022444129,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,41,1,0.09830750001128763,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,42,1,0.0012975999852642417,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,42,1,0.0001542000100016594,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,42,1,0.09468839992769063,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,43,1,0.0011648000217974186,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,43,1,0.00013860000763088465,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,43,1,0.09634859999641776,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,44,1,0.0015353999333456159,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,44,1,0.00012879993300884962,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,44,1,0.10196450003422797,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,45,1,0.0008339000632986426,2,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,45,1,0.00017570005729794502,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,45,1,0.09664949995931238,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,46,1,0.0012026000767946243,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,46,1,0.00011490005999803543,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,46,1,0.08454899990465492,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,47,1,0.0009459999855607748,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,47,1,0.00011200003791600466,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,47,1,0.0989496000111103,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,48,1,0.001490199938416481,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,48,1,0.0001620999537408352,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,48,1,0.09098770003765821,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,49,1,0.0011442999821156263,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,49,1,0.00013780000153928995,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,49,1,0.09103090001735836,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,50,1,0.0011724000796675682,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,50,1,0.00011280004400759935,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,50,1,0.0883938999613747,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,51,1,0.001408900017850101,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,51,1,0.00018900004215538502,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,51,1,0.08286299998871982,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,52,1,0.0012529999949038029,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,52,1,0.00026160001289099455,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,52,1,0.09186359995510429,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,53,1,0.0010926000541076064,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,53,1,0.000282699940726161,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,53,1,0.09254610002972186,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,54,1,0.0019107999978587031,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,54,1,0.0002730999840423465,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,54,1,0.09491149999666959,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,55,1,0.0008898000232875347,4,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,55,1,8.779997006058693e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,55,1,0.0925404999870807,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,56,1,0.0010192999616265297,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,56,1,0.00010900001507252455,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,56,1,0.080741599900648,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,57,1,0.0012795999646186829,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,57,1,0.00013729999773204327,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,57,1,0.08704600005876273,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,58,1,0.0012308000586926937,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,58,1,0.0001401000190526247,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,58,1,0.09182870003860444,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,59,1,0.0021176000591367483,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,59,1,0.0004719001008197665,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,59,1,0.09324309998191893,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,60,1,0.0009991000406444073,8,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,60,1,0.00013319996651262045,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,60,1,0.08477920002769679,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,61,1,0.0009856999386101961,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,61,1,9.660003706812859e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,61,1,0.08489099994767457,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,62,1,0.0013020000187680125,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,62,1,0.0001911999424919486,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,62,1,0.0833381999982521,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,63,1,0.0011479000095278025,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,63,1,0.0001175999641418457,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,63,1,0.0870114000281319,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,64,1,0.0012841999996453524,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,64,1,0.00016099994536489248,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,64,1,0.08530699997209013,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,65,1,0.0011208000360056758,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,65,1,0.0001015000743791461,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,65,1,0.09971419989597052,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,66,1,0.0011129999766126275,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,66,1,0.00010519998613744974,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,66,1,0.08894539996981621,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,67,1,0.0014285000506788492,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,67,1,0.00011750007979571819,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,67,1,0.08753700007218868,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,68,1,0.0011825000401586294,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,68,1,0.00013280007988214493,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,68,1,0.08028399990871549,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,69,1,0.001029399922117591,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,69,1,0.00017849996220320463,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,69,1,0.08618290000595152,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,70,1,0.0012944999616593122,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,70,1,0.00017279991880059242,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,70,1,0.08790659997612238,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,71,1,0.0011511999182403088,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,71,1,0.00021700002253055573,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,71,1,0.08313300006557256,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,72,1,0.0009843999287113547,8,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,72,1,0.00011749996338039637,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,72,1,0.08386230003088713,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,73,1,0.0011850999435409904,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,73,1,0.0001039999770000577,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,73,1,0.08368889999110252,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,74,1,0.0011505000293254852,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,74,1,0.000188400037586689,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,74,1,0.08201560005545616,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,75,1,0.0011783000081777573,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,75,1,0.00011499994434416294,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,75,1,0.0880245000589639,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,76,1,0.0011813000310212374,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,76,1,0.00011789996642619371,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,76,1,0.0917765999911353,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,77,1,0.0011137999827042222,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,77,1,0.0001357999863103032,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,77,1,0.08032379997894168,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,78,1,0.0013032000279054046,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,78,1,0.00012159999459981918,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,78,1,0.07808909995947033,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,79,1,0.0007374000269919634,3,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,79,1,0.00010649999603629112,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,79,1,0.08537390001583844,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,80,1,0.0013364000478759408,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,80,1,0.00024419999681413174,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,80,1,0.0896669999929145,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,81,1,0.0015094999689608812,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,81,1,0.0001620999537408352,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,81,1,0.0960535000776872,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,82,1,0.0015588999958708882,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,82,1,0.00014860008377581835,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,82,1,0.07909640006255358,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,83,1,0.0010786999482661486,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,83,1,0.00014929997269064188,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,83,1,0.08618179999757558,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,84,1,0.0012206000974401832,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,84,1,0.00014230003580451012,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,84,1,0.08881889993790537,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,85,1,0.0014655999839305878,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,85,1,0.0001553000183776021,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,85,1,0.07709280005656183,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,86,1,0.0011623000027611852,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,86,1,0.00015979993622750044,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,86,1,0.09050569997634739,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,87,1,0.0014751999406144023,11,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,87,1,0.0002036000369116664,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,87,1,0.08856649999506772,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,88,1,0.001123500056564808,7,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,88,1,0.0001385000068694353,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,88,1,0.08795119996648282,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,89,1,0.0013351000379770994,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,89,1,0.00013679999392479658,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,89,1,0.08952679997310042,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,90,1,0.0010645000729709864,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,90,1,0.00014000001829117537,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,90,1,0.08571070001926273,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,91,1,0.001388799981214106,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,91,1,0.00012390001211315393,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,91,1,0.08776240004226565,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,92,1,0.0009994000429287553,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,92,1,0.00015009997878223658,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,92,1,0.0934467000188306,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,93,1,0.0014679000014439225,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,93,1,0.00020920007955282927,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,93,1,0.08808310003951192,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,94,1,0.0015671000583097339,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,94,1,0.0001284000463783741,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,94,1,0.0848040001001209,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,95,1,0.0012791999615728855,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,95,1,0.0002495000371709466,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,95,1,0.08414529997389764,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,96,1,0.001233799965120852,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,96,1,0.0001876000314950943,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,96,1,0.08428599999751896,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,97,1,0.0008965999586507678,9,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,97,1,9.109999518841505e-05,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,97,1,0.08190240000840276,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,98,1,0.0013383999466896057,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,98,1,0.00017579994164407253,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,98,1,0.09113940002862364,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),1000,994,99,1,0.0011099999537691474,10,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,1000,994,99,1,0.00011239992454648018,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,1000,994,99,1,0.07590249995701015,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,0,1,0.008102599997073412,74,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,0,1,0.0018570000538602471,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,0,1,0.08695330005139112,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,1,1,0.007834999938495457,75,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,1,1,0.001523599959909916,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,1,1,0.08144960005301982,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,2,1,0.00909399997908622,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,2,1,0.0011247000657022,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,2,1,0.091900400002487,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,3,1,0.009935199981555343,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,3,1,0.0012196999741718173,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,3,1,0.08335740002803504,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,4,1,0.008237299975007772,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,4,1,0.0016368000069633126,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,4,1,0.08081700000911951,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,5,1,0.008871300029568374,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,5,1,0.0023762999335303903,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,5,1,0.08410440001171082,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,6,1,0.00858439994044602,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,6,1,0.0015113999834284186,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,6,1,0.08752579998690635,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,7,1,0.008771399967372417,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,7,1,0.0010951000731438398,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,7,1,0.0908701999578625,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,8,1,0.014954200014472008,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,8,1,0.0034602999221533537,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,8,1,0.08452480006963015,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,9,1,0.008420099969953299,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,9,1,0.0018684000242501497,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,9,1,0.08559390006121248,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,10,1,0.008459000033326447,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,10,1,0.0015434999950230122,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,10,1,0.08367069996893406,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,11,1,0.010319199995137751,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,11,1,0.001462699961848557,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,11,1,0.08433350000996143,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,12,1,0.015692800050601363,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,12,1,0.0013571000890806317,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,12,1,0.09069139999337494,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,13,1,0.008668299997225404,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,13,1,0.0013732999796047807,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,13,1,0.08172630006447434,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,14,1,0.008613200043328106,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,14,1,0.0019388999789953232,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,14,1,0.08193260000552982,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,15,1,0.00848219997715205,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,15,1,0.0014655999839305878,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,15,1,0.08521230006590486,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,16,1,0.009208000032231212,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,16,1,0.0019044000655412674,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,16,1,0.0860234999563545,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,17,1,0.00874600000679493,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,17,1,0.002265000017359853,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,17,1,0.09572530002333224,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,18,1,0.009460499975830317,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,18,1,0.0018051000079140067,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,18,1,0.09009539999533445,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,19,1,0.008413700037635863,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,19,1,0.0016548000276088715,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,19,1,0.07947070000227541,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,20,1,0.008573799976147711,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,20,1,0.0014597000554203987,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,20,1,0.08339789998717606,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,21,1,0.009207600029185414,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,21,1,0.0026590999914333224,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,21,1,0.09782530006486923,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,22,1,0.008773899986408651,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,22,1,0.0024129999801516533,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,22,1,0.08606260002125055,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,23,1,0.009902699966914952,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,23,1,0.0018211000133305788,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,23,1,0.08425120008178055,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,24,1,0.009287399938330054,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,24,1,0.0018031999934464693,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,24,1,0.08715139993000776,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,25,1,0.008617199957370758,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,25,1,0.0014149000635370612,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,25,1,0.08620320004411042,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,26,1,0.008456700015813112,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,26,1,0.002094399998895824,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,26,1,0.09331999998539686,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,27,1,0.010498700081370771,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,27,1,0.0018732999451458454,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,27,1,0.08068439993076026,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,28,1,0.010668399976566434,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,28,1,0.00245339993853122,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,28,1,0.08027060003951192,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,29,1,0.010356099926866591,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,29,1,0.003159099956974387,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,29,1,0.08665820001624525,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,30,1,0.010589199955575168,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,30,1,0.0019413999980315566,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,30,1,0.09699140000157058,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,31,1,0.008663799962960184,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,31,1,0.0012669999850913882,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,31,1,0.08454409998375922,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,32,1,0.011278199963271618,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,32,1,0.002014499972574413,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,32,1,0.08495289995335042,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,33,1,0.008450299967080355,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,33,1,0.0014611000660806894,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,33,1,0.08554470003582537,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,34,1,0.008373399963602424,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,34,1,0.0018877999391406775,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,34,1,0.08707719994708896,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,35,1,0.008569000056013465,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,35,1,0.002107399981468916,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,35,1,0.08897579996846616,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,36,1,0.00818450003862381,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,36,1,0.001561800017952919,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,36,1,0.07828879996668547,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,37,1,0.00994889996945858,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,37,1,0.002073999959975481,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,37,1,0.08395839994773269,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,38,1,0.008282100083306432,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,38,1,0.0018937999848276377,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,38,1,0.08471730002202094,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,39,1,0.011196100036613643,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,39,1,0.0022389000514522195,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,39,1,0.08572939992882311,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,40,1,0.016722099971957505,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,40,1,0.0036705000093206763,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,40,1,0.08689929998945445,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,41,1,0.010534800007008016,82,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,41,1,0.0029265000484883785,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,41,1,0.0869306999957189,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,42,1,0.00900229997932911,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,42,1,0.0013595999917015433,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,42,1,0.0826726999366656,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,43,1,0.009853499941527843,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,43,1,0.0013364999322220683,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,43,1,0.08914980001281947,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,44,1,0.009507599985226989,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,44,1,0.00194390001706779,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,44,1,0.0935137999476865,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,45,1,0.012574300053529441,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,45,1,0.002167699974961579,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,45,1,0.09891790000256151,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,46,1,0.00861410005018115,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,46,1,0.0016370000084862113,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,46,1,0.09928700001910329,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,47,1,0.011326999985612929,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,47,1,0.0019948999397456646,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,47,1,0.08605779998470098,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,48,1,0.008737999945878983,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,48,1,0.0021477999398484826,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,48,1,0.09827800001949072,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,49,1,0.009067800012417138,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,49,1,0.0018061000155285,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,49,1,0.08616589999292046,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,50,1,0.010647599934600294,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,50,1,0.0020677000284194946,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,50,1,0.08909400005359203,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,51,1,0.009185499977320433,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,51,1,0.0015960999298840761,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,51,1,0.09691900003235787,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,52,1,0.009224999928846955,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,52,1,0.002296999911777675,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,52,1,0.09290960000362247,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,53,1,0.017874800018034875,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,53,1,0.004477499984204769,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,53,1,0.09630710002966225,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,54,1,0.007679100031964481,35,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,54,1,0.001575400005094707,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,54,1,0.08384550001937896,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,55,1,0.008446900057606399,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,55,1,0.0014539000112563372,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,55,1,0.07867560000158846,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,56,1,0.008007799973711371,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,56,1,0.0012475000694394112,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,56,1,0.07913800003007054,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,57,1,0.008148499997332692,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,57,1,0.0012051999801769853,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,57,1,0.0791610999731347,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,58,1,0.012502499972470105,83,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,58,1,0.0014787999680265784,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,58,1,0.0792375000892207,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,59,1,0.007851599948480725,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,59,1,0.001059299916960299,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,59,1,0.07808710006065667,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,60,1,0.007554200012236834,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,60,1,0.0016351999947801232,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,60,1,0.07527079991996288,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,61,1,0.007880300050601363,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,61,1,0.0010461000492796302,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,61,1,0.08112670003902167,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,62,1,0.0183303999947384,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,62,1,0.005116600077599287,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,62,1,0.1354502000613138,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,63,1,0.01269729994237423,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,63,1,0.002386899897828698,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,63,1,0.08634559996426105,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,64,1,0.00994610006455332,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,64,1,0.001532200025394559,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,64,1,0.07500960002653301,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,65,1,0.008447799948044121,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,65,1,0.0014461999526247382,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,65,1,0.07493060000706464,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,66,1,0.007686299970373511,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,66,1,0.000991899985820055,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,66,1,0.07931689999531955,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,67,1,0.008108300040476024,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,67,1,0.0013367000501602888,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,67,1,0.0743091000476852,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,68,1,0.010173699934966862,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,68,1,0.0017775999149307609,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,68,1,0.08186699997168034,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,69,1,0.011188699980266392,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,69,1,0.0012758999364450574,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,69,1,0.0882644000230357,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,70,1,0.00939619995187968,72,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,70,1,0.0014134000521153212,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,70,1,0.07617190002929419,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,71,1,0.009503800072707236,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,71,1,0.00181940000038594,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,71,1,0.08857859997078776,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,72,1,0.010827900026924908,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,72,1,0.001741299987770617,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,72,1,0.08063470001798123,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,73,1,0.009137499961070716,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,73,1,0.002535899984650314,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,73,1,0.0812501999316737,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,74,1,0.010170700028538704,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,74,1,0.0017900000093504786,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,74,1,0.08215499995276332,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,75,1,0.007652799948118627,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,75,1,0.001312799984589219,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,75,1,0.07451110007241368,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,76,1,0.007768400013446808,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,76,1,0.0012501999735832214,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,76,1,0.08065680006984621,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,77,1,0.006251000100746751,8,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,77,1,0.0010560000082477927,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,77,1,0.06980529997963458,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,78,1,0.009870799956843257,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,78,1,0.0013277000980451703,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,78,1,0.07074640004429966,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,79,1,0.009445100091397762,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,79,1,0.0014317999593913555,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,79,1,0.07245170010719448,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,80,1,0.009367599966935813,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,80,1,0.0019952000584453344,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,80,1,0.07215380005072802,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,81,1,0.007828600006178021,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,81,1,0.0010412000119686127,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,81,1,0.07235109992325306,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,82,1,0.0080228999722749,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,82,1,0.0011826999252662063,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,82,1,0.07639459997881204,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,83,1,0.0076555999694392085,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,83,1,0.0015242999652400613,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,83,1,0.07614570006262511,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,84,1,0.010510100051760674,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,84,1,0.0016261000419035554,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,84,1,0.08303039998281747,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,85,1,0.008569699944928288,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,85,1,0.0015131999971345067,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,85,1,0.07692770007997751,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,86,1,0.0084627999458462,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,86,1,0.0010909999255090952,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,86,1,0.07255719997920096,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,87,1,0.0088555000256747,65,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,87,1,0.0013055999297648668,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,87,1,0.07242879993282259,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,88,1,0.00827330001629889,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,88,1,0.0015681000659242272,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,88,1,0.07979969994630665,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,89,1,0.00764510000590235,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,89,1,0.0010779000585898757,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,89,1,0.07593070005532354,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,90,1,0.009465200011618435,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,90,1,0.0011741999769583344,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,90,1,0.07590890000574291,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,91,1,0.008775199996307492,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,91,1,0.001038299989886582,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,91,1,0.07100750005338341,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,92,1,0.008147799992002547,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,92,1,0.0012552000116556883,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,92,1,0.07699410000350326,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,93,1,0.008819799986667931,27,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,93,1,0.0012052999809384346,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,93,1,0.07515610009431839,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,94,1,0.009176800027489662,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,94,1,0.0012642000801861286,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,94,1,0.0661738000344485,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,95,1,0.007786800037138164,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,95,1,0.0012774999486282468,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,95,1,0.07991309999488294,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,96,1,0.008544899988919497,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,96,1,0.001129399985074997,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,96,1,0.07081549998838454,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,97,1,0.007688499987125397,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,97,1,0.001614999957382679,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,97,1,0.0776895999442786,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,98,1,0.008203799952752888,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,98,1,0.001039499999023974,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,98,1,0.07591629994567484,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),10000,9996,99,1,0.007796399993821979,84,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,10000,9996,99,1,0.001038899994455278,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,10000,9996,99,1,0.08052109996788204,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,0,1,0.0900318999774754,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,0,1,0.01387530006468296,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,0,1,0.07850760000292212,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,1,1,0.08437110006343573,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,1,1,0.012945999973453581,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,1,1,0.08450720005203038,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,2,1,0.08605440007522702,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,2,1,0.01872449996881187,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,2,1,0.08143569994717836,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,3,1,0.08345039992127568,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,3,1,0.014579399954527617,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,3,1,0.07833910000044852,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,4,1,0.08598450000863522,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,4,1,0.015091900015249848,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,4,1,0.07196750002913177,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,5,1,0.07968079997226596,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,5,1,0.013895299984142184,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,5,1,0.076033900026232,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,6,1,0.08885379997082055,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,6,1,0.013339499942958355,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,6,1,0.08418190001975745,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,7,1,0.09319080004934222,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,7,1,0.017943099956028163,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,7,1,0.07851440005470067,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,8,1,0.15683740004897118,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,8,1,0.02307460003066808,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,8,1,0.09502390003763139,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,9,1,0.11377160006668419,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,9,1,0.015712799970060587,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,9,1,0.08396860002540052,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,10,1,0.08264599996618927,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,10,1,0.013637199997901917,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,10,1,0.08050569996703416,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,11,1,0.08472590008750558,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,11,1,0.013978500035591424,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,11,1,0.09221230004914105,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,12,1,0.0893620999995619,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,12,1,0.014981199987232685,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,12,1,0.0800164999673143,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,13,1,0.09472749999258667,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,13,1,0.017822599969804287,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,13,1,0.08120689995121211,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,14,1,0.09090950002428144,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,14,1,0.014396999962627888,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,14,1,0.08048100001178682,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,15,1,0.0846715000225231,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,15,1,0.014364600065164268,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,15,1,0.07868999999482185,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,16,1,0.09205649991054088,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,16,1,0.019096800009720027,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,16,1,0.08245789993088692,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,17,1,0.08969579997938126,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,17,1,0.014541800017468631,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,17,1,0.08022550004534423,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,18,1,0.1001029999461025,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,18,1,0.01745609997306019,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,18,1,0.07872969994787127,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,19,1,0.09241070004645735,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,19,1,0.01403520000167191,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,19,1,0.0731610000366345,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,20,1,0.0896582999266684,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,20,1,0.01766979997046292,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,20,1,0.09041800000704825,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,21,1,0.10284909990150481,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,21,1,0.019563499954529107,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,21,1,0.09433850005734712,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,22,1,0.09301449998747557,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,22,1,0.015908199944533408,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,22,1,0.08523099997546524,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,23,1,0.09618580003734678,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,23,1,0.014557500020600855,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,23,1,0.08033080003224313,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,24,1,0.07978979998733848,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,24,1,0.015402399934828281,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,24,1,0.081580700003542,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,25,1,0.08217569999396801,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,25,1,0.0174430999904871,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,25,1,0.07770619995426387,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,26,1,0.08702610002364963,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,26,1,0.018088600016199052,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,26,1,0.07746569998562336,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,27,1,0.08688189997337759,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,27,1,0.015324100037105381,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,27,1,0.07811020000372082,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,28,1,0.08843479992356151,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,28,1,0.013689299928955734,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,28,1,0.07817320001777261,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,29,1,0.08903090003877878,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,29,1,0.015212099999189377,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,29,1,0.0790312000317499,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,30,1,0.083170700003393,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,30,1,0.01350500003900379,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,30,1,0.08073130005504936,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,31,1,0.08537859993521124,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,31,1,0.013836099999025464,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,31,1,0.07652769994456321,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,32,1,0.08000620000530034,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,32,1,0.01422029989771545,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,32,1,0.07581159996334463,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,33,1,0.08419129997491837,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,33,1,0.013301700004376471,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,33,1,0.07558589999098331,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,34,1,0.0701878999825567,575,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,34,1,0.013841600040905178,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,34,1,0.07857789995614439,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,35,1,0.08387550001498312,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,35,1,0.013974800007417798,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,35,1,0.07818930002395064,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,36,1,0.08583290001843125,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,36,1,0.014022600022144616,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,36,1,0.08055269997566938,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,37,1,0.08775209996383637,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,37,1,0.015253399964421988,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,37,1,0.07897230004891753,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,38,1,0.08073069993406534,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,38,1,0.015203700051642954,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,38,1,0.07691329997032881,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,39,1,0.08026970003265887,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,39,1,0.014495500014163554,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,39,1,0.08382120006717741,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,40,1,0.07754920003935695,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,40,1,0.01453749998472631,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,40,1,0.08326179999858141,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,41,1,0.08639110007788986,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,41,1,0.016810800065286458,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,41,1,0.07088509993627667,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,42,1,0.08058369997888803,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,42,1,0.01988500007428229,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,42,1,0.06957409996539354,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,43,1,0.07969729998148978,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,43,1,0.015495900064706802,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,43,1,0.07413649989757687,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,44,1,0.08038500009570271,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,44,1,0.017164899967610836,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,44,1,0.07617300003767014,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,45,1,0.07759370002895594,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,45,1,0.016310299979522824,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,45,1,0.07320889993570745,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,46,1,0.07993569993413985,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,46,1,0.016496800002641976,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,46,1,0.07207489991560578,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,47,1,0.07581810001283884,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,47,1,0.015164999989792705,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,47,1,0.0795698999427259,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,48,1,0.08061810000799596,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,48,1,0.01854100008495152,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,48,1,0.07580029999371618,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,49,1,0.08293439995031804,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,49,1,0.01757609995547682,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,49,1,0.07303119997959584,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,50,1,0.08103310002479702,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,50,1,0.01977800007443875,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,50,1,0.0781369999749586,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,51,1,0.07829700002912432,793,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,51,1,0.018217399949207902,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,51,1,0.07466549996752292,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,52,1,0.07839340006466955,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,52,1,0.017200300004333258,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,52,1,0.07095219998154789,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,53,1,0.07787779998034239,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,53,1,0.01678659999743104,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,53,1,0.07619940000586212,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,54,1,0.08114290004596114,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,54,1,0.02065619989298284,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,54,1,0.07843689993023872,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,55,1,0.08248590002767742,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,55,1,0.015379899996332824,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,55,1,0.0799384000711143,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,56,1,0.07911550009157509,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,56,1,0.014539800002239645,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,56,1,0.07764639996457845,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,57,1,0.0767852000426501,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,57,1,0.014000299968756735,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,57,1,0.0828357000136748,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,58,1,0.08613910002168268,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,58,1,0.016745900036767125,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,58,1,0.07762180001009256,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,59,1,0.08348530007060617,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,59,1,0.01485759997740388,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,59,1,0.07906829996500164,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,60,1,0.09283349988982081,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,60,1,0.015007799956947565,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,60,1,0.08479230001103133,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,61,1,0.08723259996622801,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,61,1,0.015535499900579453,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,61,1,0.0821276999777183,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,62,1,0.07441819994710386,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,62,1,0.014634599909186363,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,62,1,0.08109500003047287,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,63,1,0.08869499992579222,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,63,1,0.01592859998345375,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,63,1,0.07783660001587123,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,64,1,0.07807219994720072,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,64,1,0.018408000003546476,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,64,1,0.0829485000576824,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,65,1,0.08338470000308007,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,65,1,0.01610949996393174,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,65,1,0.07687630003783852,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,66,1,0.08628909999970347,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,66,1,0.015061199897900224,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,66,1,0.07971130008809268,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,67,1,0.08090249996166676,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,67,1,0.014548899955116212,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,67,1,0.07269470009487122,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,68,1,0.08281469997018576,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,68,1,0.015911299968138337,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,68,1,0.08142470009624958,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,69,1,0.09147920005489141,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,69,1,0.017704900004900992,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,69,1,0.08024529996328056,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,70,1,0.0798266000347212,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,70,1,0.014763100072741508,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,70,1,0.0799040999263525,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,71,1,0.08294190000742674,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,71,1,0.014994699973613024,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,71,1,0.07205159997101873,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,72,1,0.07903460005763918,810,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,72,1,0.015382600016891956,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,72,1,0.07333789998665452,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,73,1,0.07746980001684278,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,73,1,0.016065800096839666,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,73,1,0.08030050003435463,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,74,1,0.07967549993190914,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,74,1,0.014786799903959036,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,74,1,0.08264919999055564,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,75,1,0.0814570999937132,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,75,1,0.01720699993893504,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,75,1,0.07774009997956455,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,76,1,0.0819904999807477,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,76,1,0.01445429993327707,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,76,1,0.08483890001662076,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,77,1,0.07654689997434616,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,77,1,0.014321800088509917,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,77,1,0.07590599998366088,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,78,1,0.08292360010091215,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,78,1,0.015527699957601726,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,78,1,0.083803900051862,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,79,1,0.07801220007240772,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,79,1,0.015140300034545362,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,79,1,0.08120629994664341,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,80,1,0.07642509997822344,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,80,1,0.01461299997754395,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,80,1,0.07349829992745072,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,81,1,0.09184899996034801,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,81,1,0.015325999935157597,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,81,1,0.07230020000133663,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,82,1,0.08700579998549074,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,82,1,0.015030300011858344,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,82,1,0.07315830001607537,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,83,1,0.07982499990612268,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,83,1,0.014154999982565641,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,83,1,0.07600220001768321,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,84,1,0.07930470001883805,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,84,1,0.015815500053577125,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,84,1,0.08341720001772046,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,85,1,0.08488849992863834,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,85,1,0.01704720000270754,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,85,1,0.08259629993699491,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,86,1,0.07676580001134425,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,86,1,0.014812099980190396,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,86,1,0.07772439997643232,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,87,1,0.07538589998148382,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,87,1,0.014246400096453726,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,87,1,0.07929399993736297,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,88,1,0.08037720003630966,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,88,1,0.01467260008212179,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,88,1,0.07252940000034869,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,89,1,0.07999790005851537,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,89,1,0.014465200016275048,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,89,1,0.07708269997965544,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,90,1,0.08127460000105202,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,90,1,0.014467000029981136,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,90,1,0.0727142000105232,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,91,1,0.08401420002337545,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,91,1,0.01439959998242557,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,91,1,0.07833060005214065,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,92,1,0.0794168000575155,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,92,1,0.017740500043146312,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,92,1,0.07787429995369166,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,93,1,0.07942329999059439,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,93,1,0.014156399993225932,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,93,1,0.07101919990964234,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,94,1,0.07516790006775409,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,94,1,0.01528119994327426,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,94,1,0.07907580002211034,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,95,1,0.07599889999255538,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,95,1,0.01590650004800409,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,95,1,0.07640310004353523,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,96,1,0.0828672000207007,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,96,1,0.017924100044183433,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,96,1,0.08487000002060086,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,97,1,0.08309900003951043,823,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,97,1,0.016475900076329708,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,97,1,0.08133700001053512,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,98,1,0.07771470001898706,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,98,1,0.0145037000766024,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,98,1,0.07874889997765422,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+B+Tree en disco (propio),100000,99995,99,1,0.12443379999604076,822,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+lista ordenada en memoria,100000,99995,99,1,0.02515040000434965,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+recorrido completo de la lista,100000,99995,99,1,0.10537569993175566,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

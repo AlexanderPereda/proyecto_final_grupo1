@@ -1,9 +1,0 @@
-metodo,n,actual_mb,pico_mb
-B+Tree en disco (propio),1000,0.259832,0.264068
-lista ordenada en memoria,1000,0.228912,0.229179
-B+Tree en disco (propio),10000,2.342379,2.347431
-lista ordenada en memoria,10000,2.280544,2.280811
-B+Tree en disco (propio),100000,7.199911,7.218854
-lista ordenada en memoria,100000,22.702152,22.702419
-B+Tree en disco (propio),1000000,7.032523,7.054176
-lista ordenada en memoria,1000000,227.899296,227.899563
