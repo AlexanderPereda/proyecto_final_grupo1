@@ -1,33 +1,33 @@
-experimento,metodo,n,actual_mb,pico_mb
-A. push y pop,MinHeap (propio),1000,0.008872,0.009108
-A. push y pop,heapq (C),1000,0.0088,0.008856
-A. push y pop,lista ordenada (insort + pop(0)),1000,0.008856,0.008968
-B. construcción,"n push, aleatorias (propio)",1000,0.008928,0.009072
-B. construcción,"heapify, aleatorias (propio)",1000,0.008176,0.008364
-B. construcción,"n push, decrecientes (propio)",1000,0.008928,0.009072
-B. construcción,"heapify, decrecientes (propio)",1000,0.008176,0.008364
-B. construcción,"heapq.heapify, decrecientes (C)",1000,0.008056,0.008168
-A. push y pop,MinHeap (propio),10000,0.085192,0.085372
-A. push y pop,heapq (C),10000,0.085176,0.085288
-A. push y pop,lista ordenada (insort + pop(0)),10000,0.085176,0.089627
-B. construcción,"n push, aleatorias (propio)",10000,0.085248,0.085392
-B. construcción,"heapify, aleatorias (propio)",10000,0.080176,0.080364
-B. construcción,"n push, decrecientes (propio)",10000,0.085248,0.085392
-B. construcción,"heapify, decrecientes (propio)",10000,0.080176,0.080364
-B. construcción,"heapq.heapify, decrecientes (C)",10000,0.080056,0.080168
-A. push y pop,MinHeap (propio),100000,0.80364,0.80382
-A. push y pop,heapq (C),100000,0.800984,0.801096
-A. push y pop,lista ordenada (insort + pop(0)),100000,0.800984,0.803288
-B. construcción,"n push, aleatorias (propio)",100000,0.801056,0.8012
-B. construcción,"heapify, aleatorias (propio)",100000,0.800176,0.800364
-B. construcción,"n push, decrecientes (propio)",100000,0.801056,0.8012
-B. construcción,"heapify, decrecientes (propio)",100000,0.800176,0.800364
-B. construcción,"heapq.heapify, decrecientes (C)",100000,0.800056,0.800168
-A. push y pop,MinHeap (propio),1000000,8.4488,8.451396
-A. push y pop,heapq (C),1000000,8.448728,8.44884
-A. push y pop,lista ordenada (insort + pop(0)),1000000,8.450992,8.452952
-B. construcción,"n push, aleatorias (propio)",1000000,8.450496,8.45064
-B. construcción,"heapify, aleatorias (propio)",1000000,8.000176,8.000364
-B. construcción,"n push, decrecientes (propio)",1000000,8.450496,8.45064
-B. construcción,"heapify, decrecientes (propio)",1000000,8.001872,8.00226
-B. construcción,"heapq.heapify, decrecientes (C)",1000000,8.000056,8.000168
+experimento,metodo,n,actual_mb,pico_mb,procesador,python
+A. push y pop,MinHeap (propio),1000,0.008872,0.009108,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,heapq (C),1000,0.0088,0.008856,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,lista ordenada (insort + pop(0)),1000,0.008856,0.008968,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, aleatorias (propio)",1000,0.008928,0.009072,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, aleatorias (propio)",1000,0.008176,0.008364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, decrecientes (propio)",1000,0.008928,0.009072,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, decrecientes (propio)",1000,0.008176,0.008364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapq.heapify, decrecientes (C)",1000,0.008056,0.008168,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,MinHeap (propio),10000,0.085192,0.085372,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,heapq (C),10000,0.085176,0.085288,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,lista ordenada (insort + pop(0)),10000,0.085176,0.089627,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, aleatorias (propio)",10000,0.085248,0.085392,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, aleatorias (propio)",10000,0.080176,0.080364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, decrecientes (propio)",10000,0.085248,0.085392,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, decrecientes (propio)",10000,0.080176,0.080364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapq.heapify, decrecientes (C)",10000,0.080056,0.080168,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,MinHeap (propio),100000,0.80364,0.80382,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,heapq (C),100000,0.800984,0.801096,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,lista ordenada (insort + pop(0)),100000,0.800984,0.803288,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, aleatorias (propio)",100000,0.801056,0.8012,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, aleatorias (propio)",100000,0.800176,0.800364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, decrecientes (propio)",100000,0.801056,0.8012,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, decrecientes (propio)",100000,0.800176,0.800364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapq.heapify, decrecientes (C)",100000,0.800056,0.800168,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,MinHeap (propio),1000000,8.4488,8.451396,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,heapq (C),1000000,8.448728,8.44884,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+A. push y pop,lista ordenada (insort + pop(0)),1000000,8.450992,8.452952,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, aleatorias (propio)",1000000,8.450496,8.45064,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, aleatorias (propio)",1000000,8.000176,8.000364,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"n push, decrecientes (propio)",1000000,8.450496,8.45064,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapify, decrecientes (propio)",1000000,8.001872,8.00226,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
+B. construcción,"heapq.heapify, decrecientes (C)",1000000,8.000056,8.000168,"Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",3.12.0
