@@ -18,6 +18,8 @@ con h1 y h2 tomados de un único BLAKE2b de 128 bits (Kirsch y Mitzenmacher, 200
 determinista entre ejecuciones, a diferencia del hash() de Python.
 
 `set` y `dict` se usan solo como líneas base exactas en los experimentos.
+
+notebooks/etapa6_filtrado_probabilistico.ipynb importa este código y lo explica.
 """
 
 import hashlib
@@ -26,12 +28,15 @@ import math
 from array import array
 from collections import Counter
 
-from . import config
-from .stage3_storage import TablaHash
+from .. import config
+from ..etapa_3.storage import TablaHash
 
 RUTA_LISTAS = config.CARPETA_INTERIM / "listas_senalados.json"          # entrada: listas de la etapa 0
-RUTA_ALERTAS = config.CARPETA_INTERIM / "etapa6_alertas.jsonl"           # salida: etapas 8 y 9
-RUTA_BLOQUEADAS = config.CARPETA_INTERIM / "etapa6_ordenes_bloqueadas.json"
+
+# Salidas de la etapa en data/interim/<CATEGORIA>/etapa_6/
+CARPETA_ETAPA6 = config.CARPETA_INTERIM / "etapa_6"
+RUTA_ALERTAS = CARPETA_ETAPA6 / "alertas.jsonl"                         # salida: etapas 8 y 9
+RUTA_BLOQUEADAS = CARPETA_ETAPA6 / "ordenes_bloqueadas.json"
 
 # ----- Parámetros de la etapa ----------------------------------------------------
 

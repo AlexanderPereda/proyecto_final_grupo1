@@ -3,7 +3,7 @@
 Las estructuras probabilísticas se comparan con un set y un Counter exactos.
 
 Ejecutar desde la raíz del proyecto:
-    python -m pytest tests/test_stage6.py -v
+    python -m pytest tests/etapa_6/test_probabilistic.py -v
 """
 
 import math
@@ -13,7 +13,7 @@ from collections import Counter
 import pytest
 
 from src.events import Event
-from src.stage6_probabilistic import BloomFilter, CMSVentana, CountMinSketch, DetectorFraude
+from src.etapa_6.probabilistic import BloomFilter, CMSVentana, CountMinSketch, DetectorFraude
 
 
 def _claves(n, prefijo, semilla):
