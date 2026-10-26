@@ -432,7 +432,8 @@ class HNSW:
 
     Cada nodo recibe un nivel máximo l = ⌊-ln(U)·mL⌋, con U uniforme en (0, 1] y mL = 1/ln(M),
     así que cada capa tiene en promedio 1/M de los nodos de la anterior. En cada capa hasta su
-    nivel, el nodo se conecta con hasta M vecinos (2·M en la capa 0) elegidos según `seleccion`:
+    nivel, el nodo se conecta con hasta M vecinos, y cada nodo admite hasta M aristas por capa y
+    2·M en la capa 0. Los vecinos se eligen según `seleccion`:
     - "heuristica" (algoritmo 4 del paper): un candidato se acepta si está más cerca del nodo
       que de todos los vecinos ya aceptados, lo que conserva aristas hacia regiones distintas.
     - "simple" (algoritmo 3): los M candidatos más cercanos.
