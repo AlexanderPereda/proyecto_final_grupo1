@@ -48,8 +48,8 @@ RUTA_VECTORES = CARPETA_ETAPA7 / "vectores.npz"                 # vectores de at
 RUTA_METRICAS = CARPETA_ETAPA7 / "metricas.json"                # tiempos, memoria y recall@K
 
 # ----- Parámetros de la etapa ----------------------------------------------------
-# El paso 6 del notebook compara todas las combinaciones. Los parámetros de conjuntos (6.1) y de
-# vectores (6.2) están fijados con sus resultados; los de HNSW son provisionales hasta la grilla 6.3.
+# El paso 6 del notebook compara todas las combinaciones, y cada parámetro está fijado con la
+# grilla que se indica: conjuntos (6.1), vectores (6.2) y HNSW (6.3).
 
 MIN_USUARIOS = 5          # usuarios mínimos de un producto para compararlo por conjuntos (6.1)
 N_HASHES = 256            # largo de la firma MinHash (6.1)
@@ -59,10 +59,10 @@ REDUCCION = "proyeccion"  # reducción de TF-IDF a DIM: "proyeccion" (aleatoria)
 ITERACIONES_SVD = 2       # SVD aleatorizada: iteraciones de potencia y columnas de sobremuestreo,
 SOBREMUESTREO_SVD = 10    # los valores que recomiendan Halko, Martinsson y Tropp (2011)
 COLUMNAS_HASH = 1 << 18   # columnas del hashing trick antes de la proyección
-M = 16                    # HNSW: vecinos por nodo en las capas superiores (2·M en la capa 0)
-EF_CONSTRUCCION = 100     # HNSW: candidatos explorados al insertar
-EF_BUSQUEDA = 50          # HNSW: candidatos explorados al consultar
-SELECCION = "heuristica"  # HNSW: selección de vecinos, "heuristica" (algoritmo 4) o "simple" (algoritmo 3)
+M = 32                    # HNSW: vecinos por nodo en las capas superiores (2·M en la capa 0) (6.3)
+EF_CONSTRUCCION = 100     # HNSW: candidatos explorados al insertar (6.3)
+EF_BUSQUEDA = 50          # HNSW: candidatos explorados al consultar (6.3)
+SELECCION = "heuristica"  # HNSW: selección de vecinos, "heuristica" (algoritmo 4) o "simple" (algoritmo 3) (6.3)
 K = 10                    # productos relacionados y similares por producto
 N_CONSULTAS = 1_000       # productos de la muestra con que se mide el recall@K
 
