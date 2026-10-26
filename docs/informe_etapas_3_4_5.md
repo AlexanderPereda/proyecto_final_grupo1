@@ -35,10 +35,11 @@ El dataset no trae inventario. La disponibilidad se obtiene de un stock sintéti
 | Etapa 3 | `etapa_3/matriz_usuario_producto.npz` | Etapas 7 y 9 | Matriz CSR de interacciones usuario × producto |
 | Etapa 3 | `etapa_3/metricas.json` | Informe | Métricas de la ejecución de la etapa 3 |
 | Etapa 4 | `etapa_4/indice_precio.bpt` | Etapas 5 y 9 | Índice de precios en disco |
-| Etapa 5 | `etapa_5/vectores.npz` | Etapa 7 | Vectores normalizados de los productos |
-| Etapa 5 | `etapa_5/vecinos.parquet` | Etapas 7 y 9 | 10 vecinos exactos por producto con actividad |
+| Etapa 5 | `etapa_5/vectores.npz` | Etapa 9 | Vectores normalizados para productos similares en línea (uso previsto) |
+| Etapa 5 | `knn_fuerza_bruta` y `KDTree` (código) | Etapa 7 | KNN exacto, referencia del recall@K de HNSW |
+| Etapa 5 | `etapa_5/vecinos.parquet` | Etapa 9 | 10 vecinos exactos por producto con actividad (uso previsto) |
 
-Todos los artefactos están en `data/interim/<CATEGORIA>/`. El código está en `src/etapa_3/storage.py`, `src/etapa_4/bplustree.py` y `src/etapa_5/kdtree.py`, y cada etapa tiene un notebook que lo importa y documenta sus experimentos.
+Los archivos están en `data/interim/<CATEGORIA>/`. El código está en `src/etapa_3/storage.py`, `src/etapa_4/bplustree.py` y `src/etapa_5/kdtree.py`, y cada etapa tiene un notebook que lo importa y documenta sus experimentos.
 
 ## Etapa 3. Almacenamiento, lookup y caché
 
@@ -249,7 +250,7 @@ Siete decisiones se corrigieron después de medir, y cinco limitaciones quedan d
 2. Las alternativas en C (`dict`, `OrderedDict` y numpy) son más rápidas por un factor constante, pero ninguna cambia el orden de complejidad. Las alternativas con peor orden, como la búsqueda lineal, el recorrido completo y la fuerza bruta, se alejan cada vez más al crecer n.
 3. Cada estructura responde a un tipo de consulta del escenario B. La tabla hash responde la consulta puntual, el B+Tree el rango sobre una clave y el KD-Tree el rango y los vecinos sobre varias claves. La consulta por caja del KD-Tree fue 50 veces más rápida que el B+Tree con un filtro posterior.
 4. Los límites medidos orientan las decisiones de diseño. La caché alcanza el 98 % de su cota con 50 000 productos, el índice deja de convenir con rangos del 10 % de los datos y el KD-Tree pierde la poda desde 16 dimensiones.
-5. Las salidas son entradas reales de otras etapas. La etapa 3 procesa los 9.9 millones de eventos de la etapa 2, la etapa 4 indexa el catálogo y los precios del stream de la etapa 3, la etapa 5 recorre el índice de la etapa 4, y la matriz y los vecinos exactos quedan disponibles para las etapas 7 y 9.
+5. Las salidas son entradas reales de otras etapas. La etapa 3 procesa los 9.9 millones de eventos de la etapa 2, la etapa 4 indexa el catálogo y los precios del stream de la etapa 3, la etapa 5 recorre el índice de la etapa 4, y la matriz queda disponible para las etapas 7 y 9, los vecinos exactos para la etapa 9 y el KNN por fuerza bruta de la etapa 5 sirve como referencia exacta de la etapa 7.
 
 ## Referencias
 
