@@ -196,20 +196,20 @@ La ejecución está en el paso 7 del notebook, con la función `ejecutar_etapa`,
 Los experimentos están en el paso 9 del notebook y sus resultados en `results/etapa_7/escala_conjuntos_min5_h256_256x1.csv`, `escala_hnsw_d128_proyeccion_m32_efc100_ef50_heuristica.csv` y `referencia_min5_h256_256x1_d128_proyeccion_m32_efc100_ef50.csv`. Cada estructura se mide con los parámetros elegidos.
 
 - **Datos.** Para alcanzar cada tamaño se remuestrean los datos reales, como en la etapa 5. Un conjunto sintético es el de un producto real al azar, con cada usuario reemplazado por otro al azar con probabilidad 0.05. Un vector sintético es un vector real al azar más un ruido normal de desviación 0.05 en cada coordenada, normalizado a norma 1. Con 1M elementos, cada conjunto real aparece unas 13 veces y cada vector real unas 5, y esas copias son sus vecinos más similares. Por eso el recall a esa escala es más fácil que en los datos reales, y la calidad se juzga con los pasos 6 y 7.
-- **Repeticiones.** Las consultas se miden en 100 bloques en todos los tamaños. Los bloques son de 10 consultas, salvo los de las líneas base exactas con 1M, que son de 1 consulta, porque cada una cuesta O(n). Cada construcción se repite las veces que caben en 120 s, el mismo presupuesto por medición de la etapa 5, con un máximo de 100 y un mínimo de 1. El recall se mide en 200 consultas por tamaño.
+- **Repeticiones.** Las consultas se miden en 100 bloques en todos los tamaños. Los bloques son de 10 consultas, salvo los de las líneas base exactas con 1M, que son de 1 consulta, porque cada una cuesta O(n). Cada construcción se repite las veces que caben en 120 s, el mismo presupuesto por medición de la etapa 5, con un máximo de 100 y un mínimo de 1. En las tablas, el número entre paréntesis junto al tiempo de construcción es el de repeticiones. El recall se mide en 200 consultas por tamaño.
 - **Memoria.** Se mide con `tracemalloc` en una pasada aparte, sin medir tiempo. Para HNSW con 1M se reporta la memoria de la estructura (vectores y aristas), porque la pasada con `tracemalloc` costaría otra construcción de más de 50 minutos.
 - **10M.** No se mide. Las firmas y el índice LSH de 10M conjuntos ocuparían unos 28 GB, con un pico de unos 60 GB, más que los 34 GB de la máquina, y la construcción de HNSW tardaría unas 10 h en Python. Las cifras de 10M de las tablas se extrapolan con la pendiente log-log de 10K a 1M.
 - **Plataforma.** Windows 11, Intel64 Family 6 Model 151, 20 núcleos, 34.0 GB de RAM, Python 3.12.0, semilla 42. Las grillas y el paso 7 se midieron en Windows 10, AMD64 Family 23 Model 24, 8 núcleos, 32.1 GB de RAM y Python 3.12.0, así que sus tiempos no se comparan con los de esta sección.
 
 ### MinHash + LSH frente a la fuerza bruta
 
-| n | Construcción (s) | Consulta LSH (ms) | Consulta fuerza bruta (ms) | Recall@10 | Candidatos | Memoria actual | Memoria pico |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1K | 0.151 ± 0.003 (100) | 0.20 ± 0.06 | 1.95 ± 0.07 | 0.933 | 0.9 | 4.2 MB | 5.9 MB |
-| 10K | 1.93 ± 0.40 (69) | 0.67 ± 0.13 | 4.12 ± 0.14 | 0.948 | 9.9 | 40.1 MB | 59.7 MB |
-| 100K | 25.7 ± 5.3 (5) | 1.63 ± 0.21 | 20.6 ± 2.0 | 0.988 | 78 | 358 MB | 605 MB |
-| 1M | 245.7 (1) | 2.84 ± 0.50 | 183.5 ± 35.2 | 1.000 | 753 | 3.18 GB | 6.00 GB |
-| 10M (extrapolado) | 2 927 | 6.2 | 1 113 | — | — | 28.4 GB | 60.4 GB |
+| n | Construcción (s) | Consulta LSH (ms) | Consulta fuerza bruta (ms) | Recall@10 | Candidatos | Memoria LSH, actual | Memoria LSH, pico | Memoria fuerza bruta (conjuntos en CSR) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1K | 0.151 ± 0.003 (100) | 0.20 ± 0.06 | 1.95 ± 0.07 | 0.933 | 0.9 | 4.2 MB | 5.9 MB | 0.10 MB |
+| 10K | 1.93 ± 0.40 (69) | 0.67 ± 0.13 | 4.12 ± 0.14 | 0.948 | 9.9 | 40.1 MB | 59.7 MB | 1.07 MB |
+| 100K | 25.7 ± 5.3 (5) | 1.63 ± 0.21 | 20.6 ± 2.0 | 0.988 | 78 | 358 MB | 605 MB | 10.9 MB |
+| 1M | 245.7 (1) | 2.84 ± 0.50 | 183.5 ± 35.2 | 1.000 | 753 | 3.18 GB | 6.00 GB | 108 MB |
+| 10M (extrapolado) | 2 927 | 6.2 | 1 113 | — | — | 28.4 GB | 60.4 GB | — |
 
 - **Construcción.** La pendiente log-log es 1.05, coherente con O(nnz · n_hashes), porque nnz crece en proporción a n.
 - **Consulta.** LSH tiene pendiente 0.32 desde 10K. Los candidatos crecen con n porque las copias de cada conjunto real caen en las mismas cubetas. La fuerza bruta tiene pendiente 0.82: cada consulta crea un arreglo de marcas con los 1 096 990 usuarios, un costo fijo de unos 2 ms que domina con 1K y 10K. Con 1M, LSH es 65 veces más rápido.
@@ -221,18 +221,18 @@ Los experimentos están en el paso 9 del notebook y sus resultados en `results/e
 
 El `KDTree` de la etapa 5 se construye sobre los mismos vectores y se consulta con K + 1 vecinos, porque la consulta es un punto del conjunto.
 
-| n | Construcción HNSW (s) | Construcción KD-Tree (s) | Consulta HNSW (ms) | Consulta KD-Tree (ms) | Consulta fuerza bruta (ms) | Recall@10 | Distancias por consulta | Memoria HNSW (actual) | Memoria HNSW (vectores + aristas) | Memoria KD-Tree |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1K | 1.05 ± 0.08 (100) | 0.001 | 0.62 ± 0.06 | 0.29 ± 0.02 | 0.19 ± 0.04 | 1.000 | 812 | 1.0 MB | 0.65 MB | 1.0 MB |
-| 10K | 20.5 ± 2.2 (6) | 0.04 | 2.21 ± 0.21 | 10.5 ± 0.5 | 10.4 ± 2.1 | 0.981 | 1 970 | 11.3 MB | 7.0 MB | 10.4 MB |
-| 100K | 261.7 (1) | 0.44 | 1.31 ± 0.29 | 30.4 ± 0.7 | 78.2 ± 3.6 | 0.945 | 2 136 | 111.8 MB | 69.9 MB | 104 MB |
-| 1M | 2 990.9 (1) | 6.70 | 1.34 ± 0.13 | 264.8 ± 4.8 | 788.1 ± 29.8 | 0.962 | 1 693 | — | 652 MB | 1.04 GB |
-| 10M (extrapolado) | 36 829 (10.2 h) | — | — | 1 106 | 6 532 | — | — | 11.0 GB | 6.36 GB | — |
+| n | Construcción HNSW (s) | Construcción KD-Tree (s) | Consulta HNSW (ms) | Consulta KD-Tree (ms) | Consulta fuerza bruta (ms) | Recall@10 | Distancias por consulta | Memoria HNSW, actual / pico | Memoria HNSW (vectores + aristas) | Memoria KD-Tree, actual / pico | Memoria fuerza bruta (vectores) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1K | 1.05 ± 0.08 (100) | 0.001 (100) | 0.62 ± 0.06 | 0.29 ± 0.02 | 0.19 ± 0.04 | 1.000 | 812 | 1.0 / 1.5 MB | 0.65 MB | 1.0 / 3.1 MB | 0.51 MB |
+| 10K | 20.5 ± 2.2 (6) | 0.04 (100) | 2.21 ± 0.21 | 10.5 ± 0.5 | 10.4 ± 2.1 | 0.981 | 1 970 | 11.3 / 11.7 MB | 7.0 MB | 10.4 / 31.1 MB | 5.1 MB |
+| 100K | 261.7 (1) | 0.44 (100) | 1.31 ± 0.29 | 30.4 ± 0.7 | 78.2 ± 3.6 | 0.945 | 2 136 | 111.8 / 112.2 MB | 69.9 MB | 104 / 311 MB | 51.2 MB |
+| 1M | 2 990.9 (1) | 6.70 (16) | 1.34 ± 0.13 | 264.8 ± 4.8 | 788.1 ± 29.8 | 0.962 | 1 693 | — | 652 MB | 1.04 / 3.10 GB | 512 MB |
+| 10M (extrapolado) | 36 829 (10.2 h) | — | — | 1 106 | 6 532 | — | — | 11.0 GB (actual) | 6.36 GB | — | — |
 
 - **Construcción.** HNSW tiene pendiente 1.08, coherente con O(n log n). El costo por inserción pasa de 1.05 ms con 1K a 2.99 ms con 1M, un factor de 2.9, algo más que el factor 2 de ln n.
 - **Consulta.** Desde 10K, HNSW calcula entre 1 693 y 2 136 distancias por consulta, casi constantes, y de 100K a 1M su tiempo pasa de 1.31 a 1.34 ms mientras n crece 10 veces. Con 10K tarda más que con 100K aunque calcula menos distancias. Como las distancias no dependen de la máquina, esa diferencia viene de la medición y no del algoritmo, y por ese punto su pendiente desde 10K (−0.11) no se interpreta. Con 1K, el KD-Tree y la fuerza bruta son más rápidos que HNSW; desde 10K, HNSW es el más rápido. Con 1M es 198 veces más rápido que el KD-Tree y 588 veces más que la fuerza bruta.
 - **KD-Tree.** Evalúa el 100 % de los puntos en todos los tamaños, como anticipó el experimento B de la etapa 5 para d ≥ 16, y su pendiente es 0.70. Es más rápido que la fuerza bruta (pendiente 0.94) aunque evalúa los mismos puntos, porque `knn_fuerza_bruta` convierte los vectores a float64 en cada consulta: con 1M, una consulta de fuerza bruta tiene un pico de 2.05 GB, frente a unos 0.1 MB de una consulta de HNSW.
-- **Memoria.** La estructura ocupa 512 bytes de vector y unos 140 de aristas por punto. `tracemalloc` mide 1.6 veces la estructura por las listas de Python de cada nodo, y el pico es casi igual a la memoria actual. Con la misma proporción, HNSW con 1M ocuparía unos 1.04 GB, lo mismo que el KD-Tree, que guarda una copia de los vectores en float64.
+- **Memoria.** La estructura ocupa 512 bytes de vector y unos 140 de aristas por punto. `tracemalloc` mide 1.6 veces la estructura por las listas de Python de cada nodo, y el pico es casi igual a la memoria actual. Con la misma proporción, HNSW con 1M ocuparía unos 1.04 GB, lo mismo que el KD-Tree, que guarda una copia de los vectores en float64 y tiene un pico de 3.10 GB. La fuerza bruta solo necesita los vectores, 512 MB con 1M, pero cada consulta tiene un pico de 2.05 GB.
 
 ![HNSW frente al KNN exacto](../results/etapa_7/escala_hnsw.png)
 
