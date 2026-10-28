@@ -1,0 +1,70 @@
+{
+  "corte_timestamp_ms": 1661105063734.4,
+  "pares_disponibles": 299548,
+  "pares_evaluados": 80000,
+  "pares_calibracion": 40000,
+  "pares_prueba": 40000,
+  "co_compra_sintetica": {
+    "eventos": 83462478,
+    "compras": 17344471,
+    "compras_fraude_excluidas": 302612,
+    "segundos_stream": 271.1344999159992,
+    "segundos_grafo": 11.422972583000956
+  },
+  "coresena": {
+    "nodos": 522795,
+    "aristas": 4130140,
+    "base": {
+      "candidatos_por_ancla": 450.651775,
+      "pares_logistica": 18110390,
+      "tasa_positivos": 7.929150062477948e-05,
+      "coef_logistica_libre_sim_pr_co_cat": [
+        4.11568024187638,
+        3.7207717796397537,
+        1.7553514680332356,
+        1.6630741048714268
+      ]
+    },
+    "ampliado": {
+      "candidatos_por_ancla": 681.514025,
+      "pares_logistica": 27400894,
+      "tasa_positivos": 8.255205103891866e-05,
+      "coef_logistica_libre_sim_pr_co_cat": [
+        4.069076828885029,
+        3.9897362064263255,
+        1.6371866139663829,
+        1.586391122627582
+      ]
+    }
+  },
+  "sintetico": {
+    "nodos": 531518,
+    "aristas": 4850527,
+    "ampliado": {
+      "candidatos_por_ancla": 249.105075
+    }
+  },
+  "ambos": {
+    "nodos": 604534,
+    "aristas": 8975491,
+    "ampliado": {
+      "candidatos_por_ancla": 715.45005
+    }
+  },
+  "regla_fuente_cocompra": {
+    "coresena": {
+      "mejora_hitrate": 1.582677165354331,
+      "mejora_ndcg": 2.127519332592789,
+      "subida_gini": 0.06855851059295115,
+      "cumple": false
+    },
+    "ambos": {
+      "mejora_hitrate": 0.299212598425197,
+      "mejora_ndcg": 0.4634873047135686,
+      "subida_gini": 0.009822290348517004,
+      "cumple": true
+    },
+    "fuente_adoptada": "ambos"
+  },
+  "segundos": 571.0832107500028
+}

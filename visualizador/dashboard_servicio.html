@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard de Servicio y Visualización · Etapa 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-app: #0c0d12;
+  --bg-surface: #14161f;
+  --bg-surface-elevated: #1b1e2b;
+  --bg-card: rgba(27, 30, 43, 0.7);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(99, 102, 241, 0.3);
+  --text-main: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --accent-primary: #6366f1;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --accent-cyan: #06b6d4;
+  --accent-emerald: #10b981;
+  --accent-rose: #f43f5e;
+  --accent-amber: #f59e0b;
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  background-image: radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+                    radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
+}
+
+.layout-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 32px 48px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 28px;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface-elevated);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  margin-bottom: 6px;
+}
+
+h1.app-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub-header {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-emerald);
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-surface);
+}
+
+.tab-btn.active {
+  color: #fff;
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+}
+
+/* Panels */
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid & Cards */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Search bar with live autocomplete */
+.search-box-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--text-muted);
+  width: 20px;
+  height: 20px;
+}
+
+input.search-input {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--font-main);
+  outline: none;
+  transition: all 0.2s;
+}
+
+input.search-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.quick-chips {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.chip-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chip {
+  font-size: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.chip:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.autocomplete-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  padding: 8px;
+  z-index: 100;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  display: none;
+}
+
+.sug-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sug-item:hover {
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.sug-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.sug-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tag-marca { background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); }
+.tag-categoria { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.tag-producto { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
+
+/* Product Card Highlight */
+.product-hero {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(31, 35, 53, 0.9) 0%, rgba(20, 22, 31, 0.9) 100%);
+  border: 1px solid var(--border-accent);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.product-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border: 1px solid var(--border-subtle);
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-asin {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-cyan);
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 4px 0 8px;
+}
+
+.product-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.product-meta-row strong {
+  color: var(--text-main);
+}
+
+/* Table styling */
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+table.data-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+table.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-main);
+}
+
+table.data-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-danger { background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.3); }
+.badge-warning { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-success { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-neutral { background: var(--bg-surface); color: var(--text-secondary); }
+
+.score-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-surface);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 3px;
+}
+
+/* Metrics KPI Cards */
+.kpi-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.kpi-title {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.kpi-value {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: #fff;
+}
+
+.kpi-subtext {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+</style>
+</head>
+<body>
+
+<div class="layout-container">
+  <!-- Header -->
+  <header>
+    <div>
+      <div class="brand-badge">PROYECTO EDA 2026-2 · GRUPO 1</div>
+      <h1 class="app-title">Servicio y Visualización de Comercio Electrónico</h1>
+      <p class="sub-header">Amazon Reviews 2023 (`Office_Products`) · Autocompletado Trie, Ranking Top-K Multicriterio y Panel de Fraude</p>
+    </div>
+    <div class="header-status">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Pipeline Activo · 10 Etapas Conectadas</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="cambiarTab('tab-recomendacion')">
+      <span>🎯</span> Recomendación Híbrida (Top-K)
+    </button>
+    <button class="tab-btn" onclick="cambiarTab('tab-autocompletado')">
+      <span>⚡</span> Autocompletado en Vivo (Trie)
+    </button>
+    <button class="tab-btn" onclick="cambiarTab('tab-fraude')">
+      <span>🛡️</span> Monitoreo de Fraude (Etapa 6)
+    </button>
+    <button class="tab-btn" onclick="cambiarTab('tab-metricas')">
+      <span>📊</span> Arquitectura & Métricas del Pipeline
+    </button>
+  </nav>
+
+  <!-- TAB 1: RECOMENDACIÓN TOP-K -->
+  <div id="tab-recomendacion" class="tab-panel active">
+    <!-- Selector de Producto Ancla -->
+    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+      <span style="font-size: 13px; color: var(--text-secondary); font-weight: 500;">Seleccionar Producto Ancla:</span>
+      <select id="sel-producto" onchange="actualizarProductoSeleccionado()" style="background: var(--bg-surface-elevated); color: #fff; border: 1px solid var(--border-subtle); padding: 8px 14px; border-radius: 8px; font-family: var(--font-main); font-size: 13px; cursor: pointer;">
+        <option value="B0BF98LWMZ">B0BF98LWMZ · Toner Compatible Brother TN436 (Top-1 PageRank)</option>
+        <option value="B0BN478RWJ">B0BN478RWJ · Impresora Todo-en-Uno HP DeskJet (Top-2 PageRank)</option>
+        <option value="B087S2JRXY">B087S2JRXY · Trituradora de Papel Amazon Basics (Top-3 PageRank)</option>
+        <option value="B0B3MX7LVG">B0B3MX7LVG · Cinta Doble Faz Nano EZlifego (Top-4 PageRank)</option>
+        <option value="B0BZ67T58M">B0BZ67T58M · Ruedas de Silla de Oficina LIFELONG (Top-5 PageRank)</option>
+      </select>
+    </div>
+
+    <!-- Ficha del Producto Seleccionado -->
+    <div class="product-hero" id="hero-producto">
+      <!-- Se inyecta dinámicamente -->
+    </div>
+
+    <!-- Tabla Top-K Recomendaciones Híbridas -->
+    <div class="card">
+      <div class="card-title">
+        <span>Top-K Recomendaciones Complementarias (MinHeap O(N log K))</span>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 400;">Ponderación: 35% Atributos (HNSW) · 25% Comportamiento (LSH) · 20% PageRank · 20% Co-compra</span>
+      </div>
+      <table class="data-table" id="tabla-recomendaciones">
+        <thead>
+          <tr>
+            <th style="width: 50px;">#</th>
+            <th>Producto Recomendado</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th style="width: 140px;">Score Híbrido</th>
+            <th>Atributos</th>
+            <th>Jaccard</th>
+            <th>Co-compra</th>
+            <th>PageRank</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-recs">
+          <!-- Se inyecta dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 2: AUTOCOMPLETADO (TRIE) -->
+  <div id="tab-autocompletado" class="tab-panel">
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-title">Autocompletado de Prefijo en Tiempo Real (Trie radix O(L + k), difuso OSA d = 1)</div>
+      <div class="search-box-container">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input type="text" id="input-busqueda" class="search-input" placeholder="Escribe un prefijo (ej. 'ton', 'bro', 'sta', 'pen', 'not', 'pilo', 'scot')..." oninput="manejarInputTrie(this.value)">
+        </div>
+        <div class="quick-chips">
+          <span class="chip-label">Sugerencias rápidas:</span>
+          <button class="chip" onclick="probarPrefijo('ton')">ton</button>
+          <button class="chip" onclick="probarPrefijo('bro')">bro</button>
+          <button class="chip" onclick="probarPrefijo('stap')">stap</button>
+          <button class="chip" onclick="probarPrefijo('pen')">pen</button>
+          <button class="chip" onclick="probarPrefijo('note')">note</button>
+          <button class="chip" onclick="probarPrefijo('pilo')">pilo</button>
+          <button class="chip" onclick="probarPrefijo('scot')">scot</button>
+        </div>
+        <div id="dropdown-trie" class="autocomplete-dropdown">
+          <!-- Opciones dinámicas -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultados de Búsqueda de Ejemplo -->
+    <div class="card">
+      <div class="card-title">Resultados de Búsqueda para "Toner Brother" (Ranking Híbrido Top-K)</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width: 50px;">Rango</th>
+            <th>ASIN</th>
+            <th>Título del Producto</th>
+            <th>Categoría</th>
+            <th>Tienda</th>
+            <th>Precio</th>
+            <th>PageRank</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-busqueda">
+          <!-- Inyectado dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 3: MONITOREO DE FRAUDE (ETAPA 6) -->
+  <div id="tab-fraude" class="tab-panel">
+    <div class="grid-3col" style="margin-bottom: 24px;">
+      <div class="kpi-card">
+        <div class="kpi-title">Total Alertas Detectadas</div>
+        <div class="kpi-value" id="kpi-total-alertas">47,710</div>
+        <div class="kpi-subtext">Count-Min Sketch + Bloom Filter</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Órdenes Bloqueadas</div>
+        <div class="kpi-value" style="color: var(--accent-rose);" id="kpi-bloqueadas">41,532</div>
+        <div class="kpi-subtext">Precisión medida con fraude_real: 100.0%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Órdenes Retenidas para Revisión</div>
+        <div class="kpi-value" style="color: var(--accent-amber);" id="kpi-retenidas">6,178</div>
+        <div class="kpi-subtext">Ráfaga de compras sospechosas</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Muestra de Alertas Procesadas en Tiempo Real (Etapa 6 -> Etapa 9)</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Event ID</th>
+            <th>Order ID</th>
+            <th>User ID</th>
+            <th>Motivos de Sospecha</th>
+            <th>Estimado CMS</th>
+            <th>Decisión Tomada</th>
+            <th>Fraude Real</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-alertas">
+          <!-- Inyectado dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 4: MÉTRICAS DEL PIPELINE -->
+  <div id="tab-metricas" class="tab-panel">
+    <div class="grid-3col" style="margin-bottom: 24px;">
+      <div class="kpi-card">
+        <div class="kpi-title">Latencia Trie Autocompletado</div>
+        <div class="kpi-value" style="color: var(--accent-cyan);">1.2 µs</div>
+        <div class="kpi-subtext">p50 exacto con Top-K caché · difuso (d = 1): 0.74 ms</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Latencia Top-K Recomendación</div>
+        <div class="kpi-value" style="color: var(--accent-emerald);">0.82 ms</div>
+        <div class="kpi-subtext">Scoring híbrido 4 fuentes + MinHeap</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Términos en Trie</div>
+        <div class="kpi-value">585,983</div>
+        <div class="kpi-subtext">Catálogo completo en 831,377 nodos radix</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Resumen de Algoritmos y Complejidades del Pipeline Completo</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Etapa</th>
+            <th>Módulo</th>
+            <th>Estructura / Algoritmo Principal</th>
+            <th>Complejidad Temporal</th>
+            <th>Complejidad Espacial</th>
+            <th>Rol en el Servicio (Etapa 9)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Etapa 0</strong></td>
+            <td>Ingesta & Buffer</td>
+            <td>ColaCircular con drop de desborde</td>
+            <td>O(1)</td>
+            <td>O(capacidad)</td>
+            <td>Buffer de entrada de eventos</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 1</strong></td>
+            <td>Preprocesamiento</td>
+            <td>Merge sort + Búsqueda binaria</td>
+            <td>O(N log N)</td>
+            <td>O(N)</td>
+            <td>Normalización de eventos</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 2</strong></td>
+            <td>Priorización</td>
+            <td>MinHeap con envejecimiento (aging)</td>
+            <td>O(log N)</td>
+            <td>O(N)</td>
+            <td>Estructura base para TopKHeap</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 3</strong></td>
+            <td>Almacenamiento</td>
+            <td>TablaHash + AlmacenCatalogo + CSR</td>
+            <td>O(1) / O(nnz)</td>
+            <td>O(V + E)</td>
+            <td>Consulta de metadatos de productos</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 4</strong></td>
+            <td>Indexación</td>
+            <td>B+Tree en memoria y disco</td>
+            <td>O(log B N)</td>
+            <td>O(N)</td>
+            <td>Búsquedas por rango de precio</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 5</strong></td>
+            <td>Índice Multidimensional</td>
+            <td>KD-Tree y KNN exacto</td>
+            <td>O(log N) / O(N d)</td>
+            <td>O(N)</td>
+            <td>Línea base exacta de vecinos</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 6</strong></td>
+            <td>Filtrado Probabilístico</td>
+            <td>Bloom Filter + Count-Min Sketch</td>
+            <td>O(k) / O(d)</td>
+            <td>O(m + w·d)</td>
+            <td>Centro de monitoreo de fraude</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 7</strong></td>
+            <td>Similitud Aproximada</td>
+            <td>MinHash + LSH & HNSW</td>
+            <td>O(b + c) / O(log N)</td>
+            <td>O(N · n_hashes)</td>
+            <td>Similares (atributos) y Relacionados</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 8</strong></td>
+            <td>Grafo de Dominio</td>
+            <td>PageRank (Power Iteration) & Louvain</td>
+            <td>O(k |E|) / O(N log N)</td>
+            <td>O(V + E) CSR</td>
+            <td>Autoridad global y afinidad co-compra</td>
+          </tr>
+          <tr>
+            <td><strong>Etapa 9</strong></td>
+            <td>Servicio & Visualización</td>
+            <td>Trie radix con Top-K Caché, índice invertido & TopKHeap</td>
+            <td>O(L + k) / O(Σ df) / O(N log K)</td>
+            <td>O(N)</td>
+            <td>Motor unificado de cara al usuario final</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// Datos embebidos directamente del pipeline
+const DATOS_DEMO = {"autocompletado": {"ton": [{"termino": "Toner Kingdom", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00OMUBNIC"}}, {"termino": "Toner Eagle", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00FQ1RVIM"}}, {"termino": "Tony Design", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B084P165V4"}}, {"termino": "TonerPlusUSA", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00R6PYBHK"}}, {"termino": "Toner Clinic", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00DY8P67W"}}], "bro": [{"termino": "Brownline", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B002JFOHZS"}}, {"termino": "Brother", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00IG3GZJI"}}, {"termino": "Brown Trout Publisher", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B004XPSPIC"}}, {"termino": "Broadman & Holman", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B004J0FPFW"}}, {"termino": "Broadfashion", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00LNWAM1G"}}], "stap": [{"termino": "STAPLES", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B07F8F4WGF"}}, {"termino": "Staples Arc", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00JXR5QXW"}}, {"termino": "Staples", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00ZY6T2OK"}}, {"termino": "STAPENS", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B087JPPQN9"}}, {"termino": "Staples Graph Composition Notebook", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B01LBPZPRU"}}], "pen": [{"termino": "PenPower", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B098NQ685V"}}, {"termino": "Pentel", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B01E8WD6XI"}}, {"termino": "Pendaflex", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B078H7KP9V"}}, {"termino": "Pencils Etc.", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0042TTV3W"}}, {"termino": "Penguin", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B08S6S7T14"}}], "note": [{"termino": "Note Card Cafe", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00RKQZ0B6"}}, {"termino": "Notepen", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0789VXC3Q"}}, {"termino": "noted*", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B07P2X3S31"}}, {"termino": "Note Tower", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B08XZRH4HP"}}, {"termino": "Noteworthy", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B074KNKDH9"}}], "pilo": [{"termino": "PILOT", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B09185VVR6"}}, {"termino": "Pilot Corp.", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B08M3FWTS4"}}, {"termino": "Pilot Corporation", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B008C1YOQK"}}, {"termino": "Pilot", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00WE63L90"}}, {"termino": "Pilot Japan", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B09DPGJ6RV"}}], "scot": [{"termino": "Scotch", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B08P1TKBXK"}}, {"termino": "Scotch Mounting, Fastening & Surface Protection", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B08645Z3WY"}}, {"termino": "Scotch Magic Tape Dispenser", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00ZA221U0"}}, {"termino": "Scotch Brand", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B01KQKG3PE"}}, {"termino": "Scott Marchant (Author)", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "098247248X"}}], "hp": [{"termino": "HP", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00FF3ZHYG"}}, {"termino": "HPX", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0BBMVVKFX"}}, {"termino": "HP®", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0026I9QRC"}}, {"termino": "HPP", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B087CBYG57"}}, {"termino": "HP Papers", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B09F12B968"}}]}, "autocompletado_difuso": {"tonr": [{"termino": "TOARTi", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B09L5QGQG9"}, "distancia": 1}, {"termino": "TONAHUTU", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B09HGX39B5"}, "distancia": 1}, {"termino": "TONER FOR COPY", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B008RUURZ8"}, "distancia": 1}, {"termino": "TONESPAC", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B094R4Q6K5"}, "distancia": 1}, {"termino": "TONGVEO", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B09R4DD5V3"}, "distancia": 1}], "stapel": [{"termino": "STAPENS", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B087JPPQN9"}, "distancia": 1}, {"termino": "STAPLES", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B07F8F4WGF"}, "distancia": 1}, {"termino": "Stapex", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B01D480PFO"}, "distancia": 1}, {"termino": "Staple & Stick", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B07KV78YNQ"}, "distancia": 1}, {"termino": "Staple Depot", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00425NIBC"}, "distancia": 1}], "brotehr": [{"termino": "BROTHER", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0096JU2LS"}, "distancia": 1}, {"termino": "Brother", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00IG3GZJI"}, "distancia": 1}, {"termino": "Brother International Corp.", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B00073HUYY"}, "distancia": 1}, {"termino": "Brother Printer", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B000DZU3PY"}, "distancia": 1}, {"termino": "Brotherhood", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B097XJ6T7G"}, "distancia": 1}], "pilto g2": [{"termino": "PILOT G2 Premium Refillable", "frecuencia": 26.52414961774691, "meta": {"tipo": "producto", "asin": "B0C74DYY88", "titulo": "PILOT G2 Premium Refillable and Retractable Rolling Ball Gel Pens, Fine Point, Blue Ink, 5-Pack (31299)"}, "distancia": 1}, {"termino": "Pilot, G2 Premium Gel", "frecuencia": 21.2002732286886, "meta": {"tipo": "producto", "asin": "B0C7WNCL6H", "titulo": "Pilot, G2 Premium Gel Roller Pens, Bold Point 1 mm, Pack of 12, Red"}, "distancia": 1}, {"termino": "Pilot, G2 Gel Ink", "frecuencia": 14.359828931480378, "meta": {"tipo": "producto", "asin": "B00006IEC6", "titulo": "Pilot, G2 Gel Ink Refills, Fine Point 0.7 mm, Black, Pack of 2"}, "distancia": 1}, {"termino": "PILOT G2 Limited Refillable", "frecuencia": 13.195476898683085, "meta": {"tipo": "producto", "asin": "B0BYTD57X8", "titulo": "PILOT G2 Limited Refillable & Retractable Rolling Ball Gel Pen, Fine Point, Silver Barrel, Black Ink, Single Pen (31535)"}, "distancia": 1}, {"termino": "Pilot G2 Retractable Gel", "frecuencia": 12.650098235175571, "meta": {"tipo": "producto", "asin": "B01HNNH1J4", "titulo": "Pilot G2 Retractable Gel Ink Roller Ball Pens, Bold Point Black 10-PACK(31237)"}, "distancia": 1}], "scoth tape": [{"termino": "Scotch Tape Dispenser in", "frecuencia": 4.633389225523992, "meta": {"tipo": "producto", "asin": "B0BJYK4Y95", "titulo": "Scotch Tape Dispenser in Silver with 1 Roll of Scotch Magic Tape 19mm x 33m"}, "distancia": 1}, {"termino": "Scotch Tape Runner Refill.31", "frecuencia": 3.8008947805455318, "meta": {"tipo": "producto", "asin": "B07QJ71T1M", "titulo": "Scotch Tape Runner Refill.31 in x 16.3 yd (055-R-CFT), Pack of 3"}, "distancia": 1}, {"termino": "SCOTCH TAPE TRANSPARENT CRYSTAL", "frecuencia": 3.522965184367506, "meta": {"tipo": "producto", "asin": "B00PJV7NM8", "titulo": "SCOTCH TAPE TRANSPARENT CRYSTAL CLEAR 3 PK 6 EACH"}, "distancia": 1}, {"termino": "Scotch Tape - Multi", "frecuencia": 3.522965184367506, "meta": {"tipo": "producto", "asin": "B006RNEQH2", "titulo": "Scotch Tape - Multi Task Size Ea Scotch Tape - Multi Task 2ct"}, "distancia": 1}, {"termino": "Scotch Tape Dispenser Desktop,", "frecuencia": 3.522965184367506, "meta": {"tipo": "producto", "asin": "B074L5RJ38", "titulo": "Scotch Tape Dispenser Desktop, Blue Periwinkle Bundle with Jot Clear Transparent Tape, 6 pack – for Home or Office Desk Supplies"}, "distancia": 1}], "sharpei": [{"termino": "SHARPER GLORY", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B07F267F4K"}, "distancia": 1}, {"termino": "SHARPER IMAGE", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B082T4DR6Q"}, "distancia": 1}, {"termino": "SHARPERGlorySHALORY", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B07KCB8TCG"}, "distancia": 1}, {"termino": "SHARPIE", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B08FCQ8JV1"}, "distancia": 1}, {"termino": "Sharpened Iron", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0BT4HVW12"}, "distancia": 1}], "swinglien": [{"termino": "SWINGLINE", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0147GLO0M"}, "distancia": 1}, {"termino": "Swingline", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B073XZKHLN"}, "distancia": 1}, {"termino": "Swingline GBC", "frecuencia": 500.0, "meta": {"tipo": "marca", "asin": "B0000E2PYE"}, "distancia": 1}, {"termino": "Swingline Lamination", "frecuencia": 300.0, "meta": {"tipo": "categoria", "asin": "B00CBDO0EQ"}, "distancia": 1}, {"termino": "Swingline Punch", "frecuencia": 300.0, "meta": {"tipo": "categoria", "asin": "B000Y9IUMC"}, "distancia": 1}]}, "recomendacion_ejemplo": {"asin_origen": "B0BF98LWMZ", "detalle_origen": {"parent_asin": "B0BF98LWMZ", "title": "TN436 ColorKing Compatible Toner Cartridge Replacement for Brother TN436 TN-436BK TN433 TN431 Toner for Brother HL-L8360CDW HL-L8360CDWT MFC-L8900CDW HL-L8260CDW MFC-L8610CDW MFC-L9570 Printer(4 Pack)", "main_category": "All Electronics", "categorias": ["Office Products", "Office Electronics", "Printers & Accessories", "Printer Parts & Accessories", "Printer Ink & Toner", "Toner Cartridges"], "categoria_hoja": "Toner Cartridges", "precio": 62.99, "average_rating": 5.0, "rating_number": 8, "store": "Colorking", "pagerank": 0.00039635901684100916, "grado_ponderado": 1420.0, "comunidad_louvain": 677, "comunidad_lpa": 265}, "recomendaciones": [{"rango": 1, "parent_asin": "B0CB9J3J2P", "score_hibrido": 0.792, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0235, "afinidad_cocompra": 1.0, "pagerank": 6.7e-05, "titulo": "EasyGo Rolling Cart Folding Grocery Shopping Cart Laundry Basket Rolling Utility Cart with Wheels – Removable Canvas Bag, Versa Wheels & Rear Brakes - Easy Folding 120lb Capacity – Copyrighted, Black", "categoria": "Utility Carts", "precio": 70.63, "tienda": "EasyGo Product"}, {"rango": 2, "parent_asin": "B09V1Z8Q42", "score_hibrido": 0.7303, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0213, "afinidad_cocompra": 0.8667, "pagerank": 5e-05, "titulo": "Dirty Pop Cards - Purr-fect Pop Up Birthday Card, 3D Cat Farting Confetti Funny Birthday Card, Cat Mom or Dad Bday Popup Cards for Husband, Wife, Friend, and Every Cat Lover - 1 Card 5 x 7 inch, 1 Notepaper, 1 Envelope", "categoria": "Greeting Cards", "precio": 12.99, "tienda": "Dirty Pop Cards"}, {"rango": 3, "parent_asin": "B08G51JNJB", "score_hibrido": 0.66, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0166, "afinidad_cocompra": 0.7, "pagerank": 5.2e-05, "titulo": "Rybozen Mobile Film and Slide Scanner, Lets You Scan and Play with Old 35mm Films & Slides Using Your Smartphone Camera, Fun Toys and Gifts with LED Backlight, Rugged Plastic Folding Scanner", "categoria": "Slide & Negative Scanners", "precio": 17.99, "tienda": "Rybozen"}, {"rango": 4, "parent_asin": "B09XMCSH3X", "score_hibrido": 0.6525, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0167, "afinidad_cocompra": 0.6833, "pagerank": 5e-05, "titulo": "Metal Book Stand Book Holder Book Stand for Reading Adjustable Book Holder for Reading (Full White)", "categoria": "Book Stands", "precio": 8.99, "tienda": "Camelmother"}, {"rango": 5, "parent_asin": "B07PHRP7DB", "score_hibrido": 0.6077, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0144, "afinidad_cocompra": 0.6, "pagerank": 3.1e-05, "titulo": "TRUE IMAGE Compatible 046 Toner Cartridge Replacement for Canon 046 MF733Cdw CRG-046 Color ImageCLASS MF733Cdw MF731Cdw MF735Cdw LBP654Cdw MF733 Printer Ink (Black Cyan Yellow Magenta, 4-Pack)", "categoria": "Toner Cartridges", "precio": 57.71, "tienda": "TRUE IMAGE"}, {"rango": 6, "parent_asin": "B0C5HBFMR2", "score_hibrido": 0.6058, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0139, "afinidad_cocompra": 0.5833, "pagerank": 4.1e-05, "titulo": "Eyesen Slide Viewer Light Box, Ultra-Thin A4 USB Powered Light Scanner for Photo Slide and Film Negative Scanning,Tattoo Drawing, Artist Sketching, Stenciling", "categoria": "Slide & Negative Scanners", "precio": 24.99, "tienda": "eyesen"}, {"rango": 7, "parent_asin": "B092KV8DYD", "score_hibrido": 0.595, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0141, "afinidad_cocompra": 0.5667, "pagerank": 3.3e-05, "titulo": "30 Pack Double Sided Dry Erase Clipboards 9\"x12\" Durable Clipboards Bulk with 30 Dry Erase Erasers, Dry Erase Clipboard with Low Profile Clip for School, Classroom and Home Use", "categoria": "Clipboards", "precio": 61.99, "tienda": "Scribbledo"}, {"rango": 8, "parent_asin": "B01GRMG4TU", "score_hibrido": 0.5901, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0136, "afinidad_cocompra": 0.55, "pagerank": 3.7e-05, "titulo": "MALEDEN Leather Writing Journal Notebook, Classic Spiral Bound Notebook Refillable Diary Sketchbook Gifts with Unlined Travel Journals to Write in for Girls and Boys (Sky Blue)", "categoria": "Hardcover Executive Notebooks", "precio": 9.97, "tienda": "MALEDEN"}, {"rango": 9, "parent_asin": "B0BYZ7C6TD", "score_hibrido": 0.5811, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0127, "afinidad_cocompra": 0.5333, "pagerank": 3.4e-05, "titulo": "Laminator Machine with Laminating Sheets 20 Pouches, WORKIZE 9-Inch Thermal Laminator, Personal 5-in-1 A4 Desktop Laminating Machine Built-in Paper Trimmer Hole Puncher and Corner Rounder", "categoria": "Laminators", "precio": 39.99, "tienda": "WORKIZE"}, {"rango": 10, "parent_asin": "B09CK9S8DR", "score_hibrido": 0.5701, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0119, "afinidad_cocompra": 0.5, "pagerank": 4e-05, "titulo": "Boba Cute Standing Pencil Case for Kids, Pop Up Pencil Box Makeup Pouch, Stand UP Christmas Gift kids Pen Holder Organizer Cosmetics Bag, Kawaii Stationary (Yellow)", "categoria": "Pencil Holders", "precio": 7.99, "tienda": "KPX"}]}, "busqueda_ejemplo": {"query": "toner brother", "resultados": [{"rango": 1, "parent_asin": "B0BF98LWMZ", "score": 1.0, "titulo": "TN436 ColorKing Compatible Toner Cartridge Replacement for Brother TN436 TN-436BK TN433 TN431 Toner for Brother HL-L8360CDW HL-L8360CDWT MFC-L8900CDW HL-L8260CDW MFC-L8610CDW MFC-L9570 Printer(4 Pack)", "categoria": "Toner Cartridges", "precio": 62.99, "tienda": "Colorking", "pagerank": 0.000396}, {"rango": 2, "parent_asin": "B0CCYGMRJS", "score": 0.9526, "titulo": "ColorKing Compatible Toner Cartridge Replacement for Brother TN227 TN227BK TN-227 TN223 TN223BK for MFC-L3770CDW HL-L3290CDW HL-L3270CDW HL-L3210CW MFC-L3710CW Printer (TN-227BK/C/M/Y High Yield, 5PK)", "categoria": "Toner Cartridges", "precio": 86.19, "tienda": "Colorking", "pagerank": 0.0001}, {"rango": 3, "parent_asin": "B08LG788FQ", "score": 0.9442, "titulo": "GOTOBY TN760 Toner Cartridge Replacement Compatible for Brother TN-760 TN730 TN-730 High Yield Compatible with DCP-L2550DW HL-L2350DW HL-L2370DW HL-L2370DWXL HL-L2395DW MFC-L2710DW (Black, 4-Pack)", "categoria": "Toner Cartridges", "precio": 48.99, "tienda": "GOTOBY", "pagerank": 7.8e-05}, {"rango": 4, "parent_asin": "B09W9K6BPM", "score": 0.9412, "titulo": "MCYCOLOR DR730 Drum Unit Compatible Replacement for Brother DR-730 DR 730 to Use with MFC-L2710DW MFC-L2750DW HL-L2395DW HL-L2370DW HL-L2350DW HL-L2390DW DCP-L2550DW Printer (2 Pack, NOT Toner)", "categoria": "Drum Kits", "precio": 48.99, "tienda": "MCYCOLOR", "pagerank": 7.2e-05}, {"rango": 5, "parent_asin": "B0BWM5Q4M2", "score": 0.9358, "titulo": "Brother Genuine Cartridge TN760 High Yield Black Toner", "categoria": "Toner Cartridges", "precio": 78.5, "tienda": "Brother", "pagerank": 6.1e-05}, {"rango": 6, "parent_asin": "B09X2YR8SQ", "score": 0.9331, "titulo": "Inkalfa Compatible TN227BK TN-227BK Toner: Cartridge Replacement for Brother TN227 TN227BK TN-223BK TN223BK for MFC-L3770CDW HL-L3290CDW HL-L3230CDW MFC-L3750CDW L3710CW L3210CW Printer (Black, 2Pack)", "categoria": "Toner Cartridges", "precio": 34.39, "tienda": "inkalfa", "pagerank": 5.7e-05}, {"rango": 7, "parent_asin": "B075X7TFY5", "score": 0.9304, "titulo": "Brother Genuine Standard Yield Toner Cartridge, TN730, Replacement Black Toner, Page Yield Up To 1,200 Pages, Amazon Dash Replenishment Cartridge", "categoria": "Toner Cartridges", "precio": 45.48, "tienda": "Brother", "pagerank": 5.2e-05}, {"rango": 8, "parent_asin": "B09GK7Z8B3", "score": 0.93, "titulo": "E-Z Ink (TM Compatible Toner Cartridge Replacement for Brother TN660 TN630 High Yield to use with HL-L2300D HL-L2380DW HL-L2320D DCP-L2540DW HL-L2340DW HL-L2360DW MFC-L2720DW Printer (Black, 4 Pack)", "categoria": "Toner Cartridges", "precio": 44.99, "tienda": "E-Z Ink", "pagerank": 5.2e-05}, {"rango": 9, "parent_asin": "B09W28XRXJ", "score": 0.9271, "titulo": "TN660 TN630 Higher-Yield SHEENGO Compatible Toner Cartridge Replacement for Brother TN660 TN-660 for HL-L2340DW HL-L2300D HL-L2380DW MFC-L2700DW L2740DW DCP-L2540DW Printer(TN6602PK) up to 2,600 Pages", "categoria": "Toner Cartridges", "precio": 24.99, "tienda": "SHEENGO", "pagerank": 4.8e-05}, {"rango": 10, "parent_asin": "B0C8TXW6PF", "score": 0.926, "titulo": "HaloFox Compatible Toner Cartridge for Brother TN660 TN-660 TN-630 TN630 for Brother MFC-L2700DW HL-L2300D HL-L2360DW HL-L2320D HL-L2340DW HL-L2380DW DCP-L2540DW MFC-L2740DW Printer (Black, 2-Pack)", "categoria": "Toner Cartridges", "precio": 27.98, "tienda": "HaloFox", "pagerank": 4.6e-05}]}, "busquedas": {"toner brother": {"consulta_corregida": "toner brother", "resultados": [{"rango": 1, "parent_asin": "B0BF98LWMZ", "score": 1.0, "titulo": "TN436 ColorKing Compatible Toner Cartridge Replacement for Brother TN436 TN-436BK TN433 TN431 Toner for Brother HL-L8360CDW HL-L8360CDWT MFC-L8900CDW HL-L8260CDW MFC-L8610CDW MFC-L9570 Printer(4 Pack)", "categoria": "Toner Cartridges", "precio": 62.99, "tienda": "Colorking", "pagerank": 0.000396}, {"rango": 2, "parent_asin": "B0CCYGMRJS", "score": 0.9526, "titulo": "ColorKing Compatible Toner Cartridge Replacement for Brother TN227 TN227BK TN-227 TN223 TN223BK for MFC-L3770CDW HL-L3290CDW HL-L3270CDW HL-L3210CW MFC-L3710CW Printer (TN-227BK/C/M/Y High Yield, 5PK)", "categoria": "Toner Cartridges", "precio": 86.19, "tienda": "Colorking", "pagerank": 0.0001}, {"rango": 3, "parent_asin": "B08LG788FQ", "score": 0.9442, "titulo": "GOTOBY TN760 Toner Cartridge Replacement Compatible for Brother TN-760 TN730 TN-730 High Yield Compatible with DCP-L2550DW HL-L2350DW HL-L2370DW HL-L2370DWXL HL-L2395DW MFC-L2710DW (Black, 4-Pack)", "categoria": "Toner Cartridges", "precio": 48.99, "tienda": "GOTOBY", "pagerank": 7.8e-05}, {"rango": 4, "parent_asin": "B09W9K6BPM", "score": 0.9412, "titulo": "MCYCOLOR DR730 Drum Unit Compatible Replacement for Brother DR-730 DR 730 to Use with MFC-L2710DW MFC-L2750DW HL-L2395DW HL-L2370DW HL-L2350DW HL-L2390DW DCP-L2550DW Printer (2 Pack, NOT Toner)", "categoria": "Drum Kits", "precio": 48.99, "tienda": "MCYCOLOR", "pagerank": 7.2e-05}, {"rango": 5, "parent_asin": "B0BWM5Q4M2", "score": 0.9358, "titulo": "Brother Genuine Cartridge TN760 High Yield Black Toner", "categoria": "Toner Cartridges", "precio": 78.5, "tienda": "Brother", "pagerank": 6.1e-05}, {"rango": 6, "parent_asin": "B09X2YR8SQ", "score": 0.9331, "titulo": "Inkalfa Compatible TN227BK TN-227BK Toner: Cartridge Replacement for Brother TN227 TN227BK TN-223BK TN223BK for MFC-L3770CDW HL-L3290CDW HL-L3230CDW MFC-L3750CDW L3710CW L3210CW Printer (Black, 2Pack)", "categoria": "Toner Cartridges", "precio": 34.39, "tienda": "inkalfa", "pagerank": 5.7e-05}, {"rango": 7, "parent_asin": "B075X7TFY5", "score": 0.9304, "titulo": "Brother Genuine Standard Yield Toner Cartridge, TN730, Replacement Black Toner, Page Yield Up To 1,200 Pages, Amazon Dash Replenishment Cartridge", "categoria": "Toner Cartridges", "precio": 45.48, "tienda": "Brother", "pagerank": 5.2e-05}, {"rango": 8, "parent_asin": "B09GK7Z8B3", "score": 0.93, "titulo": "E-Z Ink (TM Compatible Toner Cartridge Replacement for Brother TN660 TN630 High Yield to use with HL-L2300D HL-L2380DW HL-L2320D DCP-L2540DW HL-L2340DW HL-L2360DW MFC-L2720DW Printer (Black, 4 Pack)", "categoria": "Toner Cartridges", "precio": 44.99, "tienda": "E-Z Ink", "pagerank": 5.2e-05}, {"rango": 9, "parent_asin": "B09W28XRXJ", "score": 0.9271, "titulo": "TN660 TN630 Higher-Yield SHEENGO Compatible Toner Cartridge Replacement for Brother TN660 TN-660 for HL-L2340DW HL-L2300D HL-L2380DW MFC-L2700DW L2740DW DCP-L2540DW Printer(TN6602PK) up to 2,600 Pages", "categoria": "Toner Cartridges", "precio": 24.99, "tienda": "SHEENGO", "pagerank": 4.8e-05}, {"rango": 10, "parent_asin": "B0C8TXW6PF", "score": 0.926, "titulo": "HaloFox Compatible Toner Cartridge for Brother TN660 TN-660 TN-630 TN630 for Brother MFC-L2700DW HL-L2300D HL-L2360DW HL-L2320D HL-L2340DW HL-L2380DW DCP-L2540DW MFC-L2740DW Printer (Black, 2-Pack)", "categoria": "Toner Cartridges", "precio": 27.98, "tienda": "HaloFox", "pagerank": 4.6e-05}]}, "toner brtoher": {"consulta_corregida": "toner brother", "resultados": [{"rango": 1, "parent_asin": "B0BF98LWMZ", "score": 1.0, "titulo": "TN436 ColorKing Compatible Toner Cartridge Replacement for Brother TN436 TN-436BK TN433 TN431 Toner for Brother HL-L8360CDW HL-L8360CDWT MFC-L8900CDW HL-L8260CDW MFC-L8610CDW MFC-L9570 Printer(4 Pack)", "categoria": "Toner Cartridges", "precio": 62.99, "tienda": "Colorking", "pagerank": 0.000396}, {"rango": 2, "parent_asin": "B0CCYGMRJS", "score": 0.9526, "titulo": "ColorKing Compatible Toner Cartridge Replacement for Brother TN227 TN227BK TN-227 TN223 TN223BK for MFC-L3770CDW HL-L3290CDW HL-L3270CDW HL-L3210CW MFC-L3710CW Printer (TN-227BK/C/M/Y High Yield, 5PK)", "categoria": "Toner Cartridges", "precio": 86.19, "tienda": "Colorking", "pagerank": 0.0001}, {"rango": 3, "parent_asin": "B08LG788FQ", "score": 0.9442, "titulo": "GOTOBY TN760 Toner Cartridge Replacement Compatible for Brother TN-760 TN730 TN-730 High Yield Compatible with DCP-L2550DW HL-L2350DW HL-L2370DW HL-L2370DWXL HL-L2395DW MFC-L2710DW (Black, 4-Pack)", "categoria": "Toner Cartridges", "precio": 48.99, "tienda": "GOTOBY", "pagerank": 7.8e-05}, {"rango": 4, "parent_asin": "B09W9K6BPM", "score": 0.9412, "titulo": "MCYCOLOR DR730 Drum Unit Compatible Replacement for Brother DR-730 DR 730 to Use with MFC-L2710DW MFC-L2750DW HL-L2395DW HL-L2370DW HL-L2350DW HL-L2390DW DCP-L2550DW Printer (2 Pack, NOT Toner)", "categoria": "Drum Kits", "precio": 48.99, "tienda": "MCYCOLOR", "pagerank": 7.2e-05}, {"rango": 5, "parent_asin": "B0BWM5Q4M2", "score": 0.9358, "titulo": "Brother Genuine Cartridge TN760 High Yield Black Toner", "categoria": "Toner Cartridges", "precio": 78.5, "tienda": "Brother", "pagerank": 6.1e-05}, {"rango": 6, "parent_asin": "B09X2YR8SQ", "score": 0.9331, "titulo": "Inkalfa Compatible TN227BK TN-227BK Toner: Cartridge Replacement for Brother TN227 TN227BK TN-223BK TN223BK for MFC-L3770CDW HL-L3290CDW HL-L3230CDW MFC-L3750CDW L3710CW L3210CW Printer (Black, 2Pack)", "categoria": "Toner Cartridges", "precio": 34.39, "tienda": "inkalfa", "pagerank": 5.7e-05}, {"rango": 7, "parent_asin": "B075X7TFY5", "score": 0.9304, "titulo": "Brother Genuine Standard Yield Toner Cartridge, TN730, Replacement Black Toner, Page Yield Up To 1,200 Pages, Amazon Dash Replenishment Cartridge", "categoria": "Toner Cartridges", "precio": 45.48, "tienda": "Brother", "pagerank": 5.2e-05}, {"rango": 8, "parent_asin": "B09GK7Z8B3", "score": 0.93, "titulo": "E-Z Ink (TM Compatible Toner Cartridge Replacement for Brother TN660 TN630 High Yield to use with HL-L2300D HL-L2380DW HL-L2320D DCP-L2540DW HL-L2340DW HL-L2360DW MFC-L2720DW Printer (Black, 4 Pack)", "categoria": "Toner Cartridges", "precio": 44.99, "tienda": "E-Z Ink", "pagerank": 5.2e-05}, {"rango": 9, "parent_asin": "B09W28XRXJ", "score": 0.9271, "titulo": "TN660 TN630 Higher-Yield SHEENGO Compatible Toner Cartridge Replacement for Brother TN660 TN-660 for HL-L2340DW HL-L2300D HL-L2380DW MFC-L2700DW L2740DW DCP-L2540DW Printer(TN6602PK) up to 2,600 Pages", "categoria": "Toner Cartridges", "precio": 24.99, "tienda": "SHEENGO", "pagerank": 4.8e-05}, {"rango": 10, "parent_asin": "B0C8TXW6PF", "score": 0.926, "titulo": "HaloFox Compatible Toner Cartridge for Brother TN660 TN-660 TN-630 TN630 for Brother MFC-L2700DW HL-L2300D HL-L2360DW HL-L2320D HL-L2340DW HL-L2380DW DCP-L2540DW MFC-L2740DW Printer (Black, 2-Pack)", "categoria": "Toner Cartridges", "precio": 27.98, "tienda": "HaloFox", "pagerank": 4.6e-05}]}, "stapler swinglien": {"consulta_corregida": "stapler swingline", "resultados": [{"rango": 1, "parent_asin": "B0BW46GVDB", "score": 0.9489, "titulo": "Swingline Stapler, 747 Iconic Desktop Stapler, 25 Sheet Capacity, Desk, Office, Sky Blue (74722)", "categoria": "Desktop Staplers", "precio": 18.5, "tienda": "Swingline", "pagerank": 9e-05}, {"rango": 2, "parent_asin": "B09BKNT888", "score": 0.9389, "titulo": "Swingline Stapler, 6 Pack, Desktop Stapler, 25 Sheet Capacity, Optima 25 Reduced Effort, Blue/Gray (S7066404CS)", "categoria": "Desktop Staplers", "precio": 96.28, "tienda": "Swingline", "pagerank": 6.7e-05}, {"rango": 3, "parent_asin": "B09BKP9HN1", "score": 0.937, "titulo": "Swingline Mini Stapler, Tot, 12 Sheet Capacity, includes Built-In Staple Remover & 1000 Standard Staples, Blue - S7079172", "categoria": "Desktop Staplers", "precio": 5.59, "tienda": "Swingline", "pagerank": 6.3e-05}, {"rango": 4, "parent_asin": "B0B4M61PVQ", "score": 0.9349, "titulo": "Swingline Stapler, 747 Classic Desktop Stapler, 30 Sheet Capacity, Metal, Sky Blue (74708)", "categoria": "Desktop Staplers", "precio": 17.99, "tienda": "Swingline", "pagerank": 6e-05}, {"rango": 5, "parent_asin": "B07Y98D26B", "score": 0.9263, "titulo": "Swingline Stapler, 20 Sheet Capacity, Light Duty Desktop Stapler, Durable Metal Stapler for Desk, Black (S7040501)", "categoria": "Desktop Staplers", "precio": 5.49, "tienda": "Swingline", "pagerank": 4.7e-05}, {"rango": 6, "parent_asin": "B091N11F4Z", "score": 0.9228, "titulo": "Swingline Stapler, 2 Pack, Commercial Desktop Stapler, 20 Sheet Capacity, Durable Metal Stapler for Desk, Black (44401AZ)", "categoria": "Desktop Staplers", "precio": 17.75, "tienda": "Swingline", "pagerank": 4.2e-05}, {"rango": 7, "parent_asin": "B08LCMT4VY", "score": 0.9124, "titulo": "Swingline Red Mini Stapler With Staples, Tot, 12 Sheet Capacity, Small Stapler With Built In Staple Remover & 1000 Standard Staples, Staple Storage, Cute Compact Travel Size Stapler For Adults & Kids.", "categoria": "Desktop Staplers", "precio": 5.97, "tienda": "Swingline", "pagerank": 3.1e-05}, {"rango": 8, "parent_asin": "B09BKPYNXD", "score": 0.9122, "titulo": "Swingline Stapler, Half Strip Desktop Stapler, 40 Sheet Capacity, Low Force, Compact Size, Optima 40, Orange/Silver/Black, 1 Count (87842)", "categoria": "Desktop Staplers", "precio": 21.72, "tienda": "Swingline", "pagerank": 3.1e-05}, {"rango": 9, "parent_asin": "B09BKNKJZD", "score": 0.9047, "titulo": "Swingline Stapler, High-Capacity, 60 Sheet Capacity, Reduced Effort, Black (77701)", "categoria": "Desktop Staplers", "precio": 26.3, "tienda": "Swingline", "pagerank": 2.5e-05}, {"rango": 10, "parent_asin": "B09BKNFXVL", "score": 0.8929, "titulo": "Swingline Optima 20 Electric Stapler, 20 Sheet Capacity, Quick Reloading, Jam Free, Orange/Gray (48208)", "categoria": "Electric & Battery Operated Staplers", "precio": 66.57, "tienda": "Swingline", "pagerank": 1.8e-05}]}, "pilot g2 pens": {"consulta_corregida": "pilot g2 pens", "resultados": [{"rango": 1, "parent_asin": "B0C74DYY88", "score": 0.953, "titulo": "PILOT G2 Premium Refillable and Retractable Rolling Ball Gel Pens, Fine Point, Blue Ink, 5-Pack (31299)", "categoria": "Gel Ink Rollerball Pens", "precio": 5.57, "tienda": "PILOT", "pagerank": 0.000101}, {"rango": 2, "parent_asin": "B09YP9YYZG", "score": 0.9522, "titulo": "PILOT G2 Premium Refillable and Retractable Rolling Ball Gel Pens, Fine Point, Navy Blue Ink, 12-Pack (31187)", "categoria": "Gel Ink Rollerball Pens", "precio": 18.8, "tienda": "PILOT", "pagerank": 9.9e-05}, {"rango": 3, "parent_asin": "B0C7WNCL6H", "score": 0.945, "titulo": "Pilot, G2 Premium Gel Roller Pens, Bold Point 1 mm, Pack of 12, Red", "categoria": "Gel Ink Rollerball Pens", "precio": 14.96, "tienda": "PILOT", "pagerank": 8e-05}, {"rango": 4, "parent_asin": "B0C7WM3327", "score": 0.935, "titulo": "PILOT G2 Premium Refillable and Retractable Rolling Ball Gel Pens, Fine Point, Purple/Pink/Turquoise/Burgundy Inks, 4-Pack (31065)", "categoria": "Gel Ink Rollerball Pens", "precio": 7.62, "tienda": "PILOT", "pagerank": 6e-05}, {"rango": 5, "parent_asin": "B0BSSPYKH7", "score": 0.9337, "titulo": "JEEZZO Gel Ink Refills for Retractable Click Pens Blue Medium Point Compatible with Pilot G2 Pentel Energel Jetstream Sharpie S-Gel Uniball Signo Zebra Sarasa 24 pcs", "categoria": "Gel Ink Rollerball Pens", "precio": 12.99, "tienda": "jeezzo", "pagerank": 5.8e-05}, {"rango": 6, "parent_asin": "B0C7X44CVB", "score": 0.9324, "titulo": "Pilot, G2 Premium Gel Roller Pens, Extra Fine Point 0.5 mm, Pack of 5, Assorted Colors", "categoria": "Gel Ink Rollerball Pens", "precio": 10.46, "tienda": "PILOT", "pagerank": 5.6e-05}, {"rango": 7, "parent_asin": "B0C78L5K1Q", "score": 0.9318, "titulo": "PILOT G2 Premium Refillable & Retractable Rolling Ball Gel Pens, Bold Point, Black Ink, Tub of 48 (5673A)", "categoria": "Gel Ink Rollerball Pens", "precio": 51.19, "tienda": "PILOT", "pagerank": 5.5e-05}, {"rango": 8, "parent_asin": "B0C7WLF8FB", "score": 0.9299, "titulo": "Pilot, G2 Premium Gel Roller Pens, Extra Fine Point 0.5 mm, Pack of 12, Navy", "categoria": "Gel Ink Rollerball Pens", "precio": 21.96, "tienda": "PILOT", "pagerank": 5.2e-05}, {"rango": 9, "parent_asin": "B0BYTD57X8", "score": 0.9276, "titulo": "PILOT G2 Limited Refillable & Retractable Rolling Ball Gel Pen, Fine Point, Silver Barrel, Black Ink, Single Pen (31535)", "categoria": "Gel Ink Rollerball Pens", "precio": 20.32, "tienda": "PILOT", "pagerank": 4.8e-05}, {"rango": 10, "parent_asin": "B01HNNH1J4", "score": 0.926, "titulo": "Pilot G2 Retractable Gel Ink Roller Ball Pens, Bold Point Black 10-PACK(31237)", "categoria": "Gel Ink Rollerball Pens", "precio": 15.99, "tienda": "PILOT", "pagerank": 4.6e-05}]}}, "fraude": {"resumen": {"total_alertas": 47710, "bloqueadas": 41532, "retenidas": 6178, "aprobadas": 0, "precision_bloqueos": 1.0, "motivos": {"cuenta": 24063, "rafaga": 27711, "dispositivo": 5767, "tarjeta": 11702}}, "muestra": [{"event_id": "e000001899", "order_id": "o00000292", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta"], "fraude_real": true, "estimado_cms": 1}, {"event_id": "e000001904", "order_id": "o00000296", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta"], "fraude_real": true, "estimado_cms": null}, {"event_id": "e000001902", "order_id": "o00000295", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta"], "fraude_real": true, "estimado_cms": 2}, {"event_id": "e000001903", "order_id": "o00000296", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta"], "fraude_real": true, "estimado_cms": 3}, {"event_id": "e000001905", "order_id": "o00000297", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta"], "fraude_real": true, "estimado_cms": 4}, {"event_id": "e000001901", "order_id": "o00000294", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta", "rafaga"], "fraude_real": true, "estimado_cms": 5}, {"event_id": "e000001906", "order_id": "o00000298", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta", "rafaga"], "fraude_real": true, "estimado_cms": 6}, {"event_id": "e000001907", "order_id": "o00000299", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta", "rafaga"], "fraude_real": true, "estimado_cms": 7}, {"event_id": "e000001908", "order_id": "o00000300", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta", "rafaga"], "fraude_real": true, "estimado_cms": 8}, {"event_id": "e000001909", "order_id": "o00000301", "user_id": "APOFB6P2MCUBESJ7DYTZHQOO37JT", "decision": "bloquear", "motivos": ["cuenta", "rafaga"], "fraude_real": true, "estimado_cms": 9}, {"event_id": "e000008335", "order_id": "o00001229", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": null}, {"event_id": "e000008337", "order_id": "o00001230", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": null}, {"event_id": "e000008334", "order_id": "o00001229", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": 1}, {"event_id": "e000008336", "order_id": "o00001230", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": 2}, {"event_id": "e000008338", "order_id": "o00001231", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": 3}, {"event_id": "e000008339", "order_id": "o00001231", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": null}, {"event_id": "e000008341", "order_id": "o00001233", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": 4}, {"event_id": "e000008340", "order_id": "o00001232", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo", "rafaga"], "fraude_real": true, "estimado_cms": 5}, {"event_id": "e000008343", "order_id": "o00001234", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo"], "fraude_real": true, "estimado_cms": null}, {"event_id": "e000008344", "order_id": "o00001235", "user_id": "ARNGLYUYGR5OWD7THFRRC75OD2PW", "decision": "bloquear", "motivos": ["dispositivo", "rafaga"], "fraude_real": true, "estimado_cms": 6}]}, "catalogo_demo": {"B0BF98LWMZ": {"detalle": {"parent_asin": "B0BF98LWMZ", "title": "TN436 ColorKing Compatible Toner Cartridge Replacement for Brother TN436 TN-436BK TN433 TN431 Toner for Brother HL-L8360CDW HL-L8360CDWT MFC-L8900CDW HL-L8260CDW MFC-L8610CDW MFC-L9570 Printer(4 Pack)", "main_category": "All Electronics", "categorias": ["Office Products", "Office Electronics", "Printers & Accessories", "Printer Parts & Accessories", "Printer Ink & Toner", "Toner Cartridges"], "categoria_hoja": "Toner Cartridges", "precio": 62.99, "average_rating": 5.0, "rating_number": 8, "store": "Colorking", "pagerank": 0.00039635901684100916, "grado_ponderado": 1420.0, "comunidad_louvain": 677, "comunidad_lpa": 265}, "recomendaciones": [{"rango": 1, "parent_asin": "B0CB9J3J2P", "score_hibrido": 0.792, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0235, "afinidad_cocompra": 1.0, "pagerank": 6.7e-05, "titulo": "EasyGo Rolling Cart Folding Grocery Shopping Cart Laundry Basket Rolling Utility Cart with Wheels – Removable Canvas Bag, Versa Wheels & Rear Brakes - Easy Folding 120lb Capacity – Copyrighted, Black", "categoria": "Utility Carts", "precio": 70.63, "tienda": "EasyGo Product"}, {"rango": 2, "parent_asin": "B09V1Z8Q42", "score_hibrido": 0.7303, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0213, "afinidad_cocompra": 0.8667, "pagerank": 5e-05, "titulo": "Dirty Pop Cards - Purr-fect Pop Up Birthday Card, 3D Cat Farting Confetti Funny Birthday Card, Cat Mom or Dad Bday Popup Cards for Husband, Wife, Friend, and Every Cat Lover - 1 Card 5 x 7 inch, 1 Notepaper, 1 Envelope", "categoria": "Greeting Cards", "precio": 12.99, "tienda": "Dirty Pop Cards"}, {"rango": 3, "parent_asin": "B08G51JNJB", "score_hibrido": 0.66, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0166, "afinidad_cocompra": 0.7, "pagerank": 5.2e-05, "titulo": "Rybozen Mobile Film and Slide Scanner, Lets You Scan and Play with Old 35mm Films & Slides Using Your Smartphone Camera, Fun Toys and Gifts with LED Backlight, Rugged Plastic Folding Scanner", "categoria": "Slide & Negative Scanners", "precio": 17.99, "tienda": "Rybozen"}, {"rango": 4, "parent_asin": "B09XMCSH3X", "score_hibrido": 0.6525, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0167, "afinidad_cocompra": 0.6833, "pagerank": 5e-05, "titulo": "Metal Book Stand Book Holder Book Stand for Reading Adjustable Book Holder for Reading (Full White)", "categoria": "Book Stands", "precio": 8.99, "tienda": "Camelmother"}, {"rango": 5, "parent_asin": "B07PHRP7DB", "score_hibrido": 0.6077, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0144, "afinidad_cocompra": 0.6, "pagerank": 3.1e-05, "titulo": "TRUE IMAGE Compatible 046 Toner Cartridge Replacement for Canon 046 MF733Cdw CRG-046 Color ImageCLASS MF733Cdw MF731Cdw MF735Cdw LBP654Cdw MF733 Printer Ink (Black Cyan Yellow Magenta, 4-Pack)", "categoria": "Toner Cartridges", "precio": 57.71, "tienda": "TRUE IMAGE"}, {"rango": 6, "parent_asin": "B0C5HBFMR2", "score_hibrido": 0.6058, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0139, "afinidad_cocompra": 0.5833, "pagerank": 4.1e-05, "titulo": "Eyesen Slide Viewer Light Box, Ultra-Thin A4 USB Powered Light Scanner for Photo Slide and Film Negative Scanning,Tattoo Drawing, Artist Sketching, Stenciling", "categoria": "Slide & Negative Scanners", "precio": 24.99, "tienda": "eyesen"}, {"rango": 7, "parent_asin": "B092KV8DYD", "score_hibrido": 0.595, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0141, "afinidad_cocompra": 0.5667, "pagerank": 3.3e-05, "titulo": "30 Pack Double Sided Dry Erase Clipboards 9\"x12\" Durable Clipboards Bulk with 30 Dry Erase Erasers, Dry Erase Clipboard with Low Profile Clip for School, Classroom and Home Use", "categoria": "Clipboards", "precio": 61.99, "tienda": "Scribbledo"}, {"rango": 8, "parent_asin": "B01GRMG4TU", "score_hibrido": 0.5901, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0136, "afinidad_cocompra": 0.55, "pagerank": 3.7e-05, "titulo": "MALEDEN Leather Writing Journal Notebook, Classic Spiral Bound Notebook Refillable Diary Sketchbook Gifts with Unlined Travel Journals to Write in for Girls and Boys (Sky Blue)", "categoria": "Hardcover Executive Notebooks", "precio": 9.97, "tienda": "MALEDEN"}]}, "B0BN478RWJ": {"detalle": {"parent_asin": "B0BN478RWJ", "title": "HP DeskJet 2755e Wireless Color All-in-One Printer with bonus 6 months Instant Ink (26K67A), white", "main_category": "All Electronics", "categorias": ["Office Products", "Office Electronics", "Printers & Accessories", "Printers", "Inkjet Printers"], "categoria_hoja": "Inkjet Printers", "precio": 59.99, "average_rating": 4.1, "rating_number": 31419, "store": "HP", "pagerank": 0.0003922700048039372, "grado_ponderado": 1606.0, "comunidad_louvain": 716, "comunidad_lpa": 245}, "recomendaciones": [{"rango": 1, "parent_asin": "B0BXPBP5K6", "score_hibrido": 0.7792, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0333, "afinidad_cocompra": 1.0, "pagerank": 8.6e-05, "titulo": "Rotating Keyboard Tray Under Desk - Klearlook PU Leather Keyboard Drawer Adjustable C Clamp,Ergonomic Keyboard Platform Extender,No Drilling,Easy Install Keyboard Stand,23.62\"x 9.84\"Inch-White", "categoria": "Keyboard Drawers & Platforms", "precio": 69.99, "tienda": "Klearlook Maximized Clarity!"}, {"rango": 2, "parent_asin": "B07PRHZZ2C", "score_hibrido": 0.6858, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0264, "afinidad_cocompra": 0.7843, "pagerank": 6.5e-05, "titulo": "Amazon Basics 9 Sleeve Card Protectors Binder Sheet, 100 Pack, Clear", "categoria": "Sheet Protectors, Card & Photo Sleeves", "precio": 13.29, "tienda": "Amazon Basics"}, {"rango": 3, "parent_asin": "B07G9Y66N9", "score_hibrido": 0.5788, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0194, "afinidad_cocompra": 0.5392, "pagerank": 4.5e-05, "titulo": "Glitter Pen Refills by Chromatek. 30 Refills. Super Glittery Ultra Vivid Colors. No Repeats. Professional Art Pen Refills. New & Improved", "categoria": "Pen Refills", "precio": null, "tienda": "Chromatek"}, {"rango": 4, "parent_asin": "B0BN49WKQ6", "score_hibrido": 0.5654, "similitud_atributos": 0.2653, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 0.000214, "titulo": "HP DeskJet 4155e Wireless Color All-in-One Printer with bonus 6 months Instant Ink (26Q90A), white", "categoria": "Inkjet Printers", "precio": 99.89, "tienda": "HP"}, {"rango": 5, "parent_asin": "B0B7JF7SF6", "score_hibrido": 0.5579, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0174, "afinidad_cocompra": 0.4902, "pagerank": 4.3e-05, "titulo": "Bookends, Book Ends, Bookends for Shelves, Metal Bookends, Bookends for Heavy Books, Home Decorative Bookends for Office Home School Library Kitchen, Book Stopper, Black Book Holder(1 Pairs/2 PCS)", "categoria": "Bookends", "precio": null, "tienda": "Umikk"}, {"rango": 6, "parent_asin": "B0BK8DXNB8", "score_hibrido": 0.5548, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0164, "afinidad_cocompra": 0.4804, "pagerank": 4.7e-05, "titulo": "Shipping Bags Poly Mailers 6x9 – 200 Waterproof, Tear-Resistant Poly Bags for Shipping – Cute Packaging for Small Business – Lightweight Shipping Envelopes by Package Mint [Celestial Magic]", "categoria": "Envelope Mailers", "precio": 22.99, "tienda": "Package Mint"}, {"rango": 7, "parent_asin": "B0B92CJBFV", "score_hibrido": 0.5354, "similitud_atributos": 0.2609, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 4.2e-05, "titulo": "HP OfficeJet Pro 9018e Wireless Color All-in-One Printer with Bonus 6 Months Instant Ink with HP+ (1G5L5A), White", "categoria": "Inkjet Printers", "precio": null, "tienda": "HP"}, {"rango": 8, "parent_asin": "B0CB7BNHJG", "score_hibrido": 0.505, "similitud_atributos": 0.1911, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 0.000125, "titulo": "HP OfficeJet Pro 9015e Wireless Color All-in-One Printer with bonus 6 months Instant ink with HP+ (1G5L3A),Gray", "categoria": "Inkjet Printers", "precio": 229.99, "tienda": "HP"}]}, "B087S2JRXY": {"detalle": {"parent_asin": "B087S2JRXY", "title": "Amazon Basics 15-Sheet Cross-Cut Paper, CD Credit Card Office Shredder", "main_category": "Office Products", "categorias": ["Office Products", "Office Electronics", "Other Office Equipment", "Shredders"], "categoria_hoja": "Shredders", "precio": 131.99, "average_rating": 4.6, "rating_number": 201726, "store": "Amazon Basics", "pagerank": 0.0003399133333811746, "grado_ponderado": 1424.0, "comunidad_louvain": 292, "comunidad_lpa": 184}, "recomendaciones": [{"rango": 1, "parent_asin": "B005QAQFFS", "score_hibrido": 0.8015, "similitud_atributos": 0.6967, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 1e-05, "titulo": "Amazon Basics 12-Sheet Cross-Cut Paper, CD, and Credit Card Shredder", "categoria": "Shredders", "precio": null, "tienda": "Amazon Basics"}, {"rango": 2, "parent_asin": "B0714PJR6F", "score_hibrido": 0.7908, "similitud_atributos": 0.71, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 3e-06, "titulo": "Amazon Basics 12 Sheet Cross-Cut Paper/CD/ Credit Card Shredder", "categoria": "Shredders", "precio": null, "tienda": "Amazon Basics"}, {"rango": 3, "parent_asin": "B083KKM1LS", "score_hibrido": 0.7683, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0349, "afinidad_cocompra": 1.0, "pagerank": 0.000105, "titulo": "POWERME Electric Pencil Sharpener - Pencil Sharpener Battery Powered for Kids, School, Home, Office, Classroom, Artists – Battery Operated Pencil Sharpener for Colored Pencils, Ideal for No. 2 (Pink)", "categoria": "Pencil Sharpeners", "precio": 18.99, "tienda": "POWERME"}, {"rango": 4, "parent_asin": "B07YSJJ4SB", "score_hibrido": 0.7081, "similitud_atributos": 0.5105, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 9.3e-05, "titulo": "Amazon Basics 8-Sheet Strip-Cut Paper, CD, and Credit Card Shredder", "categoria": "Shredders", "precio": 35.99, "tienda": "Amazon Basics"}, {"rango": 5, "parent_asin": "B0153I0418", "score_hibrido": 0.6716, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0283, "afinidad_cocompra": 0.767, "pagerank": 8.6e-05, "titulo": "Smart Weigh 440lbs x 6 oz. Digital Heavy Duty Shipping and Postal Scale, with Durable Stainless Steel Large Platform, UPS USPS Post Office Postal Scale and Luggage Scale", "categoria": "Postal Scales", "precio": 39.99, "tienda": "Smart Weigh"}, {"rango": 6, "parent_asin": "B01DXXKUTG", "score_hibrido": 0.6421, "similitud_atributos": 0.5105, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 0.0, "titulo": "Amazon Basics 8-Sheet Strip-Cut Paper, CD, and Credit Card Shredder", "categoria": "Shredders", "precio": null, "tienda": "Amazon Basics"}, {"rango": 7, "parent_asin": "B072PQ9CYP", "score_hibrido": 0.625, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0255, "afinidad_cocompra": 0.6602, "pagerank": 6.7e-05, "titulo": "ChaoQ Black Ink Refills (10pcs), Replaceable Pens Refills, 1mm Medium Tip - Black", "categoria": "Pen Refills", "precio": 5.98, "tienda": "ChaoQ"}, {"rango": 8, "parent_asin": "B00FA4MP5O", "score_hibrido": 0.5734, "similitud_atributos": 0.3936, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 2e-06, "titulo": "Amazon Basics 17-Sheet Cross-Cut Paper, CD, and Credit Card Shredder with Pullout Basket", "categoria": "Shredders", "precio": null, "tienda": "Amazon Basics"}]}, "B0B3MX7LVG": {"detalle": {"parent_asin": "B0B3MX7LVG", "title": "EZlifego Double Sided Tape Heavy Duty, Extra Large Nano Double Sided Adhesive tape, Clear Mounting Tape Picture Hanging Adhesive Strips,Removable Wall Tape Sticky Poster Tape Decor Carpet Tape(9.85FT)", "main_category": "Industrial & Scientific", "categorias": ["Office Products", "Office & School Supplies", "Tape, Adhesives & Fasteners", "Interlocking Tape & Mounting Products", "Mounting Tape"], "categoria_hoja": "Mounting Tape", "precio": 10.99, "average_rating": 4.3, "rating_number": 90934, "store": "EZlifego", "pagerank": 0.0003369733632564487, "grado_ponderado": 1471.0, "comunidad_louvain": 616, "comunidad_lpa": 1}, "recomendaciones": [{"rango": 1, "parent_asin": "B09Y8HDMV7", "score_hibrido": 0.7657, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0346, "afinidad_cocompra": 1.0, "pagerank": 0.000111, "titulo": "KODAK Dock Plus 4PASS Instant Photo Printer (4x6 inches) + 90 Sheets Bundle", "categoria": "Desktop Photo Printers", "precio": 139.99, "tienda": "KODAK"}, {"rango": 2, "parent_asin": "B0C4JHHNLG", "score_hibrido": 0.6831, "similitud_atributos": 0.4829, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 7.4e-05, "titulo": "EZlifego Double Sided Tape Heavy Duty(Extra Large, Pack of 2, Total 396 Inch), Nano Double Sided Adhesive Tape, Clear Mounting Tape Picture Hanging Strips, Removable Wall Tape Sticky Poster Tape Decor", "categoria": "Transparent Tape", "precio": 14.39, "tienda": "EZlifego"}, {"rango": 3, "parent_asin": "B079PG2BT6", "score_hibrido": 0.6339, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0252, "afinidad_cocompra": 0.6869, "pagerank": 7.2e-05, "titulo": "Blank White Permanent Adhesive Labels for Laser/Ink Jet Printer (4\" x 3-1/3\" - 6 Per Page | 300 Labels)", "categoria": "Laser & Inkjet Printer Labels", "precio": 17.99, "tienda": "Next Day Labels"}, {"rango": 4, "parent_asin": "B0BVWCML3V", "score_hibrido": 0.579, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0212, "afinidad_cocompra": 0.5556, "pagerank": 6.2e-05, "titulo": "Epson EcoTank ET-4850 Wireless All-in-One Cartridge-Free Supertank Printer with Scanner, Copier, Fax, ADF and Ethernet (Renewed/Refurbished), White", "categoria": "Ink Tank Printers", "precio": null, "tienda": "Epson"}, {"rango": 5, "parent_asin": "B08JZJSKHG", "score_hibrido": 0.5514, "similitud_atributos": 0.3666, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 2e-06, "titulo": "EZlifego Double Sided Tape Heavy Duty （Pack of 3）,Multipurpose Wall Tape Adhesive Strips Removable Mounting Tape,Washable Strong Sticky Transparent Tape Gel Poster Carpet Photo Tape", "categoria": "Transparent Tape", "precio": null, "tienda": "EZlifego"}, {"rango": 6, "parent_asin": "B09J8MB8GG", "score_hibrido": 0.549, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0186, "afinidad_cocompra": 0.4848, "pagerank": 5.6e-05, "titulo": "iKyce 400 Sheets Transparent Sticky Notes， 3 x 3 inch Clear Self-Sticky Annotation, Waterproof Translucent White Memo Pad, See Through Office & School Supplies, 50 Sheets Per Pad, 8 Pads in Total", "categoria": "Self-Stick Notes", "precio": 6.59, "tienda": "iKyce"}, {"rango": 7, "parent_asin": "B07Y94SGVX", "score_hibrido": 0.5359, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0178, "afinidad_cocompra": 0.4545, "pagerank": 5.3e-05, "titulo": "Panasonic PANASONIC Link2Cell Bluetooth Cordless Phone with Answering Machine KX-TGE463S - 3 Handsets (Silver)", "categoria": "Landline Phones", "precio": null, "tienda": "Panasonic"}, {"rango": 8, "parent_asin": "B0B155YT9X", "score_hibrido": 0.5242, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0164, "afinidad_cocompra": 0.4343, "pagerank": 4.2e-05, "titulo": "Metronic Poly Mailers 14.5x19 100 Pcs | Medium Size Shipping Bags for Clothes | Large Poly Mailer Bags, Shipping Envelopes, Mailing Bags for Small Business, Strong Adhensive Poly Bags Green", "categoria": "Envelope Mailers", "precio": 19.99, "tienda": "METRONIC"}]}, "B0BZ67T58M": {"detalle": {"parent_asin": "B0BZ67T58M", "title": "Office Chair Wheels Replacement Rubber Chair casters for Hardwood Floors and Carpet, Set of 5, Heavy Duty Office Chair casters for Chairs to Replace Office Chair mats - Fits 98%", "main_category": "Automotive", "categorias": ["Office Products", "Office Furniture & Lighting", "Furniture Accessories", "Casters"], "categoria_hoja": "Casters", "precio": 39.99, "average_rating": 4.8, "rating_number": 44539, "store": "LIFELONG", "pagerank": 0.00033014946037744576, "grado_ponderado": 1391.0, "comunidad_louvain": 775, "comunidad_lpa": 65}, "recomendaciones": [{"rango": 1, "parent_asin": "B094T2JY41", "score_hibrido": 0.759, "similitud_atributos": 0.6303, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 0.000126, "titulo": "Office Chair Wheels Replacement Rubber Chair casters for Hardwood Floors and Carpet, Set of 5, Heavy Duty Rollerblade Wheels for Office Chairs to Replace Office Chair mats - Fits 98%", "categoria": "Casters", "precio": 36.95, "tienda": "LIFELONG"}, {"rango": 2, "parent_asin": "B08DHSFSTL", "score_hibrido": 0.7493, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0576, "afinidad_cocompra": 1.0, "pagerank": 0.000147, "titulo": "ComfiLife Foot Rest for Under Desk at Work – Adjustable Memory Foam Foot Rest for Office Chair & Gaming Chair – Ergonomic Design for Back & Hip Pain Relief (Navy)", "categoria": "Footrests", "precio": 35.95, "tienda": "ComfiLife"}, {"rango": 3, "parent_asin": "B09VC399FN", "score_hibrido": 0.609, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0391, "afinidad_cocompra": 0.6573, "pagerank": 9.3e-05, "titulo": "HTVRONT Printable Vinyl for Inkjet Printer - 10 Sheets Matte White Printable Vinyl Sticker Paper Vivid Color Dries Quickly, 8.5\"x11\" Tear Resistant Printable Vinyl", "categoria": "Inkjet Printer Paper", "precio": 7.99, "tienda": "HTVRONT"}, {"rango": 4, "parent_asin": "B09MJZRLMK", "score_hibrido": 0.5566, "similitud_atributos": 0.3808, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 4e-06, "titulo": "Office Chair Wheels Replacement Rubber Chair casters for Hardwood Floors and Carpet, Set of 5, Heavy Duty Office Chair casters for Chairs to Replace Office Chair mats - Fits 98%", "categoria": "Casters", "precio": null, "tienda": "Macamolly"}, {"rango": 5, "parent_asin": "B0BTDH2DLQ", "score_hibrido": 0.5468, "similitud_atributos": 0.0, "jaccard_comportamiento": 0.0299, "afinidad_cocompra": 0.5035, "pagerank": 8.4e-05, "titulo": "Simplified To Do List Planner Notebook - Easily Organize Your Daily Tasks And Boost Productivity - The Perfect Daily Journal And Undated Office Supplies Checklist For Women…", "categoria": "Planners", "precio": 9.99, "tienda": "ZICOTO"}, {"rango": 6, "parent_asin": "B09Y9M54F1", "score_hibrido": 0.5351, "similitud_atributos": 0.3299, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 1e-05, "titulo": "Office Chair Wheels Black Replacement Rubber Chair casters for All Floors (Carpet, Hardwood), Set of 5, Heavy Duty Office Chair casters for Chairs to Replace Chair mats - Universal fit", "categoria": "Casters", "precio": null, "tienda": "Eswnorth"}, {"rango": 7, "parent_asin": "B09VGZ34KX", "score_hibrido": 0.5335, "similitud_atributos": 0.3235, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 1.3e-05, "titulo": "Office Chair Wheels with Brake, Replacement Rubber Chair Casters for Hardwood Floors and Carpet, Set of 5, Heavy Duty Office Chair Casters for Chairs to Replace Office Chair Mats -Universal Fit.", "categoria": "Casters", "precio": 29.99, "tienda": "ANYLINCON"}, {"rango": 8, "parent_asin": "B0C9JSCRC4", "score_hibrido": 0.5181, "similitud_atributos": 0.2624, "jaccard_comportamiento": 0.0, "afinidad_cocompra": 0.0, "pagerank": 9.5e-05, "titulo": "Office Chair Caster Wheels Replacement Rubber Chair casters for Hardwood Floors and Carpet,Heavy Duty Office Chair casters for Chairs to Replace Office Chair mats Universal fit (1-Set of 5)", "categoria": "Casters", "precio": 23.95, "tienda": "CINEYO"}]}}};
+const DATOS_METRICAS = {"categoria": "Office_Products", "tiempo_inicializacion_s": 32.093, "terminos_trie_indexados": 585983, "nodos_trie_radix": 831377, "productos_indexados_busqueda": 710468, "vocabulario_busqueda": 336422, "postings_busqueda": 11839094, "vocabulario_correccion": 53341, "latencia_autocompletado_p50_ms": 0.0012, "latencia_autocompletado_p95_ms": 0.0013, "latencia_autocompletado_difuso_p50_ms": 0.7375, "latencia_autocompletado_difuso_p95_ms": 0.8745, "latencia_recomendacion_topk_ms": 0.823, "latencia_busqueda_topk_p50_ms": 1.839, "latencia_busqueda_topk_p95_ms": 2.012, "scoring_pesos": {"similitud": 0.35, "relacionados": 0.25, "pagerank": 0.2, "cocompra": 0.2, "kappa_cocompra": 0.0, "lambda_novedad": 0.3, "normalizacion_pagerank": "log", "fuente_cocompra": "sintetico"}, "resumen_sistema": {"categoria": "Office_Products", "trie_terminos": 585983, "productos_catalogo_indexados": 710468, "productos_pagerank": 150534, "productos_similares": 195019, "productos_relacionados": 75890, "alertas_fraude": 47710, "algoritmos_activos": ["Trie radix (Prefijos con Top-K Caché + difuso Damerau-OSA)", "Índice invertido de títulos (postings CSR, cobertura IDF)", "MinHeap (Ranking Top-K Acotado)", "Scoring Híbrido Multicriterio", "HNSW (Similitud Vectorial de Atributos)", "MinHash + LSH (Comportamiento Jaccard)", "PageRank CSR (Autoridad Espectral)", "Louvain (Comunidades Multinivel)", "Bloom Filter + CMS (Detección de Fraude)"]}};
+
+function cambiarTab(tabId) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+  event.currentTarget.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+// Manejo de Producto Seleccionado
+function actualizarProductoSeleccionado() {
+  const sel = document.getElementById('sel-producto');
+  const asin = sel.value;
+  const prodData = DATOS_DEMO.catalogo_demo[asin];
+  if (!prodData) return;
+
+  const det = prodData.detalle || {};
+  const recs = prodData.recomendaciones || [];
+
+  // Hero Card
+  const heroHtml = `
+    <div class="product-avatar">📦</div>
+    <div class="product-info">
+      <div class="product-asin">ASIN: ${det.parent_asin || asin} · TIENDA: ${det.store || 'N/D'}</div>
+      <div class="product-name">${det.title || 'Producto sin título'}</div>
+      <div class="product-meta-row">
+        <div>Categoría: <strong>${det.categoria_hoja || 'N/D'}</strong></div>
+        <div>Precio: <strong>$${det.precio ? Number(det.precio).toFixed(2) : 'N/D'}</strong></div>
+        <div>PageRank: <strong>${det.pagerank ? Number(det.pagerank).toFixed(6) : '0.000000'}</strong></div>
+        <div>Comunidad Louvain: <span class="badge badge-neutral">Clúster #${det.comunidad_louvain ?? 'N/D'}</span></div>
+      </div>
+    </div>
+  `;
+  document.getElementById('hero-producto').innerHTML = heroHtml;
+
+  // Tabla Recomendaciones
+  const tbody = document.getElementById('tbody-recs');
+  if (recs.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 24px;">No hay recomendaciones disponibles para este producto.</td></tr>';
+    return;
+  }
+
+  let recsHtml = '';
+  recs.forEach(r => {
+    const pct = Math.round(r.score_hibrido * 100);
+    recsHtml += `
+      <tr>
+        <td><strong>#${r.rango}</strong></td>
+        <td>
+          <div style="font-weight: 500; color: #fff;">${r.titulo}</div>
+          <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted);">${r.parent_asin} · ${r.tienda}</div>
+        </td>
+        <td><span class="badge badge-neutral">${r.categoria}</span></td>
+        <td style="font-weight: 600;">${r.precio ? '$' + Number(r.precio).toFixed(2) : 'N/D'}</td>
+        <td>
+          <div class="score-bar-wrapper">
+            <span style="font-weight: 600; width: 36px;">${r.score_hibrido.toFixed(2)}</span>
+            <div class="score-bar"><div class="score-bar-fill" style="width: ${pct}%;"></div></div>
+          </div>
+        </td>
+        <td>${r.similitud_atributos.toFixed(2)}</td>
+        <td>${r.jaccard_comportamiento.toFixed(3)}</td>
+        <td>${r.afinidad_cocompra.toFixed(2)}</td>
+        <td style="font-family: var(--font-mono); font-size: 11px;">${r.pagerank.toFixed(6)}</td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = recsHtml;
+}
+
+// Autocompletado Trie
+function manejarInputTrie(val) {
+  const dropdown = document.getElementById('dropdown-trie');
+  const q = val.trim().toLowerCase();
+  if (q.length < 2) {
+    dropdown.style.display = 'none';
+    return;
+  }
+
+  // Buscar en las demos de autocompletado
+  let resultados = [];
+  const demos = Object.assign({}, DATOS_DEMO.autocompletado || {}, DATOS_DEMO.autocompletado_difuso || {});
+  for (const [pref, sugs] of Object.entries(demos)) {
+    if (q.startsWith(pref) || pref.startsWith(q)) {
+      resultados = sugs;
+      break;
+    }
+  }
+
+  if (resultados.length === 0) {
+    // Simular búsqueda de coincidencia
+    dropdown.innerHTML = '<div style="padding: 10px; color: var(--text-muted); font-size: 13px;">No se encontraron términos para "' + q + '"</div>';
+    dropdown.style.display = 'block';
+    return;
+  }
+
+  let html = '';
+  resultados.slice(0, 6).forEach(s => {
+    const tipo = (s.meta && s.meta.tipo) ? s.meta.tipo : 'producto';
+    html += `
+      <div class="sug-item" onclick="seleccionarSugerencia('${s.termino}')">
+        <span class="sug-text">${s.termino}${s.distancia ? ' <small style="color: var(--text-muted);">(OSA ' + s.distancia + ')</small>' : ''}</span>
+        <span class="sug-tag tag-${tipo}">${tipo}</span>
+      </div>
+    `;
+  });
+  dropdown.innerHTML = html;
+  dropdown.style.display = 'block';
+}
+
+function probarPrefijo(pref) {
+  const input = document.getElementById('input-busqueda');
+  input.value = pref;
+  manejarInputTrie(pref);
+}
+
+function seleccionarSugerencia(termino) {
+  document.getElementById('input-busqueda').value = termino;
+  document.getElementById('dropdown-trie').style.display = 'none';
+}
+
+// Cargar Búsqueda de Ejemplo
+function cargarBusquedaDemo() {
+  const tbody = document.getElementById('tbody-busqueda');
+  const items = (DATOS_DEMO.busqueda_ejemplo && DATOS_DEMO.busqueda_ejemplo.resultados) || [];
+  let html = '';
+  items.forEach(it => {
+    html += `
+      <tr>
+        <td><strong>#${it.rango}</strong></td>
+        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-cyan);">${it.parent_asin}</td>
+        <td style="font-weight: 500;">${it.titulo}</td>
+        <td><span class="badge badge-neutral">${it.categoria}</span></td>
+        <td>${it.tienda}</td>
+        <td style="font-weight: 600;">${it.precio ? '$' + Number(it.precio).toFixed(2) : 'N/D'}</td>
+        <td style="font-family: var(--font-mono);">${it.pagerank.toFixed(6)}</td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+// Cargar Alertas de Fraude
+function cargarAlertasDemo() {
+  const tbody = document.getElementById('tbody-alertas');
+  const items = (DATOS_DEMO.fraude && DATOS_DEMO.fraude.muestra) || [];
+  let html = '';
+  items.forEach(al => {
+    const decClass = al.decision === 'bloquear' ? 'badge-danger' : (al.decision === 'retener' ? 'badge-warning' : 'badge-success');
+    const fraudeReal = al.fraude_real ? '<span style="color: var(--accent-rose); font-weight: 600;">SÍ</span>' : '<span style="color: var(--text-muted);">NO</span>';
+    html += `
+      <tr>
+        <td style="font-family: var(--font-mono); font-size: 12px;">${al.event_id}</td>
+        <td style="font-family: var(--font-mono); font-size: 12px;">${al.order_id}</td>
+        <td style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">${al.user_id}</td>
+        <td>${al.motivos.map(m => '<span class="badge badge-neutral">' + m + '</span>').join(' ')}</td>
+        <td style="font-family: var(--font-mono);">${al.estimado_cms !== null ? al.estimado_cms : '—'}</td>
+        <td><span class="badge ${decClass}">${al.decision.toUpperCase()}</span></td>
+        <td>${fraudeReal}</td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+// Inicializar al cargar
+window.addEventListener('DOMContentLoaded', () => {
+  actualizarProductoSeleccionado();
+  cargarBusquedaDemo();
+  cargarAlertasDemo();
+});
+</script>
+</body>
+</html>

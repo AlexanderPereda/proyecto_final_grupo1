@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa del Escenario B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: una columna de lectura; el diagrama ocupa todo el ancho y el panel de detalle queda debajo, en dos columnas en escritorio */
+:root {
+  --bg: #f4f6f5;
+  --panel: #ffffff;
+  --ink: #17222b;
+  --muted: #5a6b76;
+  --line: #d3dcdf;
+  --accent: #1d6b86;
+  --accent-soft: #dcebf0;
+  --real: #2f7d4f;
+  --real-soft: #e0f0e6;
+  --sint: #b5730f;
+  --sint-soft: #f8ead2;
+  --alerta: #b3412f;
+  --alerta-soft: #f6e0dc;
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11181d; --panel: #18222a; --ink: #e4ebee; --muted: #9aabb4; --line: #2b3a44;
+    --accent: #5fb3cf; --accent-soft: #1b3440; --real: #6cc391; --real-soft: #183327;
+    --sint: #e3a64a; --sint-soft: #3a2b12; --alerta: #ec8a78; --alerta-soft: #3d1f1a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11181d; --panel: #18222a; --ink: #e4ebee; --muted: #9aabb4; --line: #2b3a44;
+  --accent: #5fb3cf; --accent-soft: #1b3440; --real: #6cc391; --real-soft: #183327;
+  --sint: #e3a64a; --sint-soft: #3a2b12; --alerta: #ec8a78; --alerta-soft: #3d1f1a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+.envoltura { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 700; }
+h3 { font-size: 18px; font-weight: 700; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.seccion { display: flex; flex-direction: column; gap: 16px; }
+.lead { color: var(--muted); font-size: 17px; }
+code, .mono { font-family: var(--f-mono); font-size: 0.86em; }
+.cab { display: flex; flex-direction: column; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+.cab .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+
+/* Tablas */
+.tabla-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; font-family: var(--f-mono); font-size: 12px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.real { background: var(--real-soft); color: var(--real); }
+.chip.sint { background: var(--sint-soft); color: var(--sint); }
+.chip.fija { background: var(--accent-soft); color: var(--accent); }
+.chip.alerta { background: var(--alerta-soft); color: var(--alerta); }
+
+/* Diagrama */
+.controles { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.boton {
+  font: 600 14px var(--f-body); color: var(--ink); background: var(--panel); border: 1px solid var(--line);
+  padding: 7px 14px; border-radius: 999px; cursor: pointer;
+}
+.boton[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.boton:focus-visible, .nodo:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.diagrama-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+svg.diagrama { display: block; min-width: 900px; width: 100%; height: auto; }
+.arista { fill: none; stroke: var(--line); stroke-width: 1.6; transition: stroke 0.2s, opacity 0.2s; }
+.arista.ref { stroke-dasharray: 5 4; }
+.arista.activa { stroke: var(--accent); stroke-width: 2.4; }
+.arista.cocompra { stroke: var(--sint); stroke-width: 3; }
+.arista.atenuada { opacity: 0.25; }
+.nodo { cursor: pointer; }
+.nodo rect { fill: var(--panel); stroke: var(--line); stroke-width: 1.4; transition: fill 0.2s, stroke 0.2s; }
+.nodo text { fill: var(--ink); font-family: var(--f-body); font-size: 13px; pointer-events: none; }
+.nodo text.num { font-family: var(--f-mono); font-size: 11px; fill: var(--muted); }
+.nodo.sel rect { stroke: var(--accent); stroke-width: 2.6; fill: var(--accent-soft); }
+.nodo.fuente rect { fill: var(--real-soft); stroke: var(--real); }
+.nodo.cocompra rect { stroke: var(--sint); stroke-width: 2.6; }
+.nodo.atenuado { opacity: 0.35; }
+.marca circle { fill: var(--sint); }
+.marca text { fill: #fff; font: 700 12px var(--f-mono); }
+.leyenda { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.leyenda span { display: inline-flex; align-items: center; gap: 6px; }
+.leyenda i { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--line); }
+.leyenda i.ref { border-top-style: dashed; }
+.leyenda i.co { border-top: 3px solid var(--sint); }
+.nota-cocompra { display: none; border-left: 3px solid var(--sint); background: var(--sint-soft); padding: 12px 14px; border-radius: 0 6px 6px 0; }
+.nota-cocompra.visible { display: block; }
+.nota-cocompra ol { margin: 6px 0 0; padding-left: 20px; }
+
+/* Panel de etapa */
+.pestanas { display: flex; flex-wrap: wrap; gap: 6px; }
+.pestana {
+  font: 500 13px var(--f-mono); background: transparent; color: var(--muted); border: 1px solid var(--line);
+  border-radius: 4px; padding: 5px 9px; cursor: pointer;
+}
+.pestana[aria-selected="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent-soft); }
+.detalle { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 22px; display: flex; flex-direction: column; gap: 18px; }
+.detalle .titulo { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; }
+.detalle .titulo h3 { font-size: 24px; }
+.grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 26px; }
+.bloque { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.bloque h4 { margin: 0; font: 500 12px var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.bloque ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.bloque.salida h4 { color: var(--accent); }
+.bloque.hallazgo h4 { color: var(--alerta); }
+.flujo { display: flex; flex-wrap: wrap; gap: 8px; }
+.flujo button { font: 500 13px var(--f-body); border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 4px; padding: 4px 9px; cursor: pointer; }
+.flujo button:hover { border-color: var(--accent); }
+.estructura { font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+
+/* Cadena causal */
+.cadena { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--panel); }
+.paso { padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; border-right: 1px solid var(--line); min-width: 0; }
+.paso:last-child { border-right: 0; }
+.paso .eyebrow { color: var(--sint); }
+.paso.real .eyebrow { color: var(--real); }
+.cita { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; font-size: 18px; max-width: 72ch; }
+
+/* Gráfico */
+.dos-col { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.grafico { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 14px; }
+.grafico svg { width: 100%; height: auto; display: block; }
+.grafico text { fill: var(--muted); font-family: var(--f-mono); font-size: 11px; }
+.grafico .eje { stroke: var(--line); }
+.grafico .grid { stroke: var(--line); stroke-dasharray: 2 4; }
+.serie-t { fill: none; stroke: var(--accent); stroke-width: 2.4; }
+.serie-m { fill: none; stroke: var(--sint); stroke-width: 2.4; }
+.punto-t { fill: var(--accent); }
+.punto-m { fill: var(--sint); }
+
+.decir { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.decir > div { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.decir ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.decir h3.si { color: var(--real); }
+.decir h3.no { color: var(--alerta); }
+.pie { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+@media (max-width: 760px) {
+  .grid4, .decir, .dos-col { grid-template-columns: minmax(0, 1fr); }
+  .cadena { grid-template-columns: minmax(0, 1fr); }
+  .paso { border-right: 0; border-bottom: 1px solid var(--line); }
+  .paso:last-child { border-bottom: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="envoltura">
+
+  <header class="cab">
+    <span class="eyebrow">Proyecto final EDyA 2026-2 · Escenario B · Office_Products</span>
+    <h1>Mapa del Escenario B</h1>
+    <p class="lead">Qué pide el enunciado, qué hace cada etapa con su entrada, qué encontramos y qué le entrega a la siguiente. Empieza por el panorama y luego entra al detalle de tu etapa.</p>
+    <div class="meta"><span>10 etapas (0 a 9)</span><span>12.8 M reseñas reales disponibles</span><span>9 940 617 eventos limpios en el pipeline oficial</span><span>187 tests</span></div>
+  </header>
+
+  <section class="seccion" id="problema">
+    <span class="eyebrow">1 · El problema</span>
+    <h2>Lo que pide el enunciado y quién lo resuelve</h2>
+    <p>El escenario B es un sistema de comercio electrónico con unos 10 millones de transacciones y eventos (búsquedas, vistas, carrito, compras, devoluciones y reseñas). Cada requisito del enunciado cae en una o más etapas.</p>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Requisito del enunciado</th><th>Etapas</th><th>Estructura principal</th></tr></thead>
+        <tbody>
+          <tr><td>Ingesta y preparación: recibir, validar, normalizar y eliminar repetidos</td><td class="num">0 · 1</td><td>Cola circular, merge sort, búsqueda binaria</td></tr>
+          <tr><td>Priorización de órdenes: express antes que estándar; alertas de pago primero</td><td class="num">2</td><td>Min-heap con aging</td></tr>
+          <tr><td>Consulta de productos puntual y por rango, con baja latencia</td><td class="num">3 · 4 · 5</td><td>Tabla hash + LRU, B+Tree, KD-Tree</td></tr>
+          <tr><td>Posible fraude: cuentas, tarjetas y dispositivos señalados; intensidad en ventana</td><td class="num">6</td><td>Bloom Filter, Count-Min Sketch</td></tr>
+          <tr><td>Productos relacionados: por atributos y por comportamiento</td><td class="num">7</td><td>MinHash + LSH, HNSW</td></tr>
+          <tr><td>Co-compra: productos adquiridos juntos, agrupaciones e influyentes</td><td class="num">8</td><td>Grafo CSR, PageRank, Louvain</td></tr>
+          <tr><td>Servicio: autocompletado, Top-K, recomendaciones y panel</td><td class="num">9</td><td>Trie radix, índice invertido, MinHeap Top-K</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Con qué datos contamos</h3>
+    <p>El enunciado recomienda usar un dataset real como base y generar el stream de forma sintética. Así lo hicimos, y esa mezcla explica casi todo lo que sigue.</p>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Dato</th><th>Origen</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><td>12 845 712 reseñas: usuario, producto, fecha, rating, compra verificada (1998-2023)</td><td>Amazon Reviews 2023</td><td><span class="chip real">real</span></td></tr>
+          <tr><td>710 503 productos: título, tienda, categorías, precio, rating medio</td><td>Amazon Reviews 2023</td><td><span class="chip real">real</span></td></tr>
+          <tr><td><code>bought_together</code> (co-compras de Amazon)</td><td>Amazon Reviews 2023</td><td><span class="chip alerta">vacío</span></td></tr>
+          <tr><td>Recorrido search → view → cart → purchase → review → return alrededor de cada reseña</td><td>Generador de la etapa 0</td><td><span class="chip sint">sintético</span></td></tr>
+          <tr><td>Órdenes con varios productos (las co-compras)</td><td>Generador de la etapa 0</td><td><span class="chip sint">sintético</span></td></tr>
+          <tr><td>Duplicados, malformados, eventos tardíos y ráfagas de fraude</td><td>Generador de la etapa 0</td><td><span class="chip sint">sintético</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="seccion" id="panorama">
+    <span class="eyebrow">2 · Panorama</span>
+    <h2>Cómo fluyen los datos entre etapas</h2>
+    <p>Toca una etapa para ver su entrada, su tratamiento, sus hallazgos y lo que le entrega a la siguiente. Las flechas que se encienden son las que entran o salen de la etapa elegida.</p>
+    <div class="controles">
+      <button class="boton" id="btn-flujo" aria-pressed="true" type="button">Flujo de datos</button>
+      <button class="boton" id="btn-cocompra" aria-pressed="false" type="button">Recorrido de la co-compra</button>
+    </div>
+    <div class="diagrama-wrap"><svg class="diagrama" id="diagrama" viewBox="0 0 1100 420" role="img" aria-label="Diagrama del pipeline de 10 etapas"></svg></div>
+    <div class="leyenda">
+      <span><i></i>entrega datos</span>
+      <span><i class="ref"></i>sirve de referencia</span>
+      <span><i class="co"></i>camino de la co-compra sintética</span>
+      <span><span class="chip fija">fija</span> etapa obligatoria del enunciado</span>
+    </div>
+    <div class="nota-cocompra" id="nota-cocompra">
+      <strong>Dónde nace y dónde se nota.</strong>
+      <ol>
+        <li><strong>Etapa 0:</strong> como el dataset no trae co-compras, el generador agrega a cada orden productos del mismo grupo <code>crc32(asin) % 500</code>. Es un hash del código del producto, sin relación con su categoría.</li>
+        <li><strong>Etapa 8:</strong> el grafo de co-compra hereda esos grupos. Las comunidades de Louvain coinciden con ellos y no con temas de producto.</li>
+        <li><strong>Etapa 9:</strong> las recomendaciones que más dependen de la co-compra no se ven coherentes para un usuario.</li>
+      </ol>
+    </div>
+    <div class="pestanas" role="tablist" aria-label="Etapas" id="pestanas"></div>
+    <article class="detalle" id="detalle" aria-live="polite"></article>
+  </section>
+
+  <section class="seccion" id="hallazgo">
+    <span class="eyebrow">3 · Hallazgo principal</span>
+    <h2>De dónde salen las co-compras y por qué importa</h2>
+    <p>No fue un error de programación ni una etapa que leyera mal su entrada. Fue una decisión de modelado de la etapa 0 que nadie contrastó después con los datos reales.</p>
+    <div class="cadena">
+      <div class="paso"><span class="eyebrow">Causa · etapa 0</span><h3>Órdenes simuladas por hash</h3><p>Con probabilidad 0.25, una orden suma de 1 a 3 productos del mismo grupo <code>crc32(asin) % 500</code>.</p></div>
+      <div class="paso"><span class="eyebrow">Efecto · etapa 8</span><h3>Comunidades sin tema</h3><p>841 comunidades = 841 componentes conexas. Pureza de categoría 0.067, igual que al azar.</p></div>
+      <div class="paso"><span class="eyebrow">Efecto · etapa 9</span><h3>Recomendaciones raras</h3><p>Para un tóner Brother aparecen un carrito plegable y una tarjeta de cumpleaños.</p></div>
+      <div class="paso real"><span class="eyebrow">Validación · datos reales</span><h3>Los algoritmos sí funcionan</h3><p>Con co-reseñas reales: componente gigante del 98.7 %, Q = 0.32 y aristas que unen la misma tienda 95 veces más que el azar.</p></div>
+    </div>
+  </section>
+
+  <section class="seccion" id="escala">
+    <span class="eyebrow">4 · Escala medida</span>
+    <h2>La etapa 8 completa sobre el dataset entero</h2>
+    <div class="dos-col">
+      <div class="grafico">
+        <svg id="grafico" viewBox="0 0 560 300" role="img" aria-label="Tiempo y memoria de la etapa 8 según el número de reseñas"></svg>
+      </div>
+      <div class="seccion" style="gap:12px">
+        <p>Regeneramos el stream con ventanas reales cada vez más grandes, hasta las 12 845 712 reseñas, y corrimos la etapa 8 completa en cada una. No hay extrapolación.</p>
+        <div class="tabla-wrap">
+          <table>
+            <thead><tr><th>Reseñas</th><th>Aristas</th><th>Tiempo</th><th>Memoria</th></tr></thead>
+            <tbody id="tabla-escala"></tbody>
+          </table>
+        </div>
+        <p class="lead" style="font-size:15px">El dataset completo usa 7 GB, el 7 % de los 96 GB de la Mac Studio. PageRank y el CSR crecen de forma lineal (pendiente ≈ 1.0).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="decision">
+    <span class="eyebrow">5 · Decisión final</span>
+    <h2>Cómo lo explicamos</h2>
+    <p>Configuración final del servicio: grafo de co-compra del stream, PageRank en escala logarítmica, ajuste de diversidad λ = 0.3 y pesos 0.35 / 0.25 / 0.20 / 0.20 (similitud, relacionados, PageRank, co-compra).</p>
+    <blockquote class="cita">El enunciado define el grafo del escenario B como productos comprados en la misma orden, y así lo implementamos. Como validación probamos fuera del pipeline una señal alternativa construida con reseñas reales. Mejora la precisión, pero no cumple esa definición, no pasa por el filtro de fraude y la métrica con que se evaluó la favorece por construcción. Por eso no la integramos y el servicio usa el grafo de co-compra.</blockquote>
+    <div class="decir">
+      <div>
+        <h3 class="si">Qué decir</h3>
+        <ul>
+          <li>Las co-compras son simuladas porque el dataset no las trae; el enunciado recomienda simular el stream.</li>
+          <li>Validamos los algoritmos con la señal real de reseñas y ahí sí aparecen grupos por marca y categoría.</li>
+          <li>La etapa 8 completa corre sobre el dataset entero en unos 7 minutos con 7 GB.</li>
+          <li>Agrupar las órdenes por categoría en la etapa 0 queda como mejora futura documentada.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="no">Qué evitar</h3>
+        <ul>
+          <li>Llamar «temáticas» a las comunidades de Louvain.</li>
+          <li>Citar el «60× más rápido que NetworkX»: el valor medido es 1.8 a 2.6×.</li>
+          <li>Afirmar que la prueba con reseñas reales no mejoró: sí mejoró, y los documentos lo dicen.</li>
+          <li>Presentar PageRank como algo distinto de la popularidad en este grafo (Spearman 0.956 con el grado).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pie">Fuentes: <code>docs/auditoria_etapas_8_9.md</code>, informes de las etapas 0 a 9 y métricas en <code>data/interim/Office_Products/</code> y <code>results/</code>. Cifras al 27 de octubre de 2026.</footer>
+</div>
+
+<script>
+const ETAPAS = [
+  { id: "F", nombre: "Datos fuente", corto: "Fuente", num: "Amazon 2023", x: 20, y: 182, fuente: true,
+    estructura: "Parquet de reseñas y catálogo",
+    entrada: ["12 845 712 reseñas reales (se usan las últimas 1 500 000)", "710 503 productos del catálogo"],
+    tratamiento: ["Lectura por bloques con iter_batches; memoria O(1) respecto al número de reseñas"],
+    hallazgos: ["bought_together viene vacío en los 710 503 productos: no hay co-compras reales"],
+    salida: ["Reseñas en orden de timestamp y catálogo {asin: precio, categoría, título}"] },
+  { id: "0", nombre: "Ingesta y buffer", corto: "E0 Ingesta", num: "10.5 M registros", x: 160, y: 182,
+    estructura: "Cola circular de capacidad fija · O(1) por operación",
+    entrada: ["1 500 000 reseñas reales y el catálogo"],
+    tratamiento: ["Cada reseña se convierte en un recorrido search → view → cart → purchase → review → return en los 30 min previos",
+      "Inyecta 5 % de eventos tardíos, 299 972 duplicados exactos, 149 241 casi duplicados y 100 629 malformados",
+      "Inyecta 2 970 ráfagas de fraude con 37 095 compras",
+      "Arma 326 797 órdenes con varios productos usando el grupo crc32(asin) % 500"],
+    hallazgos: ["Ningún evento perdido de 10.5 M; pendiente log-log 0.98 y 8 bytes por elemento",
+      "Auditoría: el grupo por hash no tiene relación con la categoría; es el origen de las co-compras sin tema"],
+    salida: ["10 512 167 registros crudos en micro-lotes (etapa0_lotes.jsonl) → etapa 1",
+      "listas_senalados.json (30 cuentas, 200 tarjetas, 50 dispositivos) → etapa 6"] },
+  { id: "1", nombre: "Preprocesamiento por lotes", corto: "E1 Limpieza", num: "9.94 M eventos", x: 290, y: 182,
+    estructura: "Merge sort O(b log b) · búsqueda binaria O(log w)",
+    entrada: ["10 512 167 registros crudos de la etapa 0"],
+    tratamiento: ["Valida y normaliza campos (precio, timestamps, categoría)", "Deduplica dentro del lote y en una ventana de 600 s", "Reordena por timestamp"],
+    hallazgos: ["98 781 de 98 781 rechazos esperados", "El desorden baja del 4.62 % al 0.26 %", "La ventana de claves nunca supera 683 entradas"],
+    salida: ["9 940 617 eventos limpios (etapa1_lotes.jsonl) → etapa 2"] },
+  { id: "2", nombre: "Cola con prioridades", corto: "E2 Prioridad", num: "orden de servicio", x: 420, y: 182,
+    estructura: "Min-heap binario con aging · O(log n) por operación",
+    entrada: ["9 940 617 eventos limpios"],
+    tratamiento: ["Asigna prioridad y plazo: alertas de pago y compras express primero", "El aging evita que la navegación espere indefinidamente"],
+    hallazgos: ["Alertas y compras express dentro de plazo durante un incidente", "Con aging, la navegación afectada espera un 18 % menos"],
+    salida: ["etapa2_eventos.jsonl en orden de servicio → etapas 3, 6 y 8 (15 018 alertas de pago; 324 550 órdenes con varios productos)"] },
+  { id: "3", nombre: "Almacenamiento, lookup y caché", corto: "E3 Almacén", num: "195 019 productos", x: 560, y: 90,
+    estructura: "Tabla hash con direccionamiento abierto · caché LRU · matriz DOK → CSR",
+    entrada: ["Eventos priorizados de la etapa 2", "Catálogo de 710 503 productos"],
+    tratamiento: ["Lookup de productos por parent_asin", "Estado dinámico: stock, reposiciones, compras sin stock", "Matriz usuario × producto ponderada por tipo de evento"],
+    hallazgos: ["Sondeo medio 2.048 frente a 2.051 teórico", "95.6 % de aciertos en caché; latencia 7× menor que sin caché",
+      "Matriz de 1 096 990 × 195 019 con 2 169 111 celdas: 34.8 MB en CSR frente a 1.7 TB densa"],
+    salida: ["catalogo.jsonl y AlmacenCatalogo → etapas 4, 7 y 9", "matriz_usuario_producto.npz → etapa 7", "estado_productos.parquet"] },
+  { id: "4", nombre: "Indexación principal", corto: "E4 B+Tree", num: "4 lecturas a 10 M", x: 720, y: 24,
+    estructura: "B+Tree en disco · páginas de 4 KB · buffer pool · O(log_B n)",
+    entrada: ["Catálogo y precios observados en el stream (etapa 3)"],
+    tratamiento: ["Construye el índice por precio con el merge sort de la etapa 1", "Consultas puntuales y por rango de precio"],
+    hallazgos: ["4 lecturas de página por búsqueda a 10 M, frente a 22 de la búsqueda binaria en archivo", "El índice deja de convenir con rangos del 10 % de los datos"],
+    salida: ["indice_precio.bpt → la etapa 5 lo recorre"] },
+  { id: "5", nombre: "Índice multidimensional y KNN exacto", corto: "E5 KD-Tree", num: "0.58 ms a 10 M", x: 880, y: 24,
+    estructura: "KD-Tree global y por categoría · corte por la mediana",
+    entrada: ["Índice de la etapa 4 y atributos de los productos"],
+    tratamiento: ["Consultas por varios atributos a la vez", "KNN exacto por producto, con candidatos en el min-heap de la etapa 2"],
+    hallazgos: ["0.58 ms por consulta a 10 M puntos, 1 418× menos que la fuerza bruta", "Mismas distancias que la fuerza bruta en 3 000 consultas reales", "Pierde la poda desde 16 dimensiones"],
+    salida: ["vecinos.parquet y vectores.npz → referencia exacta para medir el recall de la etapa 7"] },
+  { id: "6", nombre: "Filtrado probabilístico", corto: "E6 Fraude", num: "41 532 bloqueos", x: 560, y: 290, fija: true,
+    estructura: "Bloom Filter O(k) · Count-Min Sketch O(d) · verificación exacta con TablaHash",
+    entrada: ["Eventos priorizados de la etapa 2", "Mitad de las listas de señalados (la otra mitad simula fraude nuevo)"],
+    tratamiento: ["Bloom Filter: ¿la cuenta, tarjeta o dispositivo está señalado?", "Count-Min Sketch: intensidad de intentos de pago en ventana", "Toda alerta se verifica antes de bloquear"],
+    hallazgos: ["47 710 alertas; 41 532 bloqueos con precisión 1.000 y recall 0.869", "6 178 en revisión", "Falsos positivos del Bloom 0.95-1.06 % frente al 1 % teórico; 73× menos memoria que un set"],
+    salida: ["ordenes_bloqueadas.json (31 994) → etapa 8", "alertas.jsonl → etapas 7 (usuarios a excluir) y 9 (panel de fraude)"] },
+  { id: "7", nombre: "Similitud aproximada", corto: "E7 Similitud", num: "recall 0.979 / 0.946", x: 720, y: 185, fija: true,
+    estructura: "MinHash + LSH (256 hashes) · HNSW (M = 32)",
+    entrada: ["Matriz usuario × producto de la etapa 3 sin los usuarios bloqueados por la etapa 6", "Título, categoría y tienda del catálogo"],
+    tratamiento: ["MinHash + LSH: productos que miran o compran los mismos usuarios (Jaccard)", "HNSW: productos con atributos parecidos (coseno)"],
+    hallazgos: ["MinHash + LSH: recall@10 0.979, verificando 55 de 75 953 productos por consulta", "HNSW: recall@10 0.946 calculando el 0.79 % de las distancias",
+      "Auditoría: en una evaluación temporal, los relacionados usan interacciones futuras (0.261 → 0.031 al recalcularlos sin futuro)"],
+    salida: ["relacionados.parquet (75 890 productos) y similares.parquet (195 019) → etapa 9"] },
+  { id: "8", nombre: "Grafo de dominio", corto: "E8 Grafo", num: "150 534 nodos", x: 720, y: 330, fija: true,
+    estructura: "Grafo CSR · PageRank O(|V|+|E|) por iteración · Louvain · LPA",
+    entrada: ["Compras de la etapa 2 sin las 31 994 órdenes bloqueadas por la etapa 6"],
+    tratamiento: ["Une los productos de cada orden: 805 587 aristas ponderadas", "PageRank (α = 0.85, 25 iteraciones, 207 ms)", "Louvain y LPA con garantía de comunidades conexas"],
+    hallazgos: ["Las 841 comunidades son las 841 componentes conexas; pureza de categoría igual al azar",
+      "PageRank: Spearman 0.956 con el grado (equivale a popularidad)", "Speedup real frente a NetworkX: 1.8-2.6× (el «60×» era calentamiento)",
+      "Escala: dataset completo en 6.8 min con 7 GB"],
+    salida: ["grafo_cocompra.npz, pagerank.parquet y comunidades.parquet → etapa 9"] },
+  { id: "9", nombre: "Servicio y visualización", corto: "E9 Servicio", num: "585 983 términos", x: 960, y: 205,
+    estructura: "Trie radix con caché Top-K · índice invertido · MinHeap Top-K · scoring híbrido",
+    entrada: ["Catálogo (etapa 3)", "Alertas (etapa 6)", "Similares y relacionados (etapa 7)", "Grafo, PageRank y comunidades (etapa 8)"],
+    tratamiento: ["Autocompletado exacto y tolerante a errores (Damerau-OSA)", "Búsqueda por índice invertido con corrección de tokens",
+      "Recomendación: 0.35 similitud + 0.25 relacionados + 0.20 PageRank (log) + 0.20 co-compra, con re-ranking de novedad λ = 0.3"],
+    hallazgos: ["Catálogo completo indexado (antes ~3 %); Trie radix 8.3× más chico", "Prefijo exacto 1.2 µs; difuso 0.43 ms; búsqueda 1.8 ms",
+      "«toner brtoher» → «toner brother»", "λ = 0.3 baja la concentración de recomendaciones sin perder precisión"],
+    salida: ["metricas.json y demo_consultas.json", "visualizador/dashboard_servicio.html (salida final para el usuario)"] },
+];
+
+const ARISTAS = [
+  ["F", "0"], ["0", "1"], ["1", "2"], ["2", "3"], ["2", "6"], ["2", "8"],
+  ["3", "4"], ["4", "5"], ["5", "7", "ref"], ["3", "7"], ["6", "7"], ["6", "8"],
+  ["3", "9"], ["6", "9"], ["7", "9"], ["8", "9"],
+];
+const CAMINO_COCOMPRA = new Set(["F-0", "0-1", "1-2", "2-8", "8-9"]);
+const NODOS_COCOMPRA = new Set(["F", "0", "1", "2", "8", "9"]);
+const W = 118, H = 58;
+const porId = Object.fromEntries(ETAPAS.map(e => [e.id, e]));
+const svg = document.getElementById("diagrama");
+const NS = "http://www.w3.org/2000/svg";
+let seleccion = "0";
+let modo = "flujo";
+
+function el(tag, attrs, padre) {
+  const n = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (padre) padre.appendChild(n);
+  return n;
+}
+
+function camino(a, b) {
+  const x1 = a.x + W, y1 = a.y + H / 2, x2 = b.x, y2 = b.y + H / 2;
+  if (b.x <= a.x + W) {
+    const xa = a.x + W / 2, ya = a.y + H, xb = b.x + W / 2, yb = b.y;
+    return `M${xa},${ya} C${xa},${(ya + yb) / 2} ${xb},${(ya + yb) / 2} ${xb},${yb}`;
+  }
+  const dx = (x2 - x1) / 2;
+  return `M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`;
+}
+
+const capaAristas = el("g", {}, svg);
+const capaNodos = el("g", {}, svg);
+const aristasEl = ARISTAS.map(([a, b, tipo]) => {
+  const p = el("path", { d: camino(porId[a], porId[b]), class: "arista" + (tipo === "ref" ? " ref" : ""), "marker-end": "url(#flecha)" }, capaAristas);
+  return { a, b, p };
+});
+const defs = el("defs", {}, svg);
+const marcador = el("marker", { id: "flecha", viewBox: "0 0 10 10", refX: "9", refY: "5", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" }, defs);
+el("path", { d: "M0,0 L10,5 L0,10 z", fill: "var(--muted)" }, marcador);
+
+const nodosEl = ETAPAS.map(e => {
+  const g = el("g", { class: "nodo" + (e.fuente ? " fuente" : ""), tabindex: "0", role: "button", "aria-label": e.nombre, transform: `translate(${e.x},${e.y})` }, capaNodos);
+  el("rect", { width: W, height: H, rx: 6 }, g);
+  const t1 = el("text", { x: 10, y: 24 }, g); t1.textContent = e.corto;
+  const t2 = el("text", { x: 10, y: 43, class: "num" }, g); t2.textContent = e.num;
+  if (e.fija) {
+    const f = el("text", { x: W - 10, y: 16, class: "num", "text-anchor": "end" }, g); f.textContent = "fija";
+  }
+  g.addEventListener("click", () => seleccionar(e.id));
+  g.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); seleccionar(e.id); } });
+  return { e, g };
+});
+
+const marcas = el("g", {}, svg);
+[["0", "1"], ["8", "2"], ["9", "3"]].forEach(([id, n]) => {
+  const e = porId[id];
+  const g = el("g", { class: "marca", transform: `translate(${e.x + W - 4},${e.y + H - 4})` }, marcas);
+  el("circle", { r: 11 }, g);
+  const t = el("text", { "text-anchor": "middle", y: 4 }, g); t.textContent = n;
+});
+
+function pintar() {
+  const co = modo === "cocompra";
+  marcas.style.display = co ? "" : "none";
+  document.getElementById("nota-cocompra").classList.toggle("visible", co);
+  for (const { a, b, p } of aristasEl) {
+    const clave = a + "-" + b;
+    p.classList.toggle("cocompra", co && CAMINO_COCOMPRA.has(clave));
+    p.classList.toggle("activa", !co && (a === seleccion || b === seleccion));
+    p.classList.toggle("atenuada", co && !CAMINO_COCOMPRA.has(clave));
+  }
+  for (const { e, g } of nodosEl) {
+    g.classList.toggle("sel", e.id === seleccion);
+    g.classList.toggle("cocompra", co && NODOS_COCOMPRA.has(e.id));
+    g.classList.toggle("atenuado", co && !NODOS_COCOMPRA.has(e.id));
+  }
+}
+
+const pestanas = document.getElementById("pestanas");
+const botonesPestana = ETAPAS.map(e => {
+  const b = document.createElement("button");
+  b.className = "pestana"; b.type = "button"; b.setAttribute("role", "tab");
+  b.textContent = e.id === "F" ? "Fuente" : "Etapa " + e.id;
+  b.addEventListener("click", () => seleccionar(e.id));
+  pestanas.appendChild(b);
+  return { e, b };
+});
+
+function lista(items) { return "<ul>" + items.map(i => `<li>${i}</li>`).join("") + "</ul>"; }
+
+function seleccionar(id) {
+  seleccion = id;
+  const e = porId[id];
+  const recibe = ARISTAS.filter(([, b]) => b === id).map(([a]) => a);
+  const entrega = ARISTAS.filter(([a]) => a === id).map(([, b]) => b);
+  const boton = x => `<button type="button" data-ir="${x}">${x === "F" ? "Fuente" : "Etapa " + x} · ${porId[x].nombre}</button>`;
+  document.getElementById("detalle").innerHTML = `
+    <div class="titulo">
+      <span class="eyebrow">${id === "F" ? "Datos" : "Etapa " + id}</span>
+      <h3>${e.nombre}</h3>
+      ${e.fija ? '<span class="chip fija">fija en el enunciado</span>' : ""}
+    </div>
+    <div class="estructura">${e.estructura}</div>
+    <div class="grid4">
+      <div class="bloque"><h4>Entrada</h4>${lista(e.entrada)}</div>
+      <div class="bloque"><h4>Tratamiento</h4>${lista(e.tratamiento)}</div>
+      <div class="bloque hallazgo"><h4>Hallazgos</h4>${lista(e.hallazgos)}</div>
+      <div class="bloque salida"><h4>Salida → siguiente etapa</h4>${lista(e.salida)}</div>
+    </div>
+    <div class="grid4">
+      <div class="bloque"><h4>Recibe de</h4><div class="flujo">${recibe.length ? recibe.map(boton).join("") : "<span>Es el inicio del pipeline</span>"}</div></div>
+      <div class="bloque"><h4>Entrega a</h4><div class="flujo">${entrega.length ? entrega.map(boton).join("") : "<span>Usuario final (dashboard)</span>"}</div></div>
+    </div>`;
+  document.querySelectorAll("#detalle [data-ir]").forEach(b => b.addEventListener("click", () => seleccionar(b.dataset.ir)));
+  botonesPestana.forEach(({ e: x, b }) => b.setAttribute("aria-selected", String(x.id === id)));
+  pintar();
+}
+
+document.getElementById("btn-flujo").addEventListener("click", ev => {
+  modo = "flujo"; ev.currentTarget.setAttribute("aria-pressed", "true");
+  document.getElementById("btn-cocompra").setAttribute("aria-pressed", "false"); pintar();
+});
+document.getElementById("btn-cocompra").addEventListener("click", ev => {
+  modo = "cocompra"; ev.currentTarget.setAttribute("aria-pressed", "true");
+  document.getElementById("btn-flujo").setAttribute("aria-pressed", "false"); pintar();
+});
+
+const inicial = (location.hash || "").replace("#etapa-", "");
+seleccionar(porId[inicial] ? inicial : "0");
+
+// Escala medida (results/etapa_8/escala_stream.csv)
+const ESCALA = [
+  [150000, 102729, 5.81, 0.81], [375000, 232973, 13.59, 0.90], [750000, 435069, 24.10, 1.09],
+  [1500000, 818423, 47.71, 1.47], [3000000, 1570362, 90.51, 2.24], [6000000, 2815463, 180.16, 3.82],
+  [12845712, 5407743, 406.55, 6.99],
+];
+const fmt = n => n.toLocaleString("es-PE");
+document.getElementById("tabla-escala").innerHTML = ESCALA.filter(r => [375000, 1500000, 6000000, 12845712].includes(r[0]))
+  .map(r => `<tr><td class="num">${fmt(r[0])}</td><td class="num">${fmt(r[1])}</td><td class="num">${r[2] >= 60 ? (r[2] / 60).toFixed(1) + " min" : r[2].toFixed(0) + " s"}</td><td class="num">${r[3].toFixed(1)} GB</td></tr>`).join("");
+
+(function grafico() {
+  const g = document.getElementById("grafico");
+  const m = { l: 52, r: 52, t: 22, b: 40 }, w = 560, h = 300;
+  const lx = v => Math.log10(v);
+  const x0 = lx(100000), x1 = lx(20000000);
+  const X = v => m.l + (lx(v) - x0) / (x1 - x0) * (w - m.l - m.r);
+  const Yt = v => h - m.b - v / 450 * (h - m.t - m.b);
+  const Ym = v => h - m.b - v / 8 * (h - m.t - m.b);
+  for (const t of [0, 100, 200, 300, 400]) {
+    el("line", { x1: m.l, x2: w - m.r, y1: Yt(t), y2: Yt(t), class: "grid" }, g);
+    const tx = el("text", { x: m.l - 8, y: Yt(t) + 4, "text-anchor": "end" }, g); tx.textContent = t + " s";
+  }
+  for (const t of [0, 2, 4, 6, 8]) {
+    const tx = el("text", { x: w - m.r + 8, y: Ym(t) + 4 }, g); tx.textContent = t + " GB";
+  }
+  for (const [v, lab] of [[150000, "150 k"], [1500000, "1.5 M"], [12845712, "12.8 M"]]) {
+    el("line", { x1: X(v), x2: X(v), y1: h - m.b, y2: h - m.b + 5, class: "eje" }, g);
+    const tx = el("text", { x: X(v), y: h - m.b + 18, "text-anchor": "middle" }, g); tx.textContent = lab;
+  }
+  el("line", { x1: m.l, x2: w - m.r, y1: h - m.b, y2: h - m.b, class: "eje" }, g);
+  const tx = el("text", { x: (m.l + w - m.r) / 2, y: h - 6, "text-anchor": "middle" }, g); tx.textContent = "reseñas procesadas (escala log)";
+  el("path", { d: ESCALA.map((r, i) => (i ? "L" : "M") + X(r[0]) + "," + Yt(r[2])).join(" "), class: "serie-t" }, g);
+  el("path", { d: ESCALA.map((r, i) => (i ? "L" : "M") + X(r[0]) + "," + Ym(r[3])).join(" "), class: "serie-m" }, g);
+  ESCALA.forEach(r => { el("circle", { cx: X(r[0]), cy: Yt(r[2]), r: 3.5, class: "punto-t" }, g); el("circle", { cx: X(r[0]), cy: Ym(r[3]), r: 3.5, class: "punto-m" }, g); });
+  const ult = ESCALA[ESCALA.length - 1];
+  const a = el("text", { x: X(ult[0]) - 6, y: Yt(ult[2]) - 8, "text-anchor": "end", style: "fill: var(--accent)" }, g); a.textContent = "tiempo total 6.8 min";
+  const b = el("text", { x: X(ult[0]) - 6, y: Ym(ult[3]) + 18, "text-anchor": "end", style: "fill: var(--sint)" }, g); b.textContent = "memoria pico 7.0 GB";
+})();
+</script>

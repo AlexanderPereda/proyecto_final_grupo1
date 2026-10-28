@@ -99,7 +99,7 @@ Errores:
     - se implemento pagerank
     - se descargo el dataset de kaggle
 
-    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+    Co-Authored-By: Nombre Apellido <correo@ejemplo.com>
 
 Errores:
 

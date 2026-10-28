@@ -15,12 +15,21 @@ __pycache__/
 # Datos (datasets pesados, no se versionan)
 data/*
 !data/.gitkeep
+*.parquet
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.h5
+*.jsonl
+*.jsonl.gz
+*.json.gz
+*.zip
+*.tar.gz
 
 # Variables de entorno / credenciales
 .env
-
-# Instrucciones locales para Claude (no se versionan)
-CLAUDE.md
+.env.*
 
 # IDE y sistema operativo
 .vscode/
@@ -28,5 +37,12 @@ CLAUDE.md
 .DS_Store
 Thumbs.db
 
+# Logs y temporales
+*.log
+*.tmp
+
 # Presentacion de la sustentacion (no se versiona)
 presentacion/
+
+# Documentos de traspaso interno (se comparten fuera del repo)
+HANDOFF.md
