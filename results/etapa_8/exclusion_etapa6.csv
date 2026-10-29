@@ -1,0 +1,2 @@
+compras_bloqueadas_excluidas,ordenes_bloqueadas_excluidas,ordenes_bloqueadas_con_cocompra,nodos_con_exclusion,nodos_sin_exclusion,aristas_con_exclusion,aristas_sin_exclusion,peso_con_exclusion,peso_sin_exclusion,nodos_solo_sin_exclusion,aristas_solo_sin_exclusion,aristas_con_peso_distinto,procesador,python
+31878,31878,0,150534,150534,805587,805587,1067474.0,1067474.0,0,0,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
