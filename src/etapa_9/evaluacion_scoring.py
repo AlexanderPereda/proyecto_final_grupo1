@@ -25,7 +25,12 @@ aprendidos en la variante 'temporal' solo si en prueba mejoran Recall@10 y NDCG@
 relativo frente al híbrido estático y la cobertura de catálogo del Top-10 no cae más de 25 %
 relativo; si no, se conservan los pesos estáticos.
 
-Ejecutar: .venv/bin/python -m src.etapa_9.evaluacion_scoring
+S_sim es el coseno de los vectores de atributos, 1 - d² / 2 (service.similitud_desde_distancia);
+el resumen lo registra en "s_sim" para distinguirlo de las calibraciones anteriores, que usaban
+1 - d (revisión técnica 2026-10-28, punto 1.5).
+
+El notebook de la etapa 9 llama a main (paso 10). Desde la terminal:
+    python -m src.etapa_9.evaluacion_scoring
 Salida: results/etapa_9/calibracion_scoring.csv, calibracion_lineas_base.csv y
         calibracion_scoring_resumen.json
 """
@@ -156,7 +161,7 @@ def main():
     print(f"relacionados temporales: {len(rel_temporal):,} productos ({time.perf_counter() - t0:.1f} s)")
 
     servicio = ServicioEcommerce(config.RAIZ / "data" / "interim", config.CATEGORIA)
-    servicio.cargar_datos(indexar_texto=False)
+    servicio.cargar_datos(indexar_texto=False, indices_auxiliares=False)
     servicio.grafo_cocompra = grafo_ent
     servicio._pagerank = dict(zip(grafo_ent.asins, pr_ent.tolist()))
     servicio._pagerank_max = float(pr_ent.max())
@@ -313,10 +318,12 @@ def main():
                                                & (df.relacionados == "fuga")]["relevante_en_candidatos"].mean())
     resumen["productos_relacionados_temporales"] = len(rel_temporal)
     resumen["anclas"] = len(anclas)
+    resumen["s_sim"] = "coseno: 1 - d^2 / 2"
     resumen["segundos"] = time.perf_counter() - t0
     (DIR_RESULTADOS / "calibracion_scoring_resumen.json").write_text(json.dumps(resumen, indent=2), encoding="utf-8")
     print(json.dumps(resumen, indent=2))
     servicio.cerrar()
+    return resumen
 
 
 if __name__ == "__main__":

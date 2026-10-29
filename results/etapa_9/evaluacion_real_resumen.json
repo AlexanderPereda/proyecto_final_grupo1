@@ -7,9 +7,10 @@
   "co_compra_sintetica": {
     "eventos": 83462478,
     "compras": 17344471,
-    "compras_fraude_excluidas": 302612,
-    "segundos_stream": 271.1344999159992,
-    "segundos_grafo": 11.422972583000956
+    "compras_fraude_excluidas": 302141,
+    "asins_vacios_descartados": 27537,
+    "segundos_stream": 881.4396452000365,
+    "segundos_grafo": 36.142731099855155
   },
   "coresena": {
     "nodos": 522795,
@@ -19,52 +20,53 @@
       "pares_logistica": 18110390,
       "tasa_positivos": 7.929150062477948e-05,
       "coef_logistica_libre_sim_pr_co_cat": [
-        4.11568024187638,
-        3.7207717796397537,
-        1.7553514680332356,
-        1.6630741048714268
+        3.059521079072747,
+        4.004385996739431,
+        1.6591453866195074,
+        1.4345367620513534
       ]
     },
     "ampliado": {
-      "candidatos_por_ancla": 681.514025,
-      "pares_logistica": 27400894,
-      "tasa_positivos": 8.255205103891866e-05,
+      "candidatos_por_ancla": 685.784825,
+      "pares_logistica": 27578223,
+      "tasa_positivos": 7.766997895404645e-05,
       "coef_logistica_libre_sim_pr_co_cat": [
-        4.069076828885029,
-        3.9897362064263255,
-        1.6371866139663829,
-        1.586391122627582
+        2.9531413260803676,
+        4.255981126334487,
+        1.6549718819396653,
+        1.4787771276423392
       ]
     }
   },
   "sintetico": {
-    "nodos": 531518,
-    "aristas": 4850527,
+    "nodos": 531469,
+    "aristas": 4827476,
     "ampliado": {
-      "candidatos_por_ancla": 249.105075
+      "candidatos_por_ancla": 248.982375
     }
   },
   "ambos": {
-    "nodos": 604534,
-    "aristas": 8975491,
+    "nodos": 604522,
+    "aristas": 8952440,
     "ampliado": {
-      "candidatos_por_ancla": 715.45005
+      "candidatos_por_ancla": 715.774675
     }
   },
   "regla_fuente_cocompra": {
     "coresena": {
-      "mejora_hitrate": 1.582677165354331,
-      "mejora_ndcg": 2.127519332592789,
-      "subida_gini": 0.06855851059295115,
-      "cumple": false
-    },
-    "ambos": {
-      "mejora_hitrate": 0.299212598425197,
-      "mejora_ndcg": 0.4634873047135686,
-      "subida_gini": 0.009822290348517004,
+      "mejora_hitrate": 0.320175438596491,
+      "mejora_ndcg": 0.3547749284959001,
+      "subida_gini": 0.0420187338587672,
       "cumple": true
     },
-    "fuente_adoptada": "ambos"
+    "ambos": {
+      "mejora_hitrate": 0.05701754385964919,
+      "mejora_ndcg": 0.11776253668796888,
+      "subida_gini": 0.004243433302372535,
+      "cumple": true
+    },
+    "fuente_adoptada": "coresena"
   },
-  "segundos": 571.0832107500028
+  "s_sim": "coseno: 1 - d^2 / 2",
+  "segundos": 1673.3830446999054
 }

@@ -5,7 +5,8 @@ concentración de la demanda (Gini de reseñas por producto, el punto de referen
 de exposición del recomendador), rating frente a compra verificada, precio y votos útiles, y
 evolución temporal.
 
-Ejecutar: .venv/bin/python -m src.etapa_9.analisis_campos_reales
+El notebook de la etapa 9 llama a main (paso 10). Desde la terminal:
+    python -m src.etapa_9.analisis_campos_reales
 Salida: results/etapa_9/analisis_campos_reales.json
 """
 
@@ -49,6 +50,7 @@ def main():
     ruta = config.RAIZ / "results" / "etapa_9" / "analisis_campos_reales.json"
     ruta.write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
     print(json.dumps(res, indent=2, ensure_ascii=False))
+    return res
 
 
 if __name__ == "__main__":

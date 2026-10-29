@@ -1,74 +1,57 @@
 """
-Suite de benchmarking y evaluación experimental para la Etapa 9 (Servicio y Visualización).
+Experimentos de la etapa 9 (servicio y visualización).
 
-Evalúa:
-1. Escalabilidad del Trie (árbol de prefijos):
-   - Inserción y consulta de autocompletado para N in [1K, 10K, 50K, 100K, 250K, 500K] términos.
-   - Memoria con tracemalloc y latencia por consulta (microsegundos).
-2. Escalabilidad de Top-K con MinHeap frente a ordenamiento completo (sorted / np.sort):
-   - N in [1K, 10K, 100K, 1M] elementos con K in [5, 10, 20, 50].
-   - Verificación de la cota teórica O(N log K) frente a O(N log N).
-3. Autocompletado difuso (auditoría 2026-10-27): latencia y acierto de autocompletar_difuso con
-   d = 1 y d = 2 sobre consultas con un error de tipeo sintético (sustitución, inserción,
-   borrado o transposición).
-4. Generación de tablas CSV y gráficos PNG en results/etapa_9/.
+notebooks/etapa9_servicio_visualizacion.ipynb llama a estas funciones a través de `resultados()`,
+que guarda cada tabla en results/etapa_9/ y la reutiliza en las ejecuciones siguientes. También se
+pueden medir desde la terminal con `python -m src.etapa_9.benchmark`.
 
-Líneas base en su mejor caso (auditoría 2026-10-27): además de sorted() se mide heapq.nlargest
-(C) y np.argpartition (O(N), C); el speedup de TopKHeap frente a sorted() no es la comparación
-relevante cuando los scores ya están en un arreglo NumPy.
+1. Escalabilidad del Trie radix: construcción, memoria y latencia de autocompletado para
+   N in [1K, 10K, 50K, 100K, 250K] términos del catálogo real.
+2. Top-K con MinHeap frente al ordenamiento completo: N in [1K, 10K, 50K, 100K, 500K, 1M] y
+   K in [5, 10, 20, 50]. Líneas base en su mejor caso (auditoría 2026-10-27): además de sorted()
+   se mide heapq.nlargest (C) y np.argpartition (O(N), C); el speedup frente a sorted() no es la
+   comparación relevante cuando los scores ya están en un arreglo NumPy.
+3. Autocompletado difuso (auditoría 2026-10-27): latencia y acierto con d = 1 y d = 2 sobre
+   consultas con un error de tipeo sintético (sustitución, inserción, borrado o transposición).
+
+Protocolo (el de las etapas 5, 7 y 8, funciones de src/etapa_8/benchmark.py): tiempo con
+time.perf_counter y el recolector de basura desactivado; la primera medición fija cuántas
+repeticiones caben en PRESUPUESTO_S, entre 1 y REPETICIONES; memoria con tracemalloc en una pasada
+aparte. Revisión técnica 2026-10-28: la versión anterior medía cada tiempo una sola vez.
 """
 
 import gc
 import heapq
 import json
-from operator import itemgetter
-import os
-import platform
 import time
-import tracemalloc
-from pathlib import Path
+from operator import itemgetter
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.etapa_9.service import TopKHeap, Trie, normalizar_texto
+from .. import config
+from ..etapa_8.benchmark import REPETICIONES, estadisticos, medir_memoria, medir_tiempos
+from .service import TopKHeap, Trie, normalizar_texto
 
-SEED = 42
-RAIZ = Path(__file__).resolve().parents[2]
-DIR_RESULTADOS = RAIZ / "results" / "etapa_9"
-DIR_RESULTADOS.mkdir(parents=True, exist_ok=True)
-DIR_INTERIM = RAIZ / "data" / "interim" / "Office_Products"
-
-PLATAFORMA = {
-    "procesador": platform.processor() or platform.machine(),
-    "python": platform.python_version(),
-    "sistema": platform.system(),
-}
-
-
-def medir_memoria(funcion, *args, **kwargs):
-    """Mide resultado, memoria actual y memoria pico en bytes usando tracemalloc."""
-    gc.collect()
-    tracemalloc.start()
-    resultado = funcion(*args, **kwargs)
-    actual, pico = tracemalloc.get_traced_memory()
-    tracemalloc.stop()
-    return resultado, actual, pico
+DIR_RESULTADOS = config.CARPETA_RESULTADOS / "etapa_9"
+TAMANOS_TRIE = (1_000, 10_000, 50_000, 100_000, 250_000)
+PREFIJOS_PRUEBA = ("ton", "bro", "pap", "off", "sta", "pri", "not", "ink", "car", "pen")
+TAMANOS_TOPK = (1_000, 10_000, 50_000, 100_000, 500_000, 1_000_000)
+VALORES_K = (5, 10, 20, 50)
 
 
 # ============================================================================
 # EXPERIMENTO 1: ESCALABILIDAD DEL TRIE
 # ============================================================================
 
-def extraer_vocabulario_catalogo(max_terminos: int = 500_000) -> list[tuple[str, float]]:
+def extraer_vocabulario_catalogo(max_terminos: int = 300_000) -> list[tuple[str, float]]:
     """Extrae palabras y frases del catálogo real para alimentar el Trie."""
-    ruta_cat = DIR_INTERIM / "etapa_3" / "catalogo.jsonl"
+    ruta_cat = config.CARPETA_INTERIM / "etapa_3" / "catalogo.jsonl"
     vocabulario: dict[str, float] = {}
 
     if not ruta_cat.exists():
         # Fallback sintético si no existe catálogo
-        rng = np.random.default_rng(SEED)
+        rng = np.random.default_rng(config.SEED)
         return [(f"termino_{i}_{rng.integers(1000, 9999)}", float(rng.uniform(1.0, 100.0))) for i in range(max_terminos)]
 
     with open(ruta_cat, "r", encoding="utf-8") as f:
@@ -102,104 +85,80 @@ def extraer_vocabulario_catalogo(max_terminos: int = 500_000) -> list[tuple[str,
     return items
 
 
-def benchmark_trie(terminos_pool: list[tuple[str, float]]):
-    """Evalúa construcción, memoria y latencia de autocompletado en el Trie."""
-    tamanos = [1_000, 10_000, 50_000, 100_000, 250_000]
-    if len(terminos_pool) >= 400_000:
-        tamanos.append(min(500_000, len(terminos_pool)))
+def benchmark_trie(terminos_pool: list[tuple[str, float]], tamanos=TAMANOS_TRIE) -> pd.DataFrame:
+    """Construcción con repeticiones, memoria en una pasada aparte y latencia de autocompletado.
 
-    prefijos_prueba = ["ton", "bro", "pap", "off", "sta", "pri", "not", "ink", "car", "pen"]
+    La latencia se mide en REPETICIONES bloques; cada bloque consulta una vez los diez prefijos de
+    prueba. Se informan el promedio por consulta entre bloques y los percentiles de las consultas.
+    """
     filas = []
-
     print("\n--- Ejecutando Benchmark de Escalabilidad del Trie ---")
     for n in tamanos:
         muestra = terminos_pool[:n]
 
-        # 1. Medir memoria de inserción
-        def _construir():
+        def construir():
             t = Trie(capacidad_cache=10)
             for termino, freq in muestra:
                 t.insertar(termino, frecuencia=freq)
             return t
 
-        trie_obj, mem_actual, mem_pico = medir_memoria(_construir)
+        tiempos, trie_obj = medir_tiempos(construir)
+        _, mem_actual, mem_pico = medir_memoria(construir)
 
-        # 2. Medir tiempo de construcción puro con repeticiones
-        gc.collect()
-        t0 = time.perf_counter()
-        _construir()
-        t_construccion = time.perf_counter() - t0
+        bloques, individuales = [], []
+        for _ in range(REPETICIONES):
+            gc.disable()
+            try:
+                t0 = time.perf_counter()
+                for pref in PREFIJOS_PRUEBA:
+                    t1 = time.perf_counter()
+                    trie_obj.autocompletar(pref, k=5)
+                    individuales.append((time.perf_counter() - t1) * 1e6)
+                bloques.append((time.perf_counter() - t0) / len(PREFIJOS_PRUEBA) * 1e6)
+            finally:
+                gc.enable()
 
-        # 3. Medir latencia de autocompletado (100 consultas por prefijo)
-        latencias_us = []
-        for pref in prefijos_prueba:
-            for _ in range(50):
-                t_sub0 = time.perf_counter()
-                trie_obj.autocompletar(pref, k=5)
-                latencias_us.append((time.perf_counter() - t_sub0) * 1_000_000.0)  # microsegundos
-
-        lat_p50 = float(np.median(latencias_us))
-        lat_p95 = float(np.percentile(latencias_us, 95))
-        lat_media = float(np.mean(latencias_us))
-
-        print(f"  N = {n:,} | Construcción: {t_construccion*1000:.1f} ms | "
-              f"Memoria: {mem_pico/(1024*1024):.2f} MB | Latencia p50: {lat_p50:.2f} µs")
-
-        filas.append({
-            "n_terminos": n,
-            "tiempo_construccion_ms": t_construccion * 1000.0,
-            "tiempo_por_insercion_us": (t_construccion / n) * 1_000_000.0,
-            "nodos_radix": trie_obj.n_nodos,
-            "memoria_actual_bytes": mem_actual,
-            "memoria_pico_bytes": mem_pico,
-            "latencia_p50_us": lat_p50,
-            "latencia_p95_us": lat_p95,
-            "latencia_media_us": lat_media,
-        })
-
-    df = pd.DataFrame(filas)
-    ruta_csv = DIR_RESULTADOS / "escala_trie.csv"
-    df.to_csv(ruta_csv, index=False)
-    print(f"Resultados guardados en {ruta_csv}")
-    return df
+        fila = {"n_terminos": n, "nodos_radix": trie_obj.n_nodos}
+        fila.update(estadisticos("tiempo_construccion_ms", tiempos, 1e3))
+        fila["tiempo_por_insercion_us"] = fila["tiempo_construccion_ms"] * 1e3 / n
+        fila.update(memoria_actual_bytes=mem_actual, memoria_pico_bytes=mem_pico)
+        fila.update(estadisticos("latencia_media_us", bloques))
+        fila.update(latencia_p50_us=float(np.median(individuales)),
+                    latencia_p95_us=float(np.percentile(individuales, 95)))
+        filas.append(fila)
+        print(f"  N = {n:,} | Construcción: {fila['tiempo_construccion_ms']:.1f} ms ({len(tiempos)} repeticiones) | "
+              f"Memoria pico: {mem_pico / 2**20:.2f} MB | Latencia p50: {fila['latencia_p50_us']:.2f} µs")
+    return pd.DataFrame(filas)
 
 
 # ============================================================================
 # EXPERIMENTO 2: TOP-K HEAP VS ORDENAMIENTO COMPLETO
 # ============================================================================
 
-def benchmark_topk():
+def benchmark_topk(tamanos=TAMANOS_TOPK, valores_k=VALORES_K) -> pd.DataFrame:
     """
     Compara la complejidad práctica de TopKHeap (O(N log K)) frente a:
     1. Python sorted() completo: O(N log N)
-    2. NumPy np.sort() / np.partition(): baseline optimizado en C
+    2. heapq.nlargest, el heap acotado de la biblioteca estándar en C: O(N log K)
+    3. NumPy np.argpartition: O(N) en C
+    Los scores son floats de Python, como los del servicio. Las líneas base se miden con K = 10.
     """
-    tamanos_n = [1_000, 10_000, 50_000, 100_000, 500_000, 1_000_000]
-    valores_k = [5, 10, 20, 50]
-    rng = np.random.default_rng(SEED)
-
-    filas_escala = []
-    filas_comparacion = []
-
+    rng = np.random.default_rng(config.SEED)
+    filas = []
     print("\n--- Ejecutando Benchmark TopKHeap frente a Sorting Completo ---")
 
-    for n in tamanos_n:
-        # Generar datos sintéticos de prueba: pares (id, score)
-        scores = rng.random(size=n).astype(np.float64)
+    for n in tamanos:
+        scores = rng.random(size=n)
         items = [f"item_{i}" for i in range(n)]
-        pares = list(zip(items, scores))
+        pares = list(zip(items, scores.tolist()))
 
-        # Medir ordenamiento completo en Python (sorted)
-        gc.collect()
-        t0 = time.perf_counter()
-        _ = sorted(pares, key=itemgetter(1), reverse=True)[:10]
-        t_sorted_ms = (time.perf_counter() - t0) * 1000.0
+        def numpy_top10():
+            top_idx = np.argpartition(-scores, 10)[:10]
+            return [items[i] for i in top_idx[np.argsort(-scores[top_idx])]]
 
-        # Línea base de la biblioteca estándar (heap acotado implementado en C)
-        gc.collect()
-        t0 = time.perf_counter()
-        _ = heapq.nlargest(10, pares, key=itemgetter(1))
-        t_nlargest_ms = (time.perf_counter() - t0) * 1000.0
+        t_sorted, _ = medir_tiempos(lambda: sorted(pares, key=itemgetter(1), reverse=True)[:10])
+        t_nlargest, _ = medir_tiempos(heapq.nlargest, 10, pares, key=itemgetter(1))
+        t_numpy, _ = medir_tiempos(numpy_top10)
 
         # Reemplazos reales en el heap frente a la esperanza K · (H_N - H_K) ≈ K ln(N / K)
         raiz = []
@@ -212,151 +171,36 @@ def benchmark_topk():
                 reemplazos += 1
         reemplazos_teoricos = 10 * (np.log(n) - np.log(10))
 
-        # Medir NumPy np.partition + sort
-        gc.collect()
-        t0 = time.perf_counter()
-        top_idx = np.argpartition(-scores, 10)[:10]
-        top_sorted = top_idx[np.argsort(-scores[top_idx])]
-        _ = [items[i] for i in top_sorted]
-        t_numpy_ms = (time.perf_counter() - t0) * 1000.0
-
         for k in valores_k:
-            # Medir TopKHeap
-            def _ejecutar_heap():
+            def top_heap():
                 h = TopKHeap(k=k)
                 for item, sc in pares:
                     h.agregar(item, sc)
                 return h.obtener_top()
 
-            # Medición de memoria
-            _, mem_actual, mem_pico = medir_memoria(_ejecutar_heap)
+            t_heap, _ = medir_tiempos(top_heap)
+            _, _, mem_pico = medir_memoria(top_heap)
 
-            # Medición de tiempo puro con GC deshabilitado
-            gc.collect()
-            gc.disable()
-            try:
-                t0 = time.perf_counter()
-                _ejecutar_heap()
-                t_heap_ms = (time.perf_counter() - t0) * 1000.0
-            finally:
-                gc.enable()
-
-            speedup_vs_sorted = t_sorted_ms / t_heap_ms if t_heap_ms > 0 else 1.0
-
-            filas_escala.append({
-                "n": n,
-                "k": k,
-                "ms_topk_heap": t_heap_ms,
-                "mem_pico_bytes": mem_pico,
-                "ms_sorted": t_sorted_ms,
-                "ms_numpy": t_numpy_ms,
-                "ms_nlargest": t_nlargest_ms,
-                "speedup_vs_sorted": speedup_vs_sorted,
-                "speedup_numpy_vs_heap": t_heap_ms / t_numpy_ms if t_numpy_ms > 0 else float("nan"),
-                "reemplazos_heap_k10": reemplazos,
-                "reemplazos_teoricos_k10": reemplazos_teoricos,
-            })
+            fila = {"n": n, "k": k}
+            fila.update(estadisticos("ms_topk_heap", t_heap, 1e3))
+            fila["mem_pico_bytes"] = mem_pico
+            fila.update(estadisticos("ms_sorted", t_sorted, 1e3))
+            fila.update(estadisticos("ms_nlargest", t_nlargest, 1e3))
+            fila.update(estadisticos("ms_numpy", t_numpy, 1e3))
+            fila.update(speedup_vs_sorted=fila["ms_sorted"] / fila["ms_topk_heap"],
+                        speedup_numpy_vs_heap=fila["ms_topk_heap"] / fila["ms_numpy"],
+                        reemplazos_heap_k10=reemplazos, reemplazos_teoricos_k10=reemplazos_teoricos)
+            filas.append(fila)
 
             if k == 10:
-                print(f"  N = {n:,} (K={k}) | TopKHeap: {t_heap_ms:.2f} ms | "
-                      f"sorted(): {t_sorted_ms:.2f} ms | Speedup: {speedup_vs_sorted:.2f}×")
-
-    df_escala = pd.DataFrame(filas_escala)
-    ruta_escala = DIR_RESULTADOS / "escala_topk.csv"
-    df_escala.to_csv(ruta_escala, index=False)
-
-    # Tabla resumen de comparación para K=10
-    df_comp = df_escala[df_escala["k"] == 10][[
-        "n", "ms_topk_heap", "ms_sorted", "ms_nlargest", "ms_numpy", "speedup_vs_sorted",
-        "speedup_numpy_vs_heap", "reemplazos_heap_k10", "reemplazos_teoricos_k10"
-    ]].copy()
-    ruta_comp = DIR_RESULTADOS / "comparacion_sorting.csv"
-    df_comp.to_csv(ruta_comp, index=False)
-
-    print(f"Resultados guardados en {ruta_escala} y {ruta_comp}")
-    return df_escala, df_comp
+                print(f"  N = {n:,} (K={k}) | TopKHeap: {fila['ms_topk_heap']:.2f} ms ({len(t_heap)} repeticiones) | "
+                      f"sorted(): {fila['ms_sorted']:.2f} ms | Speedup: {fila['speedup_vs_sorted']:.2f}×")
+    return pd.DataFrame(filas)
 
 
 # ============================================================================
-# GENERACIÓN DE GRÁFICAS TÉCNICAS
+# EXPERIMENTO 3: AUTOCOMPLETADO DIFUSO
 # ============================================================================
-
-def generar_graficos(df_trie: pd.DataFrame, df_topk: pd.DataFrame, df_comp: pd.DataFrame):
-    """Genera las gráficas PNG de evaluación para el notebook e informe técnico."""
-    print("\n--- Generando Gráficas Técnicas en results/etapa_9/ ---")
-
-    # 1. Gráfica Escalabilidad del Trie
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 4.5))
-
-    ax1.plot(df_trie["n_terminos"], df_trie["tiempo_construccion_ms"], "o-", color="#1f77b4", linewidth=2)
-    ax1.set_xscale("log")
-    ax1.set_yscale("log")
-    ax1.set_title("Trie: Tiempo de Construcción vs N Términos", fontsize=11)
-    ax1.set_xlabel("Número de términos indexados ($N$)", fontsize=10)
-    ax1.set_ylabel("Tiempo de construcción (ms)", fontsize=10)
-    ax1.grid(True, which="both", linestyle="--", alpha=0.5)
-
-    ax2.plot(df_trie["n_terminos"], df_trie["latencia_p50_us"], "s-", color="#2ca02c", label="p50 (Mediana)", linewidth=2)
-    ax2.plot(df_trie["n_terminos"], df_trie["latencia_p95_us"], "^--", color="#d62728", label="p95", linewidth=1.5)
-    ax2.set_xscale("log")
-    ax2.set_title("Trie: Latencia de Autocompletado por Prefijo", fontsize=11)
-    ax2.set_xlabel("Número de términos indexados ($N$)", fontsize=10)
-    ax2.set_ylabel("Latencia de consulta (µs)", fontsize=10)
-    ax2.grid(True, which="both", linestyle="--", alpha=0.5)
-    ax2.legend(fontsize=9)
-
-    fig.suptitle("Etapa 9. Rendimiento y Escalabilidad del Trie con Top-K Caché", fontsize=12)
-    fig.tight_layout()
-    fig.savefig(DIR_RESULTADOS / "escala_trie.png", dpi=150)
-    plt.close(fig)
-
-    # 2. Gráfica Escalabilidad TopKHeap vs K
-    fig, ax = plt.subplots(figsize=(7, 4.5))
-    colores = {5: "#1f77b4", 10: "#ff7f0e", 20: "#2ca02c", 50: "#d62728"}
-    for k_val in [5, 10, 20, 50]:
-        sub = df_topk[df_topk["k"] == k_val]
-        ax.plot(sub["n"], sub["ms_topk_heap"], "o-", label=f"K = {k_val}", color=colores.get(k_val), linewidth=1.8)
-
-    ax.set_xscale("log")
-    ax.set_yscale("log")
-    ax.set_title("TopKHeap: Tiempo de Selección vs Número de Candidatos ($N$)", fontsize=11)
-    ax.set_xlabel("Número de candidatos evaluados ($N$)", fontsize=10)
-    ax.set_ylabel("Tiempo de ejecución (ms)", fontsize=10)
-    ax.grid(True, which="both", linestyle="--", alpha=0.5)
-    ax.legend(fontsize=9)
-    fig.tight_layout()
-    fig.savefig(DIR_RESULTADOS / "escala_topk.png", dpi=150)
-    plt.close(fig)
-
-    # 3. Comparación TopKHeap vs sorted() completo
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 4.5))
-
-    ax1.plot(df_comp["n"], df_comp["ms_sorted"], "o--", label="Python sorted() O(N log N)", color="#d62728", linewidth=2)
-    ax1.plot(df_comp["n"], df_comp["ms_topk_heap"], "s-", label="TopKHeap O(N log K)", color="#1f77b4", linewidth=2)
-    ax1.plot(df_comp["n"], df_comp["ms_nlargest"], "d:", label="heapq.nlargest (C)", color="#ff7f0e", linewidth=1.5)
-    ax1.plot(df_comp["n"], df_comp["ms_numpy"], "^-.", label="NumPy argpartition O(N)", color="#2ca02c", linewidth=1.5)
-    ax1.set_xscale("log")
-    ax1.set_yscale("log")
-    ax1.set_title("Tiempo de Ejecución: Top-10 Selection", fontsize=11)
-    ax1.set_xlabel("Número de candidatos ($N$)", fontsize=10)
-    ax1.set_ylabel("Tiempo (ms)", fontsize=10)
-    ax1.grid(True, which="both", linestyle="--", alpha=0.5)
-    ax1.legend(fontsize=9)
-
-    ax2.plot(df_comp["n"], df_comp["speedup_vs_sorted"], "o-", color="#9467bd", linewidth=2)
-    ax2.set_xscale("log")
-    ax2.set_title("Speedup de TopKHeap frente a sorted() Completo", fontsize=11)
-    ax2.set_xlabel("Número de candidatos ($N$)", fontsize=10)
-    ax2.set_ylabel("Factor de aceleración (×)", fontsize=10)
-    ax2.grid(True, which="both", linestyle="--", alpha=0.5)
-
-    fig.suptitle("Etapa 9. Eficiencia Asintótica de Selección: MinHeap vs Ordenamiento Completo", fontsize=12)
-    fig.tight_layout()
-    fig.savefig(DIR_RESULTADOS / "comparacion_sorting.png", dpi=150)
-    plt.close(fig)
-
-    print("✓ Gráficas técnicas generadas exitosamente en results/etapa_9/.")
-
 
 def _error_tipeo(texto: str, rng: np.random.Generator) -> str:
     """Aplica un error de edición aleatorio (posición >= 1) para simular un tipeo."""
@@ -372,12 +216,12 @@ def _error_tipeo(texto: str, rng: np.random.Generator) -> str:
     return texto[:pos] + texto[pos + 1] + texto[pos] + texto[pos + 2:]
 
 
-def benchmark_difuso(terminos_pool: list[tuple[str, float]], n_consultas: int = 300):
+def benchmark_difuso(terminos_pool: list[tuple[str, float]], n_consultas: int = 300) -> pd.DataFrame:
     """Latencia y acierto del autocompletado difuso sobre el vocabulario del catálogo."""
     trie = Trie(capacidad_cache=10)
     for termino, freq in terminos_pool:
         trie.insertar(termino, frecuencia=freq)
-    rng = np.random.default_rng(SEED)
+    rng = np.random.default_rng(config.SEED)
     claves = [normalizar_texto(t) for t, _ in terminos_pool]
     claves = [c for c in claves if len(c) >= 7]
     filas = []
@@ -402,18 +246,18 @@ def benchmark_difuso(terminos_pool: list[tuple[str, float]], n_consultas: int = 
         })
         print(f"  d = {d}: p50 {filas[-1]['latencia_p50_us']:.0f} µs | p95 {filas[-1]['latencia_p95_us']:.0f} µs | "
               f"acierto {filas[-1]['acierto_prefijo_original_top5']:.1%}")
-    df = pd.DataFrame(filas)
-    df.to_csv(DIR_RESULTADOS / "difuso_trie.csv", index=False)
-    return df
+    return pd.DataFrame(filas)
 
 
 def main():
-    print(f"Entorno de benchmarking: {PLATAFORMA}")
+    """Mide los tres experimentos y guarda las tablas en results/etapa_9/."""
+    DIR_RESULTADOS.mkdir(parents=True, exist_ok=True)
     terminos = extraer_vocabulario_catalogo(max_terminos=300_000)
-    df_trie = benchmark_trie(terminos)
-    benchmark_difuso(terminos)
-    df_topk, df_comp = benchmark_topk()
-    generar_graficos(df_trie, df_topk, df_comp)
+    benchmark_trie(terminos).to_csv(DIR_RESULTADOS / "escala_trie.csv", index=False)
+    benchmark_difuso(terminos).to_csv(DIR_RESULTADOS / "difuso_trie.csv", index=False)
+    escala_topk = benchmark_topk()
+    escala_topk.to_csv(DIR_RESULTADOS / "escala_topk.csv", index=False)
+    escala_topk[escala_topk["k"] == 10].to_csv(DIR_RESULTADOS / "comparacion_sorting.csv", index=False)
     print("\n=== Benchmark de la Etapa 9 concluido exitosamente ===")
 
 
