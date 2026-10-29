@@ -4,8 +4,9 @@ Responde a las seis preguntas abiertas sobre las etapas 8 y 9 y documenta las co
 aplicadas. Toda cifra viene de una medición reproducible del repositorio (script y CSV indicados);
 lo que es razonamiento sin medición se marca como tal.
 
-Respaldo previo a los cambios: `../respaldo_pre_auditoria_2026-10-27.tar.gz` (código, docs, notebooks,
-resultados) y `../respaldo_datos_e8_e9/` (artefactos `data/interim` de las etapas 8 y 9).
+Los respaldos previos a los cambios (código, documentos, notebooks, resultados y artefactos de
+`data/interim` de las etapas 8 y 9) se guardaron fuera del repositorio y no forman parte de la entrega.
+Las cifras vigentes de las etapas 8 y 9 están en `results/` y en sus informes.
 
 ---
 
@@ -18,7 +19,7 @@ resultados) y `../respaldo_datos_e8_e9/` (artefactos `data/interim` de las etapa
 | H3 | «PageRank premia prestigio propagado, distinto del grado» | Spearman(PR, grado ponderado) = **0.956**; Pearson con la aproximación cerrada (1-α)/n + α·k_i/2m = **0.978**; 84 de los Top-100 coinciden. | notebook 8 §9.3 |
 | H4 | «Grilla de resolución» y curvas de escala | La grilla usaba `asins[:10_000]` (orden alfabético): un subgrafo casi sin aristas, con 8 488 comunidades de mediana 1 para todo γ. Las muestras de escala eran un BFS desde un hub (~280 nodos) más nodos aleatorios sueltos: 10 000 nodos y solo 5 131 aristas. | `src/etapa_8/benchmark.py` (antes y después) |
 | H5 | «46 818 términos indexados» en el Trie | El límite de 50 000 inserciones cortaba la lectura del catálogo: se indexaba **~3 % de los 710 503 productos**. | `src/etapa_9/service.py` |
-| H6 | Búsqueda «toner brother» | Devolvía portacarteles TONICE y sobres TONESPAC: el score era 0.5 + 0.5·S_pr (relevancia constante) y se completaba con el prefijo `query[:3]` = "ton". | `demo_consultas.json` (respaldo) |
+| H6 | Búsqueda «toner brother» | Devolvía portacarteles TONICE y sobres TONESPAC: el score era 0.5 + 0.5·S_pr (relevancia constante) y se completaba con el prefijo `query[:3]` = "ton". | `demo_consultas.json` anterior a la corrección, fuera del repositorio |
 | H7 | «Precisión 100 %» de bloqueos | Era la constante `1.0` escrita en el código; además `retenidas` daba 0 porque la etapa 6 emite `"revisar"`, no `"retener"`. Medida ahora con `fraude_real`: **1.0** (41 532 / 41 532), retenidas 6 178. | `_cargar_resumen_alertas` |
 | H8 | «Speedup 3.13× del MinHeap» | Correcto frente a `sorted()`, pero `np.argpartition` (ya medido en el CSV) resolvía N = 10⁶ en **7.3 ms frente a 87.3 ms** del heap: 12× más rápido. | `results/etapa_9/comparacion_sorting.csv` |
 | H9 | Scoring híbrido 0.35/0.25/0.20/0.20 | En una evaluación temporal honesta la popularidad sola casi iguala al híbrido (Recall@10 0.0975 frente a 0.0942). Los relacionados MinHash de la etapa 7 tenían fuga: solos daban 0.261 y, recalculados sin futuro, 0.031. Detalle en la Auditoría 1. | `results/etapa_9/calibracion_*.csv` |
