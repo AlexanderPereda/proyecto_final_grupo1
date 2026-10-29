@@ -1,1 +1,1 @@
-"""Implementaciones de las etapas 0, 1 y 2 del pipeline (extraídas de los notebooks)."""
+"""Pipeline de las etapas 0 a 9: una subcarpeta por etapa, la configuración compartida y la demo del pipeline."""
