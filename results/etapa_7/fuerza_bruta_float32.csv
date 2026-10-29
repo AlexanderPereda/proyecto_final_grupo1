@@ -1,0 +1,3 @@
+implementacion,n,consulta_ms,consulta_ms_std,consulta_ms_repeticiones,pico_consulta_bytes,recall_float32_frente_a_float64,procesador,python
+float64 (knn_fuerza_bruta de la etapa 5),1000000,1005.458907999564,45.686771454583216,100,2048068104,1.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+float32 (producto punto),1000000,30.607557992916554,6.023732846051368,100,16006480,1.0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
