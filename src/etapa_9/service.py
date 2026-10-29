@@ -7,9 +7,12 @@ Implementa:
 2. Ranking Top-K multicriterio con MinHeap acotado (O(N log K)).
 3. Índice invertido de títulos (postings CSR) para la búsqueda por texto.
 4. Scoring híbrido con pesos adaptativos por credibilidad de la co-compra (cold start).
-5. Servicio integrado de consulta, búsqueda y recomendación híbrida uniendo las salidas
-   de las etapas 3, 6, 7 y 8.
-6. Exportación de métricas de servicio y consultas de demostración.
+5. Servicio integrado de consulta, búsqueda y recomendación híbrida con las salidas de las
+   etapas 3 a 8: estado de los productos (3), filtro por rango de precio con el B+Tree (4),
+   arranque en frío con el KNN exacto del KD-Tree (5), alertas de fraude (6), similares y
+   relacionados (7) y grafo de co-compra (8).
+6. Panel de ventas y actividad con el stream de la etapa 2 y el estado de la etapa 3.
+7. Exportación de métricas de servicio, consultas de demostración y dashboard.
 """
 
 from __future__ import annotations
@@ -19,6 +22,7 @@ import json
 from array import array
 import re
 import time
+from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
@@ -26,20 +30,27 @@ from typing import Any, Iterable
 import numpy as np
 import pandas as pd
 
-from src.etapa_3.storage import AlmacenCatalogo
+from src import config
+from src.etapa_3.storage import AlmacenCatalogo, stock_inicial
+from src.etapa_4.bplustree import ArbolBMas
+from src.etapa_5.kdtree import IndiceProductos
 from src.etapa_8.graph import GrafoCoCompra, pagerank, sumar_grafos
+from src.etapa_9.dashboard import generar_dashboard
 
-# Parámetros del servicio, calibrados con src/etapa_9/evaluacion_scoring.py (partición temporal
-# 80/20 de órdenes, 59 869 anclas, relacionados MinHash recalculados sin futuro;
-# results/etapa_9/calibracion_*.csv):
-# - kappa: H1 rechazada; kappa > 0 no mejoró Recall@10 en ningún grupo de n_q. Se deja 0.
-# - normalización de PageRank: 'log' gana en las variantes sin fuga; 'max' dejaba S_pr ~ 0.
-# - pesos base 0.35/0.25/0.20/0.20: se conservan; la logística no negativa (pr 0.93, co 0.07)
-#   no cumplió la regla de adopción fijada antes de medir (Recall@10 +4.6 % < 5 %).
+# Parámetros del servicio. Se calibran con src/etapa_9/evaluacion_scoring.py (partición temporal
+# 80/20 de órdenes, relacionados MinHash recalculados sin futuro) y src/etapa_9/evaluacion_real.py
+# (siguiente reseña real); los resultados vigentes están en results/etapa_9/ y el paso 10 del
+# notebook de la etapa 9 los discute:
+# - kappa: credibilidad de la co-compra (hipótesis H1); 0 deja los pesos estáticos.
+# - normalización de PageRank: 'max' deja S_pr ~ 0 salvo en los hubs; 'log' y 'percentil' la reparten.
+# - pesos base 0.35/0.25/0.20/0.20: elección de diseño; se reemplazan solo si la logística no
+#   negativa cumple la regla de adopción fijada antes de medir (Recall@10 y NDCG@10 +5 % relativo
+#   sin perder más de 25 % de cobertura de catálogo). Decisión (2026-10-29): con S_sim corregido la
+#   regla se cumple con 0/0/0.93/0.07, pero se mantienen los pesos base. El objetivo de la
+#   calibración son los grupos de co-compra del generador, que no dependen de los atributos, y con
+#   el objetivo real de evaluacion_real.py el híbrido con similitud supera a solo PageRank.
 # - lambda_novedad: re-ranking score_λ = (1 - λ)·score + λ·(1 - S_pr) para bajar el Gini de
-#   exposición. Medido con un objetivo real (siguiente reseña, 40 000 usuarios de prueba;
-#   results/etapa_9/evaluacion_real.csv): con λ = 0.3 el Gini baja de 0.846 a 0.793 y el
-#   HitRate@10 sube de 0.0081 a 0.0082; con λ = 0.5 el Gini cae a 0.45 pero el HitRate pierde ~30 %.
+#   exposición, medido con el objetivo real de evaluacion_real.py.
 KAPPA_COCOMPRA = 0.0              # credibilidad de la co-compra; 0 = pesos estáticos
 LAMBDA_NOVEDAD = 0.3              # peso del premio a la novedad (0 = sin re-ranking)
 # Fuente del grafo de S_co y S_pr: 'sintetico' (co-compras del stream, etapa 8), 'coresena'
@@ -52,6 +63,8 @@ NORMALIZACION_PAGERANK = "log"    # 'max', 'log' o 'percentil'
 MAX_DIST_AUTOCOMPLETADO = 1       # distancia OSA máxima del autocompletado interactivo
 MIN_DF_VOCABULARIO = 3            # df mínimo de un token para servir de corrección ortográfica
 PESO_RELEVANCIA_BUSQUEDA = 0.8    # relevancia textual frente a autoridad en buscar()
+STOCK_BAJO = 3                    # unidades: umbral de stock bajo del panel de ventas
+RANGOS_PRECIO_EN_CACHE = 16       # rangos de precio cuyos productos se guardan entre consultas
 
 
 # ============================================================================
@@ -459,6 +472,17 @@ class TopKHeap:
 # 3. FUNCIÓN DE SCORING HÍBRIDO MULTICRITERIO
 # ============================================================================
 
+def similitud_desde_distancia(distancia: float) -> float:
+    """S_sim en [0, 1] a partir de la distancia de HNSW (etapa 7).
+
+    HNSW devuelve la distancia euclidiana entre vectores de norma 1, d = sqrt(2 - 2·cos), en [0, 2],
+    así que cos = 1 - d² / 2. S_sim es ese coseno, con los valores negativos llevados a 0.
+    Revisión técnica 2026-10-28 (punto 1.5): antes se usaba 1 - d, que vale 0 para todo coseno <= 0.5.
+    """
+    d = float(distancia)
+    return max(0.0, 1.0 - d * d / 2.0)
+
+
 @dataclass
 class ScoringHibrido:
     """
@@ -617,8 +641,10 @@ class IndiceInvertido:
 
 class ServicioEcommerce:
     """
-    Fachada de servicio integral que orquesta y consulta en memoria principal los
-    índices y modelos de las etapas 3, 6, 7 y 8.
+    Fachada de servicio integral que orquesta y consulta los índices y modelos de las
+    etapas 3 a 8: el catálogo y el estado de la etapa 3, el B+Tree en disco de la etapa 4,
+    el KD-Tree de la etapa 5, las alertas de la etapa 6, los vecinos de la etapa 7 y el
+    grafo de la etapa 8.
     """
 
     def __init__(
@@ -658,11 +684,21 @@ class ServicioEcommerce:
         self._alertas_resumen: dict[str, Any] = {}
         self._alertas_muestra: list[dict[str, Any]] = []
 
-    def cargar_datos(self, limite_terminos_trie: int | None = None, indexar_texto: bool = True) -> None:
+        # Índices de las etapas 3, 4 y 5
+        self._estado: dict[str, tuple[int, bool]] = {}          # etapa 3: stock y disponibilidad
+        self.indice_precio: ArbolBMas | None = None             # etapa 4: filtro por rango de precio
+        self.indice_atributos: IndiceProductos | None = None    # etapa 5: arranque en frío
+        self._rangos_precio: dict[tuple[float, float], set[str]] = {}
+
+    def cargar_datos(
+        self, limite_terminos_trie: int | None = None, indexar_texto: bool = True, indices_auxiliares: bool = True
+    ) -> None:
         """Carga en memoria todos los artefactos de las etapas previas.
 
         limite_terminos_trie None indexa el catálogo completo (auditoría 2026-10-27: el límite
         anterior de 50 000 inserciones cubría solo los primeros ~3 % de los 710 503 productos).
+        indices_auxiliares carga el estado de la etapa 3 y los índices de las etapas 4 y 5; la
+        calibración del scoring no los usa.
         """
         t0 = time.perf_counter()
 
@@ -670,6 +706,10 @@ class ServicioEcommerce:
         ruta_cat = self.dir_interim / "etapa_3" / "catalogo.jsonl"
         if ruta_cat.exists():
             self.almacen_catalogo = AlmacenCatalogo(ruta_cat)
+
+        # 1b. Estado de los productos (Etapa 3), índice de precios (Etapa 4) y de atributos (Etapa 5)
+        if indices_auxiliares:
+            self._cargar_indices_auxiliares()
 
         # 2. PageRank y Comunidades (Etapa 8)
         ruta_pr = self.dir_interim / "etapa_8" / "pagerank.parquet"
@@ -718,11 +758,31 @@ class ServicioEcommerce:
 
         print(f"ServicioEcommerce inicializado en {time.perf_counter() - t0:.2f} s")
 
+    def _cargar_indices_auxiliares(self) -> None:
+        """Estado de la etapa 3, B+Tree de precios de la etapa 4 y KD-Tree de atributos de la etapa 5.
+
+        El KD-Tree se reconstruye con los vectores de vectores.npz, que cubren todos los productos
+        con precio, también los que no aparecen en el stream; por eso sirve para el arranque en frío.
+        """
+        ruta_estados = self.dir_interim / "etapa_3" / "estado_productos.parquet"
+        if ruta_estados.exists():
+            est = pd.read_parquet(ruta_estados, columns=["parent_asin", "stock", "disponible"])
+            self._estado = {a: (int(s), bool(d)) for a, s, d in zip(est["parent_asin"], est["stock"], est["disponible"])}
+        ruta_bpt = self.dir_interim / "etapa_4" / "indice_precio.bpt"
+        if ruta_bpt.exists():
+            self.indice_precio = ArbolBMas(ruta_bpt)
+        ruta_vec = self.dir_interim / "etapa_5" / "vectores.npz"
+        if ruta_vec.exists():
+            z = np.load(ruta_vec)
+            categorias = [str(c) for c in z["nombres_categoria"][z["categoria"]]]
+            self.indice_atributos = IndiceProductos([str(a) for a in z["asins"]], z["Z"] * z["desv"] + z["media"],
+                                                    categorias)
+
     def _cargar_resumen_alertas(self, ruta_alertas: Path) -> None:
         """Lee y sintetiza las alertas de fraude de la etapa 6."""
         total = 0
         bloqueadas = 0
-        retenidas = 0
+        en_revision = 0
         aprobadas = 0
         motivos_conteo: dict[str, int] = {}
         muestra = []
@@ -739,7 +799,7 @@ class ServicioEcommerce:
                     bloqueadas += 1
                 elif dec in ("revisar", "retener"):
                     # la etapa 6 emite "revisar"; antes solo se contaba "retener" y daba 0
-                    retenidas += 1
+                    en_revision += 1
                 else:
                     aprobadas += 1
 
@@ -763,7 +823,7 @@ class ServicioEcommerce:
         self._alertas_resumen = {
             "total_alertas": total,
             "bloqueadas": bloqueadas,
-            "retenidas": retenidas,
+            "en_revision": en_revision,
             "aprobadas": aprobadas,
             # Auditoría 2026-10-27: antes era la constante 1.0; ahora se mide con fraude_real
             "precision_bloqueos": bloqueos_fraude / bloqueadas if bloqueadas else None,
@@ -893,12 +953,48 @@ class ServicioEcommerce:
         if not reg:
             return None
 
-        # Enriquecer con métricas de grafo
+        # Enriquecer con métricas de grafo (etapa 8) y con el stock de la etapa 3
         reg["pagerank"] = self._pagerank.get(parent_asin, 0.0)
         reg["grado_ponderado"] = self._grados_pond.get(parent_asin, 0.0)
         reg["comunidad_louvain"] = self._comunidades_louvain.get(parent_asin, -1)
         reg["comunidad_lpa"] = self._comunidades_lpa.get(parent_asin, -1)
+        reg["stock"], reg["disponible"] = self._stock(parent_asin)
         return reg
+
+    def _stock(self, asin: str) -> tuple[int | None, bool | None]:
+        """Stock y disponibilidad según la etapa 3; un producto sin actividad conserva su stock inicial."""
+        if not self._estado:
+            return None, None
+        return self._estado.get(asin) or (stock_inicial(asin), True)
+
+    def productos_en_rango_precio(self, precio_min: float | None, precio_max: float | None) -> set[str]:
+        """Productos con precio en [precio_min, precio_max] según el B+Tree de la etapa 4.
+
+        La consulta de rango cuesta O(log_B n + r / B) lecturas de página para r resultados. Los
+        últimos RANGOS_PRECIO_EN_CACHE rangos se guardan para no recorrer las hojas en cada consulta.
+        Los productos sin precio en el catálogo no están en el índice, así que nunca pasan el filtro.
+        """
+        if self.indice_precio is None:
+            raise RuntimeError("Falta el índice de precios de la etapa 4 (etapa_4/indice_precio.bpt)")
+        clave = (float(precio_min or 0.0), float("inf") if precio_max is None else float(precio_max))
+        if clave not in self._rangos_precio:
+            if len(self._rangos_precio) >= RANGOS_PRECIO_EN_CACHE:
+                self._rangos_precio.pop(next(iter(self._rangos_precio)))
+            self._rangos_precio[clave] = {asin for _, asin, _, _ in self.indice_precio.rango(*clave)}
+        return self._rangos_precio[clave]
+
+    def ancla_arranque_frio(self) -> str | None:
+        """Ejemplo de arranque en frío: el producto sin ninguna señal de comportamiento (fuera del stream)
+        con más calificaciones en el catálogo, según el índice de atributos de la etapa 5."""
+        indice = self.indice_atributos
+        if indice is None:
+            return None
+        activos = set(self._similares) | set(self._relacionados) | set(self._pagerank)
+        candidatos = [i for i, a in enumerate(indice.asins) if a not in activos]
+        if not candidatos:
+            return None
+        columna = 2                       # log_rating_number en ATRIBUTOS de la etapa 5
+        return indice.asins[max(candidatos, key=lambda i: indice.Z[i, columna])]
 
     def puntuar_candidatos(self, parent_asin: str) -> dict[str, tuple[float, dict[str, float]]]:
         """
@@ -907,12 +1003,12 @@ class ServicioEcommerce:
         """
         candidatos_scores: dict[str, dict[str, float]] = {}
 
-        # 1. Similares por atributos (HNSW Etapa 7); distancia coseno en [0, 2]
+        # 1. Similares por atributos (HNSW Etapa 7); distancia euclidiana entre vectores de norma 1
         similares = self._similares.get(parent_asin, [])
         for vecino, dist in similares:
             if vecino == parent_asin:
                 continue
-            sim = max(0.0, 1.0 - float(dist))
+            sim = similitud_desde_distancia(dist)
             if vecino not in candidatos_scores:
                 candidatos_scores[vecino] = {"sim": 0.0, "rel": 0.0, "co": 0.0}
             candidatos_scores[vecino]["sim"] = sim
@@ -977,13 +1073,28 @@ class ServicioEcommerce:
             for c, (sc, f) in resultado.items()
         }
 
-    def recomendar(self, parent_asin: str, k: int = 10) -> list[dict[str, Any]]:
+    def recomendar(
+        self, parent_asin: str, k: int = 10, precio_min: float | None = None, precio_max: float | None = None
+    ) -> list[dict[str, Any]]:
         """
         Produce el ranking Top-K de recomendaciones híbridas para un producto dado,
         combinando similitud vectorial HNSW, Jaccard LSH, autoridad PageRank y co-compra.
         Los pesos se adaptan por ancla (ScoringHibrido.pesos_efectivos).
+        - Con precio_min o precio_max solo entran los candidatos de ese rango (B+Tree de la etapa 4).
+        - Arranque en frío: si el ancla no tiene ninguna señal (sin vecinos HNSW, sin firma MinHash
+          y fuera del grafo, como un producto que nunca apareció en el stream), la lista sale del
+          KNN exacto por atributos dentro de su categoría con el KD-Tree de la etapa 5, ordenada por
+          distancia. Los candidatos de las anclas con señales no cambian.
         """
         candidatos = self.puntuar_candidatos(parent_asin)
+        fuente = "hibrido"
+        if not candidatos and self.indice_atributos is not None:
+            vecinos = self.indice_atributos.similares(parent_asin, k=max(5 * k, 50)) or []
+            candidatos = {asin: (1.0 / (1.0 + d), {"atr": d}) for d, asin in vecinos}
+            fuente = "arranque_frio"
+        if precio_min is not None or precio_max is not None:
+            en_rango = self.productos_en_rango_precio(precio_min, precio_max)
+            candidatos = {a: c for a, c in candidatos.items() if a in en_rango}
 
         # TopKHeap para selección eficiente O(N log K)
         topk = TopKHeap(k=k)
@@ -995,18 +1106,23 @@ class ServicioEcommerce:
         for rank, (score, cand_asin) in enumerate(topk.obtener_top(), 1):
             info = self.detalle_producto(cand_asin) or {}
             fuentes = candidatos[cand_asin][1]
+            stock, disponible = self._stock(cand_asin)
             resultados.append({
                 "rango": rank,
                 "parent_asin": cand_asin,
-                "score_hibrido": round(score, 4),
+                "fuente": fuente,
+                "score_hibrido": round(score, 4) if fuente == "hibrido" else None,
                 "similitud_atributos": round(fuentes.get("sim", 0.0), 4),
                 "jaccard_comportamiento": round(fuentes.get("rel", 0.0), 4),
                 "afinidad_cocompra": round(fuentes.get("co", 0.0), 4),
+                "distancia_atributos_etapa5": round(fuentes["atr"], 4) if "atr" in fuentes else None,
                 "pagerank": round(self._pagerank.get(cand_asin, 0.0), 6),
                 "titulo": info.get("title", "N/D"),
                 "categoria": info.get("categoria_hoja", "N/D"),
                 "precio": info.get("precio"),
                 "tienda": info.get("store", "N/D"),
+                "stock": stock,
+                "disponible": disponible,
             })
         return resultados
 
@@ -1021,12 +1137,15 @@ class ServicioEcommerce:
             corregidos.append(sug[0]["termino"] if sug else tok)
         return corregidos
 
-    def buscar(self, query: str, k: int = 10) -> list[dict[str, Any]]:
+    def buscar(
+        self, query: str, k: int = 10, precio_min: float | None = None, precio_max: float | None = None
+    ) -> list[dict[str, Any]]:
         """
         Búsqueda por texto con ranking multicriterio:
         score = 0.8 · cobertura IDF de la consulta en el título + 0.2 · autoridad (S_pr).
         Con el índice invertido construido la consulta cuesta O(sum_t df_t) y la selección
         O(C) con np.argpartition; sin índice (pruebas) usa los candidatos del Trie.
+        Con precio_min o precio_max solo quedan los productos de ese rango (B+Tree de la etapa 4).
 
         Auditoría 2026-10-27: antes el score era 0.5 + 0.5 · S_pr (la relevancia era constante)
         y, si faltaban candidatos, se completaba con el prefijo query[:3]: "toner brother"
@@ -1036,9 +1155,15 @@ class ServicioEcommerce:
         tokens = self.corregir_consulta(query)
         if not tokens:
             return []
+        en_rango = None
+        if precio_min is not None or precio_max is not None:
+            en_rango = self.productos_en_rango_precio(precio_min, precio_max)
 
         if self.indice.n_docs > 0:
             docs, cobertura = self.indice.puntuar(tokens)
+            if en_rango is not None and len(docs) > 0:
+                dentro = np.array([self._asins_docs[d] in en_rango for d in docs.tolist()], dtype=bool)
+                docs, cobertura = docs[dentro], cobertura[dentro]
             if len(docs) == 0:
                 return []
             score = alfa * cobertura + (1.0 - alfa) * self._autoridad_docs[docs]
@@ -1051,7 +1176,7 @@ class ServicioEcommerce:
             consulta = set(tokens)
             for s in self.autocompletar(" ".join(tokens), k=max(k, 10)):
                 meta = s.get("meta", {})
-                if not meta.get("asin"):
+                if not meta.get("asin") or (en_rango is not None and meta["asin"] not in en_rango):
                     continue
                 texto = set(tokenizar(f"{s['termino']} {meta.get('titulo', '')}"))
                 relevancia = len(consulta & texto) / len(consulta)
@@ -1080,6 +1205,89 @@ class ServicioEcommerce:
             "muestra": self._alertas_muestra,
         }
 
+    def panel_ventas_actividad(self, k: int = 10) -> dict[str, Any]:
+        """Panel de ventas, actividad y stock que pide el escenario B.
+
+        - Ventas y actividad por día: una pasada por el stream de la etapa 2. Las compras de las
+          órdenes bloqueadas por la etapa 6 se cuentan aparte y no suman ventas ni ingresos.
+        - Stock, disponibilidad, agotamientos y ventas sin stock: estado de los productos de la
+          etapa 3. Esos contadores incluyen las compras fraudulentas, porque la etapa 3 se actualiza
+          antes del filtro de la etapa 6 (limitación declarada en el informe de las etapas 3 a 5).
+        """
+        ruta_bloqueadas = self.dir_interim / "etapa_6" / "ordenes_bloqueadas.json"
+        bloqueadas = set(json.loads(ruta_bloqueadas.read_text(encoding="utf-8"))) if ruta_bloqueadas.exists() else set()
+        por_dia, unidades, ingresos = agregar_actividad(
+            eventos_del_stream(self.dir_interim / "etapa2_eventos.jsonl"), bloqueadas)
+        estado = pd.read_parquet(self.dir_interim / "etapa_3" / "estado_productos.parquet").set_index("parent_asin")
+
+        fichas: dict[str, tuple[str, str]] = {}
+
+        def ficha(asin: str) -> tuple[str, str]:
+            if asin not in fichas:
+                reg = (self.almacen_catalogo.leer(asin) if self.almacen_catalogo else None) or {}
+                fichas[asin] = (reg.get("title") or "N/D", reg.get("categoria_hoja") or "(sin categoría)")
+            return fichas[asin]
+
+        total: Counter = Counter()
+        for conteo in por_dia.values():
+            total.update(conteo)
+        serie = [{
+            "fecha": time.strftime("%Y-%m-%d", time.gmtime(dia * 86_400)),
+            "compras": por_dia[dia]["purchase"], "compras_bloqueadas": por_dia[dia]["purchase_bloqueada"],
+            "vistas": por_dia[dia]["view"], "carritos": por_dia[dia]["cart"], "devoluciones": por_dia[dia]["return"],
+            "resenas": por_dia[dia]["review"], "busquedas": por_dia[dia]["search"],
+            "alertas_pago": por_dia[dia]["payment_alert"],
+        } for dia in sorted(por_dia)]
+
+        resumen = {
+            "dias": len(serie),
+            "unidades_vendidas": int(sum(unidades.values())),
+            "ingresos": round(float(sum(ingresos.values())), 2),
+            "compras_bloqueadas": int(total["purchase_bloqueada"]),
+            "vistas": int(total["view"]),
+            "carritos": int(total["cart"]),
+            "devoluciones": int(total["return"]),
+            "tasa_devolucion": total["return"] / total["purchase"] if total["purchase"] else None,
+            "conversion_vista_compra": total["purchase"] / total["view"] if total["view"] else None,
+            "productos_con_actividad": int(len(estado)),
+            "productos_agotados": int((~estado["disponible"]).sum()),
+            "productos_stock_bajo": int(((estado["stock"] > 0) & (estado["stock"] <= STOCK_BAJO)).sum()),
+            "agotamientos": int(estado["agotamientos"].sum()),
+            "ventas_sin_stock": int(estado["ventas_sin_stock"].sum()),
+            "umbral_stock_bajo": STOCK_BAJO,
+        }
+
+        top_productos = []
+        for asin, n in unidades.most_common(k):
+            titulo, categoria = ficha(asin)
+            con_estado = asin in estado.index
+            top_productos.append({
+                "parent_asin": asin, "titulo": titulo, "categoria": categoria, "unidades": int(n),
+                "ingresos": round(ingresos.get(asin, 0.0), 2),
+                "stock": int(estado.at[asin, "stock"]) if con_estado else None,
+                "disponible": bool(estado.at[asin, "disponible"]) if con_estado else None,
+            })
+
+        unidades_categoria: Counter = Counter()
+        ingresos_categoria: dict[str, float] = defaultdict(float)
+        for asin, n in unidades.items():
+            categoria = ficha(asin)[1]
+            unidades_categoria[categoria] += n
+            ingresos_categoria[categoria] += ingresos.get(asin, 0.0)
+        por_categoria = [{"categoria": c, "unidades": int(n), "ingresos": round(ingresos_categoria[c], 2)}
+                         for c, n in unidades_categoria.most_common(k)]
+
+        agotados = []
+        sin_stock = estado[~estado["disponible"]].sort_values(["ventas_sin_stock", "agotamientos"], ascending=False)
+        for asin, fila in sin_stock.head(k).iterrows():
+            titulo, categoria = ficha(asin)
+            agotados.append({"parent_asin": asin, "titulo": titulo, "categoria": categoria,
+                             "ventas_sin_stock": int(fila["ventas_sin_stock"]),
+                             "agotamientos": int(fila["agotamientos"]), "compras": int(fila["compras"])})
+
+        return {"resumen": resumen, "por_dia": serie, "top_productos": top_productos,
+                "por_categoria": por_categoria, "agotados": agotados}
+
     def metricas_sistema(self) -> dict[str, Any]:
         """Devuelve un resumen consolidado de las etapas del pipeline."""
         return {
@@ -1089,12 +1297,18 @@ class ServicioEcommerce:
             "productos_pagerank": len(self._pagerank),
             "productos_similares": len(self._similares),
             "productos_relacionados": len(self._relacionados),
+            "productos_con_estado": len(self._estado),
+            "productos_indice_precio": len(self.indice_precio) if self.indice_precio is not None else 0,
+            "productos_indice_atributos": len(self.indice_atributos.asins) if self.indice_atributos is not None else 0,
             "alertas_fraude": self._alertas_resumen.get("total_alertas", 0),
             "algoritmos_activos": [
                 "Trie radix (Prefijos con Top-K Caché + difuso Damerau-OSA)",
                 "Índice invertido de títulos (postings CSR, cobertura IDF)",
                 "MinHeap (Ranking Top-K Acotado)",
                 "Scoring Híbrido Multicriterio",
+                "TablaHash + estado de productos (stock y disponibilidad, etapa 3)",
+                "B+Tree en disco (filtro por rango de precio, etapa 4)",
+                "KD-Tree (arranque en frío por atributos, etapa 5)",
                 "HNSW (Similitud Vectorial de Atributos)",
                 "MinHash + LSH (Comportamiento Jaccard)",
                 "PageRank CSR (Autoridad Espectral)",
@@ -1104,10 +1318,51 @@ class ServicioEcommerce:
         }
 
     def cerrar(self) -> None:
-        """Libera recursos del almacén de catálogo."""
+        """Libera el archivo del catálogo y el del índice de precios."""
         if self.almacen_catalogo:
             self.almacen_catalogo.cerrar()
             self.almacen_catalogo = None
+        if self.indice_precio is not None:
+            self.indice_precio.cerrar()
+            self.indice_precio = None
+
+
+# ============================================================================
+# 4b. PANEL DE VENTAS Y ACTIVIDAD
+# ============================================================================
+
+def eventos_del_stream(ruta: Path) -> Iterable[dict[str, Any]]:
+    """Eventos de la salida de la etapa 2 (un ciclo de servicio por línea) como diccionarios."""
+    with open(ruta, encoding="utf-8") as archivo:
+        for linea in archivo:
+            yield from json.loads(linea)["eventos"]
+
+
+def agregar_actividad(eventos: Iterable[dict[str, Any]], bloqueadas: set[str]):
+    """Una pasada por el stream: eventos por día y tipo, y unidades e ingresos legítimos por producto.
+
+    Las compras de las órdenes bloqueadas por la etapa 6 se cuentan como 'purchase_bloqueada' y no
+    suman ventas. Devuelve (por_dia {día Unix: Counter por tipo}, unidades Counter, ingresos dict).
+    """
+    por_dia: dict[int, Counter] = defaultdict(Counter)
+    unidades: Counter = Counter()
+    ingresos: dict[str, float] = defaultdict(float)
+    for ev in eventos:
+        ts = ev.get("ts")
+        if not isinstance(ts, (int, float)):
+            continue
+        dia = int(ts // 86_400)
+        tipo = ev.get("event_type")
+        if tipo == "purchase" and ev.get("order_id") in bloqueadas:
+            por_dia[dia]["purchase_bloqueada"] += 1
+            continue
+        por_dia[dia][tipo] += 1
+        asin = ev.get("parent_asin")
+        if tipo == "purchase" and asin:
+            unidades[asin] += 1
+            if ev.get("price") is not None:
+                ingresos[asin] += float(ev["price"])
+    return por_dia, unidades, ingresos
 
 
 # ============================================================================
@@ -1129,18 +1384,20 @@ def _latencias_us(funcion, argumentos, repeticiones: int = 20) -> list[float]:
 
 
 def ejecutar_etapa(
-    categoria: str = "Office_Products",
+    categoria: str = config.CATEGORIA,
     raiz: Path | None = None,
     limite_trie: int | None = None,
 ) -> dict[str, Any]:
     """
     Ejecuta el pipeline de la etapa 9:
     1. Carga de índices, Trie radix de autocompletado e índice invertido (catálogo completo).
-    2. Consultas de prueba: autocompletado exacto y difuso, búsqueda con corrección ortográfica
-       y recomendación Top-K con pesos adaptativos.
-    3. Persistencia de métricas y demostraciones en disco (incluye catalogo_demo del dashboard).
+    2. Consultas de prueba: autocompletado exacto y difuso, búsqueda con corrección ortográfica,
+       recomendación Top-K con pesos adaptativos, filtro por rango de precio (etapa 4) y arranque
+       en frío (etapa 5).
+    3. Panel de ventas, actividad y stock (etapas 2, 3 y 6).
+    4. Persistencia de métricas y demostraciones en disco y generación del dashboard.
     """
-    raiz_path = raiz or Path.cwd()
+    raiz_path = raiz or config.RAIZ
     dir_interim = raiz_path / "data" / "interim"
     dir_etapa9 = dir_interim / categoria / "etapa_9"
     dir_etapa9.mkdir(parents=True, exist_ok=True)
@@ -1165,11 +1422,29 @@ def ejecutar_etapa(
         consultas_difusas, repeticiones=5,
     )
 
-    # Recomendación híbrida Top-K: ancla de mayor PageRank (antes estaba fijada a mano)
-    top_pr_asin = max(servicio._pagerank, key=servicio._pagerank.get) if servicio._pagerank else ANCLAS_DEMO[0]
-    t_sub0 = time.perf_counter()
+    # Recomendación híbrida Top-K: anclas de mayor PageRank (antes estaban fijadas a mano)
+    top_pr = sorted(servicio._pagerank, key=servicio._pagerank.get, reverse=True)[:5] or ANCLAS_DEMO
+    top_pr_asin = top_pr[0]
     recs = servicio.recomendar(top_pr_asin, k=10)
-    lat_rec = (time.perf_counter() - t_sub0) * 1000.0
+    lat_rec = _latencias_us(lambda a: servicio.recomendar(a, k=10), top_pr)
+
+    # Filtro por rango de precio (B+Tree de la etapa 4): alternativas que no cuestan más que el ancla
+    rango_demo = None
+    if servicio.indice_precio is not None:
+        precio_ancla = (servicio.detalle_producto(top_pr_asin) or {}).get("precio")
+        precio_min, precio_max = (0.0, float(precio_ancla)) if precio_ancla else (0.0, 20.0)
+        servicio._rangos_precio.clear()
+        t_sub0 = time.perf_counter()
+        en_rango = servicio.productos_en_rango_precio(precio_min, precio_max)
+        ms_rango = (time.perf_counter() - t_sub0) * 1000.0
+        rango_demo = {
+            "asin_origen": top_pr_asin, "precio_min": precio_min, "precio_max": precio_max,
+            "productos_en_rango": len(en_rango), "ms_consulta_rango": round(ms_rango, 3),
+            "recomendaciones": servicio.recomendar(top_pr_asin, k=8, precio_min=precio_min, precio_max=precio_max),
+        }
+
+    # Arranque en frío (KD-Tree de la etapa 5) con un producto que nunca apareció en el stream
+    ancla_frio = servicio.ancla_arranque_frio()
 
     # Búsqueda Top-K con índice invertido y corrección de tokens
     consultas_busqueda = ["toner brother", "toner brtoher", "stapler swinglien", "pilot g2 pens"]
@@ -1180,11 +1455,20 @@ def ejecutar_etapa(
     lat_busq = _latencias_us(lambda q: servicio.buscar(q, k=10), consultas_busqueda, repeticiones=5)
 
     # Fichas y recomendaciones de los productos que el dashboard permite seleccionar
+    anclas = [(asin, f"top {i} de PageRank") for i, asin in enumerate(top_pr, 1)]
+    if ancla_frio is not None:
+        anclas.append((ancla_frio, "arranque en frío, sin actividad en el stream"))
     catalogo_demo = {}
-    for asin in ANCLAS_DEMO:
+    for asin, etiqueta in anclas:
         detalle = servicio.detalle_producto(asin)
         if detalle is not None:
-            catalogo_demo[asin] = {"detalle": detalle, "recomendaciones": servicio.recomendar(asin, k=8)}
+            catalogo_demo[asin] = {"etiqueta": etiqueta, "detalle": detalle,
+                                   "recomendaciones": servicio.recomendar(asin, k=8)}
+
+    # Panel de ventas, actividad y stock
+    t_sub0 = time.perf_counter()
+    panel = servicio.panel_ventas_actividad()
+    t_panel = time.perf_counter() - t_sub0
 
     # Consolidar métricas
     metricas = {
@@ -1200,9 +1484,12 @@ def ejecutar_etapa(
         "latencia_autocompletado_p95_ms": round(float(np.percentile(lat_exacto, 95)) / 1000.0, 4),
         "latencia_autocompletado_difuso_p50_ms": round(float(np.median(lat_difuso)) / 1000.0, 4),
         "latencia_autocompletado_difuso_p95_ms": round(float(np.percentile(lat_difuso, 95)) / 1000.0, 4),
-        "latencia_recomendacion_topk_ms": round(lat_rec, 3),
+        "latencia_recomendacion_topk_ms": round(float(np.median(lat_rec)) / 1000.0, 3),
+        "latencia_recomendacion_topk_p95_ms": round(float(np.percentile(lat_rec, 95)) / 1000.0, 3),
         "latencia_busqueda_topk_p50_ms": round(float(np.median(lat_busq)) / 1000.0, 3),
         "latencia_busqueda_topk_p95_ms": round(float(np.percentile(lat_busq, 95)) / 1000.0, 3),
+        "latencia_rango_precio_ms": rango_demo["ms_consulta_rango"] if rango_demo else None,
+        "segundos_panel_ventas": round(t_panel, 1),
         "scoring_pesos": {
             "similitud": servicio.scoring.peso_similitud,
             "relacionados": servicio.scoring.peso_relacionados,
@@ -1233,16 +1520,22 @@ def ejecutar_etapa(
             "resultados": demo_busqueda["toner brother"]["resultados"],
         },
         "busquedas": demo_busqueda,
+        "recomendacion_rango_precio": rango_demo,
+        "arranque_frio": {"asin_origen": ancla_frio,
+                          "recomendaciones": catalogo_demo.get(ancla_frio, {}).get("recomendaciones", [])},
         "fraude": servicio.resumen_fraude(),
+        "panel_ventas": panel,
         "catalogo_demo": catalogo_demo,
     }
     ruta_demo = dir_etapa9 / "demo_consultas.json"
     ruta_demo.write_text(json.dumps(demo_salida, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
 
     servicio.cerrar()
+    ruta_dashboard = generar_dashboard(ruta_demo, ruta_metricas)
 
     print(f"✓ Métricas guardadas en: {ruta_metricas}")
     print(f"✓ Demos guardadas en: {ruta_demo}")
+    print(f"✓ Dashboard generado en: {ruta_dashboard}")
     print(f"Etapa 9 completada en {time.perf_counter() - t0:.2f} s")
     return metricas
 

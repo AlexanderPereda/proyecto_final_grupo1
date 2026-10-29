@@ -18,14 +18,15 @@
       0.9271,
       0.0729
     ],
-    "mejora_recall": 0.04622587438901804,
-    "mejora_ndcg": 0.10148778462641861,
-    "caida_cobertura": 0.07061423235621955,
-    "adoptar": false
+    "mejora_recall": 0.5630929657894621,
+    "mejora_ndcg": 0.7574651907783572,
+    "caida_cobertura": 0.12375087576975552,
+    "adoptar": true
   },
   "h3_cold_start_identico": true,
   "cobertura_candidatos": 0.6340343082396566,
   "productos_relacionados_temporales": 65248,
   "anclas": 59869,
-  "segundos": 296.61742104200675
+  "s_sim": "coseno: 1 - d^2 / 2",
+  "segundos": 966.5110793998465
 }

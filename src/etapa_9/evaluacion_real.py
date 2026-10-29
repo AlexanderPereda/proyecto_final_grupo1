@@ -8,7 +8,9 @@ calibrar contra ellas mide el generador, no el catálogo. Aquí el objetivo sale
 - Prueba: para usuarios con reseñas a ambos lados del corte, ancla = último producto antes del corte,
   relevante = primer producto distinto después del corte.
 
-Señales (todas sin futuro): S_sim (vecinos HNSW de la etapa 7, solo contenido), S_pr (PageRank del
+Señales (todas sin futuro): S_sim (coseno 1 - d² / 2 de los vecinos HNSW de la etapa 7, solo
+contenido; el resumen lo registra en "s_sim" porque antes se usaba 1 - d, revisión técnica
+2026-10-28, punto 1.5), S_pr (PageRank del
 grafo de entrenamiento en escala log), S_co (co-reseñas de entrenamiento, w / w_max del ancla) y
 S_cat (1 si comparte categoria_hoja con el ancla). Candidatos: vecinos de co-reseña ∪ vecinos HNSW ∪
 los 20 más populares de la categoría del ancla (generador para cold start).
@@ -29,7 +31,8 @@ productos aparecen igual; 1 = siempre los mismos). Para BAJARLO se re-rankea con
 score_λ = (1 - λ) · score + λ · (1 - S_pr) (premio a la novedad) y se reporta la frontera
 precisión-diversidad.
 
-Ejecutar: .venv/bin/python -m src.etapa_9.evaluacion_real
+El notebook de la etapa 9 llama a main (paso 10). Desde la terminal:
+    python -m src.etapa_9.evaluacion_real
 Salida: results/etapa_9/evaluacion_real.csv y evaluacion_real_resumen.json
 """
 
@@ -46,6 +49,7 @@ from .. import config
 from ..etapa_8.escala_stream import grafo_desde_stream
 from ..etapa_8.graph import pagerank, sumar_grafos
 from ..etapa_8.grafo_resenas_reales import construir_grafo
+from .service import similitud_desde_distancia
 
 DIR_RESULTADOS = config.RAIZ / "results" / "etapa_9"
 K = 10
@@ -110,7 +114,7 @@ def main():
     similares = defaultdict(dict)
     sim_df = pd.read_parquet(config.CARPETA_INTERIM / "etapa_7" / "similares.parquet")
     for a, v, d in zip(sim_df["parent_asin"], sim_df["vecino"], sim_df["distancia"]):
-        similares[a][v] = max(0.0, 1.0 - float(d))
+        similares[a][v] = similitud_desde_distancia(d)
     del sim_df
 
     lista = list(pares.itertuples())
@@ -152,9 +156,11 @@ def main():
     validas = [f for f in regla if regla[f]["cumple"]]
     regla["fuente_adoptada"] = max(validas, key=lambda f: elegido.loc[f, "ndcg@10"]) if validas else "sintetico"
     resumen["regla_fuente_cocompra"] = regla
+    resumen["s_sim"] = "coseno: 1 - d^2 / 2"
     resumen["segundos"] = time.perf_counter() - t0
     (DIR_RESULTADOS / "evaluacion_real_resumen.json").write_text(json.dumps(resumen, indent=2), encoding="utf-8")
     print(json.dumps(resumen, indent=2), flush=True)
+    return resumen
 
 
 def preparar_candidatos(grafo, categoria, tienda, similares):

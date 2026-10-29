@@ -3,15 +3,20 @@ Pruebas unitarias para la Etapa 9: Servicio y visualización.
 Verifica:
 1. Trie (árbol de prefijos) y autocompletado en tiempo real.
 2. TopKHeap con MinHeap acotado.
-3. ScoringHibrido multicriterio.
+3. ScoringHibrido multicriterio y conversión de la distancia de HNSW en S_sim.
 4. Integración de ServicioEcommerce con catálogo y recomendaciones.
+5. Filtro por rango de precio (B+Tree de la etapa 4) y arranque en frío (KD-Tree de la etapa 5).
+6. Agregación del panel de ventas y actividad.
 """
 
+import tempfile
 import unittest
 
 import numpy as np
 from pathlib import Path
 
+from src.etapa_4.bplustree import ArbolBMas
+from src.etapa_5.kdtree import IndiceProductos
 from src.etapa_9.service import (
     IndiceInvertido,
     NodoTrie,
@@ -19,7 +24,9 @@ from src.etapa_9.service import (
     ServicioEcommerce,
     TopKHeap,
     Trie,
+    agregar_actividad,
     normalizar_texto,
+    similitud_desde_distancia,
     tokenizar,
 )
 
@@ -161,6 +168,15 @@ class TestScoringHibrido(unittest.TestCase):
         self.assertAlmostEqual(scoring.peso_similitud, 0.25)
         self.assertAlmostEqual(scoring.peso_relacionados, 0.25)
 
+    def test_similitud_es_el_coseno_de_la_distancia_de_hnsw(self):
+        # HNSW devuelve d = sqrt(2 - 2 cos) entre vectores de norma 1
+        self.assertAlmostEqual(similitud_desde_distancia(0.0), 1.0)
+        self.assertAlmostEqual(similitud_desde_distancia(1.0), 0.5)            # cos = 0.5
+        self.assertAlmostEqual(similitud_desde_distancia(2 ** 0.5), 0.0)       # vectores ortogonales
+        self.assertEqual(similitud_desde_distancia(2.0), 0.0)                  # cos = -1 se lleva a 0
+        # La mediana medida, d = 0.963, daba 0.04 con 1 - d; el coseno es ~0.54
+        self.assertAlmostEqual(similitud_desde_distancia(0.963), 1 - 0.963 ** 2 / 2)
+
 
 class TestServicioEcommerce(unittest.TestCase):
     def setUp(self):
@@ -188,7 +204,7 @@ class TestServicioEcommerce(unittest.TestCase):
     def test_recomendar_servicio(self):
         recs = self.servicio.recomendar("ASIN_TONER", k=2)
         self.assertGreaterEqual(len(recs), 1)
-        # ASIN_PAPEL tiene similitud 1-0.3=0.7 y Jaccard 0.08, debe estar en top
+        # ASIN_PAPEL tiene similitud 1 - 0.3²/2 = 0.955 y Jaccard 0.08, debe estar en top
         asins_recs = [r["parent_asin"] for r in recs]
         self.assertIn("ASIN_PAPEL", asins_recs)
 
@@ -323,6 +339,65 @@ class TestBusquedaConIndice(unittest.TestCase):
         res = servicio.buscar("toner brtoher", k=3)
         self.assertEqual(res[0]["parent_asin"], "B_TONER_BROTHER")
         self.assertNotIn("B_TONICE", [r["parent_asin"] for r in res])
+
+
+class TestFiltroPrecioYArranqueFrio(unittest.TestCase):
+    """Flujo de las etapas 4 y 5 hacia la 9."""
+
+    def setUp(self):
+        self.servicio = ServicioEcommerce(Path.cwd() / "data" / "interim", categoria="Office_Products")
+        self.servicio._similares = {"B000000000": [("B000000001", 0.2), ("B000000002", 0.4), ("B000000003", 0.6)]}
+        self.tmp = tempfile.TemporaryDirectory()
+        arbol = ArbolBMas(Path(self.tmp.name) / "precios.bpt", crear=True)
+        for precio, asin in ((5.0, "B000000001"), (15.0, "B000000002"), (25.0, "B000000003")):
+            arbol.insertar(precio, asin, 0, 0)
+        self.servicio.indice_precio = arbol
+
+    def tearDown(self):
+        self.servicio.cerrar()
+        self.tmp.cleanup()
+
+    def test_rango_de_precio_filtra_candidatos(self):
+        todos = [r["parent_asin"] for r in self.servicio.recomendar("B000000000", k=5)]
+        self.assertEqual(todos, ["B000000001", "B000000002", "B000000003"])
+        baratos = [r["parent_asin"] for r in self.servicio.recomendar("B000000000", k=5, precio_max=20.0)]
+        self.assertEqual(baratos, ["B000000001", "B000000002"])
+        self.assertEqual(self.servicio.productos_en_rango_precio(10.0, 30.0), {"B000000002", "B000000003"})
+
+    def test_arranque_en_frio_usa_el_knn_de_la_etapa_5(self):
+        asins = ["B00000000A", "B00000000B", "B00000000C", "B00000000D"]
+        X = np.array([[1.0, 4.0, 1.0, 0.0], [1.1, 4.0, 1.0, 0.0], [3.0, 2.0, 5.0, 0.0], [1.0, 4.1, 1.2, 0.0]])
+        self.servicio.indice_atributos = IndiceProductos(asins, X, ["papel"] * 4)
+        # B00000000A no tiene vecinos HNSW, relacionados ni co-compras
+        recs = self.servicio.recomendar("B00000000A", k=2)
+        self.assertEqual([r["fuente"] for r in recs], ["arranque_frio", "arranque_frio"])
+        self.assertEqual([r["parent_asin"] for r in recs], ["B00000000B", "B00000000D"])
+        self.assertIsNone(recs[0]["score_hibrido"])
+        self.assertLess(recs[0]["distancia_atributos_etapa5"], recs[1]["distancia_atributos_etapa5"])
+        # Un ancla con señales sigue usando el scoring híbrido
+        self.assertEqual(self.servicio.recomendar("B000000000", k=1)[0]["fuente"], "hibrido")
+        # Ejemplo del dashboard: el producto sin señales con más calificaciones (tercer atributo)
+        self.assertEqual(self.servicio.ancla_arranque_frio(), "B00000000C")
+
+
+class TestPanelVentas(unittest.TestCase):
+    def test_agregar_actividad_separa_las_compras_bloqueadas(self):
+        dia = 86_400 * 19_000
+        eventos = [
+            {"event_type": "view", "ts": dia + 10, "parent_asin": "A"},
+            {"event_type": "purchase", "ts": dia + 20, "parent_asin": "A", "order_id": "o1", "price": 10.0},
+            {"event_type": "purchase", "ts": dia + 30, "parent_asin": "B", "order_id": "o_fraude", "price": 99.0},
+            {"event_type": "purchase", "ts": dia + 86_400, "parent_asin": "A", "order_id": "o2", "price": 12.5},
+            {"event_type": "search", "ts": None},
+        ]
+        por_dia, unidades, ingresos = agregar_actividad(eventos, {"o_fraude"})
+        self.assertEqual(por_dia[19_000]["purchase"], 1)
+        self.assertEqual(por_dia[19_000]["purchase_bloqueada"], 1)
+        self.assertEqual(por_dia[19_000]["view"], 1)
+        self.assertEqual(por_dia[19_001]["purchase"], 1)
+        self.assertEqual(unidades, {"A": 2})
+        self.assertAlmostEqual(ingresos["A"], 22.5)
+        self.assertNotIn("B", ingresos)
 
 
 if __name__ == "__main__":
