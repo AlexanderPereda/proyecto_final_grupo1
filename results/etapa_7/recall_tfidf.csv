@@ -1,0 +1,5 @@
+respuesta,referencia,recall_at_k,recall_con_empates,coseno_tfidf_medio,ms_por_consulta,consultas,consultas_sin_vecinos,procesador,python
+HNSW,KNN exacto en DIM,0.9463,,0.46628353942556716,,1000,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+KNN exacto en DIM,coseno exacto en TF-IDF,0.5562,0.558,0.4665882481883658,183.682596701663,1000,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+HNSW,coseno exacto en TF-IDF,0.554,0.5558,0.46628353942556716,,1000,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+coseno exacto en TF-IDF,coseno exacto en TF-IDF,1.0,1.0,0.5231641302023985,7.679117996944115,1000,0,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0

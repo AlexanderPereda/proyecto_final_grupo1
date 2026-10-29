@@ -1,0 +1,4 @@
+metodo,productos,consultas,construccion_s,consulta_ms,consulta_ms_std,consulta_ms_repeticiones,recall_at_k,candidatos_por_consulta,memoria_bytes,productos_por_usuario_matriz,procesador,python
+MinHash + LSH,75953,1000,27.51746920007281,1.7766756010241807,0.397029587326246,100,0.9786056239463053,55.336,293169664,1.9773297842277504,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+índice invertido,75953,1000,0.2213411999400705,0.1087293999735266,0.011840951187017437,100,1.0,62.133,16350540,1.9773297842277504,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
+fuerza bruta,75953,1000,,31.675382100977004,3.243856884630133,100,1.0,75952.0,8182244,1.9773297842277504,"AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",3.12.0
