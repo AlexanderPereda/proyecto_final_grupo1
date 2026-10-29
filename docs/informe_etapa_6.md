@@ -12,7 +12,7 @@ La etapa 6 resuelve la detección de posible fraude del escenario B, que pide "r
 | --- | --- | --- | --- |
 | Bloom Filter | ¿La cuenta, tarjeta o dispositivo está señalado? | O(k) por operación, m = 9.6 bits por clave con p = 1 % | 73 veces menos memoria que un `set` con sus claves a 10M; falsos positivos medidos de 0.95 % a 1.06 % frente al 1 % teórico; ningún falso negativo |
 | Count-Min Sketch | ¿Cuántos intentos de pago hizo la tarjeta en la ventana? | O(d) por operación, w·d contadores fijos | 16 KB fijos frente a 49 MB del `dict` a 10M eventos (3 090 veces menos); nunca subestima; ninguna clave sobre la cota ε·N |
-| Detector (las dos + verificación) | ¿Se bloquea, se retiene o se aprueba la operación? | 28.1 µs por evento revisado | 41 532 bloqueos con precisión 1.000 y recall 0.869; 3 247 fraudes con claves nuevas retenidos por la regla de ráfaga; 61 183 falsos positivos del Bloom Filter descartados por la verificación |
+| Detector (las dos + verificación) | ¿Se bloquea, se retiene o se aprueba la operación? | 28.1 µs por evento revisado | 41 532 bloqueos con precisión 1.000, que se cumple por construcción, y recall 0.869, cerca del 7/8 que fija la lista conocida al 50 %; 3 247 fraudes con claves nuevas retenidos por la regla de ráfaga; 61 183 falsos positivos del Bloom Filter descartados por la verificación |
 
 Los experimentos van de 1K a 10M con semilla 42, y se comparan con `set` y `dict` en tiempo, memoria, falsos positivos y error de frecuencia, y con la biblioteca `pyprobables` como implementación de referencia. La etapa reutiliza la `TablaHash` de la etapa 3 como estructura exacta de verificación.
 
@@ -35,7 +35,8 @@ La etapa 0 usa las claves de `listas_senalados.json` en todas sus ráfagas. Si e
 | Etapa 2 | `etapa2_eventos.jsonl` | Etapa 6 | Compras y alertas de pago a revisar |
 | Etapa 0 | `listas_senalados.json` | Etapa 6 | Lista de señalados |
 | Etapa 3 | `TablaHash` | Etapa 6 | Verificación exacta de los positivos del Bloom Filter |
-| Etapa 6 | `etapa_6/ordenes_bloqueadas.json` | Etapa 8 | 31 994 órdenes que se excluyen del grafo de co-compra |
+| Etapa 6 | `etapa_6/ordenes_bloqueadas.json` | Etapas 8 y 9 | 31 994 órdenes que se excluyen del grafo de co-compra y del panel de ventas |
+| Etapa 6 | `etapa_6/alertas.jsonl` | Etapa 7 | Los 30 usuarios con alguna orden bloqueada, que se quitan de los conjuntos de usuarios |
 | Etapa 6 | `etapa_6/alertas.jsonl` | Etapa 9 | 47 710 alertas con motivo, estimación, conteo exacto y decisión, para el panel de alertas |
 | Etapa 6 | `etapa_6/metricas.json` | Informe | Conteos, tiempos, memoria y evaluación de la ejecución sobre el stream |
 | Etapa 6 | `etapa_6/compras.npz` | Notebook de la etapa 6 | Por compra, la estimación del CMS, el conteo exacto, si es fraude y si tiene alguna clave conocida |
@@ -51,6 +52,8 @@ Un arreglo de m bits (`bytearray`) y k funciones hash. Insertar enciende los k b
 Las k posiciones son k valores independientes de 64 bits tomados de un único BLAKE2b de la clave, de 8·k bytes, reducidos módulo m. Así se calcula un solo hash por clave sin recurrir al doble hashing, g_i(x) = h1(x) + i·h2(x) mod m, que Kirsch y Mitzenmacher (2006) proponen y que usa el `BloomFilter` de Guava. El doble hashing converge a la tasa de k hashes independientes cuando m crece, pero en un filtro chico como el de la etapa queda por encima (sección "Decisiones corregidas"). Se usa BLAKE2b de `hashlib` porque es determinista entre ejecuciones, el mismo criterio que el CRC32 de las etapas 0 y 3, y porque entrega hasta 64 bytes de una sola vez. El CMS toma sus d posiciones, una por fila, de la misma función. Cada clave lleva su tipo como prefijo (`tarjeta:pay_…`, `cuenta:A…`) para que valores de tipos distintos no se confundan.
 
 En el detector, las n = 140 claves conocidas dan m = 1 342 bits (168 bytes) y k = 7. Queda encendido el 52.1 % de los bits, cerca de la mitad que deja el k óptimo.
+
+La `TablaHash` exacta guarda las mismas 140 claves, también en RAM, así que en el pipeline el filtro no ahorra memoria frente a ella. Su aporte aquí es responder en O(k) el 97.8 % de las consultas, que dan negativo, sin tocar la estructura exacta. El ahorro de memoria aparece con listas grandes: con 10M claves el filtro ocupa 12 MB frente a 878 MB del `set` (sección "Experimentos"), y la tabla exacta puede quedar en disco o en otro servicio, consultada solo para el 2.2 % de consultas positivas.
 
 ### Count-Min Sketch por ventanas
 
@@ -85,13 +88,13 @@ La ejecución sobre el stream está en el paso 5 del notebook `etapa6_filtrado_p
 | Revisar | 0 | 3 247 | 2 931 |
 | Aprobar | 0 | 2 987 | 1 943 257 |
 
-- **Bloqueos.** Precisión 1.000 y recall 0.869. Todo el fraude con alguna clave conocida se bloquea y ninguna operación legítima se bloquea.
+- **Bloqueos.** Precisión 1.000 y recall 0.869. Todo el fraude con alguna clave conocida se bloquea y ninguna operación legítima se bloquea. Las dos cifras salen de cómo se construye la evaluación. La precisión es 1 porque solo se bloquea una clave confirmada en la lista, y en el generador es la lista la que define el fraude: un bloqueo confirmado no puede ser legítimo. Lo que esa cifra sí mide es que la verificación exacta descartó todos los falsos positivos del Bloom Filter. El recall es la fracción del fraude que deja ver la lista conocida: una ráfaga escapa solo si sus tres claves están en la mitad desconocida, con probabilidad (1/2)³ = 1/8, así que se espera bloquear 7/8 = 0.875 del fraude. El 0.869 medido queda cerca, porque las ráfagas tienen tamaños distintos y el recall se cuenta por operación.
 - **Retenidas.** 6 178 operaciones: 3 247 son fraude con sus tres claves nuevas, que el Bloom Filter no puede reconocer y que la regla de ráfaga retiene, y 2 931 son legítimas. Las legítimas son usuarios con 5 o más órdenes con la misma tarjeta en dos ventanas; la verificación exacta confirma que esas órdenes existen, y por eso se retienen en lugar de bloquearse.
 - **Aprobadas por error.** 2 987 operaciones fraudulentas, todas con claves nuevas: son las primeras compras de cada ráfaga, antes de que su tarjeta llegue al umbral, y las alertas de pago, que no suman al CMS. El fraude con claves nuevas son 6 234 operaciones, el 13.1 % del fraude, cerca del 1/8 esperado, y la regla de ráfaga retiene el 52.1 %.
 - **Todas las alertas.** Precisión 0.939 y recall 0.937.
 - **Bloom Filter.** De 5 981 862 consultas hubo 132 043 positivos: 70 860 se confirmaron en la `TablaHash` y **61 183 fueron falsos positivos** que la verificación descartó. La tasa es de 1.04 % por consulta y de 1.05 % por clave distinta (33 116 de 3 162 462 claves no conocidas, intervalo de 95 % de 1.04 % a 1.06 %). Coincide con la tasa esperada para este filtro, (bits encendidos)^k = 1.04 %, que supera el 1.00 % teórico porque el filtro encendió el 52.1 % de sus bits. Sin la verificación exacta, cada falso positivo habría bloqueado una operación legítima.
 - **Count-Min Sketch frente al conteo exacto.** La línea base es un `dict` de `(tarjeta, ventana) → órdenes`. En 1 978 936 compras no hubo ninguna subestimación; 1 627 compras (0.082 %) tienen alguna sobreestimación, con un máximo de 2. El CMS dio 27 711 alertas, cada una confirmada con el conteo exacto. Ningún evento llegó más de 24 h tarde.
-- **Memoria.** El Bloom Filter ocupa 168 bytes y el CMS 3.1 MB, ambos fijos. El conteo exacto necesitó 1 260 275 pares `(tarjeta, ventana)`, que crecen con el stream.
+- **Memoria.** El Bloom Filter ocupa 168 bytes y el CMS 3.1 MB, ambos fijos. El conteo exacto necesitó 1 260 275 pares `(tarjeta, ventana)`, que crecen con el stream. El `memoria_bytes` del detector suma solo el Bloom Filter y el CMS: deja fuera la `TablaHash` y las listas de órdenes por ventana (`_compras`) con que se verifican las alertas del CMS (sección "Limitaciones").
 
 ### Elección del umbral
 
@@ -180,6 +183,8 @@ Se compararon las dos estructuras con las de `pyprobables` 0.7.0, una biblioteca
 ### Limitaciones
 
 - **La verdad de referencia es sintética.** Todas las ráfagas del generador usan claves señaladas, y la parte desconocida de la lista simula a los defraudadores nuevos. Con la lista conocida al 50 %, la regla de ráfaga del CMS sí agrega recall, pero su aporte depende de esa fracción y de la forma de las ráfagas del generador.
+- **Bloqueos medidos por construcción.** Como la lista define el fraude, un bloqueo confirmado siempre es correcto, y el recall de los bloqueos lo fija la fracción conocida de la lista: 7/8 con `FRACCION_CONOCIDA = 0.5`. Las cifras que dependen del detector son el descarte de los falsos positivos del Bloom Filter y el aporte de la regla de ráfaga.
+- **Memoria dentro del pipeline.** El Bloom Filter y la `TablaHash` guardan las mismas 140 claves en RAM. El detector guarda además, en `_compras`, la tarjeta de cada orden de las 288 ventanas retenidas para confirmar las alertas del CMS, y `memoria_bytes` no cuenta esas listas. Con ellas el detector ya podría contar exacto, así que dentro del pipeline el CMS no demuestra una ventaja en memoria. La ventaja de las dos estructuras se demuestra en los experimentos de 1K a 10M, donde el `set` y el `dict` crecen con las claves y el filtro y el sketch no.
 - **Fraude aprobado.** Las 2 987 operaciones fraudulentas aprobadas son las primeras compras de cada ráfaga con claves nuevas, antes de llegar al umbral, y sus alertas de pago. Ningún umbral útil las detecta, porque el recall de la regla está acotado por el tamaño de las ráfagas.
 - **Ventanas fijas en lugar de deslizantes.** La suma de dos ventanas aproxima una ventana deslizante de entre 5 y 10 minutos.
 - **La regla "última orden contada"** depende de que la etapa 2 entregue seguidos los productos de una orden. Si se intercalaran, una orden se contaría más de una vez, lo que sobreestima y nunca oculta una ráfaga.
@@ -189,7 +194,7 @@ Se compararon las dos estructuras con las de `pyprobables` 0.7.0, una biblioteca
 
 El Bloom Filter responde la pertenencia a la lista de señalados con 9.6 bits por clave, 73 veces menos memoria que un `set` a 10M, y con una tasa de falsos positivos que coincide con la teórica. El Count-Min Sketch estima la intensidad de intentos por tarjeta con memoria fija, 3 090 veces menos que un `dict` a 10M, y nunca subestima, que es la dirección segura para una alerta. Frente a `pyprobables`, las estructuras propias son de 6 a 17 veces más rápidas con los mismos errores.
 
-En el stream completo, con un detector que conoce la mitad de la lista, la verificación exacta descartó 61 183 falsos positivos del Bloom Filter, de modo que ningún error de las estructuras probabilísticas produjo un bloqueo incorrecto. Los bloqueos quedaron con precisión 1.000 y recall 0.869, y la regla de ráfaga retuvo 3 247 operaciones fraudulentas con claves nuevas, que el Bloom Filter no puede reconocer. El conjunto de las alertas tiene precisión 0.939 y recall 0.937. La salida alimenta a la etapa 8, que excluye 31 994 órdenes bloqueadas del grafo de co-compra, y a la etapa 9, que muestra las 47 710 alertas.
+En el stream completo, con un detector que conoce la mitad de la lista, la verificación exacta descartó 61 183 falsos positivos del Bloom Filter, de modo que ningún error de las estructuras probabilísticas produjo un bloqueo incorrecto. Los bloqueos quedaron con precisión 1.000 y recall 0.869, cifras que fija la construcción de la evaluación: la lista define el fraude y el detector conoce la mitad de cada lista. La regla de ráfaga retuvo 3 247 operaciones fraudulentas con claves nuevas, que el Bloom Filter no puede reconocer. El conjunto de las alertas tiene precisión 0.939 y recall 0.937. La salida alimenta a la etapa 8, que excluye 31 994 órdenes bloqueadas del grafo de co-compra, y a la etapa 9, que muestra las 47 710 alertas.
 
 ## Referencias
 
