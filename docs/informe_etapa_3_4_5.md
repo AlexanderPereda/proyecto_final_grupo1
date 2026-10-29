@@ -30,14 +30,14 @@ El dataset no trae inventario. La disponibilidad se obtiene de un stock sintéti
 | Origen | Artefacto | Destino | Uso |
 | --- | --- | --- | --- |
 | Etapa 2 | `etapa2_eventos.jsonl` | Etapa 3 | Stream que actualiza la caché, el estado de los productos y la matriz |
-| Etapa 3 | `etapa_3/catalogo.jsonl` | Etapas 4, 5 y 9 | Catálogo en disco con el precio convertido a número |
-| Etapa 3 | `etapa_3/estado_productos.parquet` | Etapas 4, 5 y 9 | Contadores, stock, disponibilidad y precio observado en el stream |
-| Etapa 3 | `etapa_3/matriz_usuario_producto.npz` | Etapas 7 y 9 | Matriz CSR de interacciones usuario × producto |
+| Etapa 3 | `etapa_3/catalogo.jsonl` | Etapas 4, 5, 7 y 9 | Catálogo en disco con el precio convertido a número; la etapa 7 toma de él los rasgos de los vectores y la etapa 9 las fichas de producto |
+| Etapa 3 | `etapa_3/estado_productos.parquet` | Etapas 4, 5 y 9 | Contadores, stock, disponibilidad y precio observado en el stream; la etapa 9 muestra el stock y la disponibilidad en las fichas y en el panel de ventas |
+| Etapa 3 | `etapa_3/matriz_usuario_producto.npz` | Etapa 7 | Matriz CSR de interacciones usuario × producto |
 | Etapa 3 | `etapa_3/metricas.json` | Informe | Métricas de la ejecución de la etapa 3 |
-| Etapa 4 | `etapa_4/indice_precio.bpt` | Etapas 5 y 9 | Índice de precios en disco |
-| Etapa 5 | `etapa_5/vectores.npz` | Etapa 9 | Vectores normalizados para productos similares en línea (uso previsto) |
+| Etapa 4 | `etapa_4/indice_precio.bpt` | Etapas 5 y 9 | Índice de precios en disco; la etapa 9 filtra con él las recomendaciones por rango de precio |
+| Etapa 5 | `etapa_5/vectores.npz` | Etapa 9 | Vectores de atributos con que la etapa 9 reconstruye el KD-Tree para el arranque en frío |
 | Etapa 5 | `knn_fuerza_bruta` y `KDTree` (código) | Etapa 7 | KNN exacto, referencia del recall@K de HNSW |
-| Etapa 5 | `etapa_5/vecinos.parquet` | Etapa 9 | 10 vecinos exactos por producto con actividad (uso previsto) |
+| Etapa 5 | `etapa_5/vecinos.parquet` | Ninguna | 10 vecinos exactos por producto con actividad; la etapa 9 no lo lee, porque consulta el KD-Tree en línea |
 
 Los archivos están en `data/interim/<CATEGORIA>/`. El código está en `src/etapa_3/storage.py`, `src/etapa_4/bplustree.py` y `src/etapa_5/kdtree.py`, y cada etapa tiene un notebook que lo importa y documenta sus experimentos.
 
@@ -62,7 +62,7 @@ La etapa 3 recibe cada evento de la etapa 2, consulta su producto a través de u
 | Lecturas en disco | 372 307, igual al número de fallos |
 | Productos con estado | 195 019, con 50 906 reposiciones de stock |
 | Matriz | 1 096 990 usuarios × 195 019 productos, 2 169 391 celdas no nulas; la CSR ocupa 35 MB |
-| Tiempo y memoria | El tiempo pasa a 202 s, 20.3 µs por evento. La memoria (500 MB al terminar y 516 MB de pico) se mantiene |
+| Tiempo y memoria | 202 s, 20.3 µs por evento; 500 MB de memoria al terminar y 516 MB de pico |
 
 La ejecución se verificó con tres igualdades. Aciertos más fallos es igual al número de eventos con producto, las lecturas en disco son iguales a los fallos y la suma de la matriz es igual a la suma de los pesos de los eventos (15 891 702).
 
@@ -85,11 +85,11 @@ La caché se evaluó con la secuencia real de 8 453 141 consultas sobre 195 019 
 
 ![Tasa de aciertos de la caché LRU según la capacidad](../results/etapa_3/lru_stream.png)
 
-*Fuente: `notebooks/etapa3_almacenamiento_cache.ipynb`, 8 453 141 consultas reales, 100 repeticiones de 1 000 000 consultas.*
+*Fuente: `notebooks/etapa3_almacenamiento_cache.ipynb`. La tasa de aciertos se mide sobre las 8 453 141 consultas reales; la latencia, en 100 bloques de 10 000 consultas después de 1 000 000 de consultas de calentamiento.*
 
 | Capacidad | Tasa de aciertos |
 | --- | --- |
-| Sin caché | 0 % | 
+| Sin caché | 0 % |
 | 1 000 | 76.7 % |
 | 10 000 | 89.1 % |
 | 50 000 | 95.6 % |
@@ -218,7 +218,7 @@ Los tests comparan cada estructura con una referencia exacta. La tabla hash se c
 
 ### Condiciones de los experimentos
 
-Las etapas se ejecutaron con la salida completa de la etapa 2, generada a partir de 1 500 000 reseñas de `Office_Products` con semilla 42. Los tamaños fueron 1K, 10K, 100K, 1M y 10M. Las operaciones tienen 100 repeticiones en todos los tamaños, incluido 10M. Las construcciones tienen 100 repeticiones o menos, con la justificación que imprime cada notebook. El experimento de la caché usó 100 repeticiones de 1 000 000 consultas. Las estructuras O(n) por operación se midieron hasta 1M. Durante cada medición se desactivó el recolector de basura. La memoria actual y pico se midió con `tracemalloc`. La plataforma fue Windows 10, AMD64 Family 23 Model 24, 8 núcleos lógicos, 32.1 GB de RAM y Python 3.12.0, con semilla 42.
+Las etapas se ejecutaron con la salida completa de la etapa 2, generada a partir de 1 500 000 reseñas de `Office_Products` con semilla 42. Los tamaños fueron 1K, 10K, 100K, 1M y 10M. Las operaciones tienen 100 repeticiones en todos los tamaños, incluido 10M. Las construcciones tienen 100 repeticiones o menos, con la justificación que imprime cada notebook. El experimento de la caché midió la tasa de aciertos sobre las 8 453 141 consultas reales y la latencia en 100 bloques de 10 000 consultas, después de 1 000 000 de consultas de calentamiento. Las estructuras O(n) por operación se midieron hasta 1M. Durante cada medición se desactivó el recolector de basura. La memoria actual y pico se midió con `tracemalloc`. La plataforma fue Windows 10, AMD64 Family 23 Model 24, 8 núcleos lógicos, 32.1 GB de RAM y Python 3.12.0, con semilla 42.
 
 ## Limitaciones y decisiones corregidas
 
@@ -239,8 +239,8 @@ Siete decisiones se corrigieron después de medir, y cinco limitaciones quedan d
 ### Limitaciones
 
 - **Eventos sospechosos.** La etapa 3 procesa todos los eventos antes del filtrado de la etapa 6. Las 36 667 compras de cuentas señaladas, el 1.9 % de las compras, descuentan stock y suman peso en la matriz igual que las legítimas. Hace falta acordar con la etapa 6 una función que indique si un evento es sospechoso, para que no actualice el estado hasta su verificación.
-- **Stock sintético.** De 1 978 936 compras, 73 678 (3.7 %) llegaron sin stock, en 11 785 productos, y hubo 50 906 reposiciones. Los productos más comprados agotan sus 5 a 50 unidades antes de la reposición a las 48 horas. Los parámetros del stock no salen del dataset y deben ajustarse si la etapa 9 muestra la disponibilidad.
-- **Integración por archivos.** Las etapas se conectan a través de archivos en `data/interim/`. La etapa 4 recibe los precios observados en un solo bloque, al final del stream. El recorrido de un evento por las diez etapas depende de un orquestador común del pipeline.
+- **Stock sintético.** De 1 978 936 compras, 73 678 (3.7 %) llegaron sin stock, en 11 785 productos, y hubo 50 906 reposiciones. Los productos más comprados agotan sus 5 a 50 unidades antes de la reposición a las 48 horas. Los parámetros del stock no salen del dataset, y la etapa 9 los hereda porque muestra esa disponibilidad en las fichas y en el panel de ventas.
+- **Integración por archivos.** Las etapas se conectan a través de archivos en `data/interim/`. La etapa 4 recibe los precios observados en un solo bloque, al final del stream. No hay un orquestador que lleve cada evento del stream por las diez etapas; el recorrido de un lote por todas ellas está en `notebooks/demo_pipeline.ipynb`.
 - **Buffer pool LRU.** Un rango grande del B+Tree llena el buffer pool con hojas que no se vuelven a usar y desaloja la raíz. Es la inundación secuencial, una limitación conocida de LRU en los gestores de bases de datos.
 - **Eliminación en el B+Tree.** No se fusionan nodos, así que muchas eliminaciones dejarían hojas con poca ocupación. El índice de precios casi no tiene eliminaciones.
 
@@ -250,7 +250,7 @@ Siete decisiones se corrigieron después de medir, y cinco limitaciones quedan d
 2. Las alternativas en C (`dict`, `OrderedDict` y numpy) son más rápidas por un factor constante, pero ninguna cambia el orden de complejidad. Las alternativas con peor orden, como la búsqueda lineal, el recorrido completo y la fuerza bruta, se alejan cada vez más al crecer n.
 3. Cada estructura responde a un tipo de consulta del escenario B. La tabla hash responde la consulta puntual, el B+Tree el rango sobre una clave y el KD-Tree el rango y los vecinos sobre varias claves. La consulta por caja del KD-Tree fue 50 veces más rápida que el B+Tree con un filtro posterior.
 4. Los límites medidos orientan las decisiones de diseño. La caché alcanza el 98 % de su cota con 50 000 productos, el índice deja de convenir con rangos del 10 % de los datos y el KD-Tree pierde la poda desde 16 dimensiones.
-5. Las salidas son entradas reales de otras etapas. La etapa 3 procesa los 9.9 millones de eventos de la etapa 2, la etapa 4 indexa el catálogo y los precios del stream de la etapa 3, la etapa 5 recorre el índice de la etapa 4, y la matriz queda disponible para las etapas 7 y 9, los vecinos exactos para la etapa 9 y el KNN por fuerza bruta de la etapa 5 sirve como referencia exacta de la etapa 7.
+5. Las salidas son entradas reales de otras etapas. La etapa 3 procesa los 9.9 millones de eventos de la etapa 2, la etapa 4 indexa el catálogo y los precios del stream de la etapa 3, la etapa 5 recorre el índice de la etapa 4, y la matriz alimenta a la etapa 7. La etapa 9 usa el catálogo y el estado de la etapa 3 para las fichas y el panel de ventas, el B+Tree para filtrar por rango de precio y los vectores de la etapa 5 para el arranque en frío. El KNN por fuerza bruta de la etapa 5 sirve como referencia exacta de la etapa 7.
 
 ## Referencias
 
