@@ -8,15 +8,15 @@ Diferencias con el pipeline oficial, declaradas:
 - El filtro de fraude usa la verdad de referencia del generador (cuentas, tarjetas y dispositivos
   señalados) en lugar del detector de la etapa 6, que no se recorre a esta escala.
 - No se aplica la limpieza de la etapa 1: los duplicados no afectan (las órdenes son conjuntos) y
-  los registros malformados sin order_id o parent_asin de texto se descartan.
+  los registros malformados sin order_id o parent_asin de texto no vacío se descartan.
 
-Ejecutar: .venv/bin/python -m src.etapa_8.escala_stream [N ...]
+El notebook de la etapa 8 llama a medir_tamanos (paso 9.4). Desde la terminal:
+    python -m src.etapa_8.escala_stream [N ...]
 Salida: results/etapa_8/escala_stream.csv (una fila por tamaño, se agrega al terminar cada uno)
 """
 
 import itertools
 import json
-import resource
 import subprocess
 import sys
 import time
@@ -33,13 +33,32 @@ from .graph import (
 )
 
 RUTA_CSV = config.RAIZ / "results" / "etapa_8" / "escala_stream.csv"
-TAMANOS = [1_500_000, 3_000_000, 6_000_000, 12_845_712]
+TAMANOS = [150_000, 375_000, 750_000, 1_500_000, 3_000_000, 6_000_000, 12_845_712]
 
 
 def rss_pico_gb():
-    """Memoria residente máxima del proceso (macOS reporta bytes; Linux, KB)."""
+    """Memoria residente máxima del proceso en GB.
+
+    En macOS y Linux sale de getrusage (macOS la da en bytes y Linux en KB). Windows no tiene el
+    módulo resource; ahí se usa el pico del working set que informa psutil.
+    """
+    try:
+        import resource
+    except ImportError:
+        import psutil
+        return psutil.Process().memory_info().peak_wset / 2**30
     pico = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     return pico / 2**30 if sys.platform == "darwin" else pico / 2**20
+
+
+def compra_valida(orden, asin):
+    """Una compra entra al grafo solo con order_id y parent_asin de texto no vacío.
+
+    Revisión técnica 2026-10-28 (punto 1.3): el generador corrompe algunos registros con
+    parent_asin = "" (asin_vacio). El filtro anterior solo pedía texto, así que "" pasaba como un
+    producto más, unía órdenes de todos los grupos y se volvía el nodo central del grafo.
+    """
+    return isinstance(orden, str) and isinstance(asin, str) and bool(orden) and bool(asin)
 
 
 def grafo_desde_stream(n_resenas, ts_max=None):
@@ -58,14 +77,15 @@ def grafo_desde_stream(n_resenas, ts_max=None):
         resenas = itertools.takewhile(lambda r: r["timestamp"] < ts_max, resenas)
 
     ordenes = defaultdict(set)
-    n_eventos = n_compras = n_fraude = 0
+    n_eventos = n_compras = n_fraude = n_asin_vacio = 0
     for r in generador.eventos(resenas):
         n_eventos += 1
         if r.get("event_type") != "purchase":
             continue
         n_compras += 1
         orden, asin = r.get("order_id"), r.get("parent_asin")
-        if not isinstance(orden, str) or not isinstance(asin, str):
+        if not compra_valida(orden, asin):
+            n_asin_vacio += asin == ""
             continue
         if ts_max is not None and isinstance(r.get("ts"), (int, float)) and r["ts"] >= ts_max:
             continue
@@ -74,7 +94,7 @@ def grafo_desde_stream(n_resenas, ts_max=None):
             continue
         ordenes[orden].add(asin)
     stats = dict(eventos=n_eventos, compras=n_compras, compras_fraude_excluidas=n_fraude,
-                 segundos_stream=time.perf_counter() - t0)
+                 asins_vacios_descartados=n_asin_vacio, segundos_stream=time.perf_counter() - t0)
 
     t = time.perf_counter()
     aristas = defaultdict(int)
@@ -96,7 +116,8 @@ def medir(n_resenas):
     t0 = time.perf_counter()
     grafo, stats = grafo_desde_stream(n_resenas)
     fila.update(eventos=stats["eventos"], compras=stats["compras"],
-                compras_fraude_excluidas=stats["compras_fraude_excluidas"], segundos_stream=stats["segundos_stream"])
+                compras_fraude_excluidas=stats["compras_fraude_excluidas"],
+                asins_vacios_descartados=stats["asins_vacios_descartados"], segundos_stream=stats["segundos_stream"])
     fila.update(nodos=grafo.n_nodos, aristas=grafo.n_aristas, peso_total=grafo.peso_total,
                 memoria_csr_mb=(grafo.indptr.nbytes + grafo.indices.nbytes + grafo.data.nbytes) / 2**20,
                 segundos_grafo=stats["segundos_grafo"])
@@ -124,21 +145,32 @@ def medir(n_resenas):
     return fila
 
 
-def main(tamanos):
-    RUTA_CSV.parent.mkdir(parents=True, exist_ok=True)
+def medir_tamanos(tamanos=TAMANOS):
+    """Mide cada tamaño en un subproceso propio, para que el pico de memoria sea el de ese tamaño.
+
+    Devuelve una tabla con una fila por tamaño.
+    """
+    filas = []
     for n in tamanos:
         print(f"--- {n:,} reseñas ---", flush=True)
         salida = subprocess.run([sys.executable, "-m", "src.etapa_8.escala_stream", "--uno", str(n)],
                                 capture_output=True, text=True, cwd=config.RAIZ)
         if salida.returncode != 0:
-            print(salida.stderr[-3000:], flush=True)
-            break
-        fila = json.loads(salida.stdout.strip().splitlines()[-1])
-        print(json.dumps(fila, indent=1), flush=True)
+            raise RuntimeError(f"falló el tamaño {n:,}:\n{salida.stderr[-3000:]}")
+        filas.append(json.loads(salida.stdout.strip().splitlines()[-1]))
+        print(json.dumps(filas[-1]), flush=True)
+    return pd.DataFrame(filas)
+
+
+def main(tamanos):
+    """Mide cada tamaño y lo agrega a RUTA_CSV al terminar, en lugar de la fila previa del mismo tamaño."""
+    RUTA_CSV.parent.mkdir(parents=True, exist_ok=True)
+    for n in tamanos:
+        fila = medir_tamanos([n])
         previo = pd.read_csv(RUTA_CSV) if RUTA_CSV.exists() else pd.DataFrame()
         if len(previo):
             previo = previo[previo.resenas != n]
-        pd.concat([previo, pd.DataFrame([fila])]).sort_values("resenas").to_csv(RUTA_CSV, index=False)
+        pd.concat([previo, fila]).sort_values("resenas").to_csv(RUTA_CSV, index=False)
 
 
 if __name__ == "__main__":

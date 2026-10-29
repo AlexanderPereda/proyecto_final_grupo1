@@ -1,7 +1,8 @@
 """Tests unitarios de la etapa 8: GrafoCoCompra, PageRank, Louvain y LPA.
 
 Verifica la equivalencia exacta con NetworkX, la conservación de propiedades probabilísticas
-y topológicas, y el aislamiento de fraude de la etapa 6.
+y topológicas, el aislamiento de fraude de la etapa 6, las medidas de estabilidad (NMI y ARI) y
+el filtro de compras válidas del experimento de escala.
 
 Ejecutar:
     pytest tests/etapa_8/test_graph.py -v
@@ -19,6 +20,8 @@ from src.etapa_8.graph import (
     componentes_conexas,
     dividir_comunidades_desconectadas,
     grado_ponderado_ranking,
+    indice_rand_ajustado,
+    informacion_mutua_normalizada,
     label_propagation,
     louvain,
     modularidad,
@@ -254,6 +257,46 @@ def test_louvain_devuelve_comunidades_conexas():
     assert len(np.unique(etiquetas)) == len(np.unique(comm))
 
 
+# ----- Tests de estabilidad: NMI y ARI -----------------------------------------------
+
+def test_nmi_y_ari_valen_uno_con_particiones_iguales_salvo_nombres():
+    a = np.array([0, 0, 1, 1, 2, 2])
+    b = np.array([5, 5, 9, 9, 7, 7])
+    assert abs(informacion_mutua_normalizada(a, b) - 1.0) < 1e-12
+    assert abs(indice_rand_ajustado(a, b) - 1.0) < 1e-12
+
+
+def test_nmi_y_ari_coinciden_con_el_calculo_a_mano():
+    # Contingencia: n_00 = 2, n_01 = 1, n_11 = 1, n_12 = 2 con n = 6
+    a = [0, 0, 0, 1, 1, 1]
+    b = [0, 0, 1, 1, 2, 2]
+    # ARI: sum C(n_ij, 2) = 2; sum C(a_i, 2) = 6; sum C(b_j, 2) = 3; esperado = 6 · 3 / 15 = 1.2
+    assert abs(indice_rand_ajustado(a, b) - (2 - 1.2) / (4.5 - 1.2)) < 1e-12
+    # NMI: I = (2/3) ln 2, H(A) = ln 2, H(B) = ln 3
+    esperado = 2 * (2 / 3) * np.log(2) / (np.log(2) + np.log(3))
+    assert abs(informacion_mutua_normalizada(a, b) - esperado) < 1e-12
+
+
+def test_estabilidad_en_componentes_disjuntas_es_total():
+    from src.etapa_8.benchmark import estabilidad_comunidades
+
+    tabla = estabilidad_comunidades(_dos_triangulos(), semillas=(0, 1, 2))
+    assert set(tabla["algoritmo"]) == {"louvain", "lpa"}
+    assert (tabla["comunidades"] == 2).all()
+    assert (tabla["nmi_media"] > 1 - 1e-12).all()
+    assert (tabla["ari_media"] > 1 - 1e-12).all()
+
+
+def test_compra_valida_descarta_asin_vacio():
+    from src.etapa_8.escala_stream import compra_valida
+
+    assert compra_valida("o1", "B000000001")
+    assert not compra_valida("o1", "")              # corrupción asin_vacio del generador
+    assert not compra_valida("", "B000000001")
+    assert not compra_valida(None, "B000000001")
+    assert not compra_valida("o1", None)
+
+
 def test_sumar_grafos_une_nodos_y_suma_pesos():
     g1 = GrafoCoCompra.desde_aristas(["A", "B", "C"], {("A", "B"): 2.0, ("B", "C"): 1.0})
     g2 = GrafoCoCompra.desde_aristas(["B", "C", "D"], {("B", "C"): 3.0, ("C", "D"): 5.0})
@@ -326,4 +369,13 @@ def test_extraccion_cocompras_aisla_ordenes_bloqueadas():
         assert grafo.n_aristas == 2
         assert grafo.peso_total == 2.0
         assert grafo.compras_bloqueadas == 2
+        # La única orden bloqueada tiene dos productos: es la que habría aportado una arista
+        assert grafo.ordenes_bloqueadas_excluidas == 1
+        assert grafo.ordenes_bloqueadas_con_cocompra == 1
+
+        # Sin exclusión, la orden fraudulenta aporta la arista X-Y
+        sin_exclusion = extraer_cocompras(ruta_eventos=ruta_eventos, ruta_bloqueadas=None)
+        assert set(sin_exclusion.asins) == {"A", "B", "C", "X", "Y"}
+        assert sin_exclusion.n_aristas == 3
+        assert sin_exclusion.compras_bloqueadas == 0
 

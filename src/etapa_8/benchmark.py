@@ -1,34 +1,47 @@
-"""Script de benchmarking y generación de resultados para la Etapa 8.
+"""Experimentos de la etapa 8: grillas de parámetros, escalabilidad, referencia, estabilidad y exclusión.
 
-Ejecuta:
+notebooks/etapa8_grafo_dominio.ipynb llama a estas funciones a través de `resultados()`, que guarda
+cada tabla en results/etapa_8/ y la reutiliza en las ejecuciones siguientes. El mismo conjunto se
+puede medir desde la terminal con `python -m src.etapa_8.benchmark`.
+
 1. Grilla de sensibilidad de PageRank (alpha in [0.70, 0.75, 0.80, 0.85, 0.90, 0.95]).
 2. Grilla de resolución de Louvain sobre el grafo completo (gamma in [0.5, 1, 2, 5, 10, 20]),
    contrastada con las componentes conexas para exponer el límite de resolución.
-3. Experimentos de escalabilidad (1K, 10K, 50K, 100K y Grafo Completo ~150K):
-   - PageRank vs Grado Ponderado (tiempo y memoria tracemalloc).
-   - Louvain vs Label Propagation (tiempo, memoria actual/pico, modularidad, # comunidades).
-   - Comparación con NetworkX como implementación de referencia.
-4. Generación de figuras PNG y archivos CSV en results/etapa_8/.
+3. Escalabilidad (1K, 10K, 50K, 100K y el grafo completo, ~150K nodos):
+   - PageRank frente al grado ponderado.
+   - Louvain frente a Label Propagation (tiempo, memoria actual y pico, modularidad, comunidades).
+   - NetworkX como implementación de referencia.
+4. Estabilidad de Louvain y LPA entre semillas (NMI y ARI).
+5. Efecto de excluir las órdenes bloqueadas por la etapa 6.
+
+Protocolo de medición (el mismo de las etapas 5 y 7):
+- Tiempo con time.perf_counter y el recolector de basura desactivado, sin tracemalloc. La primera
+  ejecución fija cuántas repeticiones caben en PRESUPUESTO_S, entre 1 y REPETICIONES.
+- Memoria actual y pico con tracemalloc, en una pasada aparte. Revisión técnica 2026-10-28
+  (punto 1.4): la versión anterior medía el tiempo con el rastreo activo, que hace más lenta cada
+  asignación; Louvain tardaba 88 s en el grafo completo frente a 4 s sin rastreo.
 """
 
-import json
+import gc
+import statistics
 import time
 import tracemalloc
-from collections import Counter
-from pathlib import Path
 
-import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import pandas as pd
 
 from .. import config
+from ..etapa_3.storage import RUTA_EVENTOS_ETAPA2
+from ..etapa_6.probabilistic import RUTA_BLOQUEADAS
 from .graph import (
-    CARPETA_ETAPA8,
-    GrafoCoCompra,
     RUTA_GRAFO,
+    GrafoCoCompra,
     componentes_conexas,
+    extraer_cocompras,
     grado_ponderado_ranking,
+    indice_rand_ajustado,
+    informacion_mutua_normalizada,
     label_propagation,
     louvain,
     modularidad,
@@ -36,21 +49,111 @@ from .graph import (
 )
 
 CARPETA_RESULTADOS_E8 = config.CARPETA_RESULTADOS / "etapa_8"
+TAMANOS = (1_000, 10_000, 50_000, 100_000)     # subgrafos; el grafo completo se agrega siempre
+REPETICIONES = 100
+PRESUPUESTO_S = 120                             # tiempo máximo por medición, como en las etapas 5 y 7
+ALFAS = (0.70, 0.75, 0.80, 0.85, 0.90, 0.95)
+GAMMAS = (0.5, 1.0, 2.0, 5.0, 10.0, 20.0)
+N_MAX_NETWORKX = 50_000                         # NetworkX guarda un diccionario por nodo y por arista
+SEMILLAS_ESTABILIDAD = tuple(range(10))
 
 
-def medir_memoria_y_tiempo(func, *args, **kwargs):
-    """Mide tiempo de CPU (perf_counter) y memoria pico con tracemalloc."""
+# ----- Medición ------------------------------------------------------------------
+
+def medir(funcion, *args, **kwargs):
+    """(segundos, resultado) de funcion(*args, **kwargs) con el recolector de basura desactivado."""
+    gc.collect()
+    gc.disable()
+    try:
+        t0 = time.perf_counter()
+        resultado = funcion(*args, **kwargs)
+        segundos = time.perf_counter() - t0
+    finally:
+        gc.enable()
+    return segundos, resultado
+
+
+def medir_memoria(funcion, *args, **kwargs):
+    """(resultado, memoria actual, memoria pico) en bytes. Pasada aparte: no se mide el tiempo."""
+    gc.collect()
     tracemalloc.start()
-    tracemalloc.reset_peak()
-    t0 = time.perf_counter()
-    resultado = func(*args, **kwargs)
-    t = time.perf_counter() - t0
+    resultado = funcion(*args, **kwargs)
     actual, pico = tracemalloc.get_traced_memory()
     tracemalloc.stop()
-    return resultado, t, actual, pico
+    return resultado, actual, pico
 
 
-def generar_subgrafos_muestra(grafo, tamanos=(1_000, 10_000, 50_000, 100_000), semilla=config.SEED):
+def repeticiones_que_caben(segundos):
+    """Repeticiones que caben en PRESUPUESTO_S según la primera medición, entre 1 y REPETICIONES."""
+    return max(1, min(REPETICIONES, int(PRESUPUESTO_S // max(segundos, 1e-9))))
+
+
+def medir_tiempos(funcion, *args, **kwargs):
+    """(tiempos en segundos, resultado de la primera ejecución). La primera fija las repeticiones."""
+    segundos, resultado = medir(funcion, *args, **kwargs)
+    tiempos = [segundos]
+    while len(tiempos) < repeticiones_que_caben(tiempos[0]):
+        tiempos.append(medir(funcion, *args, **kwargs)[0])
+    return tiempos, resultado
+
+
+def estadisticos(prefijo, tiempos, escala=1.0):
+    """Promedio, desviación estándar, repeticiones y primera medición, multiplicados por `escala`."""
+    valores = [t * escala for t in tiempos]
+    return {prefijo: statistics.mean(valores),
+            f"{prefijo}_std": statistics.stdev(valores) if len(valores) > 1 else 0.0,
+            f"{prefijo}_repeticiones": len(valores), f"{prefijo}_primera": valores[0]}
+
+
+# ----- 1 y 2. Grillas de parámetros -------------------------------------------------
+
+def grilla_alpha(grafo, alfas=ALFAS):
+    """Sensibilidad de PageRank al factor de amortiguamiento: iteraciones, scores y producto top 1."""
+    filas = []
+    for a in alfas:
+        pr, iters, conv = pagerank(grafo, alpha=a, tol=1e-6)
+        top1 = int(np.argmax(pr))
+        filas.append({
+            "alpha": a,
+            "iteraciones": iters,
+            "convergido": conv,
+            "max_score": float(pr.max()),
+            "min_score": float(pr.min()),
+            "std_score": float(pr.std()),
+            "top1_asin": grafo.asins[top1],
+            "top1_score": float(pr[top1]),
+        })
+    return pd.DataFrame(filas)
+
+
+def grilla_resolucion(grafo, gammas=GAMMAS, semilla=config.SEED):
+    """Louvain con resolución creciente sobre el grafo completo, contrastado con las componentes conexas.
+
+    Auditoría 2026-10-27: la grilla anterior usaba asins[:10_000] (orden alfabético), un subgrafo
+    casi sin aristas (8 488 comunidades de mediana 1 para todo gamma). Ahora se usa el grafo
+    completo y se reporta cuántas comunidades caen dentro de cada componente conexa.
+    """
+    n_cc, _ = componentes_conexas(grafo)
+    filas = []
+    for g in gammas:
+        comm, mod, niveles = louvain(grafo, resolucion=g, semilla=semilla)
+        _, counts = np.unique(comm, return_counts=True)
+        filas.append({
+            "resolucion": g,
+            "modularidad": mod,
+            "n_comunidades": len(counts),
+            "componentes_conexas": n_cc,
+            "comunidades_por_componente": len(counts) / n_cc,
+            "niveles": niveles,
+            "comunidad_max_nodos": int(counts.max()),
+            "comunidad_mediana_nodos": float(np.median(counts)),
+        })
+    return pd.DataFrame(filas)
+
+
+# ----- 3. Escalabilidad ------------------------------------------------------------
+
+def generar_subgrafos_muestra(grafo, tamanos=TAMANOS, semilla=config.SEED):
     """Genera subgrafos inducidos uniendo componentes conexas completas elegidas al azar.
 
     Auditoría 2026-10-27: el muestreo anterior (BFS desde un hub y relleno con nodos aleatorios)
@@ -84,235 +187,164 @@ def generar_subgrafos_muestra(grafo, tamanos=(1_000, 10_000, 50_000, 100_000), s
     return subgrafos
 
 
+def escala_pagerank(subgrafos):
+    """PageRank y grado ponderado por tamaño: tiempo con repeticiones y memoria en una pasada aparte."""
+    filas = []
+    for _, g in sorted(subgrafos.items()):
+        t_pr, _ = medir_tiempos(pagerank, g)
+        t_gr, _ = medir_tiempos(grado_ponderado_ranking, g)
+        _, act_pr, pico_pr = medir_memoria(pagerank, g)
+        _, act_gr, pico_gr = medir_memoria(grado_ponderado_ranking, g)
+        fila = {"n": g.n_nodos, "aristas": g.n_aristas}
+        fila.update(estadisticos("ms_pagerank", t_pr, 1e3))
+        fila.update(estadisticos("ms_grado", t_gr, 1e3))
+        fila.update(mem_actual_pr_bytes=act_pr, mem_pico_pr_bytes=pico_pr,
+                    mem_actual_grado_bytes=act_gr, mem_pico_grado_bytes=pico_gr)
+        filas.append(fila)
+        print(f"PageRank n = {g.n_nodos:,}: {fila['ms_pagerank']:.1f} ms ({len(t_pr)} repeticiones)", flush=True)
+    return pd.DataFrame(filas)
+
+
+def escala_comunidades(subgrafos, semilla=config.SEED):
+    """Louvain y LPA por tamaño: tiempo con repeticiones, memoria aparte, modularidad y comunidades."""
+    filas = []
+    for _, g in sorted(subgrafos.items()):
+        t_lv, (comm_lv, mod_lv, niveles_lv) = medir_tiempos(louvain, g, semilla=semilla)
+        t_lpa, (comm_lpa, iters_lpa, mod_lpa) = medir_tiempos(label_propagation, g, semilla=semilla)
+        _, act_lv, pico_lv = medir_memoria(louvain, g, semilla=semilla)
+        _, act_lpa, pico_lpa = medir_memoria(label_propagation, g, semilla=semilla)
+        fila = {"n": g.n_nodos, "aristas": g.n_aristas}
+        fila.update(estadisticos("segundos_louvain", t_lv))
+        fila.update(modularidad_louvain=mod_lv, comunidades_louvain=int(len(np.unique(comm_lv))),
+                    niveles_louvain=niveles_lv, mem_actual_louvain_bytes=act_lv, mem_pico_louvain_bytes=pico_lv)
+        fila.update(estadisticos("segundos_lpa", t_lpa))
+        fila.update(modularidad_lpa=mod_lpa, comunidades_lpa=int(len(np.unique(comm_lpa))),
+                    iteraciones_lpa=iters_lpa, mem_actual_lpa_bytes=act_lpa, mem_pico_lpa_bytes=pico_lpa)
+        filas.append(fila)
+        print(f"Comunidades n = {g.n_nodos:,}: Louvain {fila['segundos_louvain']:.2f} s ({len(t_lv)} repeticiones), "
+              f"LPA {fila['segundos_lpa']:.2f} s ({len(t_lpa)} repeticiones)", flush=True)
+    return pd.DataFrame(filas)
+
+
+def referencia_networkx(subgrafos, escala_pr, escala_com, semilla=config.SEED, n_max=N_MAX_NETWORKX):
+    """PageRank y Louvain de NetworkX con el mismo protocolo, frente a los tiempos propios de las tablas de escala.
+
+    Hasta n_max nodos, porque NetworkX construye un objeto por nodo y por arista. También se
+    informa el error máximo entre los dos PageRank y la modularidad de las dos particiones.
+    """
+    propio_pr = escala_pr.set_index("n")
+    propio_com = escala_com.set_index("n")
+    filas = []
+    for _, g in sorted(subgrafos.items()):
+        if g.n_nodos > n_max:
+            continue
+        G = nx.Graph()
+        G.add_nodes_from(range(g.n_nodos))
+        G.add_weighted_edges_from(g.aristas())
+        t_pr, pr_nx = medir_tiempos(nx.pagerank, G, alpha=0.85, tol=1e-6, weight="weight")
+        t_lv, comms_nx = medir_tiempos(nx.community.louvain_communities, G, seed=semilla, weight="weight")
+        pr_propio, _, _ = pagerank(g)
+        comm_propio, mod_propia, _ = louvain(g, semilla=semilla)
+        fila = {"n": g.n_nodos, "aristas": g.n_aristas,
+                "ms_pagerank_propio": propio_pr.loc[g.n_nodos, "ms_pagerank"],
+                "segundos_louvain_propio": propio_com.loc[g.n_nodos, "segundos_louvain"]}
+        fila.update(estadisticos("ms_pagerank_nx", t_pr, 1e3))
+        fila.update(estadisticos("segundos_louvain_nx", t_lv))
+        fila.update(speedup_pagerank=fila["ms_pagerank_nx"] / fila["ms_pagerank_propio"],
+                    speedup_louvain=fila["segundos_louvain_nx"] / fila["segundos_louvain_propio"],
+                    error_max_pagerank=float(max(abs(pr_propio[i] - pr_nx[i]) for i in range(g.n_nodos))),
+                    modularidad_propia=mod_propia,
+                    modularidad_nx=nx.community.modularity(G, comms_nx, weight="weight"),
+                    comunidades_propia=int(len(np.unique(comm_propio))), comunidades_nx=len(comms_nx))
+        filas.append(fila)
+        print(f"NetworkX n = {g.n_nodos:,}: PageRank {fila['ms_pagerank_nx']:.1f} ms, "
+              f"Louvain {fila['segundos_louvain_nx']:.2f} s", flush=True)
+    return pd.DataFrame(filas)
+
+
+# ----- 4. Estabilidad -------------------------------------------------------------
+
+def estabilidad_comunidades(grafo, semillas=SEMILLAS_ESTABILIDAD):
+    """Louvain y LPA con varias semillas: comunidades, tamaños, modularidad y acuerdo entre particiones.
+
+    Los dos algoritmos visitan los nodos en un orden aleatorio, así que la partición puede cambiar
+    con la semilla. Para cada semilla se informan el NMI y el ARI medios frente a las particiones de
+    las demás semillas; un algoritmo estable da valores cercanos a 1.
+    """
+    filas = []
+    for nombre, algoritmo in (("louvain", louvain), ("lpa", label_propagation)):
+        particiones = []
+        for s in semillas:
+            segundos, resultado = medir(algoritmo, grafo, semilla=s)
+            comm = resultado[0]
+            tamanos = np.bincount(comm)
+            particiones.append(comm)
+            filas.append({"algoritmo": nombre, "semilla": s, "segundos": segundos,
+                          "comunidades": int(len(tamanos)), "modularidad": modularidad(grafo, comm),
+                          "comunidad_max": int(tamanos.max()), "comunidad_mediana": float(np.median(tamanos)),
+                          "comunidad_p90": float(np.percentile(tamanos, 90)),
+                          "comunidades_unitarias": int((tamanos == 1).sum())})
+        inicio = len(filas) - len(semillas)
+        for i in range(len(semillas)):
+            otras = [j for j in range(len(semillas)) if j != i]
+            filas[inicio + i]["nmi_media"] = float(np.mean(
+                [informacion_mutua_normalizada(particiones[i], particiones[j]) for j in otras])) if otras else 1.0
+            filas[inicio + i]["ari_media"] = float(np.mean(
+                [indice_rand_ajustado(particiones[i], particiones[j]) for j in otras])) if otras else 1.0
+        print(f"Estabilidad de {nombre}: {len(semillas)} semillas", flush=True)
+    return pd.DataFrame(filas)
+
+
+# ----- 5. Efecto de la exclusión de la etapa 6 --------------------------------------
+
+def efecto_exclusion_etapa6(ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_bloqueadas=RUTA_BLOQUEADAS):
+    """Compara el grafo con las órdenes bloqueadas por la etapa 6 excluidas y el grafo sin excluirlas.
+
+    Revisión técnica 2026-10-28 (punto 1.6): solo una orden bloqueada con dos o más productos
+    distintos puede aportar aristas, así que la tabla también cuenta esas órdenes.
+    """
+    con = extraer_cocompras(ruta_eventos, ruta_bloqueadas)
+    sin = extraer_cocompras(ruta_eventos, None)
+
+    def aristas(g):
+        filas = np.repeat(np.arange(g.n_nodos), np.diff(g.indptr))
+        asins = np.asarray(g.asins)
+        mitad = filas < g.indices
+        return dict(zip(zip(asins[filas[mitad]].tolist(), asins[g.indices[mitad]].tolist()), g.data[mitad].tolist()))
+
+    aristas_con, aristas_sin = aristas(con), aristas(sin)
+    comunes = aristas_con.keys() & aristas_sin.keys()
+    return pd.DataFrame([{
+        "compras_bloqueadas_excluidas": con.compras_bloqueadas,
+        "ordenes_bloqueadas_excluidas": con.ordenes_bloqueadas_excluidas,
+        "ordenes_bloqueadas_con_cocompra": con.ordenes_bloqueadas_con_cocompra,
+        "nodos_con_exclusion": con.n_nodos, "nodos_sin_exclusion": sin.n_nodos,
+        "aristas_con_exclusion": con.n_aristas, "aristas_sin_exclusion": sin.n_aristas,
+        "peso_con_exclusion": con.peso_total, "peso_sin_exclusion": sin.peso_total,
+        "nodos_solo_sin_exclusion": len(set(sin.asins) - set(con.asins)),
+        "aristas_solo_sin_exclusion": len(aristas_sin.keys() - aristas_con.keys()),
+        "aristas_con_peso_distinto": sum(1 for k in comunes if aristas_con[k] != aristas_sin[k]),
+    }])
+
+
+# ----- Ejecución desde la terminal ---------------------------------------------------
+
 def ejecutar_benchmarks(semilla=config.SEED):
+    """Mide los experimentos de los pasos 6, 9 y 10 del notebook y guarda las tablas en results/etapa_8/."""
     CARPETA_RESULTADOS_E8.mkdir(parents=True, exist_ok=True)
     grafo = GrafoCoCompra.cargar_npz(RUTA_GRAFO)
     print(f"Grafo base cargado: {grafo.n_nodos:,} nodos, {grafo.n_aristas:,} aristas")
-
-    # ----- 1. Grilla de sensibilidad de PageRank (Alpha) -------------------------
-    print("\n--- Ejecutando Grilla Alpha PageRank ---")
-    alphas = [0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
-    res_alpha = []
-    top_asins_por_alpha = {}
-
-    for a in alphas:
-        pr, iters, conv = pagerank(grafo, alpha=a, tol=1e-6)
-        top10_idx = np.argsort(-pr)[:10]
-        top_asins_por_alpha[a] = [grafo.asins[i] for i in top10_idx]
-        res_alpha.append({
-            "alpha": a,
-            "iteraciones": iters,
-            "convergido": conv,
-            "max_score": float(pr.max()),
-            "min_score": float(pr.min()),
-            "std_score": float(pr.std()),
-            "top1_asin": grafo.asins[top10_idx[0]],
-            "top1_score": float(pr[top10_idx[0]])
-        })
-
-    df_alpha = pd.DataFrame(res_alpha)
-    df_alpha.to_csv(CARPETA_RESULTADOS_E8 / "grilla_alpha.csv", index=False)
-    print(df_alpha[["alpha", "iteraciones", "top1_asin", "top1_score"]])
-
-    # ----- 2. Grilla de resolución de Louvain ------------------------------------
-    print("\n--- Ejecutando Grilla Resolución Louvain ---")
-    # Auditoría 2026-10-27: la grilla anterior usaba asins[:10_000] (orden alfabético), un subgrafo
-    # casi sin aristas (8 488 comunidades de mediana 1 para todo gamma). Ahora se usa el grafo
-    # completo y se reporta cuántas comunidades caen dentro de cada componente conexa.
-    n_cc, etiquetas_cc = componentes_conexas(grafo)
-    gammas = [0.5, 1.0, 2.0, 5.0, 10.0, 20.0]
-    res_gamma = []
-
-    for g in gammas:
-        comm, mod, niveles = louvain(grafo, resolucion=g, semilla=semilla)
-        n_comm = len(np.unique(comm))
-        _, counts = np.unique(comm, return_counts=True)
-        res_gamma.append({
-            "resolucion": g,
-            "modularidad": mod,
-            "n_comunidades": n_comm,
-            "componentes_conexas": n_cc,
-            "comunidades_por_componente": n_comm / n_cc,
-            "niveles": niveles,
-            "comunidad_max_nodos": int(counts.max()),
-            "comunidad_mediana_nodos": float(np.median(counts))
-        })
-
-    df_gamma = pd.DataFrame(res_gamma)
-    df_gamma.to_csv(CARPETA_RESULTADOS_E8 / "grilla_resolucion.csv", index=False)
-    print(df_gamma)
-
-    # ----- 3. Subgrafos y Escalabilidad (1K, 10K, 50K, 100K, 150K) --------------
-    print("\n--- Generando Subgrafos Inducidos para Escala ---")
-    subgrafos = generar_subgrafos_muestra(grafo, tamanos=(1_000, 10_000, 50_000, 100_000), semilla=semilla)
-
-    escala_pr = []
-    escala_comm = []
-    ref_nx = []
-
-    for n_tam, g_sub in sorted(subgrafos.items()):
-        print(f"\n--- Evaluando n = {n_tam:,} (|V|={g_sub.n_nodos:,}, |E|={g_sub.n_aristas:,}) ---")
-
-        # PageRank y Grado Ponderado
-        _, t_pr, mem_act_pr, mem_pico_pr = medir_memoria_y_tiempo(pagerank, g_sub, alpha=0.85, tol=1e-6)
-        _, t_grado, mem_act_gr, mem_pico_gr = medir_memoria_y_tiempo(grado_ponderado_ranking, g_sub)
-
-        escala_pr.append({
-            "n": g_sub.n_nodos,
-            "aristas": g_sub.n_aristas,
-            "ms_pagerank": t_pr * 1e3,
-            "ms_grado": t_grado * 1e3,
-            "mem_actual_pr_bytes": mem_act_pr,
-            "mem_pico_pr_bytes": mem_pico_pr,
-            "mem_actual_grado_bytes": mem_act_gr,
-            "mem_pico_grado_bytes": mem_pico_gr
-        })
-
-        # Louvain y LPA
-        (comm_louv, mod_louv, niveles_louv), t_louv, mem_act_l, mem_pico_l = medir_memoria_y_tiempo(
-            louvain, g_sub, resolucion=1.0, semilla=semilla
-        )
-        (comm_lpa, iters_lpa, mod_lpa), t_lpa, mem_act_lpa, mem_pico_lpa = medir_memoria_y_tiempo(
-            label_propagation, g_sub, semilla=semilla
-        )
-
-        escala_comm.append({
-            "n": g_sub.n_nodos,
-            "aristas": g_sub.n_aristas,
-            "segundos_louvain": t_louv,
-            "modularidad_louvain": mod_louv,
-            "comunidades_louvain": len(np.unique(comm_louv)),
-            "niveles_louvain": niveles_louv,
-            "mem_actual_louvain_bytes": mem_act_l,
-            "mem_pico_louvain_bytes": mem_pico_l,
-            "segundos_lpa": t_lpa,
-            "modularidad_lpa": mod_lpa,
-            "comunidades_lpa": len(np.unique(comm_lpa)),
-            "iteraciones_lpa": iters_lpa,
-            "mem_actual_lpa_bytes": mem_act_lpa,
-            "mem_pico_lpa_bytes": mem_pico_lpa
-        })
-
-        # NetworkX comparación (hasta 50K por tiempo de construcción de objetos NetworkX)
-        if g_sub.n_nodos <= 50_000:
-            print(f"  Ejecutando NetworkX de referencia para {g_sub.n_nodos:,}...")
-            # Construir grafo NetworkX
-            G_nx = nx.Graph()
-            for u, v, w in g_sub.aristas():
-                G_nx.add_edge(u, v, weight=w)
-
-            # PageRank NX
-            t_nx_pr0 = time.perf_counter()
-            pr_nx = nx.pagerank(G_nx, alpha=0.85, tol=1e-6, weight="weight")
-            t_nx_pr = time.perf_counter() - t_nx_pr0
-
-            # Louvain NX
-            t_nx_l0 = time.perf_counter()
-            comms_nx_l = list(nx.community.louvain_communities(G_nx, seed=semilla, weight="weight"))
-            t_nx_l = time.perf_counter() - t_nx_l0
-            mod_nx_l = nx.community.modularity(G_nx, comms_nx_l, weight="weight")
-
-            ref_nx.append({
-                "n": g_sub.n_nodos,
-                "aristas": g_sub.n_aristas,
-                "ms_pagerank_propio": t_pr * 1e3,
-                "ms_pagerank_nx": t_nx_pr * 1e3,
-                "speedup_pagerank": (t_nx_pr * 1e3) / max(t_pr * 1e3, 1e-4),
-                "segundos_louvain_propio": t_louv,
-                "segundos_louvain_nx": t_nx_l,
-                "speedup_louvain": t_nx_l / max(t_louv, 1e-4),
-                "modularidad_propia": mod_louv,
-                "modularidad_nx": mod_nx_l,
-                "comunidades_propia": len(np.unique(comm_louv)),
-                "comunidades_nx": len(comms_nx_l)
-            })
-
-    # Guardar CSVs
-    pd.DataFrame(escala_pr).to_csv(CARPETA_RESULTADOS_E8 / "escala_pagerank.csv", index=False)
-    pd.DataFrame(escala_comm).to_csv(CARPETA_RESULTADOS_E8 / "escala_comunidades.csv", index=False)
-    pd.DataFrame(ref_nx).to_csv(CARPETA_RESULTADOS_E8 / "referencia_networkx.csv", index=False)
-
-    print("\nResultados CSV guardados con éxito en results/etapa_8/.")
-
-    # ----- 4. Generación de Gráficas Técnicas -------------------------------------
-    generar_graficas(grafo, df_alpha, pd.DataFrame(escala_pr), pd.DataFrame(escala_comm), pd.DataFrame(ref_nx))
-
-
-def generar_graficas(grafo, df_alpha, df_pr, df_comm, df_ref):
-    plt.style.use("seaborn-v0_8-whitegrid" if "seaborn-v0_8-whitegrid" in plt.style.available else "default")
-
-    # 1. Distribución de Grados (Ley de Potencias)
-    grados = grafo.grados_ponderados()
-    grados_pos = grados[grados > 0]
-    fig, ax = plt.subplots(figsize=(7, 4.5), dpi=150)
-    conteo = Counter(grados_pos.astype(int))
-    x_val = sorted(conteo.keys())
-    y_val = [conteo[k] for k in x_val]
-    ax.loglog(x_val, y_val, "o", markersize=3, color="#1f77b4", alpha=0.7)
-    ax.set_title("Distribución de Grado Ponderado en Grafo de Co-compra (Escala Log-Log)", fontsize=11, fontweight="bold")
-    ax.set_xlabel("Grado ponderado ($k_i = \sum w_{ij}$)", fontsize=10)
-    ax.set_ylabel("Frecuencia (# de productos)", fontsize=10)
-    plt.tight_layout()
-    plt.savefig(CARPETA_RESULTADOS_E8 / "distribucion_grados.png")
-    plt.close()
-
-    # 2. PageRank vs Grado Ponderado (Discrepancia y Centralidad)
-    pr_scores, _, _ = pagerank(grafo, alpha=0.85, tol=1e-6)
-    fig, ax = plt.subplots(figsize=(7, 4.5), dpi=150)
-    ax.scatter(grados[:10_000], pr_scores[:10_000], alpha=0.3, s=8, color="#2ca02c")
-    ax.set_xscale("log")
-    ax.set_yscale("log")
-    ax.set_title("PageRank vs Grado Ponderado (Muestra 10K productos)", fontsize=11, fontweight="bold")
-    ax.set_xlabel("Grado Ponderado (Local)", fontsize=10)
-    ax.set_ylabel("Score de PageRank (Global)", fontsize=10)
-    plt.tight_layout()
-    plt.savefig(CARPETA_RESULTADOS_E8 / "pagerank_vs_grado.png")
-    plt.close()
-
-    # 3. Escalabilidad de PageRank frente a Grado
-    fig, ax = plt.subplots(figsize=(7, 4.5), dpi=150)
-    ax.plot(df_pr["n"], df_pr["ms_pagerank"], "o-", label="PageRank (Power Iteration, CSR)", color="#d62728", lw=1.8)
-    ax.plot(df_pr["n"], df_pr["ms_grado"], "s--", label="Grado Ponderado (Línea Base)", color="#7f7f7f", lw=1.5)
-    ax.set_xscale("log")
-    ax.set_yscale("log")
-    ax.set_title("Escalabilidad Temporal: PageRank vs Grado Ponderado", fontsize=11, fontweight="bold")
-    ax.set_xlabel("Número de nodos (|V|)", fontsize=10)
-    ax.set_ylabel("Tiempo de ejecución (ms)", fontsize=10)
-    ax.legend(frameon=True)
-    plt.tight_layout()
-    plt.savefig(CARPETA_RESULTADOS_E8 / "escala_pagerank.png")
-    plt.close()
-
-    # 4. Escalabilidad de Louvain vs LPA
-    fig, ax1 = plt.subplots(figsize=(7, 4.5), dpi=150)
-    ax1.plot(df_comm["n"], df_comm["segundos_louvain"], "o-", label="Louvain (Tiempo s)", color="#1f77b4", lw=1.8)
-    ax1.plot(df_comm["n"], df_comm["segundos_lpa"], "s--", label="LPA (Tiempo s)", color="#ff7f0e", lw=1.5)
-    ax1.set_xscale("log")
-    ax1.set_yscale("log")
-    ax1.set_title("Escalabilidad Temporal y Calidad: Louvain vs LPA", fontsize=11, fontweight="bold")
-    ax1.set_xlabel("Número de nodos (|V|)", fontsize=10)
-    ax1.set_ylabel("Tiempo de ejecución (segundos)", fontsize=10)
-    ax1.legend(loc="upper left", frameon=True)
-    plt.tight_layout()
-    plt.savefig(CARPETA_RESULTADOS_E8 / "escala_comunidades.png")
-    plt.close()
-
-    # 5. Comparación Propia vs NetworkX (Speedup)
-    if len(df_ref) > 0:
-        fig, ax = plt.subplots(figsize=(7, 4.5), dpi=150)
-        ax.plot(df_ref["n"], df_ref["speedup_pagerank"], "o-", label="Speedup PageRank Propio vs NetworkX", color="#2ca02c", lw=1.8)
-        ax.plot(df_ref["n"], df_ref["speedup_louvain"], "s-", label="Speedup Louvain Propio vs NetworkX", color="#1f77b4", lw=1.8)
-        ax.axhline(1.0, color="gray", linestyle="--", alpha=0.6)
-        ax.set_xscale("log")
-        ax.set_title("Speedup de Implementaciones Propias en CSR frente a NetworkX", fontsize=11, fontweight="bold")
-        ax.set_xlabel("Número de nodos (|V|)", fontsize=10)
-        ax.set_ylabel("Aceleración ($T_{NetworkX} / T_{Propio}$)", fontsize=10)
-        ax.legend(frameon=True)
-        plt.tight_layout()
-        plt.savefig(CARPETA_RESULTADOS_E8 / "referencia_networkx.png")
-        plt.close()
-
-    print("Gráficas técnicas PNG generadas en results/etapa_8/.")
+    tablas = {"grilla_alpha": grilla_alpha(grafo), "grilla_resolucion": grilla_resolucion(grafo, semilla=semilla)}
+    subgrafos = generar_subgrafos_muestra(grafo, semilla=semilla)
+    tablas["escala_pagerank"] = escala_pagerank(subgrafos)
+    tablas["escala_comunidades"] = escala_comunidades(subgrafos, semilla=semilla)
+    tablas["referencia_networkx"] = referencia_networkx(subgrafos, tablas["escala_pagerank"],
+                                                        tablas["escala_comunidades"], semilla=semilla)
+    tablas["estabilidad_cocompra"] = estabilidad_comunidades(grafo)
+    tablas["exclusion_etapa6"] = efecto_exclusion_etapa6()
+    for nombre, tabla in tablas.items():
+        tabla.to_csv(CARPETA_RESULTADOS_E8 / f"{nombre}.csv", index=False)
+    print("Resultados CSV guardados en results/etapa_8/.")
 
 
 if __name__ == "__main__":

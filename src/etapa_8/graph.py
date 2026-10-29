@@ -25,6 +25,7 @@ Construcción y análisis del grafo de co-compra para el escenario B (comercio e
     internamente desconectadas (Traag, Waltman y van Eck, 2019). Ambas particiones se post-procesan
     con dividir_comunidades_desconectadas en O(|V| + |E|); dividir nunca reduce Q.
 - Modularidad exacta Q: evaluación cuantitativa de las particiones encontradas.
+- Estabilidad: NMI y ARI entre las particiones que dan distintas semillas, en O(|V| log |V|).
 - ejecutar_etapa: procesa el stream de eventos de compras, genera el grafo, calcula PageRank y
   comunidades, y escribe los artefactos para el servicio y visualización de la etapa 9.
 
@@ -68,8 +69,8 @@ MAX_ITER_LPA = 30             # iteraciones máximas de Label Propagation
 # ----- Carga de órdenes bloqueadas ------------------------------------------------
 
 def ordenes_bloqueadas(ruta_bloqueadas=RUTA_BLOQUEADAS):
-    """Devuelve el conjunto de order_ids bloqueados por la etapa 6 por fraude."""
-    if not Path(ruta_bloqueadas).exists():
+    """Devuelve el conjunto de order_ids bloqueados por la etapa 6 por fraude (vacío con None)."""
+    if ruta_bloqueadas is None or not Path(ruta_bloqueadas).exists():
         return set()
     with open(ruta_bloqueadas, encoding="utf-8") as f:
         return set(json.load(f))
@@ -276,11 +277,16 @@ def extraer_cocompras(ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_bloqueadas=RUTA_BLO
 
     1. Filtra los eventos de tipo 'purchase'.
     2. Excluye cualquier evento cuyo order_id esté en RUTA_BLOQUEADAS (fraude de etapa 6).
+       Con ruta_bloqueadas=None no se excluye ninguna orden, para medir el efecto de la exclusión.
     3. Agrupa los productos comprados por cada orden legítima.
     4. Acumula las parejas de productos que co-ocurrieron en al menos `min_peso` órdenes.
+
+    Las órdenes bloqueadas con dos o más productos distintos son las únicas que habrían aportado
+    aristas; se cuentan en grafo.ordenes_bloqueadas_con_cocompra.
     """
     bloqueadas = ordenes_bloqueadas(ruta_bloqueadas)
     ordenes = defaultdict(set)
+    productos_bloqueados = defaultdict(set)
     n_compras = 0
     compras_bloqueadas = 0
 
@@ -291,6 +297,8 @@ def extraer_cocompras(ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_bloqueadas=RUTA_BLO
             n_compras += 1
             if ev.order_id in bloqueadas:
                 compras_bloqueadas += 1
+                if ev.parent_asin:
+                    productos_bloqueados[ev.order_id].add(ev.parent_asin)
                 continue
             if ev.order_id and ev.parent_asin:
                 ordenes[ev.order_id].add(ev.parent_asin)
@@ -328,6 +336,8 @@ def extraer_cocompras(ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_bloqueadas=RUTA_BLO
     grafo.compras_bloqueadas = compras_bloqueadas
     grafo.ordenes_legitimas = len(ordenes)
     grafo.ordenes_con_cocompra = sum(1 for p in ordenes.values() if len(p) >= 2)
+    grafo.ordenes_bloqueadas_excluidas = len(productos_bloqueados)
+    grafo.ordenes_bloqueadas_con_cocompra = sum(1 for p in productos_bloqueados.values() if len(p) >= 2)
     return grafo
 
 
@@ -656,6 +666,60 @@ def label_propagation(grafo, max_iter=MAX_ITER_LPA, semilla=config.SEED, garanti
     return comm, it, mod
 
 
+# ----- Estabilidad: comparación de dos particiones ---------------------------------
+
+def _codificar_particiones(a, b):
+    """Etiquetas 0 .. C - 1 de las dos particiones y la clave de cada par (a_i, b_i) en int64."""
+    a = np.unique(np.asarray(a), return_inverse=True)[1].astype(np.int64)
+    b = np.unique(np.asarray(b), return_inverse=True)[1].astype(np.int64)
+    if len(a) != len(b):
+        raise ValueError("las dos particiones deben tener la misma cantidad de nodos")
+    nb = int(b.max()) + 1 if len(b) else 1
+    return a, b, nb
+
+
+def informacion_mutua_normalizada(a, b):
+    """NMI entre dos particiones: I(A; B) / ((H(A) + H(B)) / 2), en [0, 1] (Danon et al., 2005).
+
+    Vale 1 si las particiones son iguales salvo el nombre de las comunidades y 0 si son
+    independientes. La tabla de contingencia sale de un np.unique sobre los pares: O(n log n).
+    """
+    a, b, nb = _codificar_particiones(a, b)
+    n = len(a)
+    if n == 0:
+        return 1.0
+    claves, n_ij = np.unique(a * nb + b, return_counts=True)
+    f_a, f_b = np.bincount(a) / n, np.bincount(b) / n
+    p_ij = n_ij / n
+    info_mutua = float(np.sum(p_ij * np.log(p_ij / (f_a[claves // nb] * f_b[claves % nb]))))
+    h_a = float(-np.sum(f_a * np.log(f_a)))
+    h_b = float(-np.sum(f_b * np.log(f_b)))
+    if h_a + h_b == 0:
+        return 1.0                                   # las dos tienen una sola comunidad
+    return 2.0 * info_mutua / (h_a + h_b)
+
+
+def indice_rand_ajustado(a, b):
+    """ARI de Hubert y Arabie (1985): acuerdo entre pares de nodos corregido por azar.
+
+    Vale 1 si las particiones son iguales y es cercano a 0 si son independientes. O(n log n).
+    """
+    a, b, nb = _codificar_particiones(a, b)
+    n = len(a)
+
+    def pares(conteos):
+        conteos = conteos.astype(np.float64)
+        return float(np.sum(conteos * (conteos - 1.0)) / 2.0)
+
+    suma_ij = pares(np.unique(a * nb + b, return_counts=True)[1])
+    suma_a, suma_b = pares(np.bincount(a)), pares(np.bincount(b))
+    esperado = suma_a * suma_b / (n * (n - 1) / 2.0) if n > 1 else 0.0
+    maximo = (suma_a + suma_b) / 2.0
+    if maximo == esperado:
+        return 1.0
+    return (suma_ij - esperado) / (maximo - esperado)
+
+
 # ----- Ejecución y Generación de Entregables --------------------------------------
 
 def ejecutar_etapa(ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_bloqueadas=RUTA_BLOQUEADAS,
@@ -689,6 +753,8 @@ def ejecutar_etapa(ruta_eventos=RUTA_EVENTOS_ETAPA2, ruta_bloqueadas=RUTA_BLOQUE
         "min_peso": min_peso,
         "compras_procesadas": getattr(grafo, "compras_procesadas", 0),
         "compras_bloqueadas_excluidas": getattr(grafo, "compras_bloqueadas", 0),
+        "ordenes_bloqueadas_excluidas": getattr(grafo, "ordenes_bloqueadas_excluidas", 0),
+        "ordenes_bloqueadas_con_cocompra": getattr(grafo, "ordenes_bloqueadas_con_cocompra", 0),
         "ordenes_legitimas": getattr(grafo, "ordenes_legitimas", 0),
         "ordenes_con_cocompra": getattr(grafo, "ordenes_con_cocompra", 0),
         "segundos_extraccion": t_extraccion,

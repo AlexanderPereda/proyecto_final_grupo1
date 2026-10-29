@@ -11,14 +11,14 @@ Este script aplica los algoritmos de la etapa 8 a esa señal real:
 - Se compara con el grafo sintético: componentes, PageRank frente al grado, Louvain/LPA y la pureza
   de categoría y de tienda frente a etiquetas permutadas al azar.
 
-Ejecutar: .venv/bin/python -m src.etapa_8.grafo_resenas_reales [--grilla]
+El notebook de la etapa 8 llama a main y a grilla_resolucion (paso 10). Desde la terminal:
+    python -m src.etapa_8.grafo_resenas_reales [--grilla]
 Salida: results/etapa_8/grafo_resenas_reales.json y data/interim/<CATEGORIA>/etapa_8/grafo_resenas.npz;
 con --grilla, results/etapa_8/grilla_resolucion_resenas.csv (Louvain con gamma creciente sobre el
 grafo real, para ver el efecto del límite de resolución en la pureza temática).
 """
 
 import json
-import resource
 import sys
 import time
 
@@ -28,6 +28,7 @@ import pyarrow.parquet as pq
 from scipy.stats import spearmanr
 
 from .. import config
+from .escala_stream import rss_pico_gb
 from .graph import (
     CARPETA_ETAPA8, GrafoCoCompra, componentes_conexas, dividir_comunidades_desconectadas, label_propagation,
     louvain, modularidad, pagerank,
@@ -139,11 +140,11 @@ def main():
         freq = pd.Series(valores).value_counts(normalize=True)
         res[f"homofilia_{nombre}_azar"] = float((freq ** 2).sum())
 
-    pico = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    res["rss_pico_gb"] = pico / 2**30 if sys.platform == "darwin" else pico / 2**20
+    res["rss_pico_gb"] = rss_pico_gb()
     res["segundos_total"] = time.perf_counter() - t0
     RUTA_SALIDA.write_text(json.dumps(res, indent=2), encoding="utf-8")
     print(json.dumps(res, indent=2), flush=True)
+    return res
 
 
 GAMMAS = [1.0, 2.0, 5.0, 10.0, 20.0]
@@ -167,6 +168,7 @@ def grilla_resolucion():
         filas.append(fila)
         print(fila, flush=True)
         pd.DataFrame(filas).to_csv(config.RAIZ / "results" / "etapa_8" / "grilla_resolucion_resenas.csv", index=False)
+    return pd.DataFrame(filas)
 
 
 if __name__ == "__main__":
