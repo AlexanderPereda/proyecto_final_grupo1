@@ -1,4 +1,4 @@
-"""Genera visualizador/pipeline.html con la traza de las etapas 0, 1 y 2 incrustada.
+"""Genera visualizador/pipeline_etapa_0_1_2.html con la traza de las etapas 0, 1 y 2 incrustada.
 
 El resultado es un solo archivo HTML que se abre con doble clic, sin servidor.
 
@@ -29,7 +29,7 @@ def leer_argumentos():
     parser.add_argument("--semilla", type=int, default=config.SEED, help="semilla del generador")
     parser.add_argument("--saltar", type=int, default=SALTAR,
                         help="eventos iniciales del stream que no se trazan")
-    parser.add_argument("--salida", type=Path, default=RAIZ / "visualizador" / "pipeline.html",
+    parser.add_argument("--salida", type=Path, default=RAIZ / "visualizador" / "pipeline_etapa_0_1_2.html",
                         help="ruta del archivo HTML")
     return parser.parse_args()
 

@@ -6,7 +6,7 @@ Proyecto EDA 2026-2 · Grupo 1 · Escenario B (comercio electrónico)
 
 ## Resumen
 
-La etapa 9 es el servicio del escenario B, que pide "proporcionar autocompletado, resultados ordenados por relevancia o popularidad, recomendaciones y panel de ventas, actividad y alertas". `ServicioEcommerce` carga las salidas de las etapas 2 a 8 y responde cada consulta con estructuras implementadas a mano: un **Trie radix** con caché Top-K para el autocompletado, con un modo difuso para los errores de tipeo; un **índice invertido** para la búsqueda; un **TopKHeap**, un MinHeap acotado, para elegir los K mejores candidatos; y un **scoring híbrido** que combina las señales de las etapas 7 y 8. Un dashboard en HTML (`visualizador/dashboard_servicio.html`) muestra las respuestas.
+La etapa 9 es el servicio del escenario B, que pide "proporcionar autocompletado, resultados ordenados por relevancia o popularidad, recomendaciones y panel de ventas, actividad y alertas". `ServicioEcommerce` carga las salidas de las etapas 2 a 8 y responde cada consulta con estructuras implementadas a mano: un **Trie radix** con caché Top-K para el autocompletado, con un modo difuso para los errores de tipeo; un **índice invertido** para la búsqueda; un **TopKHeap**, un MinHeap acotado, para elegir los K mejores candidatos; y un **scoring híbrido** que combina las señales de las etapas 7 y 8. Un dashboard en HTML (`visualizador/dashboard_etapa_9_servicio.html`) muestra las respuestas.
 
 | Estructura | Consulta | Complejidad | Resultado principal |
 | --- | --- | --- | --- |
@@ -89,7 +89,7 @@ Etapa 9  ServicioEcommerce ◄── etapa 2: ventas y actividad del panel
 | --- | --- |
 | `etapa_9/metricas.json` | Latencias p50 y p95 de cada consulta, tamaños de los índices y pesos del scoring |
 | `etapa_9/demo_consultas.json` | Consultas precalculadas, panel de ventas y alertas |
-| `visualizador/dashboard_servicio.html` | Dashboard con los dos archivos anteriores incrustados |
+| `visualizador/dashboard_etapa_9_servicio.html` | Dashboard con los dos archivos anteriores incrustados |
 
 El código está en `src/etapa_9/`: `service.py` (estructuras y servicio), `dashboard.py` y `plantilla_dashboard.html` (dashboard), `benchmark.py` (experimentos de escala), `evaluacion_scoring.py` y `evaluacion_real.py` (calibración del scoring) y `analisis_campos_reales.py`. El notebook es `notebooks/etapa9_servicio_visualizacion.ipynb`.
 
@@ -288,7 +288,7 @@ Sin el modo difuso, entre el 94 % y el 96 % de las consultas con un error de tip
 
 ## Dashboard
 
-`src/etapa_9/dashboard.py` genera `visualizador/dashboard_servicio.html` desde `src/etapa_9/plantilla_dashboard.html`, con `demo_consultas.json` y `metricas.json` incrustados, así que se abre sin servidor. Tiene cinco pestañas:
+`src/etapa_9/dashboard.py` genera `visualizador/dashboard_etapa_9_servicio.html` desde `src/etapa_9/plantilla_dashboard.html`, con `demo_consultas.json` y `metricas.json` incrustados, así que se abre sin servidor. Tiene cinco pestañas:
 
 - **Recomendación Top-K.** Un selector de productos del catálogo de demostración, la ficha del ancla y la tabla de recomendaciones con su fuente, sus señales y su stock, más un ejemplo con filtro por precio.
 - **Autocompletado y búsqueda.** Sugerencias exactas y difusas y resultados de búsqueda precalculados.
