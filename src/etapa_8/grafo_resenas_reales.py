@@ -1,7 +1,7 @@
 """Grafo de co-reseñas sobre las 12.8 M reseñas reales (auditoría 2026-10-27).
 
 Las co-compras del stream son sintéticas: el generador de la etapa 0 agrega a una orden productos
-del mismo grupo crc32(asin) % 500, sin relación con el producto (ver docs/auditoria_etapas_8_9.md).
+del mismo grupo crc32(asin) % 500, sin relación con el producto.
 La única señal de comportamiento real del dataset son las reseñas: quién reseñó qué y cuándo.
 Este script aplica los algoritmos de la etapa 8 a esa señal real:
 

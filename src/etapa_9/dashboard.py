@@ -1,4 +1,4 @@
-"""Genera visualizador/dashboard_servicio.html con los datos de la etapa 9 incrustados.
+"""Genera visualizador/dashboard_etapa_9_servicio.html con los datos de la etapa 9 incrustados.
 
 El resultado es un solo archivo HTML que se abre con doble clic, sin servidor, como el visualizador
 de las etapas 0 a 2 (scripts/generar_visualizador.py). La plantilla está en
@@ -15,7 +15,7 @@ from .. import config
 CARPETA_ETAPA9 = config.CARPETA_INTERIM / "etapa_9"
 RUTA_DEMO = CARPETA_ETAPA9 / "demo_consultas.json"
 RUTA_METRICAS = CARPETA_ETAPA9 / "metricas.json"
-RUTA_DASHBOARD = config.RAIZ / "visualizador" / "dashboard_servicio.html"
+RUTA_DASHBOARD = config.RAIZ / "visualizador" / "dashboard_etapa_9_servicio.html"
 PLANTILLA = Path(__file__).with_name("plantilla_dashboard.html")
 MARCADOR = "__DATOS_DASHBOARD__"
 

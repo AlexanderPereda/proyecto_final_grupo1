@@ -91,14 +91,14 @@ Cada notebook lee las salidas de los anteriores, así que se ejecutan en este or
 | 8 | `etapa6_filtrado_probabilistico.ipynb` | `etapa_6/`: alertas, compras y órdenes bloqueadas |
 | 9 | `etapa7_similitud_aproximada.ipynb` | `etapa_7/`: relacionados y similares |
 | 10 | `etapa8_grafo_dominio.ipynb` | `etapa_8/`: grafos de co-compra y co-reseñas, PageRank y comunidades |
-| 11 | `etapa9_servicio_visualizacion.ipynb` | `etapa_9/` y `visualizador/dashboard_servicio.html` |
+| 11 | `etapa9_servicio_visualizacion.ipynb` | `etapa_9/` y `visualizador/dashboard_etapa_9_servicio.html` |
 | 12 | `demo_pipeline.ipynb` | Ninguna: sigue un lote de 200 registros y dos eventos por las diez etapas |
 
 Los experimentos guardan sus tablas y gráficos en `results/etapa_<n>/`. Desde la etapa 1, cada notebook reutiliza las tablas que ya existen; con `REEJECUTAR_EXPERIMENTOS = True` las vuelve a medir.
 
 ### Experimentos desde la terminal
 
-Los notebooks 8 y 9 llaman a sus módulos, que también se ejecutan solos desde la raíz del repositorio. Las mediciones de la etapa 7 que pidió la [revisión técnica](docs/revision_tecnica.md) solo se ejecutan desde la terminal. Todos necesitan las salidas de los notebooks anteriores.
+Los notebooks 8 y 9 llaman a sus módulos, que también se ejecutan solos desde la raíz del repositorio. Las mediciones adicionales de la etapa 7 solo se ejecutan desde la terminal. Todos necesitan las salidas de los notebooks anteriores.
 
 | Comando | Salida |
 | --- | --- |
@@ -111,7 +111,7 @@ Los notebooks 8 y 9 llaman a sus módulos, que también se ejecutan solos desde 
 | `python -m src.etapa_9.evaluacion_real` | `results/etapa_9/evaluacion_real*`: evaluación con un objetivo real |
 | `python -m src.etapa_9.analisis_campos_reales` | `results/etapa_9/analisis_campos_reales.json` |
 | `python -m src.etapa_9.service` | La etapa 9 completa: `data/interim/Office_Products/etapa_9/` y el dashboard |
-| `python -m src.etapa_9.dashboard` | Solo vuelve a generar `visualizador/dashboard_servicio.html` |
+| `python -m src.etapa_9.dashboard` | Solo vuelve a generar `visualizador/dashboard_etapa_9_servicio.html` |
 
 ### Demo del pipeline
 
@@ -123,8 +123,9 @@ Son archivos HTML con los datos incrustados, que se abren con doble clic, sin se
 
 | Archivo | Contenido | Cómo se genera |
 | --- | --- | --- |
-| `visualizador/pipeline.html` | Traza paso a paso de las etapas 0 a 2 | `python scripts/generar_visualizador.py`, con la traza de `src/trace.py` |
-| `visualizador/dashboard_servicio.html` | Recomendación, autocompletado, ventas y actividad, alertas de fraude y arquitectura | Al final de la etapa 9, o con `python -m src.etapa_9.dashboard` |
+| `visualizador/pipeline_etapa_0_1_2.html` | Traza paso a paso de las etapas 0 a 2 | `python scripts/generar_visualizador.py`, con la traza de `src/trace.py` |
+| `visualizador/pipeline_completo.html` | Recorrido de las etapas 0 a 9 con los resultados de la demo del pipeline y los datos que pasan de una etapa a otra | `python scripts/generar_pipeline.py`, con las salidas guardadas de `notebooks/demo_pipeline.ipynb` |
+| `visualizador/dashboard_etapa_9_servicio.html` | Recomendación, autocompletado, ventas y actividad, alertas de fraude y arquitectura | Al final de la etapa 9, o con `python -m src.etapa_9.dashboard` |
 | `visualizador/mapa_escenario_b.html` | Mapa del escenario B por etapa: entrada, tratamiento, hallazgos y salida | Archivo estático |
 
 ### Tests
@@ -155,7 +156,7 @@ Axel es el mantenedor principal del repositorio.
 
 - Axel aparece con dos identidades de autor, `Axel Pereda` y `Axel Pereda Escalante`, con el mismo correo. [.mailmap](.mailmap) las une, así que `git shortlog -sn` las cuenta como una sola.
 - Los commits de Axel en las etapas 0 a 6 son de integración: la reorganización por etapa y la corrección y ejecución de los notebooks sobre el flujo integrado. La implementación de cada etapa está en los commits de su responsable.
-- Las etapas 8 y 9 entraron en un solo commit de Jesús, el 27 de octubre. Las correcciones posteriores, que salen de la [revisión técnica](docs/revision_tecnica.md), son de Axel.
+- Las etapas 8 y 9 entraron en un solo commit de Jesús, el 27 de octubre. Las correcciones posteriores son de Axel.
 
 ## Estructura del repositorio
 
@@ -170,13 +171,10 @@ Axel es el mantenedor principal del repositorio.
 ├── docs/
 │   ├── proyecto-eda-2026-2.pdf   Enunciado
 │   ├── informe_etapa_*.md        Informes de las etapas 0-1-2, 3-4-5, 6, 7, 8 y 9
-│   ├── auditoria_etapas_8_9.md   Auditoría de las etapas 8 y 9
-│   ├── revision_tecnica.md       Revisión del proyecto frente a la rúbrica
-│   ├── plan_cascada.md           Plan de cambios que sale de la revisión, con su estado
 │   └── img/                      Figuras del informe de las etapas 0 a 2
 ├── notebooks/                Descarga del dataset, un notebook por etapa y la demo del pipeline
 ├── results/etapa_0 … etapa_9/    Tablas CSV y gráficos de los experimentos
-├── scripts/                  Generador del visualizador de las etapas 0 a 2 y su plantilla
+├── scripts/                  Generadores de los visualizadores del pipeline y sus plantillas
 ├── src/
 │   ├── config.py             Categoría, semilla y rutas compartidas
 │   ├── events.py             Contrato de evento común a todas las etapas
@@ -186,7 +184,7 @@ Axel es el mantenedor principal del repositorio.
 │   └── etapa_0 … etapa_9/    Implementación de cada etapa
 ├── templates/                Plantillas del equipo, como el formato de los commits
 ├── tests/etapa_0 … etapa_9/      Pruebas con pytest
-└── visualizador/             Visualizador de las etapas 0 a 2, dashboard del servicio y mapa del escenario B
+└── visualizador/             Visualizadores del pipeline (etapas 0 a 2 y completo), dashboard del servicio y mapa del escenario B
 ```
 
 ## Indicaciones para los integrantes
