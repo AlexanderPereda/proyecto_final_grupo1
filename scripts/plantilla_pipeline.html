@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline completo · Etapas 0 a 9</title>
+<style>
+/* ===== Colores (tema claro y oscuro), los mismos del visualizador de las etapas 0 a 2 ===== */
+:root {
+  --fondo: #f6f6f4;
+  --panel: #ffffff;
+  --panel-2: #f0f0ed;
+  --texto: #1d1d1f;
+  --tenue: #66666c;
+  --borde: #deded9;
+  --acento: #2f5bd3;
+  --peligro: #c62f2f;
+  --ok: #1f8a4c;
+  --sale: #b97a00;
+  --compra: #1f9d55;
+  --fraude: #d93636;
+  --linea: #b9b9b3;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fondo: #131315; --panel: #1c1c20; --panel-2: #24242a; --texto: #ececef;
+    --tenue: #9b9ba3; --borde: #303036; --acento: #7d9bff; --peligro: #ff6b6b; --ok: #4cc37f;
+    --sale: #f0b429; --compra: #4cc37f; --fraude: #ff6b6b; --linea: #4a4a52;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fondo: #131315; --panel: #1c1c20; --panel-2: #24242a; --texto: #ececef;
+  --tenue: #9b9ba3; --borde: #303036; --acento: #7d9bff; --peligro: #ff6b6b; --ok: #4cc37f;
+  --sale: #f0b429; --compra: #4cc37f; --fraude: #ff6b6b; --linea: #4a4a52;
+  color-scheme: dark;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--fondo); color: var(--texto);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.contenedor { max-width: 1520px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 20px; margin: 0 0 2px; }
+h2 { font-size: 18px; margin: 0; }
+h3 { font-size: 12px; margin: 16px 0 6px; color: var(--tenue); text-transform: uppercase; letter-spacing: .04em; }
+h3:first-child { margin-top: 0; }
+h4 { font-size: 13px; margin: 14px 0 6px; }
+p { margin: 0 0 8px; }
+ul, ol { margin: 0 0 8px; padding-left: 20px; }
+li { margin-bottom: 4px; }
+code { font: 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; background: var(--panel-2); padding: 1px 4px; border-radius: 4px; }
+a { color: var(--acento); }
+.subtitulo { color: var(--tenue); font-size: 13px; }
+.enlaces { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; font-size: 13px; }
+.panel { background: var(--panel); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; }
+button { font: inherit; color: inherit; }
+
+/* ===== Controles ===== */
+.controles { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 14px 0 10px; }
+.botones { display: flex; gap: 6px; flex-wrap: wrap; }
+.boton {
+  background: var(--panel); border: 1px solid var(--borde); border-radius: 8px;
+  padding: 6px 12px; cursor: pointer; min-width: 44px;
+}
+.boton:hover { border-color: var(--acento); }
+.boton.principal { background: var(--acento); border-color: var(--acento); color: #fff; }
+.boton:disabled { opacity: .45; cursor: default; }
+.boton:focus-visible, .selector button:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+#indicador-paso { color: var(--tenue); font-size: 13px; font-variant-numeric: tabular-nums; }
+.selector { display: inline-flex; border: 1px solid var(--borde); border-radius: 8px; overflow: hidden; margin-left: auto; }
+.selector button { background: var(--panel); border: 0; padding: 6px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.selector button + button { border-left: 1px solid var(--borde); }
+.selector button[aria-pressed="true"] { background: var(--panel-2); font-weight: 600; }
+.punto { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.punto.compra { background: var(--compra); }
+.punto.fraude { background: var(--fraude); }
+
+/* ===== Diagrama del pipeline ===== */
+.diagrama { padding: 6px 8px 8px; }
+#diagrama { width: 100%; height: auto; display: block; }
+#diagrama .nodo { cursor: pointer; }
+#diagrama .nodo rect { fill: var(--panel); stroke: var(--borde); stroke-width: 1.5; transition: fill .2s, stroke .2s; }
+#diagrama .nodo .nombre { font-size: 12.5px; font-weight: 600; fill: var(--tenue); text-anchor: middle; }
+#diagrama .nodo .estructura { font-size: 10px; fill: var(--tenue); text-anchor: middle; }
+#diagrama .nodo.recorrido rect { fill: var(--panel-2); stroke: var(--linea); }
+#diagrama .nodo.recorrido .nombre { fill: var(--texto); }
+#diagrama .nodo.activo rect { fill: color-mix(in srgb, var(--acento) 14%, var(--panel)); stroke: var(--acento); stroke-width: 2.5; }
+#diagrama .nodo.activo .nombre { fill: var(--texto); }
+#diagrama .nodo:hover rect { stroke: var(--acento); }
+#diagrama .nodo:focus-visible { outline: none; }
+#diagrama .nodo:focus-visible rect { stroke: var(--acento); stroke-width: 3; }
+#diagrama .flujo { fill: none; stroke: var(--linea); stroke-width: 1.2; opacity: .55; transition: opacity .2s; }
+#diagrama .flujo.recorrido { opacity: .9; }
+#diagrama .flujo.entra { stroke: var(--acento); stroke-width: 2.4; opacity: 1; stroke-dasharray: 7 5; animation: fluir 1s linear infinite; }
+#diagrama .flujo.sale { stroke: var(--sale); stroke-width: 2.4; opacity: 1; stroke-dasharray: 7 5; animation: fluir 1s linear infinite; }
+#diagrama .flujo.todo { opacity: .95; stroke-width: 1.5; }
+@keyframes fluir { to { stroke-dashoffset: -24; } }
+@media (prefers-reduced-motion: reduce) { #diagrama .flujo.entra, #diagrama .flujo.sale { animation: none; } }
+#diagrama .etiqueta-flujo rect { fill: var(--panel); stroke-width: 1; }
+#diagrama .etiqueta-flujo text { font-size: 10.5px; text-anchor: middle; dominant-baseline: central; }
+#diagrama .etiqueta-flujo.entra rect { stroke: var(--acento); }
+#diagrama .etiqueta-flujo.entra text { fill: var(--acento); }
+#diagrama .etiqueta-flujo.sale rect { stroke: var(--sale); }
+#diagrama .etiqueta-flujo.sale text { fill: var(--sale); }
+#diagrama .marca circle { stroke-width: 2; }
+#diagrama .marca.compra circle { fill: var(--compra); stroke: var(--compra); }
+#diagrama .marca.fraude circle { fill: var(--fraude); stroke: var(--fraude); }
+#diagrama .marca.na circle { fill: none; stroke-dasharray: 2 2; opacity: .6; }
+#diagrama .marca.fuera circle { fill: none; }
+#diagrama .marca.fuera line { stroke: var(--fraude); stroke-width: 2; }
+#diagrama .marca.alerta .halo { fill: none; stroke-width: 1.5; opacity: .8; }
+#diagrama .marca.actual circle:first-child { animation: latir 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes latir { 50% { transform: scale(1.35); } }
+@media (prefers-reduced-motion: reduce) { #diagrama .marca.actual circle:first-child { animation: none; } }
+.leyenda { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; padding: 4px 6px 0; font-size: 12px; color: var(--tenue); }
+.leyenda .trazo { display: inline-block; width: 22px; border-top: 2.5px dashed; vertical-align: middle; margin-right: 5px; }
+.leyenda .trazo.entra { border-color: var(--acento); }
+.leyenda .trazo.sale { border-color: var(--sale); }
+.leyenda .punto { margin-right: 5px; vertical-align: -1px; }
+.leyenda .punto.hueco { background: none; border: 2px dashed var(--tenue); }
+.leyenda .punto.tachado { background: none; border: 2px solid var(--fraude); position: relative; }
+.leyenda .punto.tachado::after { content: ""; position: absolute; left: -2px; right: -2px; top: 3px; border-top: 2px solid var(--fraude); transform: rotate(-45deg); }
+.leyenda .punto.halo { box-shadow: 0 0 0 2px var(--panel), 0 0 0 3.5px var(--fraude); }
+
+/* ===== Paso actual ===== */
+.paso { margin-top: 12px; }
+.cabecera-paso { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; margin-bottom: 10px; }
+.insignia { font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 99px; background: var(--acento); color: #fff; white-space: nowrap; }
+.cabecera-paso .estructura { color: var(--tenue); font-size: 13px; }
+.modo { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--borde); color: var(--tenue); cursor: help; }
+.modo.vivo { color: var(--ok); border-color: var(--ok); }
+.columnas { display: grid; grid-template-columns: minmax(300px, 400px) 1fr; gap: 12px; align-items: start; }
+@media (max-width: 1000px) { .columnas { grid-template-columns: 1fr; } }
+.columna { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.descripcion { font-size: 13.5px; }
+.descripcion table { border-collapse: collapse; font-size: 12px; margin: 4px 0 10px; width: 100%; }
+.descripcion th, .descripcion td { border-bottom: 1px solid var(--borde); padding: 4px 6px; text-align: left; vertical-align: top; }
+.descripcion th { color: var(--tenue); font-weight: 500; }
+
+/* Flujos de entrada y salida */
+.flujos { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.flujos li { margin: 0; padding: 7px 9px; border-radius: 8px; background: var(--panel-2); border-left: 3px solid var(--acento); font-size: 13px; }
+.flujos.sale li { border-left-color: var(--sale); }
+.flujos .ir { background: none; border: 0; padding: 0; cursor: pointer; font-weight: 600; color: var(--acento); }
+.flujos.sale .ir { color: var(--sale); }
+.flujos .ir:hover { text-decoration: underline; }
+.flujos .archivo { display: block; margin: 2px 0; }
+.flujos .que { color: var(--tenue); font-size: 12.5px; }
+.vacio { color: var(--tenue); font-size: 13px; }
+
+/* Los eventos en la etapa */
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; }
+.tarjeta { border: 1px solid var(--borde); border-left: 4px solid var(--compra); border-radius: 8px; padding: 8px 10px; background: var(--panel); }
+.tarjeta.fraude { border-left-color: var(--fraude); }
+.tarjeta .quien { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--tenue); margin-bottom: 3px; }
+.tarjeta .que { font-weight: 600; }
+.tarjeta .estado { margin-left: auto; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 99px; background: var(--panel-2); color: var(--tenue); }
+.tarjeta .estado.alerta, .tarjeta .estado.fuera { color: var(--fraude); background: color-mix(in srgb, var(--fraude) 12%, transparent); }
+.tarjeta.na { opacity: .7; }
+
+/* Resultados del notebook */
+.seccion + .seccion { margin-top: 6px; padding-top: 10px; border-top: 1px solid var(--borde); }
+.seccion > h4 { margin-top: 0; }
+.bloque { margin: 8px 0; }
+.salida-texto {
+  white-space: pre-wrap; word-break: break-word; font: 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+  background: var(--panel-2); border-radius: 8px; padding: 7px 10px;
+}
+.titulo-tabla { font-size: 12.5px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.marco-tabla { overflow-x: auto; border: 1px solid var(--borde); border-radius: 8px; }
+table.tabla { border-collapse: collapse; font-size: 12px; width: 100%; }
+.tabla th, .tabla td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+.tabla thead th { color: var(--tenue); font-weight: 500; background: var(--panel-2); white-space: nowrap; }
+.tabla tbody tr:last-child > * { border-bottom: 0; }
+.tabla tbody th { font-weight: 600; white-space: nowrap; }
+.tabla td { font-variant-numeric: tabular-nums; max-width: 420px; }
+.cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+.cifra { background: var(--panel-2); border-radius: 8px; padding: 7px 10px; }
+.cifra .etiqueta { font-size: 11px; color: var(--tenue); }
+.cifra .valor { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.lectura { border-left: 3px solid var(--acento); background: color-mix(in srgb, var(--acento) 6%, var(--panel)); }
+.lectura h3 { color: var(--acento); }
+
+/* Resumen */
+.tabla tr.saltar { cursor: pointer; }
+.tabla tr.saltar:hover { background: var(--panel-2); }
+.navegacion { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.nota { font-size: 12px; color: var(--tenue); margin-top: 14px; }
+.sin-datos { padding: 40px; text-align: center; color: var(--tenue); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header>
+    <h1>Pipeline completo · Etapas 0 a 9</h1>
+    <div class="subtitulo" id="subtitulo"></div>
+    <div class="enlaces">
+      <a href="pipeline_etapa_0_1_2.html">Animación paso a paso de las etapas 0, 1 y 2 →</a>
+      <a href="dashboard_etapa_9_servicio.html">Dashboard de la etapa 9 →</a>
+    </div>
+  </header>
+
+  <!-- Controles -->
+  <section class="controles" aria-label="Controles">
+    <div class="botones">
+      <button class="boton" id="btn-inicio" title="Volver al inicio (Inicio)">⏮</button>
+      <button class="boton" id="btn-atras" title="Etapa anterior (←)">◀ Anterior</button>
+      <button class="boton principal" id="btn-reproducir" title="Avanzar solo (espacio)">▶ Reproducir</button>
+      <button class="boton" id="btn-siguiente" title="Etapa siguiente (→)">Siguiente ▶</button>
+    </div>
+    <span id="indicador-paso" aria-live="polite"></span>
+    <div class="selector" role="group" aria-label="Evento seguido" id="selector"></div>
+  </section>
+
+  <!-- Diagrama del flujo de datos entre etapas -->
+  <section class="panel diagrama" aria-label="Diagrama del pipeline">
+    <svg id="diagrama" role="img" aria-label="Las diez etapas del pipeline y los datos que pasan entre ellas"></svg>
+    <div class="leyenda" id="leyenda"></div>
+  </section>
+
+  <!-- La etapa actual -->
+  <main class="paso" id="paso" aria-live="polite"></main>
+
+  <p class="nota" id="nota"></p>
+</div>
+
+<!-- Datos del notebook, incrustados por scripts/generar_pipeline.py -->
+<script id="datos-pipeline" type="application/json">__DATOS_PIPELINE__</script>
+
+<script>
+'use strict';
+
+/* =====================================================================
+   1. Datos
+   ===================================================================== */
+let D;
+try {
+  D = JSON.parse(document.getElementById('datos-pipeline').textContent);
+} catch (error) {
+  document.querySelector('.contenedor').innerHTML =
+    '<p class="sin-datos">Esta es la plantilla sin datos. Generar el visualizador con ' +
+    '<code>python scripts/generar_pipeline.py</code>.</p>';
+  throw error;
+}
+
+const NOMBRE_EVENTO = { compra: 'Compra', fraude: 'Fraude' };
+// Pasos de la página: el lote, las diez etapas y el resumen
+const PASOS = ['L', ...D.etapas.map(e => String(e.numero)), 'R'];
+// Nodos del diagrama: el lote, las diez etapas y la salida observable
+const NODOS = ['L', ...D.etapas.map(e => String(e.numero)), 'S'];
+const orden = clave => NODOS.indexOf(clave);
+
+const estado = { paso: 0, evento: 'ambos', reloj: null };
+const $ = id => document.getElementById(id);
+
+/* =====================================================================
+   2. Utilidades de texto
+   ===================================================================== */
+function escapar(valor) {
+  return String(valor ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Markdown mínimo del notebook: párrafos, listas, tablas, `código`, **negrita** y $fórmulas$
+function enLinea(texto) {
+  return escapar(texto)
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\$([^$]+)\$/g, '<em>$1</em>');
+}
+
+function markdown(texto) {
+  const lineas = String(texto || '').split('\n');
+  let html = '', i = 0;
+  const especial = l => /^(\s*[-*] |\s*\d+\. |\||#)/.test(l);
+  while (i < lineas.length) {
+    const linea = lineas[i];
+    if (!linea.trim() || linea.startsWith('#')) { i++; continue; }
+    if (linea.startsWith('|')) {
+      const filas = [];
+      while (i < lineas.length && lineas[i].startsWith('|')) filas.push(lineas[i++]);
+      const celdas = filas.map(f => f.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()))
+                          .filter(f => !/^[-:\s]*$/.test(f.join('')));
+      html += '<table><thead><tr>' + celdas[0].map(c => `<th>${enLinea(c)}</th>`).join('') + '</tr></thead><tbody>' +
+              celdas.slice(1).map(f => '<tr>' + f.map(c => `<td>${enLinea(c)}</td>`).join('') + '</tr>').join('') +
+              '</tbody></table>';
+      continue;
+    }
+    const lista = /^\s*[-*] /.test(linea) ? 'ul' : /^\s*\d+\. /.test(linea) ? 'ol' : null;
+    if (lista) {
+      const items = [];
+      const patron = lista === 'ul' ? /^\s*[-*] / : /^\s*\d+\. /;
+      while (i < lineas.length && patron.test(lineas[i])) items.push(lineas[i++].replace(patron, ''));
+      html += `<${lista}>` + items.map(x => `<li>${enLinea(x)}</li>`).join('') + `</${lista}>`;
+      continue;
+    }
+    const parrafo = [];
+    while (i < lineas.length && lineas[i].trim() && !especial(lineas[i])) parrafo.push(lineas[i++]);
+    html += `<p>${enLinea(parrafo.join(' '))}</p>`;
+  }
+  return html;
+}
+
+// Estado de un evento en una etapa, a partir del texto del resumen de la traza
+function estadoEvento(texto) {
+  if (!texto || texto === '—') return 'na';
+  if (/excluid/.test(texto)) return 'fuera';
+  if (/^(bloquear|revisar)|alerta en/.test(texto)) return 'alerta';
+  return 'ok';
+}
+const ETIQUETA_ESTADO = { na: 'no aplica', fuera: 'excluido', alerta: 'alerta', ok: '' };
+
+const eventosVisibles = () => estado.evento === 'ambos' ? ['compra', 'fraude'] : [estado.evento];
+const nombreNodo = clave => clave === 'L' ? 'Lote' : clave === 'S' ? 'Salida' : `Etapa ${clave}`;
+
+/* =====================================================================
+   3. Diagrama: nodos en fila y arcos para los flujos que saltan etapas
+   ===================================================================== */
+const SVG = 'http://www.w3.org/2000/svg';
+const G = { x0: 70, paso: 108, ancho: 94, alto: 66, yc: 172, anchoTotal: 1328, altoTotal: 344 };
+const xNodo = clave => G.x0 + orden(clave) * G.paso;
+
+function crear(etiqueta, atributos = {}, padre) {
+  const el = document.createElementNS(SVG, etiqueta);
+  for (const [k, v] of Object.entries(atributos)) el.setAttribute(k, v);
+  if (padre) padre.appendChild(el);
+  return el;
+}
+
+// Los flujos que salen de la ingesta, de la prioridad y del fraude van por debajo; el resto, por arriba
+function lado(flujo) {
+  if (Math.abs(orden(flujo.hacia) - orden(flujo.desde)) === 1) return 'recto';
+  return ['0', '2', '6'].includes(flujo.desde) ? 'abajo' : 'arriba';
+}
+
+// Reparte los puntos de anclaje de los arcos sobre el borde de cada nodo para que se aniden sin cruzarse
+function anclajes() {
+  const puntos = new Map();
+  const grupos = {};
+  D.flujos.forEach((f, i) => {
+    const l = lado(f);
+    if (l === 'recto') return;
+    (grupos[f.hacia + l] ||= { entran: [], salen: [] }).entran.push(i);
+    (grupos[f.desde + l] ||= { entran: [], salen: [] }).salen.push(i);
+  });
+  for (const [clave, g] of Object.entries(grupos)) {
+    g.entran.sort((a, b) => orden(D.flujos[a].desde) - orden(D.flujos[b].desde));
+    g.salen.sort((a, b) => orden(D.flujos[b].hacia) - orden(D.flujos[a].hacia));
+    const todos = [...g.entran.map(i => [i, 'hacia']), ...g.salen.map(i => [i, 'desde'])];
+    const margen = 14, util = G.ancho - 2 * margen;
+    todos.forEach(([i, extremo], k) => {
+      const dx = todos.length === 1 ? 0 : -util / 2 + util * k / (todos.length - 1);
+      puntos.set(i + extremo, dx);
+    });
+  }
+  return puntos;
+}
+
+let elementosFlujo = [], elementosNodo = {}, capaEtiquetas, capaMarcas;
+
+function dibujarDiagrama() {
+  const svg = $('diagrama');
+  svg.setAttribute('viewBox', `0 0 ${G.anchoTotal} ${G.altoTotal}`);
+  const defs = crear('defs', {}, svg);
+  for (const [id, color] of [['f-normal', 'var(--linea)'], ['f-entra', 'var(--acento)'], ['f-sale', 'var(--sale)']]) {
+    const m = crear('marker', { id, viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
+    crear('path', { d: 'M0,0 L10,5 L0,10 z', style: `fill: ${color}` }, m);
+  }
+
+  const capaFlujos = crear('g', {}, svg);
+  const puntos = anclajes();
+  elementosFlujo = D.flujos.map((f, i) => {
+    const l = lado(f);
+    const x1 = xNodo(f.desde), x2 = xNodo(f.hacia);
+    let d, etiqueta;
+    if (l === 'recto') {
+      d = `M${x1 + G.ancho / 2},${G.yc} L${x2 - G.ancho / 2 - 2},${G.yc}`;
+      etiqueta = null;
+    } else {
+      const signo = l === 'arriba' ? -1 : 1;
+      const y = G.yc + signo * G.alto / 2;
+      const ax = x1 + puntos.get(i + 'desde'), bx = x2 + puntos.get(i + 'hacia');
+      const h = 22 + Math.abs(orden(f.hacia) - orden(f.desde)) * 20;
+      d = `M${ax},${y} C${ax},${y + signo * h} ${bx},${y + signo * h} ${bx},${y + signo * 2}`;
+      etiqueta = { x: (ax + bx) / 2, y: y + signo * h * 0.75 };
+    }
+    const camino = crear('path', { d, class: 'flujo', 'marker-end': 'url(#f-normal)' }, capaFlujos);
+    crear('title', {}, camino).textContent = `${nombreNodo(f.desde)} → ${nombreNodo(f.hacia)}: ${f.archivo}`;
+    return { flujo: f, camino, etiqueta };
+  });
+
+  const capaNodos = crear('g', {}, svg);
+  for (const clave of NODOS) {
+    const etapa = D.etapas.find(e => String(e.numero) === clave);
+    const x = xNodo(clave);
+    const g = crear('g', { class: 'nodo', tabindex: 0, role: 'button' }, capaNodos);
+    crear('rect', { x: x - G.ancho / 2, y: G.yc - G.alto / 2, width: G.ancho, height: G.alto, rx: 10 }, g);
+    const nombre = etapa ? `${etapa.numero} · ${etapa.corto}` : clave === 'L' ? 'Lote' : 'Salida';
+    const estructura = etapa ? etapa.estructura_corta : clave === 'L' ? 'del stream' : 'observable';
+    crear('text', { class: 'nombre', x, y: G.yc - 12 }, g).textContent = nombre;
+    crear('text', { class: 'estructura', x, y: G.yc + 4 }, g).textContent = estructura;
+    crear('title', {}, g).textContent = etapa ? `Etapa ${etapa.numero} · ${etapa.nombre}` : nombreNodo(clave);
+    const destino = clave === 'S' ? PASOS.length - 1 : PASOS.indexOf(clave);
+    g.addEventListener('click', () => irA(destino));
+    g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); irA(destino); } });
+    elementosNodo[clave] = g;
+  }
+  capaMarcas = crear('g', {}, svg);
+  capaEtiquetas = crear('g', {}, svg);
+}
+
+function actualizarDiagrama() {
+  const clave = PASOS[estado.paso];
+  const resumen = clave === 'R';
+  const actual = resumen ? Infinity : orden(clave);
+
+  for (const [k, g] of Object.entries(elementosNodo)) {
+    const o = orden(k);
+    g.classList.toggle('activo', !resumen && k === clave);
+    g.classList.toggle('recorrido', resumen || o < actual);
+  }
+
+  capaEtiquetas.replaceChildren();
+  for (const { flujo, camino, etiqueta } of elementosFlujo) {
+    const entra = !resumen && flujo.hacia === clave;
+    const sale = !resumen && flujo.desde === clave;
+    camino.setAttribute('class', 'flujo' + (entra ? ' entra' : sale ? ' sale' : '') +
+      (resumen ? ' todo' : orden(flujo.hacia) <= actual ? ' recorrido' : ''));
+    camino.setAttribute('marker-end', `url(#${entra ? 'f-entra' : sale ? 'f-sale' : 'f-normal'})`);
+    if ((entra || sale) && etiqueta) {
+      const g = crear('g', { class: 'etiqueta-flujo ' + (entra ? 'entra' : 'sale') }, capaEtiquetas);
+      const fondo = crear('rect', { rx: 4 }, g);
+      const texto = crear('text', { x: etiqueta.x, y: etiqueta.y }, g);
+      texto.textContent = flujo.corto;
+      const caja = texto.getBBox();
+      for (const [k, v] of Object.entries({ x: caja.x - 5, y: caja.y - 2, width: caja.width + 10, height: caja.height + 4 })) fondo.setAttribute(k, v);
+    }
+  }
+
+  // Marcas de los eventos seguidos en las etapas ya recorridas
+  capaMarcas.replaceChildren();
+  const eventos = eventosVisibles();
+  for (const e of D.etapas) {
+    const k = String(e.numero);
+    if (orden(k) > actual) continue;
+    eventos.forEach((nombre, j) => {
+      const est = estadoEvento(e.evento[nombre]);
+      const x = xNodo(k) + (eventos.length === 1 ? 0 : (j === 0 ? -11 : 11));
+      const y = G.yc + 21;
+      const g = crear('g', { class: `marca ${nombre} ${est}` + (k === clave ? ' actual' : '') }, capaMarcas);
+      crear('circle', { cx: x, cy: y, r: 5 }, g);
+      if (est === 'fuera') crear('line', { x1: x - 5, y1: y + 5, x2: x + 5, y2: y - 5 }, g);
+      if (est === 'alerta') crear('circle', { class: 'halo', cx: x, cy: y, r: 8.5 }, g);
+      crear('title', {}, g).textContent = `${NOMBRE_EVENTO[nombre]} ${D.eventos[nombre].id}: ${e.evento[nombre] || '—'}`;
+    });
+  }
+}
+
+function dibujarLeyenda() {
+  $('leyenda').innerHTML =
+    '<span><span class="trazo entra"></span>entra a la etapa</span>' +
+    '<span><span class="trazo sale"></span>sale de la etapa y alimenta a otra</span>' +
+    '<span><span class="punto compra"></span>compra</span>' +
+    '<span><span class="punto fraude"></span>fraude</span>' +
+    '<span><span class="punto halo fraude"></span>alerta</span>' +
+    '<span><span class="punto tachado"></span>excluido</span>' +
+    '<span><span class="punto hueco"></span>la etapa no lo usa</span>' +
+    '<span>· clic en una etapa para ir a ella</span>';
+}
+
+/* =====================================================================
+   4. Resultados del notebook
+   ===================================================================== */
+function visible(bloque) {
+  return !bloque.evento || estado.evento === 'ambos' || bloque.evento === estado.evento;
+}
+
+function tablaHtml(bloque) {
+  // Con un solo evento seguido se ocultan las columnas del otro (p. ej. "fraude: B09QHDYTFZ")
+  const otro = estado.evento === 'compra' ? 'fraude' : estado.evento === 'fraude' ? 'compra' : null;
+  const columnas = bloque.columnas.map((c, j) => [c, j]).filter(([c]) => !otro || !c.toLowerCase().startsWith(otro));
+  const cabeza = (bloque.mostrar_indice ? '<th></th>' : '') + columnas.map(([c]) => `<th>${escapar(c)}</th>`).join('');
+  const cuerpo = bloque.filas.map(f =>
+    '<tr>' + (bloque.mostrar_indice ? `<th>${escapar(f.indice)}</th>` : '') +
+    columnas.map(([, j]) => `<td>${escapar(f.valores[j])}</td>`).join('') + '</tr>').join('');
+  return `<div class="marco-tabla"><table class="tabla"><thead><tr>${cabeza}</tr></thead><tbody>${cuerpo}</tbody></table></div>`;
+}
+
+function bloqueHtml(bloque) {
+  if (!visible(bloque)) return '';
+  const punto = bloque.evento ? `<span class="punto ${bloque.evento}"></span>` : '';
+  if (bloque.tipo === 'texto') {
+    return `<div class="bloque salida-texto">${escapar(bloque.lineas.join('\n'))}</div>`;
+  }
+  if (bloque.tipo === 'cifras') {
+    return '<div class="bloque cifras">' + bloque.items.map(([etiqueta, valor]) =>
+      `<div class="cifra"><div class="etiqueta">${escapar(etiqueta)}</div><div class="valor">${escapar(valor)}</div></div>`).join('') + '</div>';
+  }
+  const titulo = bloque.titulo ? `<div class="titulo-tabla">${punto}${escapar(bloque.titulo)}</div>` : '';
+  return `<div class="bloque">${titulo}${tablaHtml(bloque)}</div>`;
+}
+
+function seccionesHtml(secciones) {
+  return secciones.map(s => `<div class="seccion"><h4>${escapar(s.titulo)}</h4>${s.bloques.map(bloqueHtml).join('')}</div>`).join('');
+}
+
+/* =====================================================================
+   5. Panel del paso actual
+   ===================================================================== */
+function flujosHtml(lista, sentido) {
+  if (!lista.length) return '<p class="vacio">Ninguno.</p>';
+  return `<ul class="flujos ${sentido}">` + lista.map(f => {
+    const otro = sentido === 'entra' ? f.desde : f.hacia;
+    const destino = otro === 'S' ? PASOS.length - 1 : PASOS.indexOf(otro);
+    const flecha = sentido === 'entra' ? `desde ${nombreNodo(otro)}` : `hacia ${nombreNodo(otro)}`;
+    return `<li><button class="ir" data-ir="${destino}">${flecha}</button>` +
+           `<code class="archivo">${escapar(f.archivo)}</code><span class="que">${escapar(f.texto)}</span></li>`;
+  }).join('') + '</ul>';
+}
+
+function tarjetasHtml(etapa) {
+  return '<div class="tarjetas">' + eventosVisibles().map(nombre => {
+    const texto = etapa.evento[nombre] || '—';
+    const est = estadoEvento(texto);
+    const chip = ETIQUETA_ESTADO[est] ? `<span class="estado ${est}">${ETIQUETA_ESTADO[est]}</span>` : '';
+    return `<div class="tarjeta ${nombre} ${est}"><div class="quien"><span class="punto ${nombre}"></span>` +
+           `${NOMBRE_EVENTO[nombre]} <code>${escapar(D.eventos[nombre].id)}</code>${chip}</div>` +
+           `<div class="que">${escapar(texto === '—' ? 'La etapa no lo usa' : texto)}</div></div>`;
+  }).join('') + '</div>';
+}
+
+function navegacionHtml() {
+  const anterior = estado.paso > 0 ? PASOS[estado.paso - 1] : null;
+  const siguiente = estado.paso < PASOS.length - 1 ? PASOS[estado.paso + 1] : null;
+  const rotulo = k => k === 'L' ? 'Lote de entrada' : k === 'R' ? 'Resumen de la traza'
+    : `Etapa ${k} · ${D.etapas[+k].corto}`;
+  return '<nav class="navegacion">' +
+    (anterior ? `<button class="boton" data-ir="${estado.paso - 1}">◀ ${escapar(rotulo(anterior))}</button>` : '<span></span>') +
+    (siguiente ? `<button class="boton" data-ir="${estado.paso + 1}">${escapar(rotulo(siguiente))} ▶</button>` : '<span></span>') +
+    '</nav>';
+}
+
+function pasoLote() {
+  const sale = D.flujos.filter(f => f.desde === 'L');
+  const tarjetas = eventosVisibles().map(nombre => {
+    const ev = D.eventos[nombre];
+    return `<div class="tarjeta ${nombre}"><div class="quien"><span class="punto ${nombre}"></span>${NOMBRE_EVENTO[nombre]} <code>${escapar(ev.id)}</code></div>` +
+           `<div class="que">${enLinea(ev.que_es)}</div><div class="vacio">${enLinea(ev.que_muestra)}</div></div>`;
+  }).join('');
+  return `<div class="cabecera-paso"><span class="insignia">Entrada</span><h2>Lote de entrada de la demo</h2></div>
+    <div class="columnas">
+      <div class="columna">
+        <section class="panel descripcion"><h3>Qué es</h3>${markdown(D.lote.descripcion)}</section>
+        <section class="panel"><h3>Sale</h3>${flujosHtml(sale, 'sale')}</section>
+      </div>
+      <div class="columna">
+        <section class="panel"><h3>Los eventos seguidos</h3><div class="tarjetas">${tarjetas}</div></section>
+        <section class="panel"><h3>Resultados del notebook</h3>${seccionesHtml(D.lote.secciones)}</section>
+      </div>
+    </div>`;
+}
+
+function pasoEtapa(etapa) {
+  const k = String(etapa.numero);
+  const entra = D.flujos.filter(f => f.hacia === k);
+  const sale = D.flujos.filter(f => f.desde === k);
+  const modo = etapa.modo
+    ? `<span class="modo ${etapa.modo === 'En vivo' ? 'vivo' : ''}" title="${escapar(etapa.detalle_modo)}">${escapar(etapa.modo)}</span>` : '';
+  const lectura = etapa.lectura
+    ? `<section class="panel lectura descripcion"><h3>Lectura · ${escapar(etapa.lectura.titulo)}</h3>${markdown(etapa.lectura.texto)}</section>` : '';
+  return `<div class="cabecera-paso"><span class="insignia">Etapa ${etapa.numero}</span><h2>${escapar(etapa.nombre)}</h2>
+      <span class="estructura">${escapar(etapa.estructura)}</span>${modo}</div>
+    <div class="columnas">
+      <div class="columna">
+        <section class="panel descripcion"><h3>Qué hace</h3>${markdown(etapa.descripcion)}</section>
+        <section class="panel"><h3>Entra</h3>${flujosHtml(entra, 'entra')}</section>
+        <section class="panel"><h3>Sale</h3>${flujosHtml(sale, 'sale')}</section>
+      </div>
+      <div class="columna">
+        <section class="panel"><h3>Los eventos en esta etapa</h3>${tarjetasHtml(etapa)}</section>
+        <section class="panel"><h3>Resultados del notebook</h3>${seccionesHtml(etapa.secciones)}</section>
+        ${lectura}
+      </div>
+    </div>`;
+}
+
+function pasoResumen() {
+  const eventos = eventosVisibles();
+  const cabeza = '<th>Etapa</th>' + eventos.map(n =>
+    `<th><span class="punto ${n}"></span> ${NOMBRE_EVENTO[n]} ${escapar(D.eventos[n].id)}</th>`).join('');
+  const filas = D.etapas.map(e =>
+    `<tr class="saltar" data-ir="${PASOS.indexOf(String(e.numero))}" title="Ir a la etapa ${e.numero}"><th>${e.numero} · ${escapar(e.corto)}</th>` +
+    eventos.map(n => `<td>${escapar(e.evento[n] || '—')}</td>`).join('') + '</tr>').join('');
+  return `<div class="cabecera-paso"><span class="insignia">Resumen</span><h2>Qué hizo cada etapa con los dos eventos</h2></div>
+    <div class="columna">
+      <section class="panel"><div class="marco-tabla"><table class="tabla"><thead><tr>${cabeza}</tr></thead><tbody>${filas}</tbody></table></div></section>
+      <section class="panel lectura descripcion"><h3>Lectura de la traza</h3>${markdown(D.resumen.lectura)}</section>
+    </div>`;
+}
+
+function dibujarPaso() {
+  const clave = PASOS[estado.paso];
+  const html = clave === 'L' ? pasoLote() : clave === 'R' ? pasoResumen() : pasoEtapa(D.etapas[+clave]);
+  $('paso').innerHTML = html + navegacionHtml();
+  $('paso').querySelectorAll('[data-ir]').forEach(el => el.addEventListener('click', () => irA(+el.dataset.ir)));
+
+  const rotulo = clave === 'L' ? 'Lote de entrada' : clave === 'R' ? 'Resumen' : `Etapa ${clave} de 9`;
+  $('indicador-paso').textContent = `Paso ${estado.paso + 1} de ${PASOS.length} · ${rotulo}`;
+  $('btn-atras').disabled = estado.paso === 0;
+  $('btn-inicio').disabled = estado.paso === 0;
+  $('btn-siguiente').disabled = estado.paso === PASOS.length - 1;
+  history.replaceState(null, '', '#' + (clave === 'L' ? 'lote' : clave === 'R' ? 'resumen' : 'etapa-' + clave));
+}
+
+function dibujar() {
+  actualizarDiagrama();
+  dibujarPaso();
+}
+
+/* =====================================================================
+   6. Navegación
+   ===================================================================== */
+function irA(paso, desdeReloj = false) {
+  if (!desdeReloj) detener();
+  estado.paso = Math.max(0, Math.min(PASOS.length - 1, paso));
+  dibujar();
+}
+
+function reproducir() {
+  if (estado.reloj) return detener();
+  if (estado.paso === PASOS.length - 1) estado.paso = -1;
+  const avanzar = () => {
+    irA(estado.paso + 1, true);
+    if (estado.paso === PASOS.length - 1) detener();
+  };
+  avanzar();
+  estado.reloj = setInterval(avanzar, 6000);
+  $('btn-reproducir').textContent = '⏸ Pausar';
+}
+
+function detener() {
+  clearInterval(estado.reloj);
+  estado.reloj = null;
+  $('btn-reproducir').textContent = '▶ Reproducir';
+}
+
+function dibujarSelector() {
+  const opciones = [['ambos', 'Ambos']].concat(['compra', 'fraude'].map(n =>
+    [n, `<span class="punto ${n}"></span>${NOMBRE_EVENTO[n]} <code>${escapar(D.eventos[n].id)}</code>`]));
+  $('selector').innerHTML = opciones.map(([valor, rotulo]) =>
+    `<button data-evento="${valor}" aria-pressed="${valor === estado.evento}">${rotulo}</button>`).join('');
+  $('selector').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    estado.evento = b.dataset.evento;
+    $('selector').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    dibujar();
+  }));
+}
+
+function iniciar() {
+  $('subtitulo').textContent = `${D.titulo} · ${D.subtitulo}`;
+  $('nota').textContent = 'Los textos y las tablas son las salidas guardadas en notebooks/demo_pipeline.ipynb; ' +
+    'el diagrama muestra qué archivo o dato de cada etapa usa la siguiente. Página generada con scripts/generar_pipeline.py.';
+  dibujarSelector();
+  dibujarDiagrama();
+  dibujarLeyenda();
+
+  $('btn-inicio').addEventListener('click', () => irA(0));
+  $('btn-atras').addEventListener('click', () => irA(estado.paso - 1));
+  $('btn-siguiente').addEventListener('click', () => irA(estado.paso + 1));
+  $('btn-reproducir').addEventListener('click', reproducir);
+  document.addEventListener('keydown', ev => {
+    if (ev.target.closest('input, textarea')) return;
+    if (ev.key === 'ArrowRight') irA(estado.paso + 1);
+    else if (ev.key === 'ArrowLeft') irA(estado.paso - 1);
+    else if (ev.key === 'Home') irA(0);
+    else if (ev.key === 'End') irA(PASOS.length - 1);
+    else if (ev.key === ' ' && !ev.target.closest('button, [role=button]')) { ev.preventDefault(); reproducir(); }
+  });
+
+  const ancla = location.hash.slice(1);
+  const inicial = ancla === 'lote' ? 0 : ancla === 'resumen' ? PASOS.length - 1
+    : ancla.startsWith('etapa-') ? PASOS.indexOf(ancla.slice(6)) : 0;
+  estado.paso = Math.max(0, inicial);
+  dibujar();
+}
+
+iniciar();
+</script>
+</body>
+</html>
