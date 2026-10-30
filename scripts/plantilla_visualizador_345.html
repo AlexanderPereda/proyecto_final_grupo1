@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline etapas 3-5</title>
+<style>
+/* ===== Colores (tema claro y oscuro), los mismos del visualizador de las etapas 0 a 2 ===== */
+:root {
+  --fondo: #f6f6f4; --panel: #ffffff; --panel-2: #f0f0ed; --texto: #1d1d1f; --tenue: #66666c;
+  --borde: #deded9; --acento: #2f5bd3; --peligro: #c62f2f; --ok: #1f8a4c; --aviso: #b7791f;
+  --t-search: #2f6fe0;   --tx-search: #ffffff;
+  --t-view: #12a4b6;     --tx-view: #04262b;
+  --t-cart: #e0a00b;     --tx-cart: #2a1c00;
+  --t-purchase: #1f9d55; --tx-purchase: #ffffff;
+  --t-payment_alert: #d93636; --tx-payment_alert: #ffffff;
+  --t-review: #7c5cdb;   --tx-review: #ffffff;
+  --t-return: #c2417e;   --tx-return: #ffffff;
+  --producto: #e9eefb; --tx-producto: #1c2f6b;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fondo: #131315; --panel: #1c1c20; --panel-2: #24242a; --texto: #ececef;
+    --tenue: #9b9ba3; --borde: #303036; --acento: #7d9bff; --peligro: #ff6b6b; --ok: #4cc37f; --aviso: #e7b04f;
+    --producto: #27304a; --tx-producto: #dbe3ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fondo: #131315; --panel: #1c1c20; --panel-2: #24242a; --texto: #ececef;
+  --tenue: #9b9ba3; --borde: #303036; --acento: #7d9bff; --peligro: #ff6b6b; --ok: #4cc37f; --aviso: #e7b04f;
+  --producto: #27304a; --tx-producto: #dbe3ff;
+  color-scheme: dark;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); color: var(--texto);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.contenedor { max-width: 1520px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 20px; margin: 0 0 2px; }
+h2 { font-size: 15px; margin: 0; }
+h3 { font-size: 12px; margin: 14px 0 6px; color: var(--tenue); text-transform: uppercase; letter-spacing: .04em; }
+.subtitulo { color: var(--tenue); font-size: 13px; }
+.panel { background: var(--panel); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; }
+button { font: inherit; color: inherit; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+.demo { display: inline-block; margin-top: 6px; padding: 4px 10px; border-radius: 8px; font-size: 12px; font-weight: 600;
+  color: var(--aviso); background: color-mix(in srgb, var(--aviso) 14%, var(--panel)); border: 1px solid var(--aviso); }
+
+/* ===== Controles ===== */
+.controles { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 14px 0 10px; }
+.botones { display: flex; gap: 6px; flex-wrap: wrap; }
+.boton { background: var(--panel); border: 1px solid var(--borde); border-radius: 8px; padding: 6px 12px; cursor: pointer; min-width: 44px; }
+.boton:hover { border-color: var(--acento); }
+.boton.principal { background: var(--acento); border-color: var(--acento); color: #fff; }
+.boton:disabled { opacity: .45; cursor: default; }
+.control { display: flex; align-items: center; gap: 8px; color: var(--tenue); font-size: 13px; }
+.control input[type=range] { accent-color: var(--acento); }
+select { font: inherit; font-size: 12px; color: var(--texto); background: var(--panel); border: 1px solid var(--borde); border-radius: 6px; padding: 2px 4px; }
+#barra-progreso { flex: 1 1 260px; min-width: 200px; accent-color: var(--acento); }
+#indicador-paso { font-variant-numeric: tabular-nums; color: var(--texto); }
+
+/* ===== Pestañas de etapa ===== */
+.pestanas { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 10px; }
+.pestana { background: var(--panel); border: 1px solid var(--borde); border-radius: 99px; padding: 5px 14px; cursor: pointer; font-size: 13px; }
+.pestana .rango { color: var(--tenue); font-size: 11px; margin-left: 6px; font-variant-numeric: tabular-nums; }
+.pestana.activa { border-color: var(--acento); background: color-mix(in srgb, var(--acento) 12%, var(--panel)); font-weight: 600; }
+
+/* ===== Contadores ===== */
+.contadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; }
+.contador { background: var(--panel); border: 1px solid var(--borde); border-radius: 10px; padding: 8px 10px; }
+.contador.inactivo { display: none; }
+.contador .etiqueta { font-size: 11px; color: var(--tenue); }
+.contador .etiqueta b { color: var(--texto); font-weight: 600; }
+.contador .valor { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.contador .extra { font-size: 11px; color: var(--tenue); font-variant-numeric: tabular-nums; }
+.barra { height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden; margin-top: 4px; }
+.barra > div { height: 100%; background: var(--acento); width: 0; transition: width .2s; }
+
+/* ===== Narración ===== */
+.narracion { margin: 10px 0; padding: 10px 14px; border-radius: 10px; background: var(--panel);
+  border: 1px solid var(--borde); min-height: 44px; display: flex; gap: 10px; align-items: center; }
+.insignia-etapa { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--panel-2); white-space: nowrap; }
+.ref { display: inline-block; padding: 0 6px; border-radius: 5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ref.producto { background: var(--producto); color: var(--tx-producto); font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+
+/* ===== Disposición de las etapas ===== */
+.vista[hidden] { display: none; }
+.columnas { display: grid; gap: 12px; align-items: start; }
+.columnas > * { min-width: 0; }
+.ejes label { display: flex; gap: 6px; align-items: center; min-width: 0; max-width: 100%; }
+.ejes select { min-width: 0; max-width: 100%; }
+.columnas.c3 { grid-template-columns: .95fr 1fr 1.25fr; }
+.columnas.c2 { grid-template-columns: 1.05fr 1fr; }
+@media (max-width: 1050px) { .columnas.c3, .columnas.c2 { grid-template-columns: 1fr; } }
+.etapa .cabecera { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.etapa .estructura { font-size: 12px; color: var(--tenue); }
+.caja { padding: 8px; border-radius: 8px; background: var(--panel-2); }
+.vacio { color: var(--tenue); font-size: 12px; }
+
+/* ===== Chips de evento ===== */
+.chip { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 22px; border-radius: 6px;
+  border: 0; padding: 0; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer; position: relative; }
+.chip.chico { width: 26px; height: 18px; font-size: 10px; border-radius: 5px; }
+.chip:focus-visible, .prod:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+.t-search { background: var(--t-search); color: var(--tx-search); }
+.t-view { background: var(--t-view); color: var(--tx-view); }
+.t-cart { background: var(--t-cart); color: var(--tx-cart); }
+.t-purchase { background: var(--t-purchase); color: var(--tx-purchase); }
+.t-payment_alert { background: var(--t-payment_alert); color: var(--tx-payment_alert); }
+.t-review { background: var(--t-review); color: var(--tx-review); }
+.t-return { background: var(--t-return); color: var(--tx-return); }
+.chip.hecho { opacity: .28; }
+.chip.actual { box-shadow: 0 0 0 2px var(--panel), 0 0 0 4px var(--texto); z-index: 2; opacity: 1; }
+.entrada { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* ===== Productos (cajas con el final del parent_asin) ===== */
+.prod { display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 6px; border-radius: 6px;
+  border: 1px solid transparent; background: var(--producto); color: var(--tx-producto); cursor: pointer;
+  font: 600 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
+.prod.nuevo { border-color: var(--acento); }
+.prod.sale { border-color: var(--peligro); background: color-mix(in srgb, var(--peligro) 20%, var(--panel)); }
+
+/* ===== Etapa 3 ===== */
+.ficha { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 12px; }
+.ficha dt { color: var(--tenue); }
+.ficha dd { margin: 0; font-variant-numeric: tabular-nums; word-break: break-all; }
+.ficha dd.cambio { background: color-mix(in srgb, var(--acento) 16%, transparent); border-radius: 4px; padding: 0 4px; font-weight: 600; }
+.lru { display: flex; flex-direction: column; gap: 4px; }
+.lru .fila { display: grid; grid-template-columns: 22px auto 1fr; gap: 8px; align-items: center; font-size: 12px; min-height: 26px; }
+.lru .rango { color: var(--tenue); font-variant-numeric: tabular-nums; text-align: right; }
+.lru .dato { color: var(--tenue); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lru .centinela { font-size: 11px; color: var(--tenue); padding: 2px 0 2px 30px; }
+.lru .fila.desborde { background: color-mix(in srgb, var(--peligro) 10%, transparent); border-radius: 6px; }
+.tabla-hash { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+.posicion { position: relative; height: 40px; border: 1px dashed var(--borde); border-radius: 7px; display: flex; align-items: flex-end;
+  justify-content: center; padding-bottom: 4px; font: 600 10px ui-monospace, Menlo, Consolas, monospace; color: var(--tx-producto); }
+.posicion.ocupada { border-style: solid; background: var(--producto); }
+.posicion.lapida { border-style: solid; color: var(--tenue); font-size: 14px; }
+.posicion .indice { position: absolute; top: 1px; left: 4px; font-size: 9px; color: var(--tenue); font-weight: 400; }
+.posicion .sonda { position: absolute; top: -6px; right: -6px; width: 15px; height: 15px; border-radius: 50%;
+  background: var(--aviso); color: #fff; font-size: 9px; line-height: 15px; text-align: center; font-family: system-ui; }
+.posicion.destino { box-shadow: 0 0 0 2px var(--acento); }
+.disco { font-size: 12px; }
+.disco.activo { border: 1px solid var(--aviso); }
+.matriz-caja { position: relative; }
+.matriz-caja svg { width: 100%; height: auto; display: block; }
+.matriz-caja rect.celda-cero { fill: var(--panel); }
+.leyenda-chica { font-size: 11px; color: var(--tenue); margin-top: 4px; }
+
+/* ===== Etapa 4: B+Tree ===== */
+.lienzo { position: relative; overflow: hidden; padding: 6px 0; background: var(--panel-2); border-radius: 8px; }
+.lienzo svg.dibujo { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.bnodo rect { fill: var(--panel); stroke: var(--borde); stroke-width: 1.2; }
+.bnodo.interno rect { fill: color-mix(in srgb, var(--acento) 7%, var(--panel)); }
+.bnodo.camino rect { stroke: var(--acento); stroke-width: 2.5; }
+.bnodo.cambio rect { stroke: var(--aviso); stroke-width: 2.5; }
+.bnodo.desborde rect { stroke: var(--peligro); stroke-width: 3; fill: color-mix(in srgb, var(--peligro) 10%, var(--panel)); }
+.bnodo.recorrida rect { fill: color-mix(in srgb, var(--ok) 12%, var(--panel)); }
+.bnodo text { fill: var(--texto); font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.bnodo text.pagina { fill: var(--tenue); font: 9px system-ui, sans-serif; }
+.bnodo text.marcada { fill: var(--acento); font-weight: 700; }
+.bnodo text.resultado { fill: var(--ok); font-weight: 700; }
+.bnodo text.vacia { fill: var(--tenue); }
+.bnodo { cursor: default; }
+line.arista { stroke: var(--tenue); stroke-width: 1.1; opacity: .55; }
+line.arista.camino { stroke: var(--acento); stroke-width: 2.5; opacity: 1; }
+path.enlace { stroke: var(--ok); stroke-width: 1.2; fill: none; opacity: .7; }
+.tira { display: flex; flex-wrap: wrap; gap: 4px; }
+.clave { font: 11px ui-monospace, Menlo, Consolas, monospace; padding: 2px 6px; border-radius: 5px; background: var(--panel); border: 1px solid var(--borde); }
+.clave.resultado { border-color: var(--ok); color: var(--ok); font-weight: 600; }
+.verificacion { font-size: 12px; margin-top: 6px; padding: 6px 8px; border-radius: 6px; }
+.verificacion.ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); }
+.verificacion.aviso { color: var(--aviso); background: color-mix(in srgb, var(--aviso) 12%, transparent); }
+.verificacion.error { color: var(--peligro); background: color-mix(in srgb, var(--peligro) 14%, transparent); font-weight: 600; }
+.alerta-global { margin-top: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 600;
+  color: var(--peligro); background: color-mix(in srgb, var(--peligro) 14%, var(--panel)); border: 1px solid var(--peligro); }
+.alerta-global button { margin-left: 8px; }
+
+/* ===== Etapa 5: KD-Tree ===== */
+.ejes { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--tenue); margin-bottom: 6px; }
+svg.dispersion { width: 100%; height: auto; display: block; background: var(--panel-2); border-radius: 8px; }
+svg.dispersion .marco { fill: none; stroke: var(--borde); }
+svg.dispersion .eje text, svg.dispersion text.eje { fill: var(--tenue); font: 10px system-ui, sans-serif; }
+svg.dispersion line.corte { stroke: var(--tenue); stroke-width: 1; opacity: .55; }
+svg.dispersion line.corte.actual { stroke: var(--aviso); stroke-width: 2.5; opacity: 1; }
+svg.dispersion rect.region { fill: color-mix(in srgb, var(--aviso) 10%, transparent); stroke: var(--aviso); stroke-width: 1.5; stroke-dasharray: 4 3; }
+svg.dispersion rect.caja-rango { fill: color-mix(in srgb, var(--ok) 10%, transparent); stroke: var(--ok); stroke-width: 1.5; }
+svg.dispersion circle.punto { fill: var(--tenue); opacity: .55; cursor: pointer; }
+svg.dispersion circle.punto.en-nodo { fill: var(--aviso); opacity: 1; }
+svg.dispersion circle.punto.evaluado { fill: var(--acento); opacity: .9; }
+svg.dispersion circle.punto.mejor { fill: var(--ok); opacity: 1; stroke: var(--panel); stroke-width: 1.5; }
+svg.dispersion circle.punto.dentro { fill: var(--ok); opacity: 1; }
+svg.dispersion circle.radio { fill: color-mix(in srgb, var(--ok) 8%, transparent); stroke: var(--ok); stroke-width: 1.2; stroke-dasharray: 5 4; }
+svg.dispersion path.consulta { fill: var(--peligro); stroke: var(--panel); stroke-width: 1; }
+.kdnodo circle, .kdnodo rect { fill: var(--panel); stroke: var(--tenue); stroke-width: 1.2; }
+.kdnodo.oculto { opacity: .12; }
+.kdnodo.actual circle, .kdnodo.actual rect { stroke: var(--aviso); stroke-width: 3; }
+.kdnodo.visitado circle, .kdnodo.visitado rect { fill: color-mix(in srgb, var(--acento) 30%, var(--panel)); stroke: var(--acento); }
+.kdnodo.podado circle, .kdnodo.podado rect { fill: color-mix(in srgb, var(--peligro) 22%, var(--panel)); stroke: var(--peligro); }
+.kdnodo.pila circle, .kdnodo.pila rect { stroke-dasharray: 3 2; stroke: var(--acento); }
+.kdnodo text { fill: var(--texto); font: 9px system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+line.kdarista { stroke: var(--tenue); stroke-width: 1; opacity: .5; }
+line.kdarista.oculta { opacity: .08; }
+table.lista { width: 100%; border-collapse: collapse; font-size: 12px; }
+table.lista th, table.lista td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--borde); font-variant-numeric: tabular-nums; }
+table.lista th { color: var(--tenue); font-weight: 500; }
+table.lista tr.nuevo td { background: color-mix(in srgb, var(--ok) 12%, transparent); }
+
+/* ===== Leyenda y nota ===== */
+.leyenda { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 12px 0; font-size: 12px; color: var(--tenue); }
+.leyenda span.muestra { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin-right: 5px; }
+.nota { font-size: 12px; color: var(--tenue); margin-top: 14px; }
+
+/* ===== Panel de detalle ===== */
+.detalle { position: fixed; top: 0; right: 0; height: 100vh; width: min(460px, 100vw); background: var(--panel);
+  border-left: 1px solid var(--borde); box-shadow: -8px 0 24px rgba(0,0,0,.12); padding: 16px; overflow-y: auto; z-index: 10;
+  transform: translateX(100%); transition: transform .2s; }
+.detalle.abierto { transform: none; }
+.detalle table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.detalle th, .detalle td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--borde); vertical-align: top; word-break: break-all; }
+.detalle th { color: var(--tenue); font-weight: 500; width: 40%; }
+.historial { list-style: none; padding: 0; margin: 0; font-size: 12px; }
+.historial li { padding: 3px 0; border-bottom: 1px solid var(--borde); }
+.historial button { background: none; border: 0; color: var(--acento); cursor: pointer; padding: 0; font-variant-numeric: tabular-nums; }
+.cerrar { float: right; }
+.sin-datos { padding: 40px; text-align: center; color: var(--tenue); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header>
+    <h1>Pipeline de eventos · Etapas 3, 4 y 5</h1>
+    <div class="subtitulo" id="subtitulo"></div>
+    <div id="aviso-demo"></div>
+    <div class="alerta-global" id="alerta-global" hidden></div>
+  </header>
+
+  <section class="controles" aria-label="Controles">
+    <div class="botones">
+      <button class="boton" id="btn-reiniciar" title="Volver al inicio">⏮</button>
+      <button class="boton" id="btn-atras" title="Paso anterior (←)">◀ Paso</button>
+      <button class="boton principal" id="btn-reproducir" title="Reproducir (espacio)">▶ Reproducir</button>
+      <button class="boton" id="btn-pausar" title="Pausar (espacio)">⏸ Pausar</button>
+      <button class="boton" id="btn-paso" title="Paso siguiente (→)">Paso ▶</button>
+    </div>
+    <label class="control">Velocidad
+      <input type="range" id="velocidad" min="1" max="60" value="6">
+      <span id="velocidad-texto">6 pasos/s</span>
+    </label>
+    <input type="range" id="barra-progreso" min="0" value="0" aria-label="Posición en la traza">
+    <span class="control" id="indicador-paso"></span>
+  </section>
+
+  <nav class="pestanas" id="pestanas" aria-label="Etapas"></nav>
+  <section class="contadores" id="contadores" aria-label="Contadores"></section>
+  <section class="narracion" id="narracion" aria-live="polite"></section>
+
+  <!-- ===================== Etapa 3 ===================== -->
+  <div class="vista" id="vista-3">
+    <section class="panel">
+      <div class="cabecera" style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">
+        <h3 style="margin-top:0">Entrada: eventos atendidos por la etapa 2, en orden de salida</h3>
+        <span class="subtitulo" id="entrada-info"></span>
+      </div>
+      <div class="entrada" id="entrada"></div>
+    </section>
+    <div class="columnas c3" style="margin-top:12px">
+      <section class="panel etapa">
+        <div class="cabecera"><h2>Evento y estado del producto</h2><span class="estructura">EstadoProducto · O(1)</span></div>
+        <h3>Evento actual</h3>
+        <div class="caja" id="evento-actual"></div>
+        <h3 id="titulo-estado">Estado del producto</h3>
+        <div class="caja" id="estado-producto"></div>
+      </section>
+      <section class="panel etapa">
+        <div class="cabecera"><h2>Caché LRU</h2><span class="estructura">TablaHash + lista doble · O(1)</span></div>
+        <h3 id="titulo-lru">Lista doblemente enlazada (más reciente arriba)</h3>
+        <div class="lru" id="lru"></div>
+        <h3 id="titulo-tabla">Tabla hash de la caché (sondeo lineal, CRC32)</h3>
+        <div class="tabla-hash" id="tabla-hash"></div>
+        <div class="leyenda-chica">Círculo naranja: orden del sondeo · borde azul: posición final · † lápida</div>
+      </section>
+      <section class="panel etapa">
+        <div class="cabecera"><h2>Disco y matriz</h2><span class="estructura">catalogo.jsonl · DOK → CSR</span></div>
+        <h3>Lectura en disco (solo en un fallo)</h3>
+        <div class="caja disco" id="disco"></div>
+        <h3 id="titulo-matriz">Matriz usuario × producto (DOK)</h3>
+        <div class="caja matriz-caja" id="matriz"></div>
+        <div class="leyenda-chica" id="matriz-info"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ===================== Etapa 4 ===================== -->
+  <div class="vista" id="vista-4" hidden>
+    <section class="panel etapa">
+      <div class="cabecera"><h2>Índice de precios · B+Tree</h2><span class="estructura" id="estructura-4"></span></div>
+      <h3 id="titulo-arbol">Árbol</h3>
+      <div class="lienzo" id="lienzo-arbol"></div>
+      <div class="verificacion" id="verificacion-arbol" aria-live="polite"></div>
+      <div class="columnas c2" style="margin-top:4px">
+        <div>
+          <h3 id="titulo-tira">Entradas</h3>
+          <div class="caja tira" id="tira-4"></div>
+        </div>
+        <div>
+          <h3>Consultas</h3>
+          <div class="caja" id="consultas-4" style="overflow-x:auto"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== Etapa 5 ===================== -->
+  <div class="vista" id="vista-5" hidden>
+    <div class="columnas c2">
+      <section class="panel etapa">
+        <div class="cabecera"><h2>Espacio de productos (z-score)</h2><span class="estructura">proyección en 2 de las 4 dimensiones</span></div>
+        <div class="ejes" style="margin-top:8px">
+          <label>Eje x <select id="eje-x"></select></label>
+          <label>Eje y <select id="eje-y"></select></label>
+        </div>
+        <div id="dispersion"></div>
+        <div class="leyenda-chica" id="leyenda-dispersion"></div>
+      </section>
+      <section class="panel etapa">
+        <div class="cabecera"><h2>KD-Tree</h2><span class="estructura" id="estructura-5"></span></div>
+        <div class="lienzo" id="lienzo-kd" style="margin-top:8px"></div>
+        <div class="leyenda-chica">Círculo: corte (letra = dimensión) · cuadrado: hoja (número = puntos) · azul: visitado · rojo: podado · borde punteado: en la pila · naranja: nodo actual</div>
+        <h3 id="titulo-mejores">Candidatos</h3>
+        <div id="mejores" style="overflow-x:auto"></div>
+        <div class="verificacion" id="verificacion-kd" hidden></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="leyenda" id="leyenda"></div>
+  <p class="nota" id="nota"></p>
+</div>
+
+<aside class="detalle" id="detalle" aria-label="Detalle"></aside>
+
+<!-- Datos de la traza, incrustados por scripts/generar_visualizador_345.py -->
+<script id="datos-traza" type="application/json"></script>
+<script>
+'use strict';
+
+/* =====================================================================
+   1. Datos
+   ===================================================================== */
+let TRAZA;
+try {
+  TRAZA = JSON.parse(document.getElementById('datos-traza').textContent);
+} catch (error) {
+  document.querySelector('.contenedor').innerHTML =
+    '<p class="sin-datos">Esta es la plantilla sin datos. Generar el visualizador con ' +
+    '<code>python scripts/generar_visualizador_345.py</code>.</p>';
+  throw error;
+}
+const PASOS = TRAZA.pasos, PARAM = TRAZA.parametros, EVENTOS = TRAZA.eventos, PRODUCTOS = TRAZA.productos;
+const KD = TRAZA.kd, MATRIZ = TRAZA.matriz;
+const N = PASOS.length;
+const TIPOS = { search: 'Búsqueda', view: 'Vista', cart: 'Carrito', purchase: 'Compra',
+                payment_alert: 'Alerta de pago', review: 'Reseña', return: 'Devolución' };
+const ATR = PARAM.atributos;
+const ATR_CORTO = { log_precio: 'P', average_rating: 'R', log_rating_number: 'N', log_actividad_stream: 'A' };
+const ATR_NOMBRE = { log_precio: 'log(1 + precio)', average_rating: 'rating promedio',
+                     log_rating_number: 'log(1 + n.º de calificaciones)', log_actividad_stream: 'log(1 + actividad en el stream)' };
+const ORDEN_ENTRADA = Object.keys(EVENTOS).map(Number).sort((a, b) => EVENTOS[a].orden_salida - EVENTOS[b].orden_salida);
+
+// Primer paso de cada etapa, para las pestañas
+const INICIO_ETAPA = {}, FIN_ETAPA = {};
+for (const p of PASOS) { if (!(p.etapa in INICIO_ETAPA)) INICIO_ETAPA[p.etapa] = p.paso; FIN_ETAPA[p.etapa] = p.paso; }
+// Pasos por evento y por producto (historial del panel de detalle)
+const PASOS_POR_TID = new Map(), PASOS_POR_ASIN = new Map();
+const agregar = (m, k, p) => { if (!m.has(k)) m.set(k, []); m.get(k).push(p); };
+for (const p of PASOS) {
+  if (p.tid !== null && p.etapa === 3) agregar(PASOS_POR_TID, p.tid, p);
+  const a = p.detalle && p.detalle.asin;
+  if (a) agregar(PASOS_POR_ASIN, a, p);
+}
+const corto = a => a ? a.slice(-5) : '';
+const tipoDe = tid => EVENTOS[tid].event_type;
+const fmt = (v, d = 2) => typeof v === 'number' ? v.toFixed(d) : (v ?? '—');
+const precioTxt = v => typeof v === 'number' ? `$${v.toFixed(2)}` : '—';
+const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+function svgEl(tag, attrs = {}, padre = null) {
+  const el = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  if (padre) padre.appendChild(el);
+  return el;
+}
+
+/* =====================================================================
+   2. Verificaciones que se hacen al cargar la página
+   ===================================================================== */
+// Etapa 3: la lista LRU y la tabla hash tienen las mismas claves y no superan la capacidad
+function verificarCache(foto, detalle) {
+  const errores = [];
+  const enTabla = foto.tabla.filter(k => k && k !== '†');
+  const limite = PARAM.capacidad_cache + (detalle && detalle.lleno ? 1 : 0);
+  if (foto.lru.length > limite) errores.push(`la lista tiene ${foto.lru.length} productos y la capacidad es ${PARAM.capacidad_cache}`);
+  if (new Set(foto.lru).size !== foto.lru.length) errores.push('la lista tiene productos repetidos');
+  const a = [...foto.lru].sort().join(), b = [...enTabla].sort().join();
+  if (a !== b) errores.push('la lista y la tabla hash no tienen las mismas claves');
+  return errores;
+}
+
+// Etapa 4: invariantes del B+Tree sobre una foto
+function compararClave(a, b) { return a[0] !== b[0] ? a[0] - b[0] : (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0); }
+function verificarArbol(foto, accion) {
+  const errores = [], N_ = foto.nodos;
+  const desborde = accion === 'desborde_hoja' || accion === 'desborde_interno';
+  const division = accion === 'division_hoja' || accion === 'division_interno';
+  if (foto.raiz !== null && foto.raices.length > 1 && !division)
+    errores.push(`páginas sin padre: ${foto.raices.filter(r => r !== foto.raiz).join(', ')}`);
+  for (const [p, n] of Object.entries(N_)) {
+    for (let i = 1; i < n.k.length; i++) if (compararClave(n.k[i - 1], n.k[i]) >= 0) errores.push(`página ${p}: claves fuera de orden`);
+    const max = n.h ? PARAM.max_hoja : PARAM.max_interno;
+    if (n.k.length > max && !desborde) errores.push(`página ${p}: ${n.k.length} claves, máximo ${max}`);
+    if (!n.h && n.c.length !== n.k.length + 1) errores.push(`página ${p}: ${n.c.length} hijos para ${n.k.length} claves`);
+  }
+  if (foto.raiz !== null) {
+    // Profundidad de las hojas y rango de claves de cada subárbol
+    const profundidades = new Set();
+    (function rec(p, nivel, min, max) {
+      const n = N_[p];
+      if (!n) { errores.push(`falta la página ${p}`); return; }
+      for (const k of n.k) {
+        if (min && compararClave(k, min) < 0) errores.push(`página ${p}: clave ${k[0]} menor que el separador`);
+        if (max && compararClave(k, max) >= 0) errores.push(`página ${p}: clave ${k[0]} no menor que el separador`);
+      }
+      if (n.h) { profundidades.add(nivel); return; }
+      n.c.forEach((h, i) => rec(h, nivel + 1, i ? n.k[i - 1] : min, i < n.k.length ? n.k[i] : max));
+    })(foto.raiz, 1, null, null);
+    if (profundidades.size > 1) errores.push(`hojas a distintas profundidades: ${[...profundidades].join(', ')}`);
+  }
+  // Las hojas enlazadas recorren todas las claves en orden
+  const hojas = Object.entries(N_).filter(([, n]) => n.h);
+  const apuntadas = new Set(hojas.map(([, n]) => n.s));
+  const primera = hojas.find(([p]) => !apuntadas.has(Number(p)));
+  if (primera) {
+    let p = Number(primera[0]), previa = null, cuenta = 0, guardia = 0;
+    while (p >= 0 && N_[p] && guardia++ < 10000) {
+      for (const k of N_[p].k) { if (previa && compararClave(previa, k) >= 0) errores.push('la lista de hojas no está en orden'); previa = k; cuenta++; }
+      p = N_[p].s;
+    }
+    const total = hojas.reduce((s, [, n]) => s + n.k.length, 0);
+    if (cuenta !== total) errores.push(`la lista de hojas recorre ${cuenta} de ${total} entradas`);
+  }
+  return [...new Set(errores)];
+}
+
+const FOTOS_CACHE = PASOS.filter(p => p.etapa === 3 && p.estructura);
+const FOTOS_ARBOL = PASOS.filter(p => p.etapa === 4 && p.estructura);
+const MALOS_CACHE = FOTOS_CACHE.filter(p => verificarCache(p.estructura, p.detalle).length).map(p => p.paso);
+const MALOS_ARBOL = FOTOS_ARBOL.filter(p => verificarArbol(p.estructura, p.accion).length).map(p => p.paso);
+const KNN_MAL = PASOS.filter(p => (p.accion === 'knn_fin' || p.accion === 'rango_kd_fin') && !verificarKnnJs(p)).map(p => p.paso);
+
+// Etapa 5: fuerza bruta en el navegador sobre los vectores Z de la traza
+function verificarKnnJs(p) {
+  const d = p.detalle;
+  if (p.accion === 'rango_kd_fin') {
+    const caja = PASOS.find(x => x.accion === 'rango_kd_inicio').detalle;
+    const dentro = KD.Z.map((z, i) => z.every((v, j) => v >= caja.min_z[j] - 1e-4 && v <= caja.max_z[j] + 1e-4) ? i : -1).filter(i => i >= 0);
+    return dentro.join() === [...d.resultado].sort((a, b) => a - b).join();
+  }
+  const q = KD.Z[d.punto];
+  const fb = KD.Z.map((z, i) => [Math.hypot(...z.map((v, j) => v - q[j])), i]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).slice(0, d.resultado.length);
+  return fb.every((x, i) => Math.abs(x[0] - d.resultado[i][0]) < 1e-3);
+}
+
+/* =====================================================================
+   3. Estado: se reconstruye aplicando los pasos en orden
+   ===================================================================== */
+function estadoInicial() {
+  return {
+    indice: -1, contadores: null,
+    // etapa 3
+    procesados: 0, eventoActual: null, foto3: { lru: [], tabla: new Array(16).fill(null) }, sondeo: [], destino: null,
+    disco: null, estadoProd: null, celdas: new Map(), celdaActual: null, csr: null, desalojado: null, nuevoLru: null,
+    // etapa 4
+    foto4: null, ordenados: null, consultas4: [], recorridas: new Set(), resultadoClaves: new Set(),
+    // etapa 5
+    revelados: -1, nodoKd: null, visitados: new Set(), podados: new Set(), pila: [], mejores: [], peor: null,
+    consulta: null, puntosHoja: [], evaluados: new Set(), dentro: new Set(), cajaRango: null, finKd: null, resumenes: [],
+  };
+}
+
+function aplicar(e, p) {
+  const d = p.detalle;
+  e.indice = p.paso;
+  e.contadores = p.contadores;
+  if (p.etapa === 3) {
+    e.sondeo = []; e.destino = null; e.desalojado = null; e.nuevoLru = null;
+    if (p.tid !== null && p.tid !== e.eventoActual) { e.eventoActual = p.tid; e.procesados = EVENTOS[p.tid].orden_salida; e.disco = null; e.estadoProd = null; }
+    if (p.estructura) e.foto3 = p.estructura;
+    switch (p.accion) {
+      case 'acierto': e.sondeo = d.sondeo; e.destino = d.sondeo.at(-1); e.nuevoLru = d.asin; break;
+      case 'fallo': e.sondeo = d.sondeo; break;
+      case 'lectura_disco': e.disco = d; break;
+      case 'poner': e.sondeo = d.sondeo; e.destino = d.sondeo.at(-1); e.nuevoLru = d.asin; if (d.lleno) e.desalojado = p.estructura.lru.at(-1); break;
+      case 'desalojo': e.sondeo = d.sondeo; e.destino = d.sondeo.at(-1); break;
+      case 'estado': e.estadoProd = d; break;
+      case 'matriz': e.celdas.set(`${d.fila},${d.columna}`, d.valor); e.celdaActual = [d.fila, d.columna]; break;
+      case 'csr': e.csr = d; e.celdaActual = null; e.eventoActual = null; e.procesados = ORDEN_ENTRADA.length; break;
+    }
+  } else if (p.etapa === 4) {
+    if (p.estructura) e.foto4 = p.estructura;
+    if (p.accion === 'ordenar') e.ordenados = d.claves;
+    if (p.accion === 'rango_inicio') { e.recorridas = new Set(); e.resultadoClaves = new Set(); }
+    if (p.accion === 'rango_hoja') { e.recorridas.add(d.pagina); for (const k of d.encontradas) e.resultadoClaves.add(k[1]); }
+    if (p.accion === 'buscar') { e.consultas4.push({ tipo: 'buscar', d }); e.recorridas = new Set(); e.resultadoClaves = new Set(d.encontrada ? [d.clave[1]] : []); }
+    if (p.accion === 'rango_fin') e.consultas4.push({ tipo: 'rango', d });
+  } else if (p.etapa === 5) {
+    switch (p.accion) {
+      case 'kd_corte': case 'kd_hoja': e.revelados = d.nodo; e.nodoKd = d.nodo; break;
+      case 'kd_fin': e.nodoKd = null; break;
+      case 'knn_inicio': case 'rango_kd_inicio':
+        e.visitados = new Set(); e.podados = new Set(); e.pila = [KD.raiz]; e.mejores = []; e.peor = null; e.puntosHoja = [];
+        e.evaluados = new Set(); e.dentro = new Set(); e.finKd = null; e.nodoKd = null;
+        e.consulta = p.accion === 'knn_inicio' ? { tipo: 'knn', punto: d.punto, asin: d.asin, k: d.k, n: d.consulta } : { tipo: 'rango' };
+        e.cajaRango = p.accion === 'rango_kd_inicio' ? d : null;
+        break;
+      case 'knn_interno': case 'rango_kd_interno':
+        e.visitados.add(d.nodo); e.nodoKd = d.nodo; e.pila = d.pila; e.puntosHoja = []; break;
+      case 'knn_poda': e.podados.add(d.nodo); e.nodoKd = d.nodo; e.pila = d.pila; e.puntosHoja = []; break;
+      case 'knn_hoja':
+        e.visitados.add(d.nodo); e.nodoKd = d.nodo; e.pila = d.pila; e.puntosHoja = d.puntos;
+        d.puntos.forEach(i => e.evaluados.add(i)); e.mejores = d.mejores; e.peor = d.peor; break;
+      case 'rango_kd_hoja':
+        e.visitados.add(d.nodo); e.nodoKd = d.nodo; e.pila = d.pila; e.puntosHoja = d.puntos;
+        d.puntos.forEach(i => e.evaluados.add(i)); d.dentro.forEach(i => e.dentro.add(i)); break;
+      case 'knn_fin': case 'rango_kd_fin':
+        e.finKd = d; e.nodoKd = null; e.pila = []; e.puntosHoja = [];
+        if (p.accion === 'knn_fin') e.mejores = d.resultado.map(([dist, i]) => [dist, i]);
+        e.resumenes.push({ accion: p.accion, d });
+        break;
+    }
+  }
+}
+
+/* =====================================================================
+   4. Pestañas y contadores
+   ===================================================================== */
+const NOMBRE_ETAPA = { 3: 'Etapa 3 · Almacenamiento y caché', 4: 'Etapa 4 · B+Tree de precios', 5: 'Etapa 5 · KD-Tree y KNN' };
+let etapaVista = 3;
+for (const et of [3, 4, 5]) {
+  const b = document.createElement('button');
+  b.className = 'pestana'; b.dataset.etapa = et;
+  b.innerHTML = `${NOMBRE_ETAPA[et]}<span class="rango">pasos ${INICIO_ETAPA[et] + 1}–${FIN_ETAPA[et] + 1}</span>`;
+  b.title = 'Ir al primer paso de la etapa';
+  b.addEventListener('click', () => { pausar(); irA(INICIO_ETAPA[et]); });
+  $('pestanas').appendChild(b);
+}
+
+const CONTADORES = [
+  [3, 'Consultas a la caché', c => c.consultas ?? 0, c => `${c.sin_producto ?? 0} búsquedas sin producto`],
+  [3, 'Aciertos / fallos', c => `${c.aciertos ?? 0} / ${c.fallos ?? 0}`,
+      c => c.consultas ? `tasa de aciertos ${(100 * c.aciertos / c.consultas).toFixed(1)} %` : ' '],
+  [3, 'Desalojos', c => c.desalojos ?? 0, () => `capacidad ${PARAM.capacidad_cache}`],
+  [3, 'Lecturas en disco', c => c.lecturas_disco ?? 0, () => '= fallos'],
+  [3, 'Productos con estado', c => c.productos_estado ?? 0, () => ' '],
+  [3, 'Celdas DOK', c => c.celdas_dok ?? 0, c => `${c.filas ?? 0} usuarios × ${c.columnas ?? 0} productos`],
+  [4, 'Entradas', c => c.entradas ?? 0, () => 'clave (precio, asin)'],
+  [4, 'Altura / páginas', c => `${c.altura ?? 0} / ${Math.max(0, (c.paginas ?? 1) - 1)}`, c => `${c.escrituras ?? 0} escrituras`],
+  [4, 'Divisiones', c => `${c.div_hoja ?? 0} + ${c.div_interno ?? 0}`, () => 'hoja + interno'],
+  [4, 'Páginas leídas', c => c.lecturas ?? 0, () => 'acumulado'],
+  [5, 'Nodos del KD-Tree', c => c.kd_nodos ?? 0, c => `${c.kd_puntos ?? 0} puntos de 4 dim.`],
+  [5, 'Visitados / podados', c => `${c.kd_visitados ?? 0} / ${c.kd_podados ?? 0}`, () => 'consulta actual'],
+  [5, 'Puntos evaluados', c => c.kd_evaluados ?? 0, c => c.kd_puntos ? `de ${c.kd_puntos}` : ' '],
+];
+const CAJAS_CONTADOR = CONTADORES.map(([et, etiqueta]) => {
+  const div = document.createElement('div');
+  div.className = 'contador';
+  div.innerHTML = `<div class="etiqueta">${etiqueta}</div><div class="valor"></div><div class="extra"></div>`;
+  $('contadores').appendChild(div);
+  return div;
+});
+
+function dibujarContadores(e) {
+  const c = e.contadores || {};
+  CONTADORES.forEach(([et, , valor, extra], i) => {
+    const caja = CAJAS_CONTADOR[i];
+    caja.classList.toggle('inactivo', et !== etapaVista);
+    caja.querySelector('.valor').textContent = valor(c);
+    caja.querySelector('.extra').textContent = extra(c);
+  });
+}
+
+/* =====================================================================
+   5. Etapa 3
+   ===================================================================== */
+const CHIPS = new Map();
+function chip(tid, chico = false) {
+  let el = CHIPS.get(tid);
+  if (!el) {
+    el = document.createElement('button');
+    el.textContent = tid;
+    el.title = `#${tid} · ${TIPOS[tipoDe(tid)]} · salida ${EVENTOS[tid].orden_salida} de la etapa 2`;
+    el.addEventListener('click', () => detalleEvento(tid));
+    CHIPS.set(tid, el);
+  }
+  el.className = `chip t-${tipoDe(tid)}${chico ? ' chico' : ''}`;
+  return el;
+}
+for (const tid of ORDEN_ENTRADA) $('entrada').appendChild(chip(tid, true));
+
+const PRODS = new Map();       // un elemento por producto en la lista LRU, para animarlo
+function prod(asin) {
+  let el = PRODS.get(asin);
+  if (!el) {
+    el = document.createElement('button');
+    el.textContent = corto(asin);
+    el.title = asin;
+    el.addEventListener('click', () => detalleProducto(asin));
+    PRODS.set(asin, el);
+  }
+  el.className = 'prod';
+  return el;
+}
+const prodHtml = (asin, extra = '') => `<button class="prod ${extra}" data-asin="${asin}" title="${asin}">${corto(asin)}</button>`;
+
+function dibujarEtapa3(e, animar) {
+  const total = ORDEN_ENTRADA.length;
+  ORDEN_ENTRADA.forEach(tid => {
+    const el = CHIPS.get(tid);
+    el.classList.toggle('hecho', EVENTOS[tid].orden_salida < e.procesados || (EVENTOS[tid].orden_salida === e.procesados && tid !== e.eventoActual));
+    el.classList.toggle('actual', tid === e.eventoActual);
+  });
+  $('entrada-info').textContent = `${Math.min(e.procesados, total)} de ${total} eventos · ` +
+    `${PARAM.eventos_traza_012 - total} de los ${PARAM.eventos_traza_012} de la etapa 0 no llegan (rechazados o duplicados)`;
+
+  // Evento actual
+  const ev = e.eventoActual !== null ? EVENTOS[e.eventoActual] : null;
+  $('evento-actual').innerHTML = ev ? `
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
+      <span class="ref t-${ev.event_type}">#${e.eventoActual}</span><b>${TIPOS[ev.event_type]}</b>
+      <span class="subtitulo">salida ${ev.orden_salida} de la etapa 2</span></div>
+    <dl class="ficha">
+      <dt>parent_asin</dt><dd>${ev.parent_asin ? prodHtml(ev.parent_asin) : '<span class="subtitulo">sin producto</span>'}</dd>
+      <dt>user_id</dt><dd class="mono">${esc(ev.user_id)}</dd>
+      ${ev.price != null ? `<dt>price</dt><dd>${precioTxt(ev.price)}</dd>` : ''}
+      ${ev.rating != null ? `<dt>rating</dt><dd>${ev.rating}</dd>` : ''}
+      ${ev.query ? `<dt>query</dt><dd>${esc(ev.query)}</dd>` : ''}
+      <dt>peso en la matriz</dt><dd>${PARAM.pesos[ev.event_type] ?? 'no se registra'}</dd>
+    </dl>` : `<span class="vacio">${e.csr ? 'Stream terminado: la DOK se convierte a CSR.' : 'Sin evento en proceso.'}</span>`;
+
+  // Estado del producto
+  const s = e.estadoProd;
+  $('titulo-estado').textContent = s ? `Estado del producto ${s.asin}${s.nuevo ? ' (nuevo)' : ''}` : 'Estado del producto';
+  if (s) {
+    const campos = [['stock', s.estado.stock], ['vistas', s.estado.vistas], ['carritos', s.estado.carritos],
+      ['compras', s.estado.compras], ['devoluciones', s.estado.devoluciones], ['resenas', s.estado.resenas],
+      ['precio_observado', s.estado.precio_observado != null ? precioTxt(s.estado.precio_observado) : '—'],
+      ['ventas_sin_stock', s.estado.ventas_sin_stock]];
+    $('estado-producto').innerHTML = `<dl class="ficha">${campos.map(([k, v]) =>
+      `<dt>${k}</dt><dd class="${s.cambios.includes(k) ? 'cambio' : ''}">${v}</dd>`).join('')}</dl>` +
+      (s.notas.length ? `<div class="leyenda-chica">${s.notas.join(' · ')}</div>` : '');
+  } else {
+    $('estado-producto').innerHTML = '<span class="vacio">Se actualiza después de la consulta al producto.</span>';
+  }
+
+  // Lista LRU (con animación FLIP de cada producto)
+  const lru = $('lru');
+  const antes = new Map();
+  if (animar) for (const [a, el] of PRODS) if (el.isConnected) antes.set(a, el.getBoundingClientRect());
+  lru.replaceChildren();
+  const cab = document.createElement('div'); cab.className = 'centinela'; cab.textContent = 'cabeza (centinela)';
+  lru.appendChild(cab);
+  const foto = e.foto3;
+  foto.lru.forEach((a, i) => {
+    const fila = document.createElement('div');
+    fila.className = 'fila' + (a === e.desalojado ? ' desborde' : '');
+    const r = document.createElement('span'); r.className = 'rango'; r.textContent = i + 1;
+    const el = prod(a);
+    if (a === e.nuevoLru) el.classList.add('nuevo');
+    if (a === e.desalojado) el.classList.add('sale');
+    const dato = document.createElement('span'); dato.className = 'dato';
+    const pr = PRODUCTOS[a];
+    dato.textContent = a === e.desalojado ? 'menos reciente: se desaloja' : `${pr.precio != null ? precioTxt(pr.precio) : 'sin precio'} · ${pr.categoria ?? ''}`;
+    fila.append(r, el, dato);
+    lru.appendChild(fila);
+  });
+  for (let i = foto.lru.length; i < PARAM.capacidad_cache; i++) {
+    const fila = document.createElement('div'); fila.className = 'fila';
+    fila.innerHTML = `<span class="rango">${i + 1}</span><span class="vacio">libre</span><span></span>`;
+    lru.appendChild(fila);
+  }
+  const col = document.createElement('div'); col.className = 'centinela'; col.textContent = 'cola (centinela) · se desaloja el de arriba';
+  lru.appendChild(col);
+  $('titulo-lru').textContent = `Lista doblemente enlazada · ${foto.lru.length} / ${PARAM.capacidad_cache} (más reciente arriba)`;
+  if (animar) {
+    const dur = Math.min(450, 800 / velocidad);
+    for (const a of foto.lru) {
+      const el = PRODS.get(a), previo = antes.get(a), nuevo = el.getBoundingClientRect();
+      if (previo) {
+        const dy = previo.top - nuevo.top;
+        if (dy) el.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: dur, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      } else el.animate([{ opacity: 0, transform: 'scale(.4)' }, { opacity: 1, transform: 'none' }], { duration: dur });
+    }
+  }
+
+  // Tabla hash de la caché
+  const th = $('tabla-hash');
+  th.replaceChildren();
+  $('titulo-tabla').textContent = `Tabla hash de la caché · ${foto.tabla.length} posiciones (sondeo lineal, CRC32)`;
+  th.style.gridTemplateColumns = `repeat(${Math.min(8, foto.tabla.length)}, 1fr)`;
+  foto.tabla.forEach((k, i) => {
+    const div = document.createElement('div');
+    div.className = 'posicion' + (k === '†' ? ' lapida' : k ? ' ocupada' : '') + (i === e.destino ? ' destino' : '');
+    div.innerHTML = `<span class="indice">${i}</span>${k === '†' ? '†' : k ? corto(k) : ''}`;
+    if (k && k !== '†') { div.title = k; div.style.cursor = 'pointer'; div.addEventListener('click', () => detalleProducto(k)); }
+    const orden = e.sondeo.indexOf(i);
+    if (orden >= 0) div.insertAdjacentHTML('beforeend', `<span class="sonda">${orden + 1}</span>`);
+    th.appendChild(div);
+  });
+
+  // Disco
+  const dsk = e.disco;
+  $('disco').classList.toggle('activo', !!dsk);
+  $('disco').innerHTML = dsk ? `
+    <div style="margin-bottom:4px">seek(${dsk.offset}) · read(${dsk.largo} bytes) → ${prodHtml(dsk.asin)}</div>
+    <dl class="ficha">
+      <dt>precio</dt><dd>${precioTxt(dsk.registro.precio)}</dd>
+      <dt>average_rating</dt><dd>${dsk.registro.average_rating}</dd>
+      <dt>rating_number</dt><dd>${dsk.registro.rating_number}</dd>
+      <dt>categoria_hoja</dt><dd>${esc(dsk.registro.categoria_hoja)}</dd></dl>`
+    : '<span class="vacio">Con un acierto el registro sale de la caché y no se lee el disco.</span>';
+
+  dibujarMatriz(e);
+}
+
+function dibujarMatriz(e) {
+  const filas = Math.max(1, MATRIZ.usuarios.length), cols = Math.max(1, MATRIZ.productos.length);
+  const t = 5, m = 18;
+  const svg = svgEl('svg', { viewBox: `0 0 ${cols * t + m + 2} ${filas * t + m + 2}`, role: 'img', 'aria-label': 'Matriz usuario por producto' });
+  svgEl('rect', { x: m, y: m, width: cols * t, height: filas * t, class: 'celda-cero', stroke: 'var(--borde)' }, svg);
+  const nf = e.contadores ? (e.contadores.filas || 0) : 0, nc = e.contadores ? (e.contadores.columnas || 0) : 0;
+  svgEl('rect', { x: m, y: m, width: nc * t, height: nf * t, fill: 'var(--panel-2)' }, svg);
+  for (const [k, v] of e.celdas) {
+    const [f, c] = k.split(',').map(Number);
+    const intensidad = Math.min(1, 0.3 + Math.abs(v) / 10);
+    svgEl('rect', { x: m + c * t, y: m + f * t, width: t, height: t,
+      fill: v > 0 ? 'var(--ok)' : 'var(--peligro)', 'fill-opacity': intensidad }, svg);
+  }
+  if (e.celdaActual) {
+    const [f, c] = e.celdaActual;
+    svgEl('line', { x1: m, x2: m + cols * t, y1: m + f * t + t / 2, y2: m + f * t + t / 2, stroke: 'var(--acento)', 'stroke-width': .6, opacity: .7 }, svg);
+    svgEl('line', { y1: m, y2: m + filas * t, x1: m + c * t + t / 2, x2: m + c * t + t / 2, stroke: 'var(--acento)', 'stroke-width': .6, opacity: .7 }, svg);
+    svgEl('rect', { x: m + c * t - 1.5, y: m + f * t - 1.5, width: t + 3, height: t + 3, fill: 'none', stroke: 'var(--texto)', 'stroke-width': 1.2 }, svg);
+  }
+  const tx = svgEl('text', { x: m, y: 11, class: 'eje', fill: 'var(--tenue)', 'font-size': 9 }, svg); tx.textContent = 'productos (columnas, en orden de aparición) →';
+  const ty = svgEl('text', { x: 11, y: m, fill: 'var(--tenue)', 'font-size': 9, transform: `rotate(90 11 ${m})` }, svg); ty.textContent = 'usuarios (filas) →';
+  $('matriz').replaceChildren(svg);
+  const c = e.contadores || {};
+  const p = PASOS[e.indice];
+  let info = `${c.celdas_dok ?? 0} celdas no nulas de ${nf * nc} posibles en la parte usada. Verde: peso positivo · rojo: ≤ 0 (compra devuelta).`;
+  if (p && p.accion === 'matriz') info = `celda (${p.detalle.fila}, ${p.detalle.columna}) += ${p.detalle.peso} → ${p.detalle.valor}` +
+    `${p.detalle.nueva ? ' (celda nueva en la DOK)' : ''} · clave = fila << 32 | columna. ` + info;
+  if (e.csr) info = `CSR: ${e.csr.nnz} celdas con peso positivo (${e.csr.omitidas} omitidas), ` +
+    `${(e.csr.bytes_csr / 1024).toFixed(1)} KB frente a ${(e.csr.bytes_densa / 1024).toFixed(1)} KB de una matriz densa ${e.csr.filas} × ${e.csr.columnas}.`;
+  $('matriz-info').textContent = info;
+  $('titulo-matriz').textContent = e.csr ? 'Matriz usuario × producto (CSR al cerrar)' : 'Matriz usuario × producto (DOK)';
+}
+
+/* =====================================================================
+   6. Etapa 4: B+Tree
+   Cada nodo es una caja con sus claves en columna. Las hojas se ubican de izquierda a
+   derecha en el orden del recorrido y cada nodo interno se centra sobre sus hijos.
+   ===================================================================== */
+const ANCHO_NODO = 64, SEP_X = 12, FILA_KEY = 14, CAB_NODO = 14, SEP_Y = 34;
+function dibujarEtapa4(e) {
+  const p = PASOS[e.indice];
+  const d = p && p.etapa === 4 ? p.detalle : {};
+  const accion = p && p.etapa === 4 ? p.accion : null;
+  $('estructura-4').textContent = `hojas de ${PARAM.max_hoja} entradas · nodos internos de ${PARAM.max_interno} claves · ` +
+    `carga masiva al ${Math.round(PARAM.llenado * 100)} %`;
+  const lienzo = $('lienzo-arbol');
+  const foto = e.foto4;
+  if (!foto) {
+    lienzo.innerHTML = '<div class="vacio" style="padding:10px">El árbol se construye después de extraer y ordenar las entradas.</div>';
+    $('verificacion-arbol').className = 'verificacion'; $('verificacion-arbol').textContent = '';
+  } else {
+    // Resaltados del paso actual
+    const camino = new Set((d.camino || []).map(c => c[0]));
+    const cambio = new Set([d.pagina, d.izquierda, d.derecha].filter(x => x !== undefined && x !== null));
+    const desborde = accion === 'desborde_hoja' || accion === 'desborde_interno' ? d.pagina : null;
+    const claveMarcada = d.clave ? d.clave.join('|') : (d.separador ? d.separador.join('|') : (d.sube ? d.sube.join('|') : null));
+
+    // Disposición del bosque (durante la carga masiva hay varias raíces)
+    const nodos = foto.nodos;
+    const pos = {};
+    let hojaX = 0, maxNivel = 0;
+    const altoNodo = n => CAB_NODO + Math.max(1, n.k.length) * FILA_KEY + 4;
+    const niveles = {};
+    (function () {
+      const profundidad = p0 => { let h = 0, q = p0; while (!nodos[q].h) { q = nodos[q].c[0]; h++; } return h; };
+      const altura = Math.max(...foto.raices.map(profundidad));
+      // Un nodo recién dividido y todavía sin padre se dibuja junto a su hermano izquierdo
+      const despues = {};
+      if (foto.raiz !== null && (accion === 'division_hoja' || accion === 'division_interno')) despues[d.izquierda] = d.derecha;
+      function ubicar(pg, nivel) {
+        const n = nodos[pg];
+        maxNivel = Math.max(maxNivel, nivel);
+        (niveles[nivel] ||= []).push(pg);
+        if (n.h) { pos[pg] = { x: hojaX * (ANCHO_NODO + SEP_X), nivel }; hojaX++; }
+        else {
+          n.c.forEach(h => ubicar(h, nivel + 1));
+          const xs = n.c.map(h => pos[h].x);
+          pos[pg] = { x: (Math.min(...xs) + Math.max(...xs)) / 2, nivel };
+        }
+        if (pg in despues) ubicar(despues[pg], nivel);
+      }
+      const huerfanos = new Set(Object.values(despues));
+      foto.raices.filter(r => !huerfanos.has(r)).forEach(r => ubicar(r, altura - profundidad(r)));
+    })();
+    const altoNivel = {};
+    for (const [nv, pgs] of Object.entries(niveles)) altoNivel[nv] = Math.max(...pgs.map(pg => altoNodo(nodos[pg])));
+    const yNivel = {}; let y = 6;
+    for (let nv = 0; nv <= maxNivel; nv++) { yNivel[nv] = y; y += (altoNivel[nv] || 0) + SEP_Y; }
+    const ancho = Math.max(1, hojaX) * (ANCHO_NODO + SEP_X) + 8, alto = y - SEP_Y + 22;
+
+    const svg = svgEl('svg', { class: 'dibujo', viewBox: `-4 0 ${ancho} ${alto}`, width: ancho, role: 'img', 'aria-label': 'B+Tree' });
+    // Aristas padre → hijo
+    for (const [pg, n] of Object.entries(nodos)) {
+      if (n.h || !pos[pg]) continue;
+      n.c.forEach(h => {
+        if (!pos[h]) return;
+        const enCamino = camino.has(Number(pg)) && camino.has(h);
+        svgEl('line', { class: 'arista' + (enCamino ? ' camino' : ''),
+          x1: pos[pg].x + ANCHO_NODO / 2, y1: yNivel[pos[pg].nivel] + altoNodo(n),
+          x2: pos[h].x + ANCHO_NODO / 2, y2: yNivel[pos[h].nivel] }, svg);
+      });
+    }
+    // Enlaces entre hojas
+    for (const [pg, n] of Object.entries(nodos)) {
+      if (!n.h || n.s < 0 || !pos[pg] || !pos[n.s]) continue;
+      const y0 = yNivel[pos[pg].nivel] + altoNodo(n) + 8, x0 = pos[pg].x + ANCHO_NODO - 6, x1 = pos[n.s].x + 6;
+      svgEl('path', { class: 'enlace', d: `M${x0},${y0 - 6} C${x0 + 4},${y0 + 4} ${x1 - 4},${y0 + 4} ${x1},${y0 - 6}`, 'marker-end': 'url(#flecha)' }, svg);
+    }
+    const defs = svgEl('defs', {}, svg);
+    const mk = svgEl('marker', { id: 'flecha', viewBox: '0 0 6 6', refX: 5, refY: 3, markerWidth: 5, markerHeight: 5, orient: 'auto' }, defs);
+    svgEl('path', { d: 'M0,0 L6,3 L0,6 z', fill: 'var(--ok)' }, mk);
+    // Nodos
+    for (const [pgTxt, n] of Object.entries(nodos)) {
+      const pg = Number(pgTxt);
+      if (!pos[pg]) continue;
+      const clases = ['bnodo', n.h ? 'hoja' : 'interno'];
+      if (camino.has(pg)) clases.push('camino');
+      if (cambio.has(pg)) clases.push('cambio');
+      if (desborde === pg) clases.push('desborde');
+      if (n.h && e.recorridas.has(pg)) clases.push('recorrida');
+      const g = svgEl('g', { class: clases.join(' '), transform: `translate(${pos[pg].x},${yNivel[pos[pg].nivel]})` }, svg);
+      const titulo = svgEl('title', {}, g);
+      titulo.textContent = `página ${pg} · ${n.h ? 'hoja' : 'nodo interno'} · ${n.k.length} claves\n` +
+        n.k.map(k => `(${k[0].toFixed(2)}, ${k[1]})`).join('\n') + (n.h && n.s >= 0 ? `\nsiguiente: página ${n.s}` : '');
+      svgEl('rect', { width: ANCHO_NODO, height: altoNodo(n), rx: 6 }, g);
+      const tp = svgEl('text', { x: 4, y: 10, class: 'pagina' }, g); tp.textContent = `p${pg}${n.h ? '' : ' · int.'}`;
+      if (!n.k.length) { const tv = svgEl('text', { x: 6, y: CAB_NODO + 10, class: 'vacia' }, g); tv.textContent = 'vacía'; }
+      n.k.forEach((k, i) => {
+        const marcada = claveMarcada === k.join('|');
+        const resultado = n.h && e.resultadoClaves.has(k[1]);
+        const t = svgEl('text', { x: 6, y: CAB_NODO + 10 + i * FILA_KEY, class: marcada ? 'marcada' : resultado ? 'resultado' : '' }, g);
+        t.textContent = k[0] >= 1000 ? k[0].toFixed(0) : k[0].toFixed(2);
+      });
+    }
+    lienzo.replaceChildren(svg);
+
+    // Verificación de la foto actual
+    const errores = verificarArbol(foto, accion);
+    const caja = $('verificacion-arbol');
+    if (errores.length) {
+      caja.className = 'verificacion error';
+      caja.textContent = `⚠ ${errores.length} problema(s) en el árbol: ${errores.slice(0, 3).join('; ')}.`;
+    } else if (foto.raiz !== null && foto.raices.length > 1) {
+      caja.className = 'verificacion aviso';
+      caja.textContent = `La página nueva p${d.derecha} todavía no tiene padre: en el paso siguiente su separador se inserta en el nivel de arriba.`;
+    } else if (accion === 'desborde_hoja' || accion === 'desborde_interno') {
+      caja.className = 'verificacion aviso';
+      caja.textContent = `La página ${d.pagina} tiene ${d.n} claves y el máximo es ${d.max}: se divide en el paso siguiente.`;
+    } else {
+      caja.className = 'verificacion ok';
+      caja.textContent = foto.raiz === null
+        ? '✓ Carga masiva: hojas ordenadas y enlazadas de izquierda a derecha.'
+        : '✓ Claves ordenadas en cada nodo, separadores consistentes con sus subárboles, todas las hojas a la misma profundidad y la lista de hojas recorre todas las entradas en orden.';
+    }
+  }
+  $('titulo-arbol').textContent = foto
+    ? (foto.raiz === null ? `Carga masiva: nivel en construcción (${foto.raices.length} nodos sin padre)` : `Árbol completo · raíz en la página ${foto.raiz}`)
+    : 'Árbol';
+
+  // Entradas ordenadas (tira)
+  const tira = $('tira-4');
+  if (e.ordenados) {
+    $('titulo-tira').textContent = `Entradas de la carga masiva, ordenadas por (precio, asin) · ${e.ordenados.length}`;
+    tira.innerHTML = e.ordenados.map(k => `<span class="clave${e.resultadoClaves.has(k[1]) ? ' resultado' : ''}" title="${k[1]}">${k[0].toFixed(2)}</span>`).join('');
+  } else {
+    $('titulo-tira').textContent = 'Entradas';
+    tira.innerHTML = '<span class="vacio">Se extraen del catálogo los productos con precio.</span>';
+  }
+  // Consultas hechas
+  const cq = $('consultas-4');
+  cq.innerHTML = e.consultas4.length ? '<table class="lista"><tr><th>Consulta</th><th>Resultados</th><th>Páginas leídas</th></tr>' +
+    e.consultas4.map(({ tipo, d }) => tipo === 'buscar'
+      ? `<tr><td>buscar(${d.clave[0].toFixed(2)}, ${d.clave[1]})</td><td>${d.encontrada ? `offset ${d.valor[0]}, ${d.valor[1]} B` : 'no está'}</td><td>${d.lecturas}</td></tr>`
+      : `<tr><td>rango(${d.desde}, ${d.hasta})</td><td>${d.resultados}</td><td>${d.lecturas}</td></tr>`).join('') + '</table>'
+    : '<span class="vacio">Las consultas se ejecutan al final de la etapa.</span>';
+}
+
+/* =====================================================================
+   7. Etapa 5: dispersión y KD-Tree
+   ===================================================================== */
+for (const id of ['eje-x', 'eje-y']) {
+  $(id).innerHTML = ATR.map((a, i) => `<option value="${i}">${ATR_NOMBRE[a]}</option>`).join('');
+  $(id).addEventListener('change', () => dibujar(estado, false));
+}
+$('eje-x').value = 0; $('eje-y').value = 1;
+
+// Padre y lado de cada nodo, para calcular la región de un nodo
+const PADRE = new Array(KD.dim.length).fill(-1), LADO = new Array(KD.dim.length).fill(0);
+KD.dim.forEach((dm, n) => { if (dm >= 0) { PADRE[KD.izq[n]] = n; LADO[KD.izq[n]] = -1; PADRE[KD.der[n]] = n; LADO[KD.der[n]] = 1; } });
+function region(n) {
+  const lo = ATR.map(() => -Infinity), hi = ATR.map(() => Infinity);
+  for (let h = n, p = PADRE[n]; p >= 0; h = p, p = PADRE[p]) {
+    const dm = KD.dim[p], c = KD.corte[p];
+    if (LADO[h] < 0) hi[dm] = Math.min(hi[dm], c); else lo[dm] = Math.max(lo[dm], c);
+  }
+  return { lo, hi };
+}
+const puntosDe = n => KD.perm.slice(KD.lo[n], KD.hi[n]);
+
+function dibujarEtapa5(e) {
+  const p = PASOS[e.indice];
+  const d = p && p.etapa === 5 ? p.detalle : {};
+  $('estructura-5').textContent = `${KD.Z.length} puntos · hojas de hasta ${PARAM.tam_hoja_kd} · corte en la dimensión de mayor dispersión, en la mediana`;
+  const ix = Number($('eje-x').value), iy = Number($('eje-y').value);
+
+  // --- Dispersión
+  const W = 520, H = 400, M = { l: 40, r: 12, t: 12, b: 34 };
+  const xs = KD.Z.map(z => z[ix]), ys = KD.Z.map(z => z[iy]);
+  const pad = (a, b) => { const r = (b - a) || 1; return [a - r * .06, b + r * .06]; };
+  const [x0, x1] = pad(Math.min(...xs), Math.max(...xs)), [y0, y1] = pad(Math.min(...ys), Math.max(...ys));
+  const sx = v => M.l + (v - x0) / (x1 - x0) * (W - M.l - M.r), sy = v => H - M.b - (v - y0) / (y1 - y0) * (H - M.t - M.b);
+  const clipX = v => Math.max(M.l, Math.min(W - M.r, sx(Math.max(x0, Math.min(x1, v))))), clipY = v => Math.max(M.t, Math.min(H - M.b, sy(Math.max(y0, Math.min(y1, v)))));
+  const svg = svgEl('svg', { class: 'dispersion', viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Puntos de los productos' });
+  svgEl('rect', { class: 'marco', x: M.l, y: M.t, width: W - M.l - M.r, height: H - M.t - M.b }, svg);
+  const recorte = svgEl('clipPath', { id: 'recorte-plano' }, svgEl('defs', {}, svg));
+  svgEl('rect', { x: M.l, y: M.t, width: W - M.l - M.r, height: H - M.t - M.b }, recorte);
+  for (const v of [-2, -1, 0, 1, 2]) {
+    if (v > x0 && v < x1) { const t = svgEl('text', { class: 'eje', x: sx(v), y: H - M.b + 12, 'text-anchor': 'middle' }, svg); t.textContent = v; }
+    if (v > y0 && v < y1) { const t = svgEl('text', { class: 'eje', x: M.l - 6, y: sy(v) + 3, 'text-anchor': 'end' }, svg); t.textContent = v; }
+  }
+  const tx = svgEl('text', { class: 'eje', x: (M.l + W - M.r) / 2, y: H - 6, 'text-anchor': 'middle' }, svg); tx.textContent = `z(${ATR_NOMBRE[ATR[ix]]})`;
+  const ty = svgEl('text', { class: 'eje', x: 12, y: (M.t + H - M.b) / 2, 'text-anchor': 'middle', transform: `rotate(-90 12 ${(M.t + H - M.b) / 2})` }, svg); ty.textContent = `z(${ATR_NOMBRE[ATR[iy]]})`;
+
+  // Cortes revelados en las dos dimensiones dibujadas, dentro de la región de su nodo
+  const revelados = e.revelados;
+  for (let n = 0; n <= revelados && n < KD.dim.length; n++) {
+    const dm = KD.dim[n];
+    if (dm !== ix && dm !== iy) continue;
+    const r = region(n), c = KD.corte[n];
+    const actual = n === e.nodoKd && p && p.accion === 'kd_corte';
+    if (dm === ix) svgEl('line', { class: 'corte' + (actual ? ' actual' : ''), x1: sx(c), x2: sx(c), y1: clipY(r.hi[iy]), y2: clipY(r.lo[iy]) }, svg);
+    else svgEl('line', { class: 'corte' + (actual ? ' actual' : ''), y1: sy(c), y2: sy(c), x1: clipX(r.lo[ix]), x2: clipX(r.hi[ix]) }, svg);
+  }
+  // Región del nodo actual
+  if (e.nodoKd !== null) {
+    const r = region(e.nodoKd);
+    const xa = clipX(r.lo[ix]), xb = clipX(r.hi[ix]), ya = clipY(r.hi[iy]), yb = clipY(r.lo[iy]);
+    svgEl('rect', { class: 'region', x: xa, y: ya, width: Math.max(0, xb - xa), height: Math.max(0, yb - ya) }, svg);
+  }
+  // Caja de la consulta por rango
+  if (e.cajaRango) {
+    const c = e.cajaRango;
+    const xa = clipX(c.min_z[ix]), xb = clipX(c.max_z[ix]), ya = clipY(c.max_z[iy]), yb = clipY(c.min_z[iy]);
+    svgEl('rect', { class: 'caja-rango', x: xa, y: ya, width: Math.max(0, xb - xa), height: Math.max(0, yb - ya) }, svg);
+  }
+  // Radio del peor candidato (la bola de 4 dimensiones se proyecta como un disco del mismo radio)
+  const q = e.consulta && e.consulta.tipo === 'knn' ? KD.Z[e.consulta.punto] : null;
+  if (q && e.peor) {
+    const rx = e.peor / (x1 - x0) * (W - M.l - M.r), ry = e.peor / (y1 - y0) * (H - M.t - M.b);
+    svgEl('ellipse', { class: 'radio', cx: sx(q[ix]), cy: sy(q[iy]), rx, ry, 'clip-path': 'url(#recorte-plano)',
+      fill: 'color-mix(in srgb, var(--ok) 8%, transparent)', stroke: 'var(--ok)', 'stroke-dasharray': '5 4' }, svg);
+  }
+  // Puntos
+  const enNodo = new Set(e.nodoKd !== null && p && (p.accion === 'kd_corte' || p.accion === 'kd_hoja') ? puntosDe(e.nodoKd) : e.puntosHoja);
+  const mejores = new Set(e.mejores.map(m => m[1]));
+  KD.Z.forEach((z, i) => {
+    const cls = ['punto'];
+    if (e.consulta && e.consulta.tipo === 'rango' && e.dentro.has(i)) cls.push('dentro');
+    else if (mejores.has(i)) cls.push('mejor');
+    else if (enNodo.has(i)) cls.push('en-nodo');
+    else if (e.evaluados.has(i)) cls.push('evaluado');
+    const c = svgEl('circle', { class: cls.join(' '), cx: sx(z[ix]), cy: sy(z[iy]), r: mejores.has(i) || enNodo.has(i) ? 4.5 : 3.2 }, svg);
+    const t = svgEl('title', {}, c);
+    const pr = PRODUCTOS[KD.asins[i]];
+    t.textContent = `punto ${i} · ${KD.asins[i]}\n${precioTxt(pr.precio ?? (pr.estado_final && pr.estado_final.precio_observado))} · rating ${pr.average_rating} · ${pr.rating_number} calificaciones`;
+    c.addEventListener('click', () => detalleProducto(KD.asins[i]));
+  });
+  if (q) {
+    const cx = sx(q[ix]), cy = sy(q[iy]), r = 8;
+    const estrella = Array.from({ length: 10 }, (_, k) => { const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r * .45 : r; return `${cx + rr * Math.cos(a)},${cy + rr * Math.sin(a)}`; }).join(' ');
+    svgEl('path', { class: 'consulta', d: `M${estrella}Z` }, svg);
+  }
+  $('dispersion').replaceChildren(svg);
+  $('leyenda-dispersion').textContent = 'Estrella roja: consulta · verde: k mejores (o dentro de la caja) · naranja: puntos del nodo actual · azul: evaluados · ' +
+    'línea gris: corte en una de las dos dimensiones dibujadas · rectángulo punteado: región del nodo actual · elipse: radio del peor candidato. ' +
+    'Los cortes en las otras dos dimensiones no se ven en esta proyección.';
+
+  dibujarArbolKd(e);
+  dibujarMejores(e, d, p);
+}
+
+function dibujarArbolKd(e) {
+  const n = KD.dim.length;
+  const hijos = i => KD.dim[i] >= 0 ? [KD.izq[i], KD.der[i]] : [];
+  const pos = new Array(n);
+  let hoja = 0, maxNivel = 0;
+  (function ubicar(i, nivel) {
+    maxNivel = Math.max(maxNivel, nivel);
+    const hs = hijos(i);
+    if (!hs.length) { pos[i] = { x: hoja++ * 22 + 12, y: 14 + nivel * 40 }; return; }
+    hs.forEach(h => ubicar(h, nivel + 1));
+    pos[i] = { x: (pos[hs[0]].x + pos[hs[1]].x) / 2, y: 14 + nivel * 40 };
+  })(KD.raiz, 0);
+  const W = hoja * 22 + 4, H = 28 + maxNivel * 40;
+  const svg = svgEl('svg', { class: 'dibujo', viewBox: `0 0 ${W} ${H}`, width: W, role: 'img', 'aria-label': 'KD-Tree' });
+  const pila = new Set(e.pila);
+  for (let i = 0; i < n; i++) for (const h of hijos(i)) {
+    svgEl('line', { class: 'kdarista' + (h > e.revelados ? ' oculta' : ''), x1: pos[i].x, y1: pos[i].y, x2: pos[h].x, y2: pos[h].y }, svg);
+  }
+  for (let i = 0; i < n; i++) {
+    const cls = ['kdnodo'];
+    if (i > e.revelados) cls.push('oculto');
+    if (e.podados.has(i)) cls.push('podado'); else if (e.visitados.has(i)) cls.push('visitado');
+    if (pila.has(i)) cls.push('pila');
+    if (i === e.nodoKd) cls.push('actual');
+    const g = svgEl('g', { class: cls.join(' '), transform: `translate(${pos[i].x},${pos[i].y})` }, svg);
+    const t = svgEl('title', {}, g);
+    const cant = KD.hi[i] - KD.lo[i];
+    if (KD.dim[i] >= 0) {
+      t.textContent = `nodo ${i} · corte en ${ATR[KD.dim[i]]} = ${KD.corte[i].toFixed(3)} (z) · ${cant} puntos`;
+      svgEl('circle', { r: 8 }, g);
+      const tx = svgEl('text', {}, g); tx.textContent = ATR_CORTO[ATR[KD.dim[i]]];
+    } else {
+      t.textContent = `hoja ${i} · ${cant} puntos: ${puntosDe(i).join(', ')}`;
+      svgEl('rect', { x: -8, y: -8, width: 16, height: 16, rx: 3 }, g);
+      const tx = svgEl('text', {}, g); tx.textContent = cant;
+    }
+  }
+  $('lienzo-kd').replaceChildren(svg);
+}
+
+function filaProducto(i, dist, extra = '') {
+  const a = KD.asins[i], pr = PRODUCTOS[a];
+  const precio = Math.expm1(KD.X[i][0]);
+  return `<tr class="${extra}"><td>${dist !== null ? dist.toFixed(3) : ''}</td><td>${prodHtml(a)}</td>` +
+    `<td>${KD.tid[i] !== null && KD.tid[i] !== undefined ? `<span class="ref t-${tipoDe(KD.tid[i])}">#${KD.tid[i]}</span>` : ''}</td>` +
+    `<td>${precioTxt(precio)}</td><td>${pr.average_rating}</td><td>${pr.rating_number}</td><td>${esc(pr.categoria ?? '')}</td></tr>`;
+}
+
+function dibujarMejores(e, d, p) {
+  const caja = $('mejores'), ver = $('verificacion-kd');
+  ver.hidden = true;
+  const cab = '<table class="lista"><tr><th>dist.</th><th>producto</th><th>1.er evento</th><th>precio</th><th>rating</th><th>n.º calif.</th><th>categoría</th></tr>';
+  if (!e.consulta) {
+    $('titulo-mejores').textContent = 'Construcción';
+    if (p && (p.accion === 'kd_corte' || p.accion === 'kd_hoja')) {
+      caja.innerHTML = p.accion === 'kd_corte'
+        ? `<div class="caja">Nodo ${d.nodo}: ${d.hi - d.lo} puntos. Dispersión por dimensión (máx. − mín. en z): ` +
+          d.dispersion.map((v, j) => `${ATR_CORTO[ATR[j]]} ${v.toFixed(2)}`).join(' · ') +
+          `. Se corta en <b>${ATR_NOMBRE[ATR[d.dim]]}</b> en la mediana z = ${d.corte.toFixed(3)}.</div>`
+        : `<div class="caja">Hoja ${d.nodo} con ${d.hi - d.lo} puntos (≤ ${PARAM.tam_hoja_kd}), contiguos en el arreglo reordenado: posiciones ${d.lo} a ${d.hi - 1}.</div>`;
+    } else if (p && p.accion === 'vectores') {
+      caja.innerHTML = `<div class="caja">Cada producto del índice de precios es un punto de 4 dimensiones. Media: ` +
+        d.media.map((v, j) => `${ATR_CORTO[ATR[j]]} ${v}`).join(' · ') + `. Desviación: ` + d.desv.map((v, j) => `${ATR_CORTO[ATR[j]]} ${v}`).join(' · ') +
+        `. Se normaliza con z-score.</div>`;
+    } else caja.innerHTML = '<span class="vacio">Los vectores se construyen recorriendo las hojas del B+Tree.</span>';
+    return;
+  }
+  if (e.consulta.tipo === 'knn') {
+    $('titulo-mejores').textContent = `KNN de ${e.consulta.asin} · k = ${e.consulta.k} · ${e.finKd ? 'resultado' : 'heap de candidatos (raíz = peor)'}`;
+    const nuevos = new Set(p && p.accion === 'knn_hoja' ? d.aceptados : []);
+    caja.innerHTML = e.mejores.length
+      ? cab + e.mejores.map(([dist, i]) => filaProducto(i, dist, nuevos.has(i) ? 'nuevo' : '')).join('') + '</table>' +
+        (e.peor && !e.finKd ? `<div class="leyenda-chica">Peor candidato a distancia ${e.peor.toFixed(3)}: se poda todo subárbol cuya región esté más lejos.</div>` : '')
+      : '<span class="vacio">Todavía no hay candidatos.</span>';
+    if (e.finKd) {
+      const f = e.finKd;
+      ver.hidden = false;
+      ver.className = 'verificacion ' + (f.iguales ? 'ok' : 'error');
+      ver.textContent = `${f.iguales ? '✓' : '⚠'} Igual a la fuerza bruta (${f.n} distancias). El KD-Tree visitó ${f.visitados} de ${f.nodos} nodos, ` +
+        `podó ${f.podados} subárboles y evaluó ${f.evaluados} de ${f.n} puntos. El primer vecino es el propio producto (distancia 0).`;
+    }
+  } else {
+    const c = e.cajaRango;
+    $('titulo-mejores').textContent = `Rango: ${c.caja.texto}`;
+    const dentro = [...e.dentro].sort((a, b) => Math.expm1(KD.X[a][0]) - Math.expm1(KD.X[b][0]));
+    caja.innerHTML = dentro.length ? cab + dentro.map(i => filaProducto(i, null)).join('') + '</table>' : '<span class="vacio">Ningún punto dentro de la caja todavía.</span>';
+    if (e.finKd) {
+      const f = e.finKd;
+      ver.hidden = false;
+      ver.className = 'verificacion ' + (f.iguales ? 'ok' : 'error');
+      ver.textContent = `${f.iguales ? '✓' : '⚠'} ${f.resultado.length} productos, los mismos que un filtro directo sobre los ${f.n} puntos. ` +
+        `Se evaluaron ${f.evaluados} puntos.`;
+    }
+  }
+}
+
+/* =====================================================================
+   8. Narración
+   ===================================================================== */
+const refEv = tid => `<span class="ref t-${tipoDe(tid)}">#${tid}</span>`;
+const refP = a => `<span class="ref producto" title="${a}">${corto(a)}</span>`;
+const k2 = k => `(${k[0].toFixed(2)}, ${corto(k[1])})`;
+function narrar(p) {
+  const d = p.detalle, t = p.tid;
+  let x;
+  switch (p.accion) {
+    case 'sin_producto': x = `${refEv(t)} es una búsqueda («${esc(d.query)}»): no tiene producto, no consulta la caché ni suma en la matriz.`; break;
+    case 'acierto': x = `${refEv(t)} consulta ${refP(d.asin)}: <b>acierto</b>. La tabla hash lo encuentra tras revisar ${d.sondeo.length} posición(es) y el nodo pasa al frente de la lista.`; break;
+    case 'fallo': x = `${refEv(t)} consulta ${refP(d.asin)}: <b>fallo</b>. El sondeo revisó ${d.sondeo.length} posición(es) hasta una vacía; el producto no está en la caché.`; break;
+    case 'lectura_disco': x = `El índice hash del catálogo da offset ${d.offset} y largo ${d.largo}: se lee el registro de ${refP(d.asin)} con un seek.`; break;
+    case 'poner': x = `${refP(d.asin)} entra a la caché en la posición ${d.sondeo.at(-1)} de la tabla y al frente de la lista.` +
+      (d.reconstruccion ? ` Las posiciones usadas superaron el 70 %: la tabla se reconstruye (${d.capacidad_tabla} posiciones) y desaparecen las lápidas.` : '') +
+      (d.lleno ? ` La caché queda con ${PARAM.capacidad_cache + 1} productos, uno más que su capacidad.` : ''); break;
+    case 'desalojo': x = `Se desaloja ${refP(d.asin)}, el menos reciente (junto a la cola). Su posición en la tabla queda como lápida †.`; break;
+    case 'estado': x = `Estado de ${refP(d.asin)}${d.nuevo ? ' (creado con stock sintético)' : ''}: cambia ${d.cambios.filter(c => c !== 'ultima_actividad').join(', ') || 'solo la última actividad'}.` +
+      (d.notas.includes('agotado') ? ' El stock llega a 0.' : '') + (d.notas.includes('sin_stock') ? ' Compra sin stock.' : '') + (d.notas.includes('reposicion') ? ' Reposición tras 48 h agotado.' : ''); break;
+    case 'matriz': x = `${refEv(t)} suma ${d.peso > 0 ? '+' : ''}${d.peso} en la celda (usuario ${d.fila}, producto ${d.columna}) de la DOK, que queda en ${d.valor}.`; break;
+    case 'csr': x = `Fin del stream. La DOK se convierte a CSR: ${d.nnz} celdas con peso positivo en ${d.filas} filas; ${d.omitidas} celda(s) con peso ≤ 0 se omiten.`; break;
+    case 'extraer': x = `De los productos con actividad, ${d.con_precio} tienen precio en el catálogo y van a la carga masiva. ${d.sin_precio} no tienen precio: ${d.con_observado} se insertarán después con el precio observado en el stream y ${d.sin_indice} quedan fuera del índice.`; break;
+    case 'ordenar': x = `Las ${d.n} entradas se ordenan por la clave (precio, parent_asin). La clave incluye el asin porque muchos productos comparten precio.`; break;
+    case 'masiva_hoja': x = `Carga masiva: la hoja p${d.pagina} se escribe con ${d.n} entradas (${Math.round(PARAM.llenado * 100)} % de ${PARAM.max_hoja} = ${d.por_hoja}) y se enlaza con la siguiente.${d.ultima ? ' Es la última hoja.' : ''}`; break;
+    case 'masiva_interno': x = `Carga masiva: el nodo interno p${d.pagina} del nivel ${d.nivel} agrupa ${d.hijos} hijos; sus separadores son la menor clave de cada hijo salvo el primero.`; break;
+    case 'masiva_fin': x = `Carga masiva terminada: raíz p${d.raiz}, altura ${d.altura}, ${d.paginas} páginas. Cada página se escribió una sola vez: O(n).`; break;
+    case 'descenso': x = `Insertar ${refP(d.asin)} con la clave ${k2(d.clave)}, usando el precio observado en el stream: se desciende ${d.camino.map(c => 'p' + c[0]).join(' → ')} con búsqueda binaria en cada nodo, ${d.lecturas} páginas leídas.`; break;
+    case 'insertar_hoja': x = `La entrada ${k2(d.clave)} se inserta en la posición ${d.posicion} de la hoja p${d.pagina}; cabe sin dividir.`; break;
+    case 'actualizar': x = `La clave ya existía en p${d.pagina}: solo se actualiza su valor.`; break;
+    case 'desborde_hoja': x = `La hoja p${d.pagina} queda con ${d.n} entradas, más que el máximo de ${d.max}.`; break;
+    case 'division_hoja': x = `La hoja se divide: la mitad derecha pasa a la hoja nueva p${d.derecha}, enlazada después de p${d.izquierda}. Su primera clave ${k2(d.separador)} sube al padre${d.padre !== null ? ` p${d.padre}` : ''}.`; break;
+    case 'separador_padre': x = `El separador ${k2(d.separador)} se inserta en p${d.pagina} (posición ${d.posicion}); el padre tiene espacio.`; break;
+    case 'desborde_interno': x = `El nodo interno p${d.pagina} queda con ${d.n} claves, más que el máximo de ${d.max}.`; break;
+    case 'division_interno': x = `El nodo interno se divide en p${d.izquierda} y p${d.derecha}; la clave del medio ${k2(d.sube)} sube y no se queda en ningún hijo.`; break;
+    case 'nueva_raiz': x = `Se dividió la raíz: la nueva raíz p${d.pagina} tiene el separador ${k2(d.separador)} y el árbol crece a altura ${d.altura}.`; break;
+    case 'buscar': x = `Consulta puntual ${k2(d.clave)}: descenso ${d.camino.map(c => 'p' + c[0]).join(' → ')}, ${d.lecturas} páginas leídas (una por nivel). ${d.encontrada ? `Devuelve offset ${d.valor[0]} en el catálogo.` : 'No está.'}`; break;
+    case 'rango_inicio': x = `Rango de ${d.desde} a ${d.hasta} dólares: se desciende ${d.camino.map(c => 'p' + c[0]).join(' → ')} hasta la primera hoja que puede contener ${d.desde}.`; break;
+    case 'rango_hoja': x = `Hoja p${d.pagina}: ${d.encontradas.length} entrada(s) en el rango (total ${d.total}).${d.corta ? ' Aparece una clave mayor que el límite: el recorrido termina.' : ' Se sigue por el enlace a la hoja siguiente.'}`; break;
+    case 'rango_fin': x = `Rango [${d.desde}, ${d.hasta}]: ${d.resultados} productos con ${d.lecturas} páginas leídas, la altura más las hojas recorridas: O(log_B n + k / B).`; break;
+    case 'vectores': x = `Se recorren las hojas del B+Tree: ${d.n} productos en orden de precio. Cada uno es un vector de 4 atributos normalizado con z-score.`; break;
+    case 'kd_corte': x = `Nodo ${d.nodo} (${d.hi - d.lo} puntos, profundidad ${d.profundidad}): la mayor dispersión está en <b>${ATR_NOMBRE[ATR[d.dim]]}</b>; se corta en la mediana (z = ${d.corte.toFixed(3)}) con argpartition.`; break;
+    case 'kd_hoja': x = `Hoja ${d.nodo} con ${d.hi - d.lo} puntos (≤ ${PARAM.tam_hoja_kd}).`; break;
+    case 'kd_fin': x = `KD-Tree construido: ${d.nodos} nodos, ${d.hojas} hojas, altura ${d.altura} (log₂(n / tamaño de hoja) = ${Math.log2(KD.Z.length / PARAM.tam_hoja_kd).toFixed(1)}).`; break;
+    case 'knn_inicio': x = `Consulta KNN: los ${d.k} vecinos más cercanos de ${refP(d.asin)} (estrella). Se empieza por la raíz con cota 0.`; break;
+    case 'knn_interno': x = `Nodo ${d.nodo}: q tiene ${ATR_CORTO[ATR[d.dim]]} = ${d.valor_q.toFixed(3)} frente al corte ${d.corte.toFixed(3)}. Se apila el lado lejano (nodo ${d.lejos}, cota ${d.cota_lejos.toFixed(3)}) y luego el cercano (nodo ${d.cerca}), que se visita primero.`; break;
+    case 'knn_hoja': x = `Hoja ${d.nodo}: distancias a ${d.puntos.length} puntos con numpy; ${d.aceptados.length ? `entran al heap los puntos ${d.aceptados.join(', ')}` : 'ninguno mejora al peor candidato'}.` +
+      (d.peor ? ` Peor candidato: ${d.peor.toFixed(3)}.` : ''); break;
+    case 'knn_poda': x = `Nodo ${d.nodo} <b>podado</b>: su región está a ${d.cota.toFixed(3)} o más y el peor candidato está a ${d.peor.toFixed(3)}. No puede contener un vecino mejor.`; break;
+    case 'knn_fin': x = `Resultado: ${d.resultado.length} vecinos. Visitó ${d.visitados} de ${d.nodos} nodos y evaluó ${d.evaluados} de ${d.n} puntos. ${d.iguales ? 'Coincide' : 'NO coincide'} con la fuerza bruta.`; break;
+    case 'rango_kd_inicio': x = `Consulta por rango: ${esc(d.caja.texto)}. Los límites se normalizan con la media y la desviación del índice.`; break;
+    case 'rango_kd_interno': x = `Nodo ${d.nodo} (corte en ${ATR_CORTO[ATR[d.dim]]} = ${d.corte.toFixed(3)}): ${d.va_izq && d.va_der ? 'la caja corta el hiperplano, se baja por los dos hijos' : d.va_izq ? 'la caja está a la izquierda, solo se baja por la izquierda' : 'la caja está a la derecha, solo se baja por la derecha'}.`; break;
+    case 'rango_kd_hoja': x = `Hoja ${d.nodo}: ${d.dentro.length} de ${d.puntos.length} puntos dentro de la caja (total ${d.total}).`; break;
+    case 'rango_kd_fin': x = `Rango: ${d.resultado.length} productos evaluando ${d.evaluados} de ${d.n} puntos. ${d.iguales ? 'Coincide' : 'NO coincide'} con el filtro directo.`; break;
+    default: x = p.accion;
+  }
+  return `<span class="insignia-etapa">Etapa ${p.etapa}</span><span>${x}</span>`;
+}
+
+/* =====================================================================
+   9. Panel de detalle
+   ===================================================================== */
+function historialHtml(pasos) {
+  return `<ul class="historial">${pasos.map(p => `<li><button data-paso="${p.paso}">paso ${p.paso + 1}</button> · Etapa ${p.etapa} · ${p.accion}</li>`).join('')}</ul>`;
+}
+function abrirDetalle(html) {
+  $('detalle').innerHTML = `<button class="boton cerrar" id="btn-cerrar" title="Cerrar (Esc)">✕</button>${html}`;
+  $('detalle').classList.add('abierto');
+  $('btn-cerrar').addEventListener('click', cerrarDetalle);
+  $('detalle').querySelectorAll('[data-paso]').forEach(b => b.addEventListener('click', () => { pausar(); irA(Number(b.dataset.paso)); }));
+  $('detalle').querySelectorAll('[data-asin]').forEach(b => b.addEventListener('click', () => detalleProducto(b.dataset.asin)));
+}
+function detalleEvento(tid) {
+  const ev = EVENTOS[tid];
+  const filas = Object.entries(ev).map(([k, v]) => `<tr><th>${k}</th><td>${k === 'parent_asin' && v ? prodHtml(v) : esc(v ?? 'null')}</td></tr>`).join('');
+  abrirDetalle(`<h2><span class="ref t-${ev.event_type}">#${tid}</span> ${TIPOS[ev.event_type]}</h2>
+    <p class="subtitulo">Mismo número que en el visualizador de las etapas 0 a 2.</p>
+    <table>${filas}</table><h3>Pasos en la etapa 3</h3>${historialHtml(PASOS_POR_TID.get(tid) || [])}`);
+}
+function detalleProducto(asin) {
+  const pr = PRODUCTOS[asin];
+  const s = pr.estado_final || {};
+  const i = KD.asins.indexOf(asin);
+  const vector = i >= 0 ? `<h3>Vector en la etapa 5 (punto ${i})</h3><table><tr><th>atributo</th><td>valor · z</td></tr>` +
+    ATR.map((a, j) => `<tr><th>${a}</th><td>${KD.X[i][j].toFixed(3)} · ${KD.Z[i][j].toFixed(3)}</td></tr>`).join('') + '</table>'
+    : '<p class="subtitulo">No está en el índice de precios: no tiene precio de catálogo ni precio observado, así que tampoco entra al KD-Tree.</p>';
+  const eventos = ORDEN_ENTRADA.filter(t => EVENTOS[t].parent_asin === asin).map(t => `<span class="ref t-${tipoDe(t)}">#${t}</span>`).join(' ');
+  abrirDetalle(`<h2><span class="ref producto">${asin}</span></h2>
+    ${pr.titulo ? `<p>${esc(pr.titulo)}</p>` : ''}
+    <table>
+      <tr><th>precio (catálogo)</th><td>${precioTxt(pr.precio)}</td></tr>
+      <tr><th>precio observado</th><td>${precioTxt(s.precio_observado)}</td></tr>
+      <tr><th>average_rating</th><td>${pr.average_rating}</td></tr>
+      <tr><th>rating_number</th><td>${pr.rating_number}</td></tr>
+      <tr><th>categoria_hoja</th><td>${esc(pr.categoria)}</td></tr>
+      <tr><th>offset · largo</th><td>${pr.offset} · ${pr.largo}</td></tr>
+      <tr><th>estado final</th><td>stock ${s.stock} · ${s.vistas} vistas · ${s.carritos} carritos · ${s.compras} compras · ${s.resenas} reseñas · ${s.devoluciones} devoluciones</td></tr>
+      <tr><th>eventos</th><td>${eventos}</td></tr>
+    </table>${vector}<h3>Pasos donde aparece</h3>${historialHtml(PASOS_POR_ASIN.get(asin) || [])}`);
+}
+function cerrarDetalle() { $('detalle').classList.remove('abierto'); }
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('.prod[data-asin]');
+  if (b && !b.closest('#detalle')) detalleProducto(b.dataset.asin);
+});
+
+/* =====================================================================
+   10. Dibujo general y controles
+   ===================================================================== */
+let estado = estadoInicial();
+let velocidad = 6, temporizador = null;
+
+function dibujar(e, animar) {
+  const p = e.indice >= 0 ? PASOS[e.indice] : null;
+  etapaVista = p ? p.etapa : 3;
+  for (const et of [3, 4, 5]) $(`vista-${et}`).hidden = et !== etapaVista;
+  document.querySelectorAll('.pestana').forEach(b => b.classList.toggle('activa', Number(b.dataset.etapa) === etapaVista));
+  if (etapaVista === 3) dibujarEtapa3(e, animar);
+  if (etapaVista === 4) dibujarEtapa4(e);
+  if (etapaVista === 5) dibujarEtapa5(e);
+  dibujarContadores(e);
+  $('narracion').innerHTML = p ? narrar(p) : `<span class="insignia-etapa">Inicio</span><span>Pulsa <b>Reproducir</b> o <b>Paso</b>. ` +
+    `${ORDEN_ENTRADA.length} eventos atendidos por la etapa 2 recorren las etapas 3, 4 y 5. Haz clic en un evento o un producto para ver sus datos.</span>`;
+  $('barra-progreso').value = e.indice + 1;
+  $('indicador-paso').textContent = `Paso ${e.indice + 1} / ${N}`;
+  actualizarBotones();
+}
+
+function avanzar() {
+  if (estado.indice >= N - 1) return false;
+  aplicar(estado, PASOS[estado.indice + 1]);
+  dibujar(estado, true);
+  return true;
+}
+function irA(k) {
+  estado = estadoInicial();
+  for (let i = 0; i <= k && i < N; i++) aplicar(estado, PASOS[i]);
+  dibujar(estado, false);
+}
+function programar() {
+  temporizador = setTimeout(() => { temporizador = null; if (avanzar()) programar(); else actualizarBotones(); }, 1000 / velocidad);
+}
+function reproducir() { if (temporizador) return; if (estado.indice >= N - 1) irA(-1); programar(); actualizarBotones(); }
+function pausar() { clearTimeout(temporizador); temporizador = null; actualizarBotones(); }
+function actualizarBotones() {
+  const r = temporizador !== null;
+  $('btn-reproducir').disabled = r; $('btn-pausar').disabled = !r;
+  $('btn-paso').disabled = estado.indice >= N - 1; $('btn-atras').disabled = estado.indice < 0;
+}
+$('btn-reproducir').addEventListener('click', reproducir);
+$('btn-pausar').addEventListener('click', pausar);
+$('btn-paso').addEventListener('click', () => { pausar(); avanzar(); });
+$('btn-atras').addEventListener('click', () => { pausar(); irA(estado.indice - 1); });
+$('btn-reiniciar').addEventListener('click', () => { pausar(); irA(-1); });
+$('velocidad').addEventListener('input', ev => { velocidad = Number(ev.target.value); $('velocidad-texto').textContent = `${velocidad} pasos/s`; });
+$('barra-progreso').max = N;
+$('barra-progreso').addEventListener('input', ev => { pausar(); irA(Number(ev.target.value) - 1); });
+document.addEventListener('keydown', ev => {
+  if (ev.target.tagName === 'INPUT' || ev.target.tagName === 'SELECT') return;
+  if (ev.key === ' ') { ev.preventDefault(); temporizador ? pausar() : reproducir(); }
+  else if (ev.key === 'ArrowRight') { pausar(); avanzar(); }
+  else if (ev.key === 'ArrowLeft') { pausar(); irA(estado.indice - 1); }
+  else if (ev.key === 'Escape') cerrarDetalle();
+});
+
+/* =====================================================================
+   11. Textos fijos e inicio
+   ===================================================================== */
+$('subtitulo').textContent = `${ORDEN_ENTRADA.length} eventos de ${PARAM.categoria} (salida de la etapa 2, semilla ${PARAM.semilla}) · ${N} pasos · ` +
+  `caché de ${PARAM.capacidad_cache} productos · B+Tree de ${PARAM.max_hoja} entradas por hoja · KD-Tree con hojas de ${PARAM.tam_hoja_kd} · k = ${PARAM.k}`;
+if (PARAM.demo) $('aviso-demo').innerHTML = '<span class="demo">Catálogo de demostración: precio, rating, calificaciones y categoría son sintéticos. ' +
+  'Generar en el repositorio para usar catalogo.jsonl.</span>';
+
+const problemas = [];
+if (MALOS_CACHE.length) problemas.push([`caché inconsistente en ${MALOS_CACHE.length} fotos`, MALOS_CACHE[0]]);
+if (MALOS_ARBOL.length) problemas.push([`B+Tree inválido en ${MALOS_ARBOL.length} fotos`, MALOS_ARBOL[0]]);
+if (KNN_MAL.length) problemas.push([`resultado del KD-Tree distinto de la fuerza bruta en ${KNN_MAL.length} consultas`, KNN_MAL[0]]);
+for (const [texto, ok] of TRAZA.verificacion_src || []) if (ok === false) problemas.push([`no coincide con src/: ${texto}`, null]);
+if (problemas.length) {
+  const a = $('alerta-global'); a.hidden = false;
+  a.innerHTML = '⚠ ' + problemas.map(([t]) => t).join(' · ') +
+    (problemas[0][1] !== null ? '<button class="boton" id="btn-ir-problema">Ir al primero</button>' : '');
+  if ($('btn-ir-problema')) $('btn-ir-problema').addEventListener('click', () => { pausar(); irA(problemas[0][1]); });
+}
+
+$('leyenda').innerHTML = Object.entries(TIPOS).map(([t, nombre]) => `<span><span class="muestra t-${t}"></span>${nombre}</span>`).join('') +
+  '<span><span class="muestra" style="background:var(--producto);border:1px solid var(--acento)"></span>Producto (últimos 5 caracteres del parent_asin)</span>';
+
+const srcTxt = (TRAZA.verificacion_src || []).length
+  ? ` Comparación con las clases de src/: ${(TRAZA.verificacion_src).map(([t, ok]) => `${t} ${ok ? '✓' : ok === false ? '✕' : '(no se pudo)'}`).join('; ')}.`
+  : (PARAM.demo ? ' Sin comparación con src/ porque se usó el catálogo de demostración.' : '');
+$('nota').textContent =
+  `Las estructuras se dibujan a partir de fotos tomadas por src/trace_345.py, que sigue el código de src/etapa_3, src/etapa_4 y src/etapa_5 ` +
+  `con parámetros reducidos para que quepan en pantalla. Verificaciones hechas al cargar la página: caché en ${FOTOS_CACHE.length} fotos ` +
+  `(${MALOS_CACHE.length} con problemas), B+Tree en ${FOTOS_ARBOL.length} fotos (${MALOS_ARBOL.length} con problemas) y KNN/rango contra fuerza bruta ` +
+  `en el navegador (${KNN_MAL.length} diferencias).` + srcTxt;
+
+window.addEventListener('resize', () => dibujar(estado, false));
+// La dirección puede indicar un paso o una etapa: pipeline_345.html#paso=900, #etapa=5, #reproducir
+const pasoInicial = Number((location.hash.match(/paso=(\d+)/) || [])[1]);
+const etapaInicial = Number((location.hash.match(/etapa=(\d)/) || [])[1]);
+if (Number.isFinite(pasoInicial)) irA(Math.min(pasoInicial, N) - 1);
+else if (etapaInicial in INICIO_ETAPA) irA(INICIO_ETAPA[etapaInicial]);
+else irA(-1);
+if (/reproducir/.test(location.hash)) reproducir();
+</script>
+</body>
+</html>
