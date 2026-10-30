@@ -13,6 +13,7 @@ análisis de co-compra y servicio al usuario final.
 
 - **Dataset base:** [Amazon Reviews 2023](https://amazon-reviews-2023.github.io/) (McAuley-Lab), categoría `Office_Products`. Se descarga y se convierte a Parquet con [notebooks/00-download-data.ipynb](notebooks/00-download-data.ipynb).
 - **Enunciado:** [docs/proyecto-eda-2026-2.pdf](docs/proyecto-eda-2026-2.pdf)
+- **Informe final:** [docs/Proyecto_Final_Grupo1.pdf](docs/Proyecto_Final_Grupo1.pdf)
 
 ## Pipeline
 
@@ -156,7 +157,7 @@ Axel es el mantenedor principal del repositorio.
 
 - Axel aparece con dos identidades de autor, `Axel Pereda` y `Axel Pereda Escalante`, con el mismo correo. [.mailmap](.mailmap) las une, así que `git shortlog -sn` las cuenta como una sola.
 - Los commits de Axel en las etapas 0 a 6 son de integración: la reorganización por etapa y la corrección y ejecución de los notebooks sobre el flujo integrado. La implementación de cada etapa está en los commits de su responsable.
-- Las etapas 8 y 9 entraron en un solo commit de Jesús, el 27 de octubre. Las correcciones posteriores son de Axel.
+- Las etapas 8 y 9 entraron en un solo commit de Jesús, el 27 de octubre. Las correcciones posteriores son de Axel, con la aprobación de Jesús.
 
 ## Estructura del repositorio
 
@@ -170,6 +171,7 @@ Axel es el mantenedor principal del repositorio.
 │   └── interim/<CATEGORIA>/  Salidas de cada etapa, que leen las siguientes
 ├── docs/
 │   ├── proyecto-eda-2026-2.pdf   Enunciado
+│   ├── Proyecto_Final_Grupo1.pdf Informe final
 │   ├── informe_etapa_*.md        Informes de las etapas 0-1-2, 3-4-5, 6, 7, 8 y 9
 │   └── img/                      Figuras del informe de las etapas 0 a 2
 ├── notebooks/                Descarga del dataset, un notebook por etapa y la demo del pipeline
